@@ -1,0 +1,627 @@
+{
+  "branding": {
+    "siteName": "CosyNest Tunisia",
+    "whatsapp": "+21653340970",
+    "whatsappTemplates": {
+      "payment": "Hello {{name}},\n\nYour request ({{ref}}) for {{apartment}}\nDates: {{dates}}\n{{stayLine}}\n\nTo confirm the booking, we require a small advance payment. Once received, we will confirm and block the dates for you.",
+      "confirm": "Hello {{name}},\n\nGood news — your booking ({{ref}}) for {{apartment}} from {{dates}} is confirmed.\n{{stayLine}}\n\nThank you and see you soon.",
+      "decline": "Hello {{name}},\n\nThank you for your request ({{ref}}) for {{apartment}}. Unfortunately these dates are no longer available."
+    }
+  },
+  "apartments": {
+    "elegance-la-marsa": {
+      "slug": "elegance-la-marsa",
+      "titles": {
+        "fr": "L'Élégance de La Marsa",
+        "en": "The Marsa Elegance",
+        "ar": "أناقة المرسى"
+      },
+      "category": "la_marsa_2br",
+      "priceTND": 170,
+      "priceEUR": 50,
+      "icalUrl": "",
+      "extraImages": [
+        "/uploads/elegance-la-marsa/1774338457569-cj9yls4da7t.jpg"
+      ],
+      "deleted": false,
+      "manualBlocks": [],
+      "datePrices": [],
+      "internalName": "L'Élégance de La Marsa",
+      "airbnbRating": 4.85,
+      "airbnbReviewCount": 87,
+      "airbnbReviews": [
+        {
+          "name": "Mélanie",
+          "text": "Excellent séjour, logement propre et décoré avec goût.",
+          "date": "janvier 2026"
+        },
+        {
+          "name": "Majdi",
+          "text": "Bien placé, propre, accès facile.",
+          "date": "mars 2025"
+        },
+        {
+          "name": "David",
+          "text": "Très bon appartement, pratique et confortable.",
+          "date": "mai 2025"
+        },
+        {
+          "name": "Mohamed",
+          "text": "Conforme à la description, bonne communication.",
+          "date": "décembre 2025"
+        },
+        {
+          "name": "Reza",
+          "text": "Appartement élégant et bien rangé, hôte très poli et facilement joignable.",
+          "date": "mai 2025"
+        },
+        {
+          "name": "Rezgui",
+          "text": "Hôtes très accueillants et réactifs, je recommande vivement !",
+          "date": "avril 2025"
+        }
+      ]
+    },
+    "nid-perche-la-marsa": {
+      "slug": "nid-perche-la-marsa",
+      "titles": {
+        "fr": "Le Nid Perché",
+        "en": "The Marsa Nest",
+        "ar": "العش الهادئ بالمرسى"
+      },
+      "category": "la_marsa_2br",
+      "priceTND": 170,
+      "priceEUR": 50,
+      "icalUrl": "",
+      "extraImages": [],
+      "deleted": false,
+      "manualBlocks": [],
+      "datePrices": [],
+      "internalName": "Le Nid Perché",
+      "airbnbRating": 4.91,
+      "airbnbReviewCount": 65,
+      "airbnbReviews": [
+        {
+          "name": "Cédric",
+          "text": "Logement impeccable, très spacieux et conforme à la description.",
+          "date": "Il y a 1 semaine"
+        },
+        {
+          "name": "Swann",
+          "text": "Séjour parfait. Logement calme, propre et très bien équipé.",
+          "date": "juin 2025"
+        },
+        {
+          "name": "Allan",
+          "text": "Très bon séjour, bel appartement.",
+          "date": "février 2026"
+        },
+        {
+          "name": "Samuel",
+          "text": "Super logement, fidèle à l’annonce, très calme.",
+          "date": "janvier 2026"
+        },
+        {
+          "name": "Adonis",
+          "text": "Bien situé, calme et pratique.",
+          "date": "juin 2025"
+        },
+        {
+          "name": "Ciara",
+          "text": "Parfait, fidèle aux photos, excellent emplacement.",
+          "date": "décembre 2025"
+        }
+      ]
+    },
+    "ecrin-lumineux": {
+      "slug": "ecrin-lumineux",
+      "titles": {
+        "fr": "L'Écrin Lumineux",
+        "en": "The Bright Haven",
+        "ar": "الملاذ المشرق"
+      },
+      "category": "la_marsa_2br",
+      "priceTND": 170,
+      "priceEUR": 50,
+      "icalUrl": "",
+      "extraImages": [],
+      "deleted": false,
+      "manualBlocks": [],
+      "datePrices": [],
+      "internalName": "L'Écrin Lumineux",
+      "airbnbRating": 4.84,
+      "airbnbReviewCount": 83,
+      "airbnbReviews": [
+        {
+          "name": "Mohamed",
+          "text": "Bel appartement. J’ai été ravi de mon séjour. Check-in autonome très facile.",
+          "date": "novembre 2025"
+        },
+        {
+          "name": "Sami",
+          "text": "J’ai été ravi de mon séjour chez Nour et Nabil. Appartement propre et bien entretenu.",
+          "date": "juillet 2025"
+        },
+        {
+          "name": "Rebin",
+          "text": "Appartement très propre, avec un bon emplacement. Hôte très serviable.",
+          "date": "février 2026"
+        },
+        {
+          "name": "Khouloud",
+          "text": "C’est notre deuxième séjour. Appartement spacieux avec tout le nécessaire fourni.",
+          "date": "juillet 2025"
+        },
+        {
+          "name": "Pierre",
+          "text": "Communication excellente et appartement tout à fait conforme au descriptif.",
+          "date": "décembre 2024"
+        },
+        {
+          "name": "Rebin",
+          "text": "Nous avons prolongé de 3 jours. Appartement très propre et hôtes très serviables.",
+          "date": "février 2026"
+        }
+      ]
+    },
+    "azur-corniche": {
+      "slug": "azur-corniche",
+      "titles": {
+        "fr": "L'Azur de la Corniche",
+        "en": "The Corniche Azure",
+        "ar": "أزور الكورنيش"
+      },
+      "category": "one_bedroom",
+      "priceTND": 155,
+      "priceEUR": 45,
+      "icalUrl": "",
+      "extraImages": [],
+      "deleted": false,
+      "manualBlocks": [],
+      "datePrices": [],
+      "internalName": "L'Azur de la Corniche",
+      "airbnbRating": 4.94,
+      "airbnbReviewCount": 16,
+      "airbnbReviews": [
+        {
+          "name": "Myrna",
+          "text": "Excellents hôtes, communication fluide et flexibilité appréciée. Recommandé !",
+          "date": "décembre 2025"
+        },
+        {
+          "name": "Kevin",
+          "text": "Excellent emplacement, communication et expérience. Je recommande vivement cet appartement.",
+          "date": "avril 2025"
+        },
+        {
+          "name": "Swann",
+          "text": "Excellent séjour dans cet appartement. Conforme à l’annonce, propre et bien situé.",
+          "date": "février 2025"
+        },
+        {
+          "name": "Colin",
+          "text": "Excellente location pour moi. Très propre, spacieux et calme. Je reviendrai !",
+          "date": "avril 2025"
+        },
+        {
+          "name": "Selim",
+          "text": "Très joli appartement avec balcon à Marsa plage. Avec tout ce dont on a besoin.",
+          "date": "avril 2024"
+        },
+        {
+          "name": "Wassim",
+          "text": "Séjour fantastique, emplacement parfait, arrivée autonome très simple.",
+          "date": "avril 2024"
+        }
+      ]
+    },
+    "brise-marine": {
+      "slug": "brise-marine",
+      "titles": {
+        "fr": "La Brise Marine",
+        "en": "The Sea Breeze",
+        "ar": "نسيم البحر"
+      },
+      "category": "one_bedroom",
+      "priceTND": 155,
+      "priceEUR": 45,
+      "icalUrl": "",
+      "extraImages": [],
+      "deleted": false,
+      "manualBlocks": [],
+      "datePrices": [],
+      "internalName": "La Brise Marine",
+      "airbnbRating": 4.9,
+      "airbnbReviewCount": 92,
+      "airbnbReviews": [
+        {
+          "name": "Azdine",
+          "text": "Très agréable séjour, logement conforme aux photos, proche des commodités.",
+          "date": "Il y a 3 semaines"
+        },
+        {
+          "name": "Sophia",
+          "text": "Séjour agréable, hôte disponible, appartement fidèle à la description.",
+          "date": "janvier 2026"
+        },
+        {
+          "name": "Ghassen",
+          "text": "Très propre, confortable et bien équipé. Hôtes très accueillants.",
+          "date": "Il y a 1 semaine"
+        },
+        {
+          "name": "Jessica",
+          "text": "Très confortable, tout était parfait. Aucun problème.",
+          "date": "février 2026"
+        },
+        {
+          "name": "Nidhal",
+          "text": "Appartement sympa et proche de toute commodité. Je recommande.",
+          "date": "janvier 2026"
+        },
+        {
+          "name": "Sandra",
+          "text": "Excellent ! Hôtes disponibles et bienveillants. Nous sommes ravis de notre séjour.",
+          "date": "octobre 2025"
+        }
+      ]
+    },
+    "grand-triplex": {
+      "slug": "grand-triplex",
+      "titles": {
+        "fr": "Le Grand Triplex",
+        "en": "The Grand Triplex",
+        "ar": "التريبلس الكبير"
+      },
+      "category": "triplex",
+      "priceTND": 240,
+      "priceEUR": 70,
+      "icalUrl": "",
+      "extraImages": [],
+      "deleted": false,
+      "manualBlocks": [],
+      "datePrices": [],
+      "internalName": "Le Grand Triplex",
+      "airbnbRating": 4.79,
+      "airbnbReviewCount": 70,
+      "airbnbReviews": [
+        {
+          "name": "Miriem",
+          "text": "Un grand merci pour la flexibilité à l’arrivée, la propreté et la communication très rapide et efficace.",
+          "date": "septembre 2025"
+        },
+        {
+          "name": "Nabil",
+          "text": "Très bel appartement au cœur de La Marsa, pas trop loin de la plage. Je recommande vivement.",
+          "date": "octobre 2025"
+        },
+        {
+          "name": "Lynda",
+          "text": "Superbe maison et quartier. L’un de mes préférés.",
+          "date": "août 2025"
+        },
+        {
+          "name": "Alaaeddine",
+          "text": "Super séjour. Logement propre, conforme à l’annonce et hôtes très accueillants.",
+          "date": "août 2025"
+        },
+        {
+          "name": "Bochra",
+          "text": "Logement très propre et confortable, hôtes accueillants et disponibles.",
+          "date": "août 2025"
+        },
+        {
+          "name": "Bilel",
+          "text": "Maison propre et soignée, position privilégiée pour les déplacements à pied.",
+          "date": "décembre 2025"
+        }
+      ]
+    },
+    "perle-de-la-plage": {
+      "slug": "perle-de-la-plage",
+      "titles": {
+        "fr": "La Perle de la Plage",
+        "en": "The Beach Pearl",
+        "ar": "لؤلؤة الشاطئ"
+      },
+      "category": "one_bedroom",
+      "priceTND": 155,
+      "priceEUR": 45,
+      "icalUrl": "",
+      "extraImages": [],
+      "deleted": false,
+      "manualBlocks": [],
+      "datePrices": [],
+      "internalName": "La Perle de la Plage",
+      "airbnbRating": 5.0,
+      "airbnbReviewCount": 16,
+      "airbnbReviews": [
+        {
+          "name": "Eric",
+          "text": "Hôte très accueillante et attentive. Super emplacement.",
+          "date": "Il y a 3 semaines"
+        },
+        {
+          "name": "Mohamed",
+          "text": "Troisième fois avec vous et ce n’est pas fini ! Je peux dire en toute confiance qu’il s’agit de mon logement préféré.",
+          "date": "janvier 2026"
+        },
+        {
+          "name": "Swann",
+          "text": "Comme toujours, un très bon séjour chez Nour et Nabil. Toujours un plaisir d’y revenir.",
+          "date": "mai 2025"
+        },
+        {
+          "name": "Jacques",
+          "text": "Un séjour merveilleux, je reviendrai.",
+          "date": "juin 2025"
+        },
+        {
+          "name": "Bassel",
+          "text": "Séjour très plaisant, logement spacieux et charmant.",
+          "date": "février 2024"
+        },
+        {
+          "name": "Mohamed",
+          "text": "C’était ma deuxième fois, tout était parfait comme d’habitude.",
+          "date": "janvier 2025"
+        }
+      ]
+    },
+    "oasis-de-la-corniche": {
+      "slug": "oasis-de-la-corniche",
+      "titles": {
+        "fr": "L'Oasis de la Corniche",
+        "en": "The Corniche Oasis",
+        "ar": "واحة الكورنيش"
+      },
+      "category": "one_bedroom",
+      "priceTND": 155,
+      "priceEUR": 45,
+      "icalUrl": "",
+      "extraImages": [],
+      "deleted": false,
+      "manualBlocks": [],
+      "datePrices": [],
+      "internalName": "L'Oasis de la Corniche",
+      "airbnbRating": 4.9,
+      "airbnbReviewCount": 69,
+      "airbnbReviews": [
+        {
+          "name": "Bertrand",
+          "text": "Le logement était conforme aux photos et au descriptif. Très bien situé à La Marsa.",
+          "date": "novembre 2025"
+        },
+        {
+          "name": "Muhamad",
+          "text": "Nous avons passé un merveilleux séjour à La Marsa. Appartement impeccable et confortable.",
+          "date": "janvier 2026"
+        },
+        {
+          "name": "Gerlinde",
+          "text": "Premier séjour en Tunisie, super expérience dans ce logement.",
+          "date": "octobre 2025"
+        },
+        {
+          "name": "Hany",
+          "text": "Lieu de résidence idéal, quartier animé mais calme, à quelques minutes de la plage.",
+          "date": "juin 2025"
+        },
+        {
+          "name": "Sébastien",
+          "text": "Super choix et très grande flexibilité. Nous avons été ravis de notre séjour.",
+          "date": "mai 2025"
+        },
+        {
+          "name": "Anna-Lisa",
+          "text": "Appartement ressemblant aux photos, propre, hôte toujours disponible en cas de besoin.",
+          "date": "mai 2025"
+        }
+      ]
+    },
+    "toit-sidi-bou-said": {
+      "slug": "toit-sidi-bou-said",
+      "titles": {
+        "fr": "Le Toit de Sidi Bou Saïd",
+        "en": "Sidi Bou Said Rooftop",
+        "ar": "قمة سيدي بوسعيد"
+      },
+      "category": "sidi_2br",
+      "priceTND": 205,
+      "priceEUR": 60,
+      "icalUrl": "",
+      "extraImages": [],
+      "deleted": false,
+      "manualBlocks": [],
+      "datePrices": [],
+      "internalName": "Le Toit de Sidi Bou Saïd",
+      "airbnbRating": 4.82,
+      "airbnbReviewCount": 184,
+      "airbnbReviews": [
+        {
+          "name": "Catherine",
+          "text": "Maison très agréable, au calme mais juste à côté des rues animées de Sidi Bou Saïd. Le toit terrasse est parfait pour profiter des couchers de soleil.",
+          "date": "Il y a 3 semaines"
+        },
+        {
+          "name": "Benjamin",
+          "text": "Idéalement situé et facile d’accès. Appartement confortable pour profiter pleinement de Sidi Bou Saïd.",
+          "date": "février 2025"
+        },
+        {
+          "name": "Gregory",
+          "text": "Très bien situé dans le quartier, terrasse magnifique. Très pratique pour visiter Tunis.",
+          "date": "juillet 2025"
+        },
+        {
+          "name": "Chema",
+          "text": "Séjour parfait, excellente communication avec le propriétaire. Je recommande fortement.",
+          "date": "Il y a 2 semaines"
+        },
+        {
+          "name": "Slim",
+          "text": "Excellent séjour, emplacement parfait, proche de tout.",
+          "date": "mai 2025"
+        },
+        {
+          "name": "Amel",
+          "text": "Très bien situé dans une zone animée mais paisible. Expérience unique.",
+          "date": "août 2025"
+        }
+      ]
+    },
+    "rez-de-jardin": {
+      "slug": "rez-de-jardin",
+      "titles": {
+        "fr": "Le Rez-de-Jardin",
+        "en": "The Garden Retreat",
+        "ar": "ملاذ الحديقة"
+      },
+      "category": "sidi_2br",
+      "priceTND": 205,
+      "priceEUR": 60,
+      "icalUrl": "",
+      "extraImages": [],
+      "deleted": false,
+      "manualBlocks": [],
+      "datePrices": [],
+      "internalName": "Le Rez-de-Jardin",
+      "airbnbRating": 4.86,
+      "airbnbReviewCount": 7,
+      "airbnbReviews": [
+        {
+          "name": "Stephanie",
+          "text": "Appartement très bien situé, très propre et hôte très accueillant.",
+          "date": "juillet 2025"
+        },
+        {
+          "name": "Nour Kati",
+          "text": "J’ai adoré mon séjour ici. Décoration soignée, ambiance cosy et terrasse véritable atout.",
+          "date": "juin 2024"
+        },
+        {
+          "name": "Canap",
+          "text": "Au cœur de Sidi Bou Saïd, proche de tout, gens sympathiques. Vous pouvez contacter l’équipe de Nabil.",
+          "date": "novembre 2025"
+        },
+        {
+          "name": "Lini",
+          "text": "Magnifique maison dans le plus beau quartier. Merci Nour et Nabil.",
+          "date": "décembre 2025"
+        },
+        {
+          "name": "Samira",
+          "text": "Nous avons passé un bon séjour, tout était génial.",
+          "date": "août 2025"
+        },
+        {
+          "name": "Moe",
+          "text": "Super logement et propre. L’équipe a été très réactive et sympathique. Merci.",
+          "date": "avril 2024"
+        }
+      ]
+    },
+    "duplex-prestige": {
+      "slug": "duplex-prestige",
+      "titles": {
+        "fr": "Le Duplex Prestige",
+        "en": "The Prestige Duplex",
+        "ar": "دوبلكس بريستيج"
+      },
+      "category": "sidi_2br",
+      "priceTND": 205,
+      "priceEUR": 60,
+      "icalUrl": "",
+      "extraImages": [],
+      "deleted": false,
+      "manualBlocks": [],
+      "datePrices": [],
+      "internalName": "Le Duplex Prestige",
+      "airbnbRating": 4.81,
+      "airbnbReviewCount": 84,
+      "airbnbReviews": [
+        {
+          "name": "Mohamed Hedi",
+          "text": "Excellent séjour, maison chaleureuse, très propre et parfaitement équipée. Emplacement top et hôte très accueillant.",
+          "date": "décembre 2025"
+        },
+        {
+          "name": "Charly",
+          "text": "Logement conforme à l’annonce avec bon rapport qualité/prix. Instructions claires.",
+          "date": "Il y a 2 semaines"
+        },
+        {
+          "name": "Ambre",
+          "text": "Super séjour, bien placé. Logement fidèle à la description, très beau et propre.",
+          "date": "novembre 2025"
+        },
+        {
+          "name": "Cynthia",
+          "text": "Appartement conforme, très propre, proche de tout. Hôte très réactif. Recommandé à 1000%.",
+          "date": "juillet 2025"
+        },
+        {
+          "name": "Najoua",
+          "text": "Séjour parfait, tranquillité absolue et voisinage agréable.",
+          "date": "novembre 2025"
+        },
+        {
+          "name": "Donia",
+          "text": "Logement propre, confortable et suffisant pour 3 personnes. Hôte très gentil et réactif.",
+          "date": "décembre 2025"
+        }
+      ]
+    },
+    "belvedere-360": {
+      "slug": "belvedere-360",
+      "titles": {
+        "fr": "Le Belvédère 360°",
+        "en": "The 360° Belvedere",
+        "ar": "بلفيدير 360 درجة"
+      },
+      "category": "belvedere",
+      "priceTND": 290,
+      "priceEUR": 85,
+      "icalUrl": "",
+      "extraImages": [],
+      "deleted": false,
+      "manualBlocks": [],
+      "datePrices": [],
+      "internalName": "Le Belvédère 360°",
+      "airbnbRating": 4.84,
+      "airbnbReviewCount": 37,
+      "airbnbReviews": [
+        {
+          "name": "Isabelle",
+          "text": "Très beau logement avec une belle terrasse sur les toits de Sidi Bou Saïd. Cuisine bien équipée.",
+          "date": "novembre 2025"
+        },
+        {
+          "name": "Faouzi",
+          "text": "Séjour agréable, logement bien situé dans le village. L’accès au logement est juste un peu difficile.",
+          "date": "septembre 2025"
+        },
+        {
+          "name": "Yannis",
+          "text": "Très bon accueil, hôte disponible et facilitant. Logement spacieux, propre et bien équipé.",
+          "date": "août 2025"
+        },
+        {
+          "name": "Véronique",
+          "text": "Super logement, bien placé, spacieux. Belle terrasse. Très calme au cœur du village.",
+          "date": "Il y a 2 semaines"
+        },
+        {
+          "name": "Nour",
+          "text": "Appartement impeccable, instructions claires et détaillées pour arriver.",
+          "date": "juin 2025"
+        },
+        {
+          "name": "Emily",
+          "text": "Appartement fantastique, dans le meilleur emplacement pour tout à Sidi Bou Saïd.",
+          "date": "Il y a 1 semaine"
+        }
+      ]
+    }
+  }
+}

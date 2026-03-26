@@ -1,0 +1,1096 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>CosyNest Admin</title>
+<script src="https://cdn.tailwindcss.com">
+document.addEventListener('DOMContentLoaded', function(){
+  const username = document.getElementById('username');
+  const password = document.getElementById('password');
+  [username, password].forEach(el => {
+    el && el.addEventListener('keydown', function(e){
+      if (e.key === 'Enter') {
+        e.preventDefault();
+        login();
+      }
+    });
+  });
+});
+</script>
+<style>
+body{background:#f8fafc}
+.card{background:#fff;border:1px solid rgba(15,23,42,.08);border-radius:1rem;box-shadow:0 10px 22px rgba(15,23,42,.05)}
+.admin-cal{border:1px solid rgba(148,163,184,.22);border-radius:18px;background:#fff;padding:14px}
+.admin-cal-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px}
+.admin-cal-title{font-weight:800;color:#0f172a;font-size:1.05rem}
+.admin-cal-nav{display:flex;gap:8px}
+.admin-cal-nav button,.admin-cal-actions button{border:1px solid rgba(148,163,184,.24);background:#fff;border-radius:999px;padding:8px 12px;font-weight:700}
+.admin-cal-weekdays,.admin-cal-days{display:grid;grid-template-columns:repeat(7,1fr);gap:8px}
+.admin-cal-weekdays div{font-size:12px;color:#64748b;text-align:center;font-weight:700}
+.admin-cal-day{height:58px;display:flex;flex-direction:column;align-items:center;justify-content:center;border-radius:14px;background:#f8fafc;color:#334155;border:1px solid transparent;font-weight:600;cursor:pointer;padding:4px}
+.admin-cal-day.empty{background:transparent;border:none;cursor:default}
+.admin-cal-day.blocked{background:#d1d5db;color:#6b7280;text-decoration:line-through}
+.admin-cal-day.selected{background:#dbeafe;border-color:#93c5fd;color:#1d4ed8}
+.admin-cal-day.inrange{background:#eff6ff;border-color:#bfdbfe}
+.admin-cal-day.today{border-color:#cbd5e1}
+.admin-cal-day.has-price{box-shadow:inset 0 0 0 1px rgba(59,130,246,.24)}
+.admin-cal-price{font-size:10px;line-height:1;color:#2563eb;font-weight:800;margin-top:3px}
+.admin-cal-day.blocked .admin-cal-price{color:#6b7280}
+.admin-cal-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
+.admin-cal-actions .primary{background:#16375C;color:#fff;border-color:#16375C}
+.admin-cal-actions .danger{color:#b91c1c;border-color:#fecaca;background:#fff}
+.admin-cal-note{font-size:12px;color:#64748b;margin-top:10px}
+.admin-cal-legend{display:flex;gap:14px;flex-wrap:wrap;margin-top:10px;font-size:12px;color:#64748b}
+.admin-cal-dot{width:12px;height:12px;border-radius:999px;display:inline-block;margin-right:6px;vertical-align:-1px}
+.admin-cal-dot.free{background:#f8fafc;border:1px solid #cbd5e1}
+.admin-cal-dot.blocked{background:#d1d5db}
+.admin-cal-dot.selected{background:#dbeafe;border:1px solid #93c5fd}
+.admin-cal-range{font-size:13px;color:#334155;margin-top:8px;font-weight:600}
+.template-chip{padding:.65rem .9rem;border-radius:.85rem;border:1px solid rgba(26,54,93,.14);background:#fff;font-weight:700}
+.template-chip:hover{background:#f8fbff}
+.dashboard-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1rem}
+.dashboard-card{background:#fff;border:1px solid rgba(15,23,42,.08);border-radius:1rem;padding:1rem;box-shadow:0 10px 22px rgba(15,23,42,.05)}
+.dashboard-label{font-size:.8rem;font-weight:700;color:#64748b;text-transform:uppercase;letter-spacing:.04em}
+.dashboard-value{font-size:1.8rem;font-weight:800;color:#0f172a;margin-top:.25rem}
+.dashboard-sub{font-size:.9rem;color:#64748b;margin-top:.35rem}
+.dashboard-list{display:grid;gap:.65rem}
+.dashboard-row{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.7rem .85rem;border:1px solid rgba(15,23,42,.08);border-radius:.85rem;background:#fff}
+@media (max-width: 1024px){.dashboard-grid{grid-template-columns:repeat(2,minmax(0,1fr));}}
+@media (max-width: 640px){.dashboard-grid{grid-template-columns:1fr;}}
+.booking-card-meta{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.6rem}
+@media (max-width: 700px){.booking-card-meta{grid-template-columns:1fr}}
+</style>
+</head>
+<body onload='loadBookings()'> class="min-h-screen text-slate-800">
+<div class="max-w-6xl mx-auto p-4 md:p-8">
+  <div class="flex items-center justify-between mb-6">
+    <div>
+      
+<h1 class="text-3xl font-bold text-slate-900">CosyNest Admin</h1>
+      <p class="text-slate-500">Update prices, upload photos, delete photos, and sync Airbnb calendars.</p>
+    </div>
+    <a href="/" class="rounded-full px-4 py-2 bg-slate-900 text-white font-semibold">View site</a>
+  </div>
+
+  <div id="loginCard" class="card p-6 max-w-md">
+    <h2 class="text-xl font-bold mb-3">Admin login</h2>
+    <p class="text-slate-500 mb-4">Use the admin password configured in the server.</p>
+    <input id="username" type="text" placeholder="Admin username" class="w-full border rounded-xl px-4 py-3 mb-3" />
+    <input id="password" type="password" placeholder="Admin password" class="w-full border rounded-xl px-4 py-3 mb-3" />
+    <button onclick="login()" class="w-full rounded-xl bg-emerald-600 text-white font-bold px-4 py-3">Login</button>
+    <p id="loginMsg" class="text-red-600 mt-3 text-sm"></p>
+  </div>
+
+  <div id="adminApp" class="hidden">
+    
+    <div id="bookingRequestsPanel" class="card p-5 mb-6 hidden">
+      <div class="flex items-center justify-between mb-4">
+        <div>
+          <h3 class="text-xl font-bold">Booking requests</h3>
+          <p class="text-slate-500 text-sm">Requests coming from apartment pages.</p>
+        </div>
+        <button onclick="loadBookings()" class="rounded-xl border px-4 py-2 font-semibold">Refresh</button>
+      </div>
+      <div id="bookingRequestsList" class="space-y-3"></div>
+    </div>
+
+    <div class="card p-4 md:p-6 mb-6">
+      <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-3">
+        <div>
+          <h2 class="text-xl font-bold">Apartments</h2>
+          <p class="text-slate-500">Click one apartment to edit price, photos and iCal sync.</p>
+        </div>
+        <button onclick="saveAll()" class="rounded-xl bg-slate-900 text-white font-bold px-5 py-3">Save changes</button>
+      </div>
+    </div>
+    
+    <div id="waTemplatesPanel" class="card p-5 mb-6 hidden">
+      <div class="flex items-center justify-between mb-4">
+        <div>
+          <h3 class="text-xl font-bold">WhatsApp templates</h3>
+          <p class="text-slate-500 text-sm">Edit your reusable WhatsApp messages for payment, confirmation, and decline.</p>
+        </div>
+        <button onclick="saveTemplates()" class="rounded-xl px-4 py-2 bg-slate-900 text-white font-semibold">Save templates</button>
+      </div>
+      <div class="grid gap-4">
+        <label class="block">
+          <span class="text-sm font-semibold">Payment instructions template</span>
+          <textarea id="tplPayment" class="w-full border rounded-xl px-4 py-3 mt-1 min-h-[120px]"></textarea>
+        </label>
+        <label class="block">
+          <span class="text-sm font-semibold">Confirmation template</span>
+          <textarea id="tplConfirm" class="w-full border rounded-xl px-4 py-3 mt-1 min-h-[120px]"></textarea>
+        </label>
+        <label class="block">
+          <span class="text-sm font-semibold">Decline template</span>
+          <textarea id="tplDecline" class="w-full border rounded-xl px-4 py-3 mt-1 min-h-[100px]"></textarea>
+        </label>
+      </div>
+      <div class="mt-4 text-xs text-slate-500">
+        Available variables: <code>{{name}}</code>, <code>{{ref}}</code>, <code>{{apartment}}</code>, <code>{{dates}}</code>, <code>{{stayLine}}</code>
+      </div>
+    </div>
+
+    
+    
+    <div id="contactSettingsPanel" class="card p-5 mb-6 hidden">
+      <div class="flex items-center justify-between mb-4">
+        <div>
+          <h3 class="text-xl font-bold">Contact settings</h3>
+          <p class="text-slate-500 text-sm">Update the phone number and WhatsApp number used across the site.</p>
+        </div>
+        <button onclick="saveContactSettings()" class="rounded-xl px-4 py-2 bg-slate-900 text-white font-semibold">Save contact settings</button>
+      </div>
+      <div class="grid md:grid-cols-2 gap-4">
+        <label class="block">
+          <span class="text-sm font-semibold">Phone number</span>
+          <input id="sitePhoneInput" class="w-full border rounded-xl px-4 py-3 mt-1" placeholder="+21653340970" />
+        </label>
+        <label class="block">
+          <span class="text-sm font-semibold">WhatsApp number</span>
+          <input id="siteWhatsappInput" class="w-full border rounded-xl px-4 py-3 mt-1" placeholder="+21653340970" />
+        </label>
+      </div>
+      <div class="mt-3 text-xs text-slate-500">Use full international format, for example <code>+21653340970</code>.</div>
+    </div>
+
+    <div id="dashboardPanel" class="card p-5 mb-6 hidden">
+      <div class="flex items-center justify-between mb-4">
+        <div>
+          <h3 class="text-xl font-bold">Dashboard</h3>
+          <p class="text-slate-500 text-sm">Quick overview of your booking activity and revenue.</p>
+        </div>
+        <button onclick="renderDashboard()" class="rounded-xl border px-4 py-2 font-semibold">Refresh stats</button>
+      </div>
+      <div id="dashboardContent"></div>
+    </div>
+
+    <div class="grid lg:grid-cols-[320px_1fr] gap-6">
+      <div class="card p-3">
+        <div id="apartmentList" class="space-y-2"></div>
+      </div>
+      <div class="card p-5">
+        <div id="editorEmpty" class="text-slate-500">Select an apartment to edit.</div>
+        <div id="editor" class="hidden space-y-5"><div class="rounded-2xl border border-blue-200 bg-blue-50 text-blue-900 p-4 mb-5 text-sm">
+<strong>Note:</strong> title editing is saved in admin, but the public title auto-replacement has been disabled for now to keep the site layout stable.
+</div>
+          <div>
+            <h3 id="editorTitle" class="text-2xl font-bold text-slate-900"></h3>
+            <p class="text-slate-500">Changes are saved to the file-based backend and reflected on the site.</p>
+<div class="grid md:grid-cols-3 gap-4 mt-4">
+  <label class="block"><span class="text-sm font-semibold">Title (FR)</span><input id="titleFR" class="w-full border rounded-xl px-4 py-3 mt-1" type="text" /></label>
+  <label class="block"><span class="text-sm font-semibold">Title (EN)</span><input id="titleEN" class="w-full border rounded-xl px-4 py-3 mt-1" type="text" /></label>
+  <label class="block"><span class="text-sm font-semibold">Title (AR)</span><input id="titleAR" class="w-full border rounded-xl px-4 py-3 mt-1" type="text" /></label>
+</div>
+<div class="mt-4">
+  <label class="block">
+    <span class="text-sm font-semibold">Internal name (admin only)</span>
+    <input id="internalName" class="w-full border rounded-xl px-4 py-3 mt-1" type="text" placeholder="Example: Owner flat, VIP, Renovation needed" />
+    <span class="text-xs text-slate-500">Visible only inside admin. It does not change the public website.</span>
+  </label>
+</div>
+          </div>
+          <div class="grid md:grid-cols-2 gap-4">
+            <label class="block">
+              <span class="text-sm font-semibold">Price in TND</span>
+              <input id="priceTND" class="w-full border rounded-xl px-4 py-3 mt-1" type="number" />
+            </label>
+            <label class="block">
+              <span class="text-sm font-semibold">Approx price in EUR</span>
+              <input id="priceEUR" class="w-full border rounded-xl px-4 py-3 mt-1" type="number" />
+            </label>
+          </div>
+
+          <label class="block">
+            <span class="text-sm font-semibold">Airbnb iCal URL</span>
+            <input id="icalUrl" class="w-full border rounded-xl px-4 py-3 mt-1" placeholder="https://www.airbnb.com/calendar/ical/....ics" />
+            <span class="text-xs text-slate-500">Paste the Airbnb export calendar link here to sync blocked dates. For photos, Airbnb automatic import is not reliable, so use direct image uploads or direct image URLs.</span>
+          </label>
+
+          
+          <div class="grid md:grid-cols-2 gap-6">
+            <div class="rounded-2xl border border-slate-200 bg-slate-50 p-4">
+              <div class="text-sm font-semibold mb-2">Website iCal export URL</div>
+              <div class="flex gap-2">
+                <input id="exportIcalUrl" readonly class="flex-1 border rounded-xl px-3 py-2 bg-white text-slate-600" />
+                <button onclick="copyExportUrl()" class="px-3 py-2 rounded-xl border font-semibold">Copy</button>
+              </div>
+              <p class="text-xs text-slate-500 mt-2">Paste this link into Airbnb calendar import for this apartment.</p>
+            </div>
+            <div class="rounded-2xl border border-slate-200 bg-slate-50 p-4">
+              <div class="text-sm font-semibold mb-3">Manual blocked dates (Airbnb-style)</div>
+              <div class="admin-cal">
+                <div class="admin-cal-head">
+                  <div class="admin-cal-title" id="adminCalTitle">Calendar</div>
+                  <div class="admin-cal-nav">
+                    <button type="button" onclick="changeAdminCalendarMonth(-1)">‹</button>
+                    <button type="button" onclick="changeAdminCalendarMonth(1)">›</button>
+                  </div>
+                </div>
+                <div class="admin-cal-weekdays">
+                  <div>Mon</div><div>Tue</div><div>Wed</div><div>Thu</div><div>Fri</div><div>Sat</div><div>Sun</div>
+                </div>
+                <div id="adminCalDays" class="admin-cal-days mt-2"></div>
+                <div id="adminCalRange" class="admin-cal-range">Select a start and end date to block or unblock.</div>
+                <div class="admin-cal-actions">
+                  <button type="button" class="primary" onclick="blockSelectedRange()">Block selected dates</button>
+                  <button type="button" class="danger" onclick="unblockSelectedRange()">Unblock selected dates</button>
+                  <button type="button" onclick="clearCalendarSelection()">Clear selection</button>
+                </div>
+                <div class="mt-4 rounded-2xl border border-slate-200 bg-slate-50 p-4">
+                  <div class="text-sm font-semibold mb-2">Custom pricing for selected dates</div>
+                  <div class="flex flex-wrap gap-2 items-center">
+                    <input id="selectedRangePrice" type="number" min="0" step="1" placeholder="Price in TND" class="border rounded-xl px-3 py-2 w-40" />
+                    <button type="button" class="primary" style="background:#16a34a;color:white;padding:10px 16px;border-radius:10px;font-weight:700;border:none;" onclick="setSelectedRangePrice()">Set custom price</button>
+                    <button type="button" style="background:#dc2626;color:white;padding:10px 16px;border-radius:10px;font-weight:700;border:none;" onclick="clearSelectedRangePrice()">Clear custom price</button>
+                  </div>
+                  <div class="text-xs text-slate-500 mt-2">Set a different nightly price for one date or a date range, Airbnb style.</div>
+                </div>
+                <div class="admin-cal-legend">
+                  <div><span class="admin-cal-dot free"></span>Available</div>
+                  <div><span class="admin-cal-dot blocked"></span>Blocked</div>
+                  <div><span class="admin-cal-dot selected"></span>Selected</div>
+                </div>
+                <div class="admin-cal-note">Click one date for a single day, or click two dates to create a range.</div>
+              </div>
+              <div id="manualBlocksList" class="space-y-2 mt-4"></div>
+            </div>
+          </div>
+
+          <div class="grid md:grid-cols-2 gap-6">
+            <div>
+              <div class="flex items-center justify-between mb-2">
+                <span class="text-sm font-semibold">Extra photo URLs</span>
+                <button onclick="addImageUrl()" class="text-emerald-700 font-semibold">+ Add URL</button>
+              </div>
+              <div id="imageUrlList" class="space-y-2"></div>
+            </div>
+            <div>
+              <div class="text-sm font-semibold mb-2">Upload photos</div><p class="text-xs text-slate-500 mb-2">Use the admin on <strong>http://localhost:3000</strong>. Uploads will not work from a file:// page.</p>
+              <input id="uploadInput" type="file" multiple class="w-full border rounded-xl px-4 py-3" />
+              <button onclick="uploadFiles()" class="mt-3 rounded-xl bg-emerald-600 text-white font-bold px-4 py-3">Upload selected files</button>
+              <p id="uploadMsg" class="text-sm text-slate-500 mt-2"></p>
+            </div>
+          </div>
+
+          <div>
+            <div class="text-sm font-semibold mb-2">Upcoming blocked dates from Airbnb</div>
+            <button onclick="checkCalendar()" class="rounded-xl bg-white border px-4 py-3 font-semibold">Check calendar sync</button>
+            <div id="calendarResults" class="mt-3 text-sm text-slate-600"></div>
+          </div>
+
+          <div class="pt-3 border-t">
+            <div class="flex flex-wrap gap-3">
+<button onclick="saveCurrent()" class="rounded-xl bg-slate-900 text-white font-bold px-5 py-3">Save this apartment</button>
+<button onclick="deleteCurrentListing()" class="rounded-xl bg-red-600 text-white font-bold px-5 py-3">Delete this listing</button>
+</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+
+let siteData = null;
+let currentSlug = null;
+let adminCalendarMonth = new Date();
+let adminRangeStart = null;
+let adminRangeEnd = null;
+
+function fmtDateLocal(d){
+  const y = d.getFullYear();
+  const m = String(d.getMonth()+1).padStart(2,'0');
+  const day = String(d.getDate()).padStart(2,'0');
+  return `${y}-${m}-${day}`;
+}
+function parseDateLocal(s){
+  const [y,m,d] = String(s).split('-').map(Number);
+  return new Date(y, (m||1)-1, d||1);
+}
+function dateRangeDays(start, end){
+  const out = [];
+  const a = parseDateLocal(start), b = parseDateLocal(end);
+  const from = a <= b ? a : b;
+  const to = a <= b ? b : a;
+  for(let d = new Date(from); d <= to; d.setDate(d.getDate()+1)){
+    out.push(fmtDateLocal(d));
+  }
+  return out;
+}
+function manualBlocksToSet(blocks){
+  const out = new Set();
+  (blocks || []).forEach(b => {
+    if (!b || !b.start || !b.end) return;
+    dateRangeDays(b.start, b.end).forEach(day => out.add(day));
+  });
+  return out;
+}
+function setToManualBlocks(daySet){
+  const sorted = Array.from(daySet).sort();
+  if (!sorted.length) return [];
+  const blocks = [];
+  let start = sorted[0];
+  let prev = sorted[0];
+  for (let i=1; i<sorted.length; i++){
+    const current = sorted[i];
+    const prevDate = parseDateLocal(prev);
+    prevDate.setDate(prevDate.getDate()+1);
+    const expected = fmtDateLocal(prevDate);
+    if (current !== expected){
+      blocks.push({start, end: prev});
+      start = current;
+    }
+    prev = current;
+  }
+  blocks.push({start, end: prev});
+  return blocks;
+}
+function datePricesToMap(datePrices){
+  const map = new Map();
+  (datePrices || []).forEach(p => {
+    if (p && p.date) map.set(p.date, Number(p.price || 0));
+  });
+  return map;
+}
+function mapToDatePrices(map){
+  return Array.from(map.entries())
+    .filter(([_, price]) => Number(price) > 0)
+    .sort((a,b) => a[0].localeCompare(b[0]))
+    .map(([date, price]) => ({date, price: Number(price)}));
+}
+
+function getSelectedRangeDays(){
+  if (!adminRangeStart) return [];
+  if (!adminRangeEnd) return [fmtDateLocal(adminRangeStart)];
+  return dateRangeDays(fmtDateLocal(adminRangeStart), fmtDateLocal(adminRangeEnd));
+}
+function renderAdminCalendar(){
+  if (!currentSlug || !siteData?.apartments?.[currentSlug]) return;
+  const apt = siteData.apartments[currentSlug];
+  apt.manualBlocks ||= [];
+  const blockedSet = manualBlocksToSet(apt.manualBlocks);
+  const priceMap = datePricesToMap(apt.datePrices || []);
+
+  const title = document.getElementById('adminCalTitle');
+  const daysWrap = document.getElementById('adminCalDays');
+  const rangeEl = document.getElementById('adminCalRange');
+  if (!title || !daysWrap || !rangeEl) return;
+
+  title.textContent = adminCalendarMonth.toLocaleString('en-US', {month:'long', year:'numeric'});
+  daysWrap.innerHTML = '';
+
+  const first = new Date(adminCalendarMonth.getFullYear(), adminCalendarMonth.getMonth(), 1);
+  const last = new Date(adminCalendarMonth.getFullYear(), adminCalendarMonth.getMonth()+1, 0);
+  const startWeekday = (first.getDay() + 6) % 7; // Monday first
+  for(let i=0; i<startWeekday; i++){
+    const empty = document.createElement('div');
+    empty.className = 'admin-cal-day empty';
+    daysWrap.appendChild(empty);
+  }
+
+  const selectedSet = new Set(getSelectedRangeDays());
+  const today = new Date(); today.setHours(0,0,0,0);
+
+  for(let day=1; day<=last.getDate(); day++){
+    const d = new Date(adminCalendarMonth.getFullYear(), adminCalendarMonth.getMonth(), day);
+    const ds = fmtDateLocal(d);
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'admin-cal-day';
+    if (blockedSet.has(ds)) btn.classList.add('blocked');
+    if (selectedSet.has(ds)) btn.classList.add(selectedSet.size === 1 ? 'selected' : 'inrange');
+    if (adminRangeStart && fmtDateLocal(adminRangeStart) === ds) btn.classList.add('selected');
+    if (adminRangeEnd && fmtDateLocal(adminRangeEnd) === ds) btn.classList.add('selected');
+    if (fmtDateLocal(today) === ds) btn.classList.add('today');
+    const price = priceMap.get(ds);
+    btn.innerHTML = `<div>${day}</div>${price ? `<div class="admin-cal-price">${price} TND</div>` : ''}`;
+    if (price) btn.classList.add('has-price');
+    btn.onclick = () => selectCalendarDate(ds);
+    daysWrap.appendChild(btn);
+  }
+
+  if (!adminRangeStart){
+    rangeEl.textContent = 'Select a start and end date to block or unblock.';
+  } else if (!adminRangeEnd){
+    rangeEl.textContent = `Selected: ${fmtDateLocal(adminRangeStart)}`;
+  } else {
+    rangeEl.textContent = `Selected: ${fmtDateLocal(adminRangeStart)} → ${fmtDateLocal(adminRangeEnd)}`;
+  }
+}
+function selectCalendarDate(dateStr){
+  const d = parseDateLocal(dateStr);
+  if (!adminRangeStart || (adminRangeStart && adminRangeEnd)){
+    adminRangeStart = d;
+    adminRangeEnd = null;
+  } else {
+    adminRangeEnd = d;
+    if (adminRangeEnd < adminRangeStart){
+      const tmp = adminRangeStart;
+      adminRangeStart = adminRangeEnd;
+      adminRangeEnd = tmp;
+    }
+  }
+  renderAdminCalendar();
+}
+function clearCalendarSelection(){
+  adminRangeStart = null;
+  adminRangeEnd = null;
+  renderAdminCalendar();
+}
+function changeAdminCalendarMonth(offset){
+  adminCalendarMonth = new Date(adminCalendarMonth.getFullYear(), adminCalendarMonth.getMonth()+offset, 1);
+  renderAdminCalendar();
+}
+function setSelectedRangePrice(){
+  if (!currentSlug || !adminRangeStart) return;
+  const apt = siteData.apartments[currentSlug];
+  apt.datePrices ||= [];
+  const priceValue = Number(document.getElementById('selectedRangePrice').value || 0);
+  if (!priceValue) {
+    alert('Enter a price in TND first.');
+    return;
+  }
+  const priceMap = datePricesToMap(apt.datePrices);
+  getSelectedRangeDays().forEach(day => priceMap.set(day, priceValue));
+  apt.datePrices = mapToDatePrices(priceMap);
+  renderAdminCalendar();
+  alert('Custom price saved for selected dates');
+}
+function clearSelectedRangePrice(){
+  if (!currentSlug || !adminRangeStart) return;
+  const apt = siteData.apartments[currentSlug];
+  apt.datePrices ||= [];
+  const priceMap = datePricesToMap(apt.datePrices);
+  getSelectedRangeDays().forEach(day => priceMap.delete(day));
+  apt.datePrices = mapToDatePrices(priceMap);
+  renderAdminCalendar();
+}
+
+function blockSelectedRange(){
+  if (!currentSlug || !adminRangeStart) return;
+  const apt = siteData.apartments[currentSlug];
+  apt.manualBlocks ||= [];
+  const blockedSet = manualBlocksToSet(apt.manualBlocks);
+  const priceMap = datePricesToMap(apt.datePrices || []);
+  getSelectedRangeDays().forEach(day => blockedSet.add(day));
+  apt.manualBlocks = setToManualBlocks(blockedSet);
+  renderManualBlocks();
+  clearCalendarSelection();
+}
+function unblockSelectedRange(){
+  if (!currentSlug || !adminRangeStart) return;
+  const apt = siteData.apartments[currentSlug];
+  apt.manualBlocks ||= [];
+  const blockedSet = manualBlocksToSet(apt.manualBlocks);
+  const priceMap = datePricesToMap(apt.datePrices || []);
+  getSelectedRangeDays().forEach(day => blockedSet.delete(day));
+  apt.manualBlocks = setToManualBlocks(blockedSet);
+  renderManualBlocks();
+  clearCalendarSelection();
+}
+
+
+function exportIcalUrlFor(slug){
+  return window.location.origin + '/api/ical/' + encodeURIComponent(slug) + '.ics';
+}
+function copyExportUrl(){
+  const input = document.getElementById('exportIcalUrl');
+  const value = input.value;
+  if (navigator.clipboard && window.isSecureContext) {
+    navigator.clipboard.writeText(value).then(()=>alert('iCal URL copied'));
+  } else {
+    window.prompt('Copy this iCal URL:', value);
+  }
+}
+function renderManualBlocks(){
+  const apt = siteData.apartments[currentSlug];
+  apt.manualBlocks ||= [];
+  const root = document.getElementById('manualBlocksList');
+  root.innerHTML = '';
+  if (!apt.manualBlocks.length) {
+    root.innerHTML = '<div class="text-sm text-slate-500">No manual blocks yet.</div>';
+  } else {
+    apt.manualBlocks.forEach((block, i) => {
+      const row = document.createElement('div');
+      row.className = 'grid grid-cols-[1fr_1fr_auto] gap-2';
+      row.innerHTML = `
+        <input type="date" class="border rounded-xl px-3 py-2" value="${block.start || ''}" onchange="updateManualBlock(${i}, 'start', this.value)" />
+        <input type="date" class="border rounded-xl px-3 py-2" value="${block.end || ''}" onchange="updateManualBlock(${i}, 'end', this.value)" />
+        <button class="rounded-xl border border-red-200 text-red-700 px-3 py-2" onclick="removeManualBlock(${i})">Delete</button>
+      `;
+      root.appendChild(row);
+    });
+  }
+  renderAdminCalendar();
+}
+function addManualBlock(){
+  if(!currentSlug) return;
+  siteData.apartments[currentSlug].manualBlocks ||= [];
+  siteData.apartments[currentSlug].manualBlocks.push({start:'', end:''});
+  renderManualBlocks();
+}
+function updateManualBlock(i, key, value){
+  siteData.apartments[currentSlug].manualBlocks[i][key] = value;
+  renderAdminCalendar();
+}
+function removeManualBlock(i){
+  siteData.apartments[currentSlug].manualBlocks.splice(i,1);
+  renderManualBlocks();
+}
+
+
+function toAbsoluteUrl(url){
+  if(!url) return '';
+  if(url.startsWith('http://') || url.startsWith('https://')) return url;
+  if(url.startsWith('/')) return window.location.origin + url;
+  return window.location.origin + '/' + url.replace(/^\/+/, '');
+}
+
+async function api(path, opts={}){
+  const res = await fetch(path, {credentials:'include', headers:{'Content-Type':'application/json', ...(opts.headers||{})}, ...opts});
+  if(!res.ok) throw new Error(await res.text());
+  const ct = res.headers.get('content-type') || '';
+  return ct.includes('application/json') ? res.json() : res.text();
+}
+async function login(){
+  const username = document.getElementById('username').value.trim();
+  const password = document.getElementById('password').value;
+  try{
+    await api('/api/login', {method:'POST', body: JSON.stringify({username, password})});
+    document.getElementById('loginCard').classList.add('hidden');
+    document.getElementById('adminApp').classList.remove('hidden');
+    await loadData();
+  }catch(e){
+    document.getElementById('loginMsg').textContent = 'Login failed';
+  }
+}
+async function loadData(){
+  siteData = await api('/api/admin/site-data');
+  renderList();
+  const panel = document.getElementById('bookingRequestsPanel');
+  if (panel) panel.classList.remove('hidden');
+  const tplPanel = document.getElementById('waTemplatesPanel');
+  if (tplPanel) tplPanel.classList.remove('hidden');
+  const dashPanel = document.getElementById('dashboardPanel');
+  if (dashPanel) dashPanel.classList.remove('hidden');
+  const contactPanel = document.getElementById('contactSettingsPanel');
+  if (contactPanel) contactPanel.classList.remove('hidden');
+  loadTemplateInputs();
+  loadContactSettingsInputs();
+  await loadBookings();
+  await renderDashboard();
+}
+function loadContactSettingsInputs(){
+  siteData.branding ||= {};
+  const phone = document.getElementById('sitePhoneInput');
+  const wa = document.getElementById('siteWhatsappInput');
+  if (phone) phone.value = siteData.branding.phone || siteData.branding.whatsapp || '+21653340970';
+  if (wa) wa.value = siteData.branding.whatsapp || siteData.branding.phone || '+21653340970';
+}
+async function saveContactSettings(){
+  siteData.branding ||= {};
+  const phoneVal = (document.getElementById('sitePhoneInput')?.value || '').trim();
+  const waVal = (document.getElementById('siteWhatsappInput')?.value || '').trim();
+  siteData.branding.phone = phoneVal;
+  siteData.branding.whatsapp = waVal;
+  await api('/api/admin/site-data', {method:'POST', body: JSON.stringify(siteData)});
+  alert('Contact settings saved');
+}
+
+function getTemplates(){
+  siteData.branding ||= {};
+  siteData.branding.whatsappTemplates ||= {
+    payment: "Hello {{name}},\n\nYour request ({{ref}}) for {{apartment}}\nDates: {{dates}}\n{{stayLine}}\n\nTo confirm the booking, we require a small advance payment. Once received, we will confirm and block the dates for you.",
+    confirm: "Hello {{name}},\n\nGood news — your booking ({{ref}}) for {{apartment}} from {{dates}} is confirmed.\n{{stayLine}}\n\nThank you and see you soon.",
+    decline: "Hello {{name}},\n\nThank you for your request ({{ref}}) for {{apartment}}. Unfortunately these dates are no longer available."
+  };
+  return siteData.branding.whatsappTemplates;
+}
+function loadTemplateInputs(){
+  const t = getTemplates();
+  const pay = document.getElementById('tplPayment');
+  const conf = document.getElementById('tplConfirm');
+  const dec = document.getElementById('tplDecline');
+  if (pay) pay.value = t.payment || '';
+  if (conf) conf.value = t.confirm || '';
+  if (dec) dec.value = t.decline || '';
+}
+function fillTemplate(template, row){
+  const ref = row.id || 'request';
+  const apartment = row.apartmentName || row.apartmentSlug || '';
+  const dates = `${row.checkin || '—'} → ${row.checkout || '—'}`;
+  const stayLine = `${row.nights || '—'} nights • ${row.guests || '—'} guest(s) • ${row.totalTND ? row.totalTND + ' TND' : '—'}`;
+  return String(template || '')
+    .replaceAll('{{name}}', row.customerName || '')
+    .replaceAll('{{ref}}', ref)
+    .replaceAll('{{apartment}}', apartment)
+    .replaceAll('{{dates}}', dates)
+    .replaceAll('{{stayLine}}', stayLine);
+}
+async function saveTemplates(){
+  const t = getTemplates();
+  t.payment = document.getElementById('tplPayment')?.value || '';
+  t.confirm = document.getElementById('tplConfirm')?.value || '';
+  t.decline = document.getElementById('tplDecline')?.value || '';
+  await api('/api/admin/site-data', {method:'POST', body: JSON.stringify(siteData)});
+  await loadBookings();
+  alert('Templates saved');
+}
+
+
+function formatMoneyTND(v){
+  return `${Number(v || 0).toLocaleString()} TND`;
+}
+function parseDateSafe(s){
+  const [y,m,d] = String(s || '').split('-').map(Number);
+  if (!y || !m || !d) return null;
+  return new Date(y, m - 1, d);
+}
+function nightsBetweenDates(checkin, checkout){
+  const a = parseDateSafe(checkin);
+  const b = parseDateSafe(checkout);
+  if (!a || !b) return 0;
+  return Math.max(0, Math.round((b - a) / 86400000));
+}
+function monthKey(dt){
+  return `${dt.getFullYear()}-${String(dt.getMonth()+1).padStart(2,'0')}`;
+}
+function calculateOccupancyStats(rows){
+  const confirmed = rows.filter(r => r.status === 'confirmed');
+  const now = new Date();
+  const monthStart = new Date(now.getFullYear(), now.getMonth(), 1);
+  const monthEnd = new Date(now.getFullYear(), now.getMonth() + 1, 0);
+  const apartmentCount = Object.keys(siteData?.apartments || {}).filter(k => !siteData.apartments[k]?.deleted).length || 1;
+  let bookedNights = 0;
+  confirmed.forEach(r => {
+    const ci = parseDateSafe(r.checkin);
+    const co = parseDateSafe(r.checkout);
+    if (!ci || !co) return;
+    for (let d = new Date(ci); d < co; d.setDate(d.getDate() + 1)) {
+      if (d >= monthStart && d <= monthEnd) bookedNights += 1;
+    }
+  });
+  const nightsInMonth = monthEnd.getDate();
+  const totalCapacityNights = nightsInMonth * apartmentCount;
+  return {
+    bookedNights,
+    totalCapacityNights,
+    occupancyPct: totalCapacityNights ? Math.round((bookedNights / totalCapacityNights) * 100) : 0
+  };
+}
+function buildPerApartmentStats(rows){
+  const map = {};
+  rows.forEach(r => {
+    const key = r.apartmentSlug || r.apartmentName || 'unknown';
+    if (!map[key]) map[key] = { name: r.apartmentName || key, requests: 0, confirmed: 0, revenue: 0 };
+    map[key].requests += 1;
+    if (r.status === 'confirmed') {
+      map[key].confirmed += 1;
+      map[key].revenue += Number(r.totalTND || 0);
+    }
+  });
+  return Object.values(map).sort((a,b) => b.confirmed - a.confirmed || b.requests - a.requests || b.revenue - a.revenue);
+}
+function renderDashboardFromRows(rows){
+  const total = rows.length;
+  const pending = rows.filter(r => r.status === 'pending').length;
+  const confirmed = rows.filter(r => r.status === 'confirmed').length;
+  const declined = rows.filter(r => r.status === 'declined' || r.status === 'cancelled').length;
+  const revenue = rows.filter(r => r.status === 'confirmed').reduce((sum, r) => sum + Number(r.totalTND || 0), 0);
+  const occupancy = calculateOccupancyStats(rows);
+  const perApartment = buildPerApartmentStats(rows);
+
+  const topApartmentHtml = perApartment.length
+    ? perApartment.slice(0,5).map(item => `
+        <div class="dashboard-row">
+          <div>
+            <div class="font-semibold text-slate-900">${item.name}</div>
+            <div class="text-xs text-slate-500">${item.requests} request(s) • ${item.confirmed} confirmed</div>
+          </div>
+          <div class="text-right">
+            <div class="font-bold text-slate-900">${formatMoneyTND(item.revenue)}</div>
+          </div>
+        </div>`).join('')
+    : '<div class="text-slate-500 text-sm">No booking data yet.</div>';
+
+  document.getElementById('dashboardContent').innerHTML = `
+    <div class="dashboard-grid">
+      <div class="dashboard-card">
+        <div class="dashboard-label">Total bookings</div>
+        <div class="dashboard-value">${total}</div>
+        <div class="dashboard-sub">All requests received</div>
+      </div>
+      <div class="dashboard-card">
+        <div class="dashboard-label">Pending</div>
+        <div class="dashboard-value">${pending}</div>
+        <div class="dashboard-sub">Requests awaiting action</div>
+      </div>
+      <div class="dashboard-card">
+        <div class="dashboard-label">Confirmed</div>
+        <div class="dashboard-value">${confirmed}</div>
+        <div class="dashboard-sub">Confirmed stays</div>
+      </div>
+      <div class="dashboard-card">
+        <div class="dashboard-label">Declined / cancelled</div>
+        <div class="dashboard-value">${declined}</div>
+        <div class="dashboard-sub">Requests not going ahead</div>
+      </div>
+      <div class="dashboard-card">
+        <div class="dashboard-label">Estimated revenue</div>
+        <div class="dashboard-value">${formatMoneyTND(revenue)}</div>
+        <div class="dashboard-sub">Confirmed bookings only</div>
+      </div>
+      <div class="dashboard-card">
+        <div class="dashboard-label">Occupancy this month</div>
+        <div class="dashboard-value">${occupancy.occupancyPct}%</div>
+        <div class="dashboard-sub">${occupancy.bookedNights} booked nights across all apartments</div>
+      </div>
+      <div class="dashboard-card">
+        <div class="dashboard-label">Average booking value</div>
+        <div class="dashboard-value">${formatMoneyTND(confirmed ? Math.round(revenue / confirmed) : 0)}</div>
+        <div class="dashboard-sub">Confirmed stays only</div>
+      </div>
+      <div class="dashboard-card">
+        <div class="dashboard-label">Conversion</div>
+        <div class="dashboard-value">${total ? Math.round((confirmed / total) * 100) : 0}%</div>
+        <div class="dashboard-sub">Confirmed over total requests</div>
+      </div>
+    </div>
+    <div class="mt-6">
+      <div class="text-sm font-semibold mb-3">Top apartments</div>
+      <div class="dashboard-list">${topApartmentHtml}</div>
+    </div>
+  `;
+}
+async function renderDashboard(){
+  try{
+    const data = await api('/api/admin/bookings');
+    renderDashboardFromRows(data.bookings || []);
+  }catch(e){
+    const root = document.getElementById('dashboardContent');
+    if (root) root.innerHTML = '<div class="text-red-600 text-sm">Could not load dashboard stats.</div>';
+  }
+}
+
+
+async function loadBookings(){
+  const root = document.getElementById('bookingRequestsList');
+  if (!root) return;
+  root.innerHTML = '<div class="text-slate-500 text-sm">Loading…</div>';
+  try{
+    const data = await api('/api/admin/bookings');
+    const rows = data.bookings || [];
+    if (!rows.length) {
+      root.innerHTML = '<div class="text-slate-500 text-sm">No booking requests yet.</div>';
+      return;
+    }
+    root.innerHTML = rows.map(row => {
+      const waNumber = String(row.customerPhone || '').replace(/[^0-9]/g,'');
+      const paymentLabel = row.paymentStatus || 'awaiting_advance';
+      const dateLine = `${row.checkin || '—'} → ${row.checkout || '—'}`;
+      const stayLine = `${row.nights || '—'} nights • ${row.guests || '—'} guest(s) • ${row.totalTND ? row.totalTND + ' TND' : '—'}`;
+      const baseRef = row.id || 'request';
+      const apt = row.apartmentName || row.apartmentSlug || '';
+      const paymentMsg = encodeURIComponent(
+        `Hello ${row.customerName || ''},
+
+Your request (${baseRef}) for ${apt}
+Dates: ${dateLine}
+${stayLine}
+
+To confirm the booking, we require a small advance payment. Once received, we will confirm and block the dates for you.`
+      );
+      const confirmMsg = encodeURIComponent(
+        `Hello ${row.customerName || ''},
+
+Good news — your booking (${baseRef}) for ${apt} from ${dateLine} is confirmed.
+${stayLine}
+
+Thank you and see you soon.`
+      );
+      const declineMsg = encodeURIComponent(
+        `Hello ${row.customerName || ''},
+
+Thank you for your request (${baseRef}) for ${apt}. Unfortunately these dates are no longer available.`
+      );
+      return `
+      <div class="border rounded-2xl p-4 bg-slate-50">
+        <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+          <div>
+            <div class="font-bold text-slate-900">${apt}</div>
+            <div class="text-xs text-slate-500">${row.createdAt ? new Date(row.createdAt).toLocaleString() : ''} • Ref: ${baseRef}</div>
+          </div>
+          <div class="flex flex-wrap gap-2 items-center">
+            <div class="text-xs px-3 py-1 rounded-full ${row.status === 'confirmed' ? 'bg-emerald-100 text-emerald-700' : row.status === 'declined' || row.status === 'cancelled' ? 'bg-red-100 text-red-700' : 'bg-amber-100 text-amber-700'}">${row.status}</div>
+            <div class="text-xs px-3 py-1 rounded-full ${paymentLabel === 'paid_full' ? 'bg-slate-900 text-white' : paymentLabel === 'advance_received' ? 'bg-emerald-100 text-emerald-700' : 'bg-blue-100 text-blue-700'}">${paymentLabel}</div>
+          </div>
+        </div>
+        <div class="booking-card-meta text-sm text-slate-700">
+          <div><strong>Name:</strong> ${row.customerName || '—'}</div>
+          <div><strong>Phone:</strong> ${row.customerPhone || '—'}</div>
+          <div><strong>Dates:</strong> ${dateLine}</div>
+          <div><strong>Stay:</strong> ${stayLine}</div>
+        </div>
+        ${row.customerMessage ? `<div class="mt-3 text-sm text-slate-600 border-t pt-3"><strong>Message:</strong> ${row.customerMessage}</div>` : ''}
+        <div class="flex flex-wrap gap-2 mt-4">
+          <button onclick="updateBookingStatus('${row.id}','confirmed')" class="px-3 py-2 rounded-xl bg-emerald-600 text-white font-semibold">Confirm</button>
+          <button onclick="updateBookingStatus('${row.id}','declined')" class="px-3 py-2 rounded-xl bg-red-600 text-white font-semibold">Decline</button>
+          <button onclick="updateBookingStatus('${row.id}','cancelled')" class="px-3 py-2 rounded-xl bg-slate-700 text-white font-semibold">Cancel</button>
+          <button onclick="updateBookingStatus('${row.id}','pending')" class="px-3 py-2 rounded-xl border font-semibold">Set pending</button>
+        </div>
+        <div class="flex flex-wrap gap-2 mt-3">
+          <button onclick="updateBookingPayment('${row.id}','awaiting_advance')" class="px-3 py-2 rounded-xl border font-semibold">Awaiting advance</button>
+          <button onclick="updateBookingPayment('${row.id}','advance_received')" class="px-3 py-2 rounded-xl bg-amber-500 text-white font-semibold">Advance received</button>
+          <button onclick="updateBookingPayment('${row.id}','paid_full')" class="px-3 py-2 rounded-xl bg-slate-900 text-white font-semibold">Paid in full</button>
+        </div>
+        <div class="mt-4 border-t pt-4">
+          <div class="text-sm font-semibold mb-2">WhatsApp templates</div>
+          <div class="flex flex-wrap gap-2">
+            <a class="template-chip" target="_blank" href="https://wa.me/${waNumber}?text=${paymentMsg}">Send payment instructions</a>
+            <a class="template-chip" target="_blank" href="https://wa.me/${waNumber}?text=${confirmMsg}">Send confirmation</a>
+            <a class="template-chip" target="_blank" href="https://wa.me/${waNumber}?text=${declineMsg}">Send decline</a>
+          </div>
+        </div>
+      </div>`;
+    }).join('');
+  }catch(e){
+    root.innerHTML = '<div class="text-red-600 text-sm">Could not load booking requests.</div>';
+  }
+}
+async function updateBookingStatus(id, status){
+  await api('/api/admin/bookings/' + encodeURIComponent(id) + '/status', {method:'POST', body: JSON.stringify({status})});
+  await loadBookings();
+}
+async function updateBookingPayment(id, paymentStatus){
+  await api('/api/admin/bookings/' + encodeURIComponent(id) + '/payment', {method:'POST', body: JSON.stringify({paymentStatus})});
+  await loadBookings();
+}
+
+function renderList(){
+  const root = document.getElementById('apartmentList');
+  root.innerHTML = '';
+  Object.values(siteData.apartments).filter(apt => !apt.deleted).forEach(apt => {
+    const btn = document.createElement('button');
+    btn.className = 'w-full text-left rounded-xl px-4 py-3 border hover:bg-slate-50';
+    btn.innerHTML = `<div class="font-bold">${apt.internalName || apt.titles?.fr || apt.slug}</div><div class="text-sm text-slate-500">${apt.titles?.fr || ''}</div>`;
+    btn.onclick = () => selectApartment(apt.slug);
+    root.appendChild(btn);
+  });
+}
+function selectApartment(slug){
+  currentSlug = slug;
+  adminCalendarMonth = new Date();
+  adminRangeStart = null;
+  adminRangeEnd = null;
+  const apt = siteData.apartments[slug];
+  apt.datePrices ||= [];
+  document.getElementById('editorEmpty').classList.add('hidden');
+  document.getElementById('editor').classList.remove('hidden');
+  document.getElementById('editorTitle').textContent = apt.titles.fr;
+  document.getElementById('titleFR').value = apt.titles?.fr || '';
+  document.getElementById('titleEN').value = apt.titles?.en || '';
+  document.getElementById('titleAR').value = apt.titles?.ar || '';
+  document.getElementById('internalName').value = apt.internalName || apt.titles?.fr || '';
+  document.getElementById('priceTND').value = apt.priceTND;
+  document.getElementById('priceEUR').value = apt.priceEUR;
+  document.getElementById('icalUrl').value = apt.icalUrl || '';
+  document.getElementById('exportIcalUrl').value = exportIcalUrlFor(slug);
+  renderManualBlocks();
+  renderImageUrls();
+  document.getElementById('calendarResults').innerHTML = '';
+  document.getElementById('uploadMsg').textContent = '';
+  const priceInput = document.getElementById('selectedRangePrice'); if (priceInput) priceInput.value = '';
+}
+function renderImageUrls(){
+  const apt = siteData.apartments[currentSlug];
+  const root = document.getElementById('imageUrlList');
+  root.innerHTML = '';
+  (apt.extraImages || []).forEach((url, i) => {
+    const row = document.createElement('div');
+    row.className = 'border rounded-2xl p-3 bg-slate-50';
+    const safeUrl = url || '';
+    row.innerHTML = `
+      <div class="flex gap-3 items-start">
+        <div class="w-24 h-24 rounded-xl overflow-hidden bg-white border flex items-center justify-center shrink-0">
+          ${safeUrl ? `<img src="${safeUrl}" class="w-full h-full object-cover" onerror="this.replaceWith(document.createTextNode('Image unavailable'))" />` : `<span class="text-xs text-slate-400">No image</span>`}
+        </div>
+        <div class="flex-1">
+          <input class="w-full border rounded-xl px-3 py-2 mb-2" value="${safeUrl}" oninput="updateImageUrl(${i}, this.value)" />
+          <div class="flex gap-2">
+            <button class="px-3 py-2 rounded-xl border" onclick="removeImageUrl(${i})">Remove from gallery</button>
+            <button class="px-3 py-2 rounded-xl border border-red-200 text-red-700" onclick="deleteImageFile(${i})">Delete file</button>
+          </div>
+        </div>
+      </div>`;
+    root.appendChild(row);
+  });
+}
+function addImageUrl(){
+  siteData.apartments[currentSlug].extraImages ||= [];
+  siteData.apartments[currentSlug].extraImages.push('');
+  renderImageUrls();
+}
+function updateImageUrl(i, val){
+  siteData.apartments[currentSlug].extraImages[i] = val;
+}
+function removeImageUrl(i){
+  siteData.apartments[currentSlug].extraImages.splice(i,1);
+  renderImageUrls();
+}
+function syncInputsToState(){
+  const apt = siteData.apartments[currentSlug];
+  apt.titles ||= {};
+  apt.titles.fr = document.getElementById('titleFR').value.trim();
+  apt.titles.en = document.getElementById('titleEN').value.trim();
+  apt.titles.ar = document.getElementById('titleAR').value.trim();
+  apt.internalName = document.getElementById('internalName').value.trim();
+  apt.priceTND = Number(document.getElementById('priceTND').value || 0);
+  apt.priceEUR = Number(document.getElementById('priceEUR').value || 0);
+  apt.icalUrl = document.getElementById('icalUrl').value.trim();
+  apt.manualBlocks ||= [];
+  apt.datePrices ||= [];
+}
+async function saveCurrent(){
+  syncInputsToState();
+  await api('/api/admin/site-data', {method:'POST', body: JSON.stringify(siteData)});
+  renderList();
+  alert('Saved');
+}
+async function saveAll(){
+  if (currentSlug) syncInputsToState();
+  await api('/api/admin/site-data', {method:'POST', body: JSON.stringify(siteData)});
+  renderList();
+  alert('All changes saved');
+}
+async function uploadFiles(){
+  if(!currentSlug) return;
+  const files = document.getElementById('uploadInput').files;
+  if(!files.length) return;
+  const fd = new FormData();
+  fd.append('slug', currentSlug);
+  for(const f of files) fd.append('files', f);
+  const res = await fetch('/api/upload?slug=' + encodeURIComponent(currentSlug), {method:'POST', body: fd, credentials:'include'});
+  const json = await res.json();
+  if(!res.ok){ document.getElementById('uploadMsg').textContent = json.message || 'Upload failed'; return; }
+  siteData.apartments[currentSlug].extraImages ||= [];
+  siteData.apartments[currentSlug].extraImages.push(...json.urls);
+  await saveCurrent();
+  renderImageUrls();
+  document.getElementById('uploadMsg').textContent = `${json.urls.length} file(s) uploaded and saved`;
+}
+async function deleteImageFile(i){
+  if(!currentSlug) return;
+  const apt = siteData.apartments[currentSlug];
+  const url = apt.extraImages[i];
+  if(!url) return;
+  if(!confirm('Delete this image file and remove it from the gallery?')) return;
+  const res = await fetch('/api/upload', {
+    method:'DELETE',
+    credentials:'include',
+    headers:{'Content-Type':'application/json'},
+    body: JSON.stringify({slug: currentSlug, url})
+  });
+  const json = await res.json();
+  if(!res.ok || !json.ok){
+    alert('Delete failed');
+    return;
+  }
+  apt.extraImages.splice(i, 1);
+  await saveCurrent();
+  renderImageUrls();
+}
+async function deleteCurrentListing(){
+  if(!currentSlug) return;
+  const apt = siteData.apartments[currentSlug];
+  const label = apt?.titles?.fr || currentSlug;
+  if(!confirm(`Delete "${label}" from the site? This hides it from the public site and admin list.`)) return;
+  apt.deleted = true;
+  await api('/api/admin/site-data', {method:'POST', body: JSON.stringify(siteData)});
+  currentSlug = null;
+  document.getElementById('editor').classList.add('hidden');
+  document.getElementById('editorEmpty').classList.remove('hidden');
+  renderList();
+  alert('Listing deleted');
+}
+
+async function checkCalendar(){
+  if(!currentSlug) return;
+  const root = document.getElementById('calendarResults');
+  root.innerHTML = 'Checking…';
+  const res = await fetch('/api/calendar/' + currentSlug, {credentials:'include'});
+  const json = await res.json();
+  if(!json.ok){ root.innerHTML = `<span class="text-red-600">${json.message || 'Calendar unavailable'}</span>`; return; }
+  if(!json.blocks.length){ root.textContent = 'No blocked dates found yet.'; return; }
+  root.innerHTML = '<ul class="list-disc pl-5">' + json.blocks.slice(0,12).map(b => `<li>${b.start} → ${b.end}</li>`).join('') + '</ul>';
+}
+
+document.addEventListener('DOMContentLoaded', function(){
+  const username = document.getElementById('username');
+  const password = document.getElementById('password');
+  [username, password].forEach(el => {
+    el && el.addEventListener('keydown', function(e){
+      if (e.key === 'Enter') {
+        e.preventDefault();
+        login();
+      }
+    });
+  });
+});
+</script>
+
+
+<script>
+(function(){
+  const KEY = 'cosynest-lang';
+
+  function setActiveLanguage(lang){
+    document.documentElement.lang = lang;
+    document.querySelectorAll('[data-lang]').forEach(el => {
+      const active = el.getAttribute('data-lang') === lang;
+      el.classList.toggle('lang-active', active);
+      if (active) {
+        el.style.display = '';
+      } else {
+        el.style.display = 'none';
+      }
+    });
+  }
+
+  const previousSwitchLang = window.switchLang;
+  window.switchLang = function(lang){
+    try { localStorage.setItem(KEY, lang); } catch(e) {}
+    if (typeof previousSwitchLang === 'function') {
+      previousSwitchLang(lang);
+    }
+    setActiveLanguage(lang);
+  };
+
+  function initSavedLanguage(){
+    const saved = localStorage.getItem(KEY) || 'fr';
+    window.switchLang(saved);
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initSavedLanguage);
+  } else {
+    initSavedLanguage();
+  }
+})();
+</script>
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function(){
+  try {
+    const savedLang = localStorage.getItem('cosynest-lang') || 'fr';
+    if (typeof switchLang === 'function') switchLang(savedLang);
+  } catch(e) {}
+});
+</script>
+
+</body>
+</html>
