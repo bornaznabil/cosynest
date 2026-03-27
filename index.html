@@ -18,8 +18,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&amp;family=Tajawal:wght@500;700&amp;display=swap" rel="stylesheet"/>
 <!-- Tailwind CSS for styling -->
 <script src="https://cdn.tailwindcss.com"></script>
-
-
 <script>
         tailwind.config = {
             theme: {
@@ -311,9 +309,6 @@
     border-bottom: 2px solid #d4af37;
 }
 </style>
-
-
-
 <style>
 .cosy-compact{
   background:
@@ -429,9 +424,6 @@
   .compact-side{ margin-top:0.5rem; }
 }
 </style>
-
-
-
 <style>
 /* Section adjustments */
 .cosy-feature-card{
@@ -459,8 +451,6 @@
   margin-top: .1rem;
 }
 </style>
-
-
 <style>
 .amenity-card{
     background: linear-gradient(180deg, #ffffff 0%, #f9fbff 100%);
@@ -501,8 +491,6 @@
 section .amenity-card [data-lang]:not(.lang-active){display:none !important;}
 section .amenity-card .lang-active[data-lang]{display:block !important;}
 </style>
-
-
 <style>
 .price-row{
     display:flex;
@@ -558,8 +546,6 @@ section .amenity-card .lang-active[data-lang]{display:block !important;}
     }
 }
 </style>
-
-
 <style>
 .gallery-backdrop{
   position:fixed; inset:0; background:rgba(15,23,42,.82);
@@ -596,9 +582,7 @@ body.gallery-open{overflow:hidden;}
   .gallery-main{grid-template-columns:repeat(2, 1fr);}
 }
 </style>
-
-
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+<link href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css" rel="stylesheet"/>
 <style>
 .booking-date-input{font-size:1.08rem !important;padding:.85rem 0 !important;font-weight:700}
 .flatpickr-calendar{
@@ -694,8 +678,8 @@ body.gallery-open{overflow:hidden;}
 <div class="w-full bg-brand-blue shadow-lg relative overflow-hidden">
 <div class="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-brand-blue/70 to-transparent z-10 pointer-events-none"></div>
 <picture>
-  <source media="(max-width: 768px)" srcset="/images/cover-mobile.webp">
-  <img src="/images/cover.webp" alt="Cosy apartments in La Marsa Tunisia" loading="eager">
+<source media="(max-width: 768px)" srcset="/images/cover-mobile.webp"/>
+<img alt="Cosy apartments in La Marsa Tunisia" loading="eager" src="/images/cover.webp"/>
 </picture>
 </div>
 <div class="max-w-4xl mx-auto px-4 text-center mt-12">
@@ -753,236 +737,208 @@ body.gallery-open{overflow:hidden;}
 </div>
 </div>
 </section>
-
-
 <section class="px-4 pb-10 max-w-5xl mx-auto">
-  <div class="cosy-compact rounded-[2rem] shadow-xl border border-slate-100 overflow-hidden">
-    <div class="grid lg:grid-cols-[1.2fr_0.8fr] gap-6 p-5 md:p-6 items-start">
-      <div>
-        <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold cosy-badge-compact mb-4">
-          <span>✨</span>
-          <span data-lang="fr" class="lang-active">Pourquoi réserver avec CosyNest</span>
-          <span data-lang="ar" class="font-arabic">لماذا تحجز مع CosyNest</span>
-          <span data-lang="en">Why book with CosyNest</span>
-        </span>
-
-        <h2 data-lang="fr" class="lang-active text-3xl md:text-4xl font-bold text-brand-blue mb-3 leading-tight">Un séjour simple<br>et direct</h2>
-        <h2 data-lang="ar" class="text-3xl md:text-4xl font-bold text-brand-blue mb-3 leading-tight font-arabic">إقامة سهلة<br>وحجز مباشر</h2>
-        <h2 data-lang="en" class="text-3xl md:text-4xl font-bold text-brand-blue mb-3 leading-tight">A simple,<br>direct stay</h2>
-
-        <p data-lang="fr" class="lang-active text-base md:text-lg text-slate-600 leading-relaxed max-w-2xl mb-4">Des appartements soigneusement sélectionnés en Tunisie, une communication rapide sur WhatsApp et une expérience plus claire pour rassurer vos voyageurs dès les premières secondes.</p>
-        <p data-lang="ar" class="text-base md:text-lg text-slate-600 leading-relaxed max-w-2xl mb-4 font-arabic">شقق مختارة بعناية في تونس، تواصل سريع عبر واتساب وتجربة واضحة تمنح الضيف الثقة من أول لحظة.</p>
-        <p data-lang="en" class="text-base md:text-lg text-slate-600 leading-relaxed max-w-2xl mb-4">Carefully selected apartments in Tunisia, fast WhatsApp support, and a clearer guest experience from the very first click.</p>
-
-        <div class="grid sm:grid-cols-2 gap-3">
-          <div class="compact-card compact-blue">
-            <div class="compact-icon">📍</div>
-            <div class="compact-copy">
-              <h3 data-lang="fr" class="lang-active">Beaux emplacements</h3>
-              <h3 data-lang="ar" class="font-arabic">مواقع ممتازة</h3>
-              <h3 data-lang="en">Great locations</h3>
-              <p data-lang="fr" class="lang-active">Adresses recherchées et quartiers appréciés.</p>
-              <p data-lang="ar" class="font-arabic">عناوين مميزة في أحياء محبوبة.</p>
-              <p data-lang="en">Well-located homes in sought-after areas.</p>
-            </div>
-          </div>
-
-          <div class="compact-card compact-gold">
-            <div class="compact-icon">⚡</div>
-            <div class="compact-copy">
-              <h3 data-lang="fr" class="lang-active">Réponse rapide</h3>
-              <h3 data-lang="ar" class="font-arabic">رد سريع</h3>
-              <h3 data-lang="en">Fast replies</h3>
-              <p data-lang="fr" class="lang-active">Questions et réservation directe via WhatsApp.</p>
-              <p data-lang="ar" class="font-arabic">الاستفسار والحجز المباشر عبر واتساب.</p>
-              <p data-lang="en">Questions and booking handled on WhatsApp.</p>
-            </div>
-          </div>
-
-          <div class="compact-card compact-green">
-            <div class="compact-icon">🧼</div>
-            <div class="compact-copy">
-              <h3 data-lang="fr" class="lang-active">Propreté soignée</h3>
-              <h3 data-lang="ar" class="font-arabic">نظافة ممتازة</h3>
-              <h3 data-lang="en">Spotless cleanliness</h3>
-              <p data-lang="fr" class="lang-active">Linge propre et appartements préparés avec soin.</p>
-              <p data-lang="ar" class="font-arabic">شقق نظيفة ومجهزة بعناية مع أغطية نظيفة.</p>
-              <p data-lang="en">Fresh linens and carefully prepared apartments.</p>
-            </div>
-          </div>
-
-          <div class="compact-card compact-pink">
-            <div class="compact-icon">🛡️</div>
-            <div class="compact-copy">
-              <h3 data-lang="fr" class="lang-active">Réservation rassurante</h3>
-              <h3 data-lang="ar" class="font-arabic">حجز مطمئن</h3>
-              <h3 data-lang="en">Clear booking</h3>
-              <p data-lang="fr" class="lang-active">Communication claire avant l’arrivée et pendant le séjour.</p>
-              <p data-lang="ar" class="font-arabic">تواصل واضح قبل الوصول وأثناء الإقامة.</p>
-              <p data-lang="en">Clear communication before arrival and during the stay.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="compact-side">
-        <div class="compact-side-head">
-          <div class="compact-logo-wrap">
-            <img src="logo.jpg" alt="CosyNest Tunisia Logo" class="w-10 h-10 object-contain">
-          </div>
-          <div>
-            <p class="text-sm uppercase tracking-[0.2em] text-brand-gold font-semibold">CosyNest Tunisia</p>
-            <p data-lang="fr" class="lang-active text-sm text-slate-500">Réservation directe • Tunisie</p>
-            <p data-lang="ar" class="text-sm text-slate-500 font-arabic">حجز مباشر • تونس</p>
-            <p data-lang="en" class="text-sm text-slate-500">Direct booking • Tunisia</p>
-          </div>
-        </div>
-
-        <div class="compact-point">
-          <span class="mini-icon-compact">✅</span>
-          <div>
-            <strong data-lang="fr" class="lang-active">Processus clair</strong>
-            <strong data-lang="ar" class="font-arabic">خطوات واضحة</strong>
-            <strong data-lang="en">Clear process</strong>
-            <p data-lang="fr" class="lang-active">Demande, confirmation, arrivée : tout est simple.</p>
-            <p data-lang="ar" class="font-arabic">الطلب والتأكيد والوصول: كل شيء واضح وسهل.</p>
-            <p data-lang="en">Inquiry, confirmation and arrival are kept simple.</p>
-          </div>
-        </div>
-
-        <div class="compact-point">
-          <span class="mini-icon-compact">💬</span>
-          <div>
-            <strong data-lang="fr" class="lang-active">Support humain</strong>
-            <strong data-lang="ar" class="font-arabic">تواصل مباشر</strong>
-            <strong data-lang="en">Human support</strong>
-            <p data-lang="fr" class="lang-active">Une réponse rapide et un contact direct avec CosyNest.</p>
-            <p data-lang="ar" class="font-arabic">رد سريع وتواصل مباشر مع CosyNest.</p>
-            <p data-lang="en">Fast replies and direct contact with CosyNest.</p>
-          </div>
-        </div>
-
-        <a class="mt-4 inline-flex items-center justify-center gap-2 w-full bg-brand-whatsapp text-white font-bold rounded-2xl px-5 py-3.5 hover:bg-green-500 transition-colors shadow-md" href="https://wa.me/21653340970" target="_blank">
-          <span>💬</span>
-          <span data-lang="fr" class="lang-active">Parler avec CosyNest sur WhatsApp</span>
-          <span data-lang="ar" class="font-arabic">تواصل مع CosyNest عبر واتساب</span>
-          <span data-lang="en">Chat with CosyNest on WhatsApp</span>
-        </a>
-      </div>
-    </div>
-  </div>
+<div class="cosy-compact rounded-[2rem] shadow-xl border border-slate-100 overflow-hidden">
+<div class="grid lg:grid-cols-[1.2fr_0.8fr] gap-6 p-5 md:p-6 items-start">
+<div>
+<span class="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold cosy-badge-compact mb-4">
+<span>✨</span>
+<span class="lang-active" data-lang="fr">Pourquoi réserver avec CosyNest</span>
+<span class="font-arabic" data-lang="ar">لماذا تحجز مع CosyNest</span>
+<span data-lang="en">Why book with CosyNest</span>
+</span>
+<h2 class="lang-active text-3xl md:text-4xl font-bold text-brand-blue mb-3 leading-tight" data-lang="fr">Un séjour simple<br/>et direct</h2>
+<h2 class="text-3xl md:text-4xl font-bold text-brand-blue mb-3 leading-tight font-arabic" data-lang="ar">إقامة سهلة<br/>وحجز مباشر</h2>
+<h2 class="text-3xl md:text-4xl font-bold text-brand-blue mb-3 leading-tight" data-lang="en">A simple,<br/>direct stay</h2>
+<p class="lang-active text-base md:text-lg text-slate-600 leading-relaxed max-w-2xl mb-4" data-lang="fr">Des appartements soigneusement sélectionnés en Tunisie, une communication rapide sur WhatsApp et une expérience plus claire pour rassurer vos voyageurs dès les premières secondes.</p>
+<p class="text-base md:text-lg text-slate-600 leading-relaxed max-w-2xl mb-4 font-arabic" data-lang="ar">شقق مختارة بعناية في تونس، تواصل سريع عبر واتساب وتجربة واضحة تمنح الضيف الثقة من أول لحظة.</p>
+<p class="text-base md:text-lg text-slate-600 leading-relaxed max-w-2xl mb-4" data-lang="en">Carefully selected apartments in Tunisia, fast WhatsApp support, and a clearer guest experience from the very first click.</p>
+<div class="grid sm:grid-cols-2 gap-3">
+<div class="compact-card compact-blue">
+<div class="compact-icon">📍</div>
+<div class="compact-copy">
+<h3 class="lang-active" data-lang="fr">Beaux emplacements</h3>
+<h3 class="font-arabic" data-lang="ar">مواقع ممتازة</h3>
+<h3 data-lang="en">Great locations</h3>
+<p class="lang-active" data-lang="fr">Adresses recherchées et quartiers appréciés.</p>
+<p class="font-arabic" data-lang="ar">عناوين مميزة في أحياء محبوبة.</p>
+<p data-lang="en">Well-located homes in sought-after areas.</p>
+</div>
+</div>
+<div class="compact-card compact-gold">
+<div class="compact-icon">⚡</div>
+<div class="compact-copy">
+<h3 class="lang-active" data-lang="fr">Réponse rapide</h3>
+<h3 class="font-arabic" data-lang="ar">رد سريع</h3>
+<h3 data-lang="en">Fast replies</h3>
+<p class="lang-active" data-lang="fr">Questions et réservation directe via WhatsApp.</p>
+<p class="font-arabic" data-lang="ar">الاستفسار والحجز المباشر عبر واتساب.</p>
+<p data-lang="en">Questions and booking handled on WhatsApp.</p>
+</div>
+</div>
+<div class="compact-card compact-green">
+<div class="compact-icon">🧼</div>
+<div class="compact-copy">
+<h3 class="lang-active" data-lang="fr">Propreté soignée</h3>
+<h3 class="font-arabic" data-lang="ar">نظافة ممتازة</h3>
+<h3 data-lang="en">Spotless cleanliness</h3>
+<p class="lang-active" data-lang="fr">Linge propre et appartements préparés avec soin.</p>
+<p class="font-arabic" data-lang="ar">شقق نظيفة ومجهزة بعناية مع أغطية نظيفة.</p>
+<p data-lang="en">Fresh linens and carefully prepared apartments.</p>
+</div>
+</div>
+<div class="compact-card compact-pink">
+<div class="compact-icon">🛡️</div>
+<div class="compact-copy">
+<h3 class="lang-active" data-lang="fr">Réservation rassurante</h3>
+<h3 class="font-arabic" data-lang="ar">حجز مطمئن</h3>
+<h3 data-lang="en">Clear booking</h3>
+<p class="lang-active" data-lang="fr">Communication claire avant l’arrivée et pendant le séjour.</p>
+<p class="font-arabic" data-lang="ar">تواصل واضح قبل الوصول وأثناء الإقامة.</p>
+<p data-lang="en">Clear communication before arrival and during the stay.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="compact-side">
+<div class="compact-side-head">
+<div class="compact-logo-wrap">
+<img alt="CosyNest Tunisia Logo" class="w-10 h-10 object-contain" src="logo.jpg"/>
+</div>
+<div>
+<p class="text-sm uppercase tracking-[0.2em] text-brand-gold font-semibold">CosyNest Tunisia</p>
+<p class="lang-active text-sm text-slate-500" data-lang="fr">Réservation directe • Tunisie</p>
+<p class="text-sm text-slate-500 font-arabic" data-lang="ar">حجز مباشر • تونس</p>
+<p class="text-sm text-slate-500" data-lang="en">Direct booking • Tunisia</p>
+</div>
+</div>
+<div class="compact-point">
+<span class="mini-icon-compact">✅</span>
+<div>
+<strong class="lang-active" data-lang="fr">Processus clair</strong>
+<strong class="font-arabic" data-lang="ar">خطوات واضحة</strong>
+<strong data-lang="en">Clear process</strong>
+<p class="lang-active" data-lang="fr">Demande, confirmation, arrivée : tout est simple.</p>
+<p class="font-arabic" data-lang="ar">الطلب والتأكيد والوصول: كل شيء واضح وسهل.</p>
+<p data-lang="en">Inquiry, confirmation and arrival are kept simple.</p>
+</div>
+</div>
+<div class="compact-point">
+<span class="mini-icon-compact">💬</span>
+<div>
+<strong class="lang-active" data-lang="fr">Support humain</strong>
+<strong class="font-arabic" data-lang="ar">تواصل مباشر</strong>
+<strong data-lang="en">Human support</strong>
+<p class="lang-active" data-lang="fr">Une réponse rapide et un contact direct avec CosyNest.</p>
+<p class="font-arabic" data-lang="ar">رد سريع وتواصل مباشر مع CosyNest.</p>
+<p data-lang="en">Fast replies and direct contact with CosyNest.</p>
+</div>
+</div>
+<a class="mt-4 inline-flex items-center justify-center gap-2 w-full bg-brand-whatsapp text-white font-bold rounded-2xl px-5 py-3.5 hover:bg-green-500 transition-colors shadow-md" href="https://wa.me/21653340970" target="_blank">
+<span>💬</span>
+<span class="lang-active" data-lang="fr">Parler avec CosyNest sur WhatsApp</span>
+<span class="font-arabic" data-lang="ar">تواصل مع CosyNest عبر واتساب</span>
+<span data-lang="en">Chat with CosyNest on WhatsApp</span>
+</a>
+</div>
+</div>
+</div>
 </section>
-
-
 <!-- Amenities Section -->
-
 <section class="py-14 bg-white border-b border-gray-100">
-    <div class="max-w-6xl mx-auto px-4">
-        <div class="text-center mb-10">
-            <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold bg-brand-blue/5 text-brand-blue border border-brand-blue/10 mb-4">
-                <span>✨</span>
-                <span data-lang="fr" class="lang-active">Confort & équipements</span>
-                <span data-lang="ar" class="font-arabic">الراحة والتجهيزات</span>
-                <span data-lang="en">Comfort & amenities</span>
-            </span>
-
-            <h2 data-lang="fr" class="lang-active text-3xl md:text-4xl font-bold text-brand-blue mb-3">Tout ce qu’il faut pour un séjour réussi</h2>
-            <h2 data-lang="ar" class="text-3xl md:text-4xl font-bold text-brand-blue mb-3 font-arabic">كل ما تحتاجه لإقامة مريحة</h2>
-            <h2 data-lang="en" class="text-3xl md:text-4xl font-bold text-brand-blue mb-3">Everything you need for a great stay</h2>
-
-            <p data-lang="fr" class="lang-active text-gray-600 max-w-2xl mx-auto text-lg"></p>
-            <p data-lang="ar" class="text-gray-600 max-w-2xl mx-auto text-lg font-arabic">مزايا أساسية تمنح الضيف الثقة وتجعل كل شقة أكثر جاذبية من أول نظرة.</p>
-            <p data-lang="en" class="text-gray-600 max-w-2xl mx-auto text-lg">The essentials guests look for first, presented in a clearer and more attractive way.</p>
-        </div>
-
-        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            <div class="amenity-card">
-                <div class="amenity-icon">🛋️</div>
-                <h3 data-lang="fr" class="lang-active">Confort premium</h3>
-                <h3 data-lang="ar" class="font-arabic">راحة عالية</h3>
-                <h3 data-lang="en">Premium comfort</h3>
-                <p data-lang="fr" class="lang-active">Espaces pensés pour se détendre et se sentir chez soi.</p>
-                <p data-lang="ar" class="font-arabic">مساحات مريحة تمنح الضيف إحساساً حقيقياً بالراحة.</p>
-                <p data-lang="en">Comfortable spaces designed to help guests relax instantly.</p>
-            </div>
-
-            <div class="amenity-card">
-                <div class="amenity-icon">✨</div>
-                <h3 data-lang="fr" class="lang-active">Propreté garantie</h3>
-                <h3 data-lang="ar" class="font-arabic">نظافة ممتازة</h3>
-                <h3 data-lang="en">Spotless cleanliness</h3>
-                <p data-lang="fr" class="lang-active">Un standard de propreté visible dès l’arrivée.</p>
-                <p data-lang="ar" class="font-arabic">معيار نظافة واضح يمنح الضيف الثقة من أول لحظة.</p>
-                <p data-lang="en">A cleanliness standard guests notice the moment they arrive.</p>
-            </div>
-
-            <div class="amenity-card">
-                <div class="amenity-icon">❄️</div>
-                <h3 data-lang="fr" class="lang-active">Climatisation</h3>
-                <h3 data-lang="ar" class="font-arabic">مكيف هواء</h3>
-                <h3 data-lang="en">Air conditioning</h3>
-                <p data-lang="fr" class="lang-active">Fraîcheur et confort toute l’année.</p>
-                <p data-lang="ar" class="font-arabic">راحة مثالية في الصيف وفي كل المواسم.</p>
-                <p data-lang="en">Reliable comfort during warmer days and nights.</p>
-            </div>
-
-            <div class="amenity-card">
-                <div class="amenity-icon">🅿️</div>
-                <h3 data-lang="fr" class="lang-active">Parking privé</h3>
-                <h3 data-lang="ar" class="font-arabic">موقف سيارات خاص</h3>
-                <h3 data-lang="en">Private parking</h3>
-                <p data-lang="fr" class="lang-active">Plus de simplicité pour les voyageurs motorisés.</p>
-                <p data-lang="ar" class="font-arabic">راحة إضافية للضيوف القادمين بالسيارة.</p>
-                <p data-lang="en">A reassuring extra for guests arriving by car.</p>
-            </div>
-
-            <div class="amenity-card">
-                <div class="amenity-icon">📶</div>
-                <h3 data-lang="fr" class="lang-active">Wi‑Fi rapide</h3>
-                <h3 data-lang="ar" class="font-arabic">واي فاي سريع</h3>
-                <h3 data-lang="en">Fast Wi‑Fi</h3>
-                <p data-lang="fr" class="lang-active">Pour le travail, le streaming ou rester connecté facilement.</p>
-                <p data-lang="ar" class="font-arabic">للعمل أو المشاهدة أو البقاء على اتصال بسهولة.</p>
-                <p data-lang="en">Great for work, streaming or staying connected.</p>
-            </div>
-
-            <div class="amenity-card">
-                <div class="amenity-icon">📺</div>
-                <h3 data-lang="fr" class="lang-active">Smart TV</h3>
-                <h3 data-lang="ar" class="font-arabic">تلفاز ذكي</h3>
-                <h3 data-lang="en">Smart TV</h3>
-                <p data-lang="fr" class="lang-active">Un vrai plus pour les soirées détente à l’appartement.</p>
-                <p data-lang="ar" class="font-arabic">ميزة رائعة لأوقات الراحة داخل الشقة.</p>
-                <p data-lang="en">A welcome extra for relaxed evenings in the apartment.</p>
-            </div>
-
-            <div class="amenity-card">
-                <div class="amenity-icon">🛁</div>
-                <h3 data-lang="fr" class="lang-active">Serviettes & linge fournis</h3>
-                <h3 data-lang="ar" class="font-arabic">مناشف وأغطية متوفرة</h3>
-                <h3 data-lang="en">Towels & linens provided</h3>
-                <p data-lang="fr" class="lang-active">Les essentiels prêts dès l’arrivée.</p>
-                <p data-lang="ar" class="font-arabic">كل الأساسيات جاهزة من لحظة الوصول.</p>
-                <p data-lang="en">Essentials prepared and ready from check-in.</p>
-            </div>
-
-            <div class="amenity-card">
-                <div class="amenity-icon">🍳</div>
-                <h3 data-lang="fr" class="lang-active">Cuisine équipée</h3>
-                <h3 data-lang="ar" class="font-arabic">مطبخ مجهز</h3>
-                <h3 data-lang="en">Equipped kitchen</h3>
-                <p data-lang="fr" class="lang-active">Pratique pour les séjours courts comme pour les longs.</p>
-                <p data-lang="ar" class="font-arabic">مثالي للإقامات القصيرة والطويلة على حد سواء.</p>
-                <p data-lang="en">Useful for both short stays and longer visits.</p>
-            </div>
-        </div>
-    </div>
+<div class="max-w-6xl mx-auto px-4">
+<div class="text-center mb-10">
+<span class="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold bg-brand-blue/5 text-brand-blue border border-brand-blue/10 mb-4">
+<span>✨</span>
+<span class="lang-active" data-lang="fr">Confort &amp; équipements</span>
+<span class="font-arabic" data-lang="ar">الراحة والتجهيزات</span>
+<span data-lang="en">Comfort &amp; amenities</span>
+</span>
+<h2 class="lang-active text-3xl md:text-4xl font-bold text-brand-blue mb-3" data-lang="fr">Tout ce qu’il faut pour un séjour réussi</h2>
+<h2 class="text-3xl md:text-4xl font-bold text-brand-blue mb-3 font-arabic" data-lang="ar">كل ما تحتاجه لإقامة مريحة</h2>
+<h2 class="text-3xl md:text-4xl font-bold text-brand-blue mb-3" data-lang="en">Everything you need for a great stay</h2>
+<p class="lang-active text-gray-600 max-w-2xl mx-auto text-lg" data-lang="fr"></p>
+<p class="text-gray-600 max-w-2xl mx-auto text-lg font-arabic" data-lang="ar">مزايا أساسية تمنح الضيف الثقة وتجعل كل شقة أكثر جاذبية من أول نظرة.</p>
+<p class="text-gray-600 max-w-2xl mx-auto text-lg" data-lang="en">The essentials guests look for first, presented in a clearer and more attractive way.</p>
+</div>
+<div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+<div class="amenity-card">
+<div class="amenity-icon">🛋️</div>
+<h3 class="lang-active" data-lang="fr">Confort premium</h3>
+<h3 class="font-arabic" data-lang="ar">راحة عالية</h3>
+<h3 data-lang="en">Premium comfort</h3>
+<p class="lang-active" data-lang="fr">Espaces pensés pour se détendre et se sentir chez soi.</p>
+<p class="font-arabic" data-lang="ar">مساحات مريحة تمنح الضيف إحساساً حقيقياً بالراحة.</p>
+<p data-lang="en">Comfortable spaces designed to help guests relax instantly.</p>
+</div>
+<div class="amenity-card">
+<div class="amenity-icon">✨</div>
+<h3 class="lang-active" data-lang="fr">Propreté garantie</h3>
+<h3 class="font-arabic" data-lang="ar">نظافة ممتازة</h3>
+<h3 data-lang="en">Spotless cleanliness</h3>
+<p class="lang-active" data-lang="fr">Un standard de propreté visible dès l’arrivée.</p>
+<p class="font-arabic" data-lang="ar">معيار نظافة واضح يمنح الضيف الثقة من أول لحظة.</p>
+<p data-lang="en">A cleanliness standard guests notice the moment they arrive.</p>
+</div>
+<div class="amenity-card">
+<div class="amenity-icon">❄️</div>
+<h3 class="lang-active" data-lang="fr">Climatisation</h3>
+<h3 class="font-arabic" data-lang="ar">مكيف هواء</h3>
+<h3 data-lang="en">Air conditioning</h3>
+<p class="lang-active" data-lang="fr">Fraîcheur et confort toute l’année.</p>
+<p class="font-arabic" data-lang="ar">راحة مثالية في الصيف وفي كل المواسم.</p>
+<p data-lang="en">Reliable comfort during warmer days and nights.</p>
+</div>
+<div class="amenity-card">
+<div class="amenity-icon">🅿️</div>
+<h3 class="lang-active" data-lang="fr">Parking privé</h3>
+<h3 class="font-arabic" data-lang="ar">موقف سيارات خاص</h3>
+<h3 data-lang="en">Private parking</h3>
+<p class="lang-active" data-lang="fr">Plus de simplicité pour les voyageurs motorisés.</p>
+<p class="font-arabic" data-lang="ar">راحة إضافية للضيوف القادمين بالسيارة.</p>
+<p data-lang="en">A reassuring extra for guests arriving by car.</p>
+</div>
+<div class="amenity-card">
+<div class="amenity-icon">📶</div>
+<h3 class="lang-active" data-lang="fr">Wi‑Fi rapide</h3>
+<h3 class="font-arabic" data-lang="ar">واي فاي سريع</h3>
+<h3 data-lang="en">Fast Wi‑Fi</h3>
+<p class="lang-active" data-lang="fr">Pour le travail, le streaming ou rester connecté facilement.</p>
+<p class="font-arabic" data-lang="ar">للعمل أو المشاهدة أو البقاء على اتصال بسهولة.</p>
+<p data-lang="en">Great for work, streaming or staying connected.</p>
+</div>
+<div class="amenity-card">
+<div class="amenity-icon">📺</div>
+<h3 class="lang-active" data-lang="fr">Smart TV</h3>
+<h3 class="font-arabic" data-lang="ar">تلفاز ذكي</h3>
+<h3 data-lang="en">Smart TV</h3>
+<p class="lang-active" data-lang="fr">Un vrai plus pour les soirées détente à l’appartement.</p>
+<p class="font-arabic" data-lang="ar">ميزة رائعة لأوقات الراحة داخل الشقة.</p>
+<p data-lang="en">A welcome extra for relaxed evenings in the apartment.</p>
+</div>
+<div class="amenity-card">
+<div class="amenity-icon">🛁</div>
+<h3 class="lang-active" data-lang="fr">Serviettes &amp; linge fournis</h3>
+<h3 class="font-arabic" data-lang="ar">مناشف وأغطية متوفرة</h3>
+<h3 data-lang="en">Towels &amp; linens provided</h3>
+<p class="lang-active" data-lang="fr">Les essentiels prêts dès l’arrivée.</p>
+<p class="font-arabic" data-lang="ar">كل الأساسيات جاهزة من لحظة الوصول.</p>
+<p data-lang="en">Essentials prepared and ready from check-in.</p>
+</div>
+<div class="amenity-card">
+<div class="amenity-icon">🍳</div>
+<h3 class="lang-active" data-lang="fr">Cuisine équipée</h3>
+<h3 class="font-arabic" data-lang="ar">مطبخ مجهز</h3>
+<h3 data-lang="en">Equipped kitchen</h3>
+<p class="lang-active" data-lang="fr">Pratique pour les séjours courts comme pour les longs.</p>
+<p class="font-arabic" data-lang="ar">مثالي للإقامات القصيرة والطويلة على حد سواء.</p>
+<p data-lang="en">Useful for both short stays and longer visits.</p>
+</div>
+</div>
+</div>
 </section>
-
-
-
 <!-- Properties Section -->
-<section id="properties-section" class="py-20 px-4 max-w-6xl mx-auto">
+<section class="py-20 px-4 max-w-6xl mx-auto" id="properties-section">
 <div class="text-center mb-16">
 <h2 class="lang-active text-3xl md:text-4xl font-bold text-brand-blue mb-4" data-lang="fr">Découvrez Nos Appartements</h2>
 <h2 class="text-3xl md:text-4xl font-bold text-brand-blue mb-4 font-arabic" data-lang="ar">اكتشف شققنا</h2>
@@ -994,11 +950,11 @@ body.gallery-open{overflow:hidden;}
 <!-- Apartment 1: La Marsa -->
 <div class="bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-100 flex flex-col group hover:shadow-xl transition-shadow">
 <div class="relative h-64 overflow-hidden bg-gray-200">
-<img alt="Appartement La Marsa" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://a0.muscache.com/im/pictures/9290366c-badd-41ed-b673-f4c8d3415244.jpg?im_w=720"/>
+<img alt="Appartement La Marsa" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="../uploads/elegance-la-marsa/elegance-01.webp">
 <div class="absolute top-4 right-4 bg-white/90 backdrop-blur px-4 py-2 rounded-full text-brand-blue font-bold shadow-sm" dir="ltr">
                             La Marsa
                         </div>
-</div>
+</img></div>
 <div class="p-8 flex flex-col flex-grow">
 <div class="lang-active flex-grow" data-lang="fr">
 <h3 class="text-2xl font-bold text-brand-blue mb-1">L'Élégance de La Marsa</h3>
@@ -1026,11 +982,11 @@ body.gallery-open{overflow:hidden;}
 <!-- Apartment 3: La Marsa 2nd Floor -->
 <div class="bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-100 flex flex-col group hover:shadow-xl transition-shadow">
 <div class="relative h-64 overflow-hidden bg-gray-200">
-<img alt="Appartement La Marsa 2nd Floor" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://a0.muscache.com/im/pictures/miso/Hosting-583787765176810175/original/c7badc6a-c0b0-4c3f-bab3-07165563e5f6.jpeg?im_w=720"/>
+<img alt="Appartement La Marsa 2nd Floor" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="../uploads/nid-perche-la-marsa/2em-01.webp">
 <div class="absolute top-4 right-4 bg-white/90 backdrop-blur px-4 py-2 rounded-full text-brand-blue font-bold shadow-sm" dir="ltr">
                             La Marsa
                         </div>
-</div>
+</img></div>
 <div class="p-8 flex flex-col flex-grow">
 <div class="lang-active flex-grow" data-lang="fr">
 <h3 class="text-2xl font-bold text-brand-blue mb-1">Le Nid Perché</h3>
@@ -1058,7 +1014,7 @@ body.gallery-open{overflow:hidden;}
 <!-- Apartment 4: La Marsa 1st Floor -->
 <div class="bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-100 flex flex-col group hover:shadow-xl transition-shadow">
 <div class="relative h-64 overflow-hidden bg-gray-200">
-<img alt="Appartement La Marsa 1st Floor" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://a0.muscache.com/im/pictures/miso/Hosting-45330248/original/2b56d4ea-1b6f-42a5-9edf-ff17251fff3a.jpeg?im_w=720"/>
+<img alt="Appartement La Marsa 1st Floor" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="../uploads/ecrin-lumineux/ecrin-01.webp"/>
 <div class="absolute top-4 right-4 bg-white/90 backdrop-blur px-4 py-2 rounded-full text-brand-blue font-bold shadow-sm" dir="ltr">
                             La Marsa
                         </div>
@@ -1090,7 +1046,7 @@ body.gallery-open{overflow:hidden;}
 <!-- Apartment 5: La Marsa Corniche -->
 <div class="bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-100 flex flex-col group hover:shadow-xl transition-shadow">
 <div class="relative h-64 overflow-hidden bg-gray-200">
-<img alt="Appartement La Marsa Corniche" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://a0.muscache.com/im/pictures/miso/Hosting-758300689459776355/original/5039366a-d111-40df-ac12-a77231d5e5a5.jpeg?im_w=720"/>
+<img alt="Appartement La Marsa Corniche" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="../uploads/azur-corniche/azur-01.webp"/>
 <div class="absolute top-4 right-4 bg-white/90 backdrop-blur px-4 py-2 rounded-full text-brand-blue font-bold shadow-sm" dir="ltr">
                             La Marsa Corniche
                         </div>
@@ -1122,7 +1078,7 @@ body.gallery-open{overflow:hidden;}
 <!-- Apartment 6: La Marsa Corniche Plage -->
 <div class="bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-100 flex flex-col group hover:shadow-xl transition-shadow">
 <div class="relative h-64 overflow-hidden bg-gray-200">
-<img alt="Appartement Corniche Plage" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://a0.muscache.com/im/pictures/miso/Hosting-771370503826948643/original/153ad520-0b20-40dc-9dd7-4f5d9884c1f4.jpeg?im_w=720"/>
+<img alt="Appartement Corniche Plage" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="../uploads/brise-marine/brise-01.webp"/>
 <div class="absolute top-4 right-4 bg-white/90 backdrop-blur px-4 py-2 rounded-full text-brand-blue font-bold shadow-sm" dir="ltr">
                             La Marsa Corniche
                         </div>
@@ -1154,7 +1110,7 @@ body.gallery-open{overflow:hidden;}
 <!-- Apartment 7: Sidi Bou Said Village S2 -->
 <div class="bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-100 flex flex-col group hover:shadow-xl transition-shadow">
 <div class="relative h-64 overflow-hidden bg-gray-200">
-<img alt="Appartement Sidi Bou Said Village" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://a0.muscache.com/im/pictures/miso/Hosting-1126537860666644929/original/2aae4593-f76c-4802-8397-7234486c2ef3.jpeg?im_w=720"/>
+<img alt="Appartement Sidi Bou Said Village" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="../uploads/toit-sidi-bou-said/toit-01.webp"/>
 <div class="absolute top-4 right-4 bg-white/90 backdrop-blur px-4 py-2 rounded-full text-brand-blue font-bold shadow-sm" dir="ltr">
                             Sidi Bou Said
                         </div>
@@ -1186,7 +1142,7 @@ body.gallery-open{overflow:hidden;}
 <!-- Apartment 8: Sidi Bou Said S2 Ground Floor -->
 <div class="bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-100 flex flex-col group hover:shadow-xl transition-shadow">
 <div class="relative h-64 overflow-hidden bg-gray-200">
-<img alt="Appartement Sidi Bou Said Rez-de-chaussée" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://a0.muscache.com/im/pictures/miso/Hosting-1131326661308342331/original/ce7636cf-a112-4345-8484-922c55f49293.jpeg?im_w=720"/>
+<img alt="Appartement Sidi Bou Said Rez-de-chaussée" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="../uploads/rez-de-jardin/rdc-01.webp"/>
 <div class="absolute top-4 right-4 bg-white/90 backdrop-blur px-4 py-2 rounded-full text-brand-blue font-bold shadow-sm" dir="ltr">
                             Sidi Bou Said
                         </div>
@@ -1218,7 +1174,7 @@ body.gallery-open{overflow:hidden;}
 <!-- Apartment 9: Sidi Bou Said Duplex -->
 <div class="bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-100 flex flex-col group hover:shadow-xl transition-shadow">
 <div class="relative h-64 overflow-hidden bg-gray-200">
-<img alt="Appartement Sidi Bou Said Duplex" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://a0.muscache.com/im/pictures/miso/Hosting-49770055/original/7745c319-419b-4fbd-ba26-9cdf29a3da56.jpeg?im_w=720"/>
+<img alt="Appartement Sidi Bou Said Duplex" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="../uploads/duplex-prestige/duplex-01.webp"/>
 <div class="absolute top-4 right-4 bg-white/90 backdrop-blur px-4 py-2 rounded-full text-brand-blue font-bold shadow-sm" dir="ltr">
                             Sidi Bou Said
                         </div>
@@ -1250,7 +1206,7 @@ body.gallery-open{overflow:hidden;}
 <!-- Apartment 10: Sidi Bou Said S3 -->
 <div class="bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-100 flex flex-col group hover:shadow-xl transition-shadow">
 <div class="relative h-64 overflow-hidden bg-gray-200">
-<img alt="Appartement Sidi Bou Said S3" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://a0.muscache.com/im/pictures/4934cee2-53ce-4cf1-80a1-c995cc033812.jpg?im_w=720"/>
+<img alt="Appartement Sidi Bou Said S3" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="../uploads/belvedere-360/belvedere-01.webp"/>
 <div class="absolute top-4 right-4 bg-white/90 backdrop-blur px-4 py-2 rounded-full text-brand-blue font-bold shadow-sm" dir="ltr">
                             Sidi Bou Said
                         </div>
@@ -1282,7 +1238,7 @@ body.gallery-open{overflow:hidden;}
 <!-- Apartment 11: La Marsa Triplex -->
 <div class="bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-100 flex flex-col group hover:shadow-xl transition-shadow">
 <div class="relative h-64 overflow-hidden bg-gray-200">
-<img alt="Appartement La Marsa Triplex" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://a0.muscache.com/im/pictures/hosting/Hosting-42120347/original/f7fd792d-28e6-40ce-a22c-875433875412.jpeg?im_w=720"/>
+<img alt="Appartement La Marsa Triplex" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="../uploads/grand-triplex/triplex-01.webp"/>
 <div class="absolute top-4 right-4 bg-white/90 backdrop-blur px-4 py-2 rounded-full text-brand-blue font-bold shadow-sm" dir="ltr">
                             La Marsa
                         </div>
@@ -1314,7 +1270,7 @@ body.gallery-open{overflow:hidden;}
 <!-- Apartment 12: La Marsa Corniche Beach -->
 <div class="bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-100 flex flex-col group hover:shadow-xl transition-shadow">
 <div class="relative h-64 overflow-hidden bg-gray-200">
-<img alt="Appartement La Marsa Corniche Plage" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://a0.muscache.com/im/pictures/miso/Hosting-809257071180127452/original/b8a2f4ef-65cb-4a61-ad0a-60744ab6f120.jpeg?im_w=720"/>
+<img alt="Appartement La Marsa Corniche Plage" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="../uploads/perle-de-la-plage/perle-01.webp"/>
 <div class="absolute top-4 right-4 bg-white/90 backdrop-blur px-4 py-2 rounded-full text-brand-blue font-bold shadow-sm" dir="ltr">
                             La Marsa Corniche
                         </div>
@@ -1346,7 +1302,7 @@ body.gallery-open{overflow:hidden;}
 <!-- Apartment 13: La Marsa Spacious Corniche -->
 <div class="bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-100 flex flex-col group hover:shadow-xl transition-shadow">
 <div class="relative h-64 overflow-hidden bg-gray-200">
-<img alt="Appartement Spacieux La Marsa Corniche" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://a0.muscache.com/im/pictures/05707336-5237-453a-aa1a-e89916348398.jpg?im_w=720"/>
+<img alt="Appartement Spacieux La Marsa Corniche" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="../uploads/oasis-de-la-corniche/oasis-01.webp"/>
 <div class="absolute top-4 right-4 bg-white/90 backdrop-blur px-4 py-2 rounded-full text-brand-blue font-bold shadow-sm" dir="ltr">
                             La Marsa Plage
                         </div>
@@ -1382,21 +1338,21 @@ body.gallery-open{overflow:hidden;}
 <!-- SIDI BOU SAID DETAIL VIEWS                     -->
 <!-- ============================================== -->
 <div class="hidden pt-24 pb-20 px-4 max-w-6xl mx-auto" id="detail-view-sidi2">
-  <button onclick="goHome()" class="mb-6 flex items-center gap-2 text-brand-blue font-bold hover:text-brand-gold transition-colors">
-    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" /></svg>
-    <span data-lang="fr" class="lang-active">Retour aux appartements</span><span data-lang="ar" class="font-arabic">العودة إلى الشقق</span><span data-lang="en">Back to apartments</span>
-  </button>
-  <h1 data-lang="fr" class="lang-active text-3xl md:text-5xl font-bold text-brand-blue mb-4">Le Toit de Sidi Bou Saïd</h1>
-  <h1 data-lang="ar" class="text-3xl md:text-5xl font-bold text-brand-blue mb-4 font-arabic">قمة سيدي بوسعيد</h1>
-  <h1 data-lang="en" class="text-3xl md:text-5xl font-bold text-brand-blue mb-4">Sidi Bou Said Rooftop</h1>
-  <div class="flex items-center gap-4 text-gray-600 mb-8 font-medium"><span>⭐ 4.82 (184)</span><span>•</span><span class="underline">Sidi Bou Said, Tunis, Tunisia</span></div>
-  <div class="grid md:grid-cols-3 gap-12"><div class="md:col-span-2"><div class="border-b border-gray-200 pb-8 mb-8"><h2 class="text-2xl font-bold text-brand-blue mb-2"><span data-lang="fr" class="lang-active">Séjour entier par CosyNest Tunisia</span><span data-lang="ar" class="font-arabic">إقامة كاملة من CosyNest Tunisia</span><span data-lang="en">Entire stay by CosyNest Tunisia</span></h2><p class="text-gray-600 text-lg"><span data-lang="fr" class="lang-active">4 voyageurs • 2 chambres • 1 salle de bain</span><span data-lang="ar" class="font-arabic">4 ضيوف • غرفتا نوم • حمام واحد</span><span data-lang="en">4 guests • 2 bedrooms • 1 bath</span></p></div><div class="mb-10 text-gray-700 leading-relaxed text-lg"><p data-lang="fr" class="lang-active mb-4">Une adresse signature à Sidi Bou Saïd avec terrasse privée et rooftop pour admirer le coucher du soleil sur le village et la Méditerranée.</p><p data-lang="ar" class="font-arabic mb-4">عنوان مميز في سيدي بوسعيد مع تراس خاص وسطح رائع لمشاهدة غروب الشمس فوق القرية والبحر.</p><p data-lang="en" class="mb-4">A signature Sidi Bou Said stay with a private terrace and rooftop made for sunset views over the village and the Mediterranean.</p></div><section class="mt-10 border-t border-gray-200 pt-8"><div class="flex items-center justify-between flex-wrap gap-3 mb-5"><h3 class="text-2xl font-bold text-brand-blue"><span data-lang="fr" class="lang-active">Avis des voyageurs</span><span data-lang="ar" class="font-arabic">آراء الضيوف</span><span data-lang="en">Guest feedback</span></h3></div><div class="airbnb-score-card mb-5"><div class="flex flex-wrap items-center gap-3 mb-4"><span class="inline-flex items-center gap-2 bg-brand-blue text-white px-4 py-2 rounded-full font-bold">⭐ 4.82 / 5</span><span class="inline-flex items-center gap-2 bg-white border border-gray-200 px-4 py-2 rounded-full font-semibold text-brand-blue">184 reviews</span><span class="inline-flex items-center gap-2 bg-brand-gold/20 border border-brand-gold px-4 py-2 rounded-full font-semibold text-brand-blue">Guest favorite</span></div><div class="flex flex-wrap gap-3"><span class="airbnb-chip">✓ Rooftop sunsets</span><span class="airbnb-chip">✓ Prime village location</span><span class="airbnb-chip">✓ Great guest experience</span></div></div></section></div><div><div class="bg-white border border-gray-200 rounded-2xl shadow-xl p-6 booking-card"><div class="flex items-baseline gap-2 mb-6"><span class="text-gray-500 text-sm font-medium"><span data-lang="fr" class="lang-active">À partir de</span><span data-lang="ar" class="font-arabic">ابتداءً من</span><span data-lang="en">From</span></span><span class="text-3xl font-bold text-brand-blue">255 TND (~75€)</span><span class="text-gray-500 text-sm">/ nuit</span></div><div class="border border-gray-300 rounded-xl mb-4 overflow-hidden"><div class="flex divide-x divide-gray-300 border-b border-gray-300"><div class="p-3 w-1/2"><label for="checkin-sidi2" class="text-xs font-bold uppercase text-gray-800 block">Check-in</label><input type="date" id="checkin-sidi2" class="w-full text-gray-700 text-sm outline-none bg-transparent mt-1" onchange="updateWhatsAppLink('sidi2')"></div><div class="p-3 w-1/2"><label for="checkout-sidi2" class="text-xs font-bold uppercase text-gray-800 block">Checkout</label><input type="date" id="checkout-sidi2" class="w-full text-gray-700 text-sm outline-none bg-transparent mt-1" onchange="updateWhatsAppLink('sidi2')"></div></div><div class="p-3"><label for="guests-sidi2" class="text-xs font-bold uppercase text-gray-800 block">Guests</label><select id="guests-sidi2" class="w-full text-gray-700 text-sm outline-none bg-transparent mt-1" onchange="updateWhatsAppLink('sidi2')"><option value="1">1 guest</option><option value="2">2 guests</option><option value="3">3 guests</option><option value="4">4 guests</option></select></div></div><a href="https://wa.me/21653340970?text=Bonjour" id="wa-btn-sidi2" target="_blank" class="wa-primary-btn block w-full text-center text-white py-4 rounded-xl font-bold text-lg transition-all mb-4 shadow-md"><span data-lang="fr" class="lang-active">Vérifier la disponibilité</span><span data-lang="ar" class="font-arabic">تحقق من التوفر عبر واتساب</span><span data-lang="en">Check availability on WhatsApp</span></a></div></div></div>
+<button class="mb-6 flex items-center gap-2 text-brand-blue font-bold hover:text-brand-gold transition-colors" onclick="goHome()">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+<span class="lang-active" data-lang="fr">Retour aux appartements</span><span class="font-arabic" data-lang="ar">العودة إلى الشقق</span><span data-lang="en">Back to apartments</span>
+</button>
+<h1 class="lang-active text-3xl md:text-5xl font-bold text-brand-blue mb-4" data-lang="fr">Le Toit de Sidi Bou Saïd</h1>
+<h1 class="text-3xl md:text-5xl font-bold text-brand-blue mb-4 font-arabic" data-lang="ar">قمة سيدي بوسعيد</h1>
+<h1 class="text-3xl md:text-5xl font-bold text-brand-blue mb-4" data-lang="en">Sidi Bou Said Rooftop</h1>
+<div class="flex items-center gap-4 text-gray-600 mb-8 font-medium"><span>⭐ 4.82 (184)</span><span>•</span><span class="underline">Sidi Bou Said, Tunis, Tunisia</span></div>
+<div class="grid md:grid-cols-3 gap-12"><div class="md:col-span-2"><div class="border-b border-gray-200 pb-8 mb-8"><h2 class="text-2xl font-bold text-brand-blue mb-2"><span class="lang-active" data-lang="fr">Séjour entier par CosyNest Tunisia</span><span class="font-arabic" data-lang="ar">إقامة كاملة من CosyNest Tunisia</span><span data-lang="en">Entire stay by CosyNest Tunisia</span></h2><p class="text-gray-600 text-lg"><span class="lang-active" data-lang="fr">4 voyageurs • 2 chambres • 1 salle de bain</span><span class="font-arabic" data-lang="ar">4 ضيوف • غرفتا نوم • حمام واحد</span><span data-lang="en">4 guests • 2 bedrooms • 1 bath</span></p></div><div class="mb-10 text-gray-700 leading-relaxed text-lg"><p class="lang-active mb-4" data-lang="fr">Une adresse signature à Sidi Bou Saïd avec terrasse privée et rooftop pour admirer le coucher du soleil sur le village et la Méditerranée.</p><p class="font-arabic mb-4" data-lang="ar">عنوان مميز في سيدي بوسعيد مع تراس خاص وسطح رائع لمشاهدة غروب الشمس فوق القرية والبحر.</p><p class="mb-4" data-lang="en">A signature Sidi Bou Said stay with a private terrace and rooftop made for sunset views over the village and the Mediterranean.</p></div><section class="mt-10 border-t border-gray-200 pt-8"><div class="flex items-center justify-between flex-wrap gap-3 mb-5"><h3 class="text-2xl font-bold text-brand-blue"><span class="lang-active" data-lang="fr">Avis des voyageurs</span><span class="font-arabic" data-lang="ar">آراء الضيوف</span><span data-lang="en">Guest feedback</span></h3></div><div class="airbnb-score-card mb-5"><div class="flex flex-wrap items-center gap-3 mb-4"><span class="inline-flex items-center gap-2 bg-brand-blue text-white px-4 py-2 rounded-full font-bold">⭐ 4.82 / 5</span><span class="inline-flex items-center gap-2 bg-white border border-gray-200 px-4 py-2 rounded-full font-semibold text-brand-blue">184 reviews</span><span class="inline-flex items-center gap-2 bg-brand-gold/20 border border-brand-gold px-4 py-2 rounded-full font-semibold text-brand-blue">Guest favorite</span></div><div class="flex flex-wrap gap-3"><span class="airbnb-chip">✓ Rooftop sunsets</span><span class="airbnb-chip">✓ Prime village location</span><span class="airbnb-chip">✓ Great guest experience</span></div></div></section></div><div><div class="bg-white border border-gray-200 rounded-2xl shadow-xl p-6 booking-card"><div class="flex items-baseline gap-2 mb-6"><span class="text-gray-500 text-sm font-medium"><span class="lang-active" data-lang="fr">À partir de</span><span class="font-arabic" data-lang="ar">ابتداءً من</span><span data-lang="en">From</span></span><span class="text-3xl font-bold text-brand-blue">255 TND (~75€)</span><span class="text-gray-500 text-sm">/ nuit</span></div><div class="border border-gray-300 rounded-xl mb-4 overflow-hidden"><div class="flex divide-x divide-gray-300 border-b border-gray-300"><div class="p-3 w-1/2"><label class="text-xs font-bold uppercase text-gray-800 block" for="checkin-sidi2">Check-in</label><input class="w-full text-gray-700 text-sm outline-none bg-transparent mt-1" id="checkin-sidi2" onchange="updateWhatsAppLink('sidi2')" type="date"/></div><div class="p-3 w-1/2"><label class="text-xs font-bold uppercase text-gray-800 block" for="checkout-sidi2">Checkout</label><input class="w-full text-gray-700 text-sm outline-none bg-transparent mt-1" id="checkout-sidi2" onchange="updateWhatsAppLink('sidi2')" type="date"/></div></div><div class="p-3"><label class="text-xs font-bold uppercase text-gray-800 block" for="guests-sidi2">Guests</label><select class="w-full text-gray-700 text-sm outline-none bg-transparent mt-1" id="guests-sidi2" onchange="updateWhatsAppLink('sidi2')"><option value="1">1 guest</option><option value="2">2 guests</option><option value="3">3 guests</option><option value="4">4 guests</option></select></div></div><a class="wa-primary-btn block w-full text-center text-white py-4 rounded-xl font-bold text-lg transition-all mb-4 shadow-md" href="https://wa.me/21653340970?text=Bonjour" id="wa-btn-sidi2" target="_blank"><span class="lang-active" data-lang="fr">Vérifier la disponibilité</span><span class="font-arabic" data-lang="ar">تحقق من التوفر عبر واتساب</span><span data-lang="en">Check availability on WhatsApp</span></a></div></div></div>
 </div>
-<div class="hidden pt-24 pb-20 px-4 max-w-6xl mx-auto" id="detail-view-sidi3"><button onclick="goHome()" class="mb-6 flex items-center gap-2 text-brand-blue font-bold hover:text-brand-gold transition-colors"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" /></svg><span data-lang="fr" class="lang-active">Retour aux appartements</span><span data-lang="ar" class="font-arabic">العودة إلى الشقق</span><span data-lang="en">Back to apartments</span></button><h1 data-lang="fr" class="lang-active text-3xl md:text-5xl font-bold text-brand-blue mb-4">Le Rez-de-Jardin</h1><h1 data-lang="ar" class="text-3xl md:text-5xl font-bold text-brand-blue mb-4 font-arabic">ملاذ الحديقة</h1><h1 data-lang="en" class="text-3xl md:text-5xl font-bold text-brand-blue mb-4">The Garden Retreat</h1><div class="flex items-center gap-4 text-gray-600 mb-8 font-medium"><span>⭐ 4.94</span><span>•</span><span class="underline">Sidi Bou Said, Tunis, Tunisia</span></div><div class="grid md:grid-cols-3 gap-12"><div class="md:col-span-2"><p data-lang="fr" class="lang-active mb-8 text-lg text-gray-700">Un havre de paix au rez-de-chaussée avec terrasse jardin, idéal pour un séjour relaxant au cœur du village.</p><p data-lang="ar" class="font-arabic mb-8 text-lg text-gray-700">ملاذ هادئ في الطابق الأرضي مع تراس حديقة في قلب القرية.</p><p data-lang="en" class="mb-8 text-lg text-gray-700">A peaceful ground-floor retreat with a garden terrace in the heart of the village.</p><section class="mt-10 border-t border-gray-200 pt-8" data-guest-feedback="sidi3">
+<div class="hidden pt-24 pb-20 px-4 max-w-6xl mx-auto" id="detail-view-sidi3"><button class="mb-6 flex items-center gap-2 text-brand-blue font-bold hover:text-brand-gold transition-colors" onclick="goHome()"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" stroke-linecap="round" stroke-linejoin="round"></path></svg><span class="lang-active" data-lang="fr">Retour aux appartements</span><span class="font-arabic" data-lang="ar">العودة إلى الشقق</span><span data-lang="en">Back to apartments</span></button><h1 class="lang-active text-3xl md:text-5xl font-bold text-brand-blue mb-4" data-lang="fr">Le Rez-de-Jardin</h1><h1 class="text-3xl md:text-5xl font-bold text-brand-blue mb-4 font-arabic" data-lang="ar">ملاذ الحديقة</h1><h1 class="text-3xl md:text-5xl font-bold text-brand-blue mb-4" data-lang="en">The Garden Retreat</h1><div class="flex items-center gap-4 text-gray-600 mb-8 font-medium"><span>⭐ 4.94</span><span>•</span><span class="underline">Sidi Bou Said, Tunis, Tunisia</span></div><div class="grid md:grid-cols-3 gap-12"><div class="md:col-span-2"><p class="lang-active mb-8 text-lg text-gray-700" data-lang="fr">Un havre de paix au rez-de-chaussée avec terrasse jardin, idéal pour un séjour relaxant au cœur du village.</p><p class="font-arabic mb-8 text-lg text-gray-700" data-lang="ar">ملاذ هادئ في الطابق الأرضي مع تراس حديقة في قلب القرية.</p><p class="mb-8 text-lg text-gray-700" data-lang="en">A peaceful ground-floor retreat with a garden terrace in the heart of the village.</p><section class="mt-10 border-t border-gray-200 pt-8" data-guest-feedback="sidi3">
 <div class="flex items-center justify-between flex-wrap gap-3 mb-5">
 <h3 class="text-2xl font-bold text-brand-blue">
-<span data-lang="fr" class="lang-active">Avis des voyageurs</span>
-<span data-lang="ar" class="font-arabic">آراء الضيوف</span>
+<span class="lang-active" data-lang="fr">Avis des voyageurs</span>
+<span class="font-arabic" data-lang="ar">آراء الضيوف</span>
 <span data-lang="en">Guest feedback</span>
 </h3>
 </div>
@@ -1404,26 +1360,26 @@ body.gallery-open{overflow:hidden;}
 <div class="bg-white border border-gray-200 rounded-2xl p-5 shadow-sm">
 <div class="flex items-center justify-between mb-3"><span class="font-bold text-brand-blue">★★★★★</span><span class="text-sm text-gray-400">Verified stay</span></div>
 <p class="text-gray-700 leading-relaxed">
-<span data-lang="fr" class="lang-active">Guests often mention the peaceful garden feel and how relaxing the terrace makes the stay.</span>
-<span data-lang="ar" class="font-arabic">Guests often mention the peaceful garden feel and how relaxing the terrace makes the stay.</span>
+<span class="lang-active" data-lang="fr">Guests often mention the peaceful garden feel and how relaxing the terrace makes the stay.</span>
+<span class="font-arabic" data-lang="ar">Guests often mention the peaceful garden feel and how relaxing the terrace makes the stay.</span>
 <span data-lang="en">Guests often mention the peaceful garden feel and how relaxing the terrace makes the stay.</span>
 </p>
 </div>
 <div class="bg-white border border-gray-200 rounded-2xl p-5 shadow-sm">
 <div class="flex items-center justify-between mb-3"><span class="font-bold text-brand-blue">★★★★★</span><span class="text-sm text-gray-400">Verified stay</span></div>
 <p class="text-gray-700 leading-relaxed">
-<span data-lang="fr" class="lang-active">The central village setting and calm atmosphere stand out in repeated guest feedback.</span>
-<span data-lang="ar" class="font-arabic">The central village setting and calm atmosphere stand out in repeated guest feedback.</span>
+<span class="lang-active" data-lang="fr">The central village setting and calm atmosphere stand out in repeated guest feedback.</span>
+<span class="font-arabic" data-lang="ar">The central village setting and calm atmosphere stand out in repeated guest feedback.</span>
 <span data-lang="en">The central village setting and calm atmosphere stand out in repeated guest feedback.</span>
 </p>
 </div>
 </div>
-</section></div><div><div class="bg-white border border-gray-200 rounded-2xl shadow-xl p-6 booking-card"><div class="flex items-baseline gap-2 mb-6"><span class="text-gray-500 text-sm font-medium">From</span><span class="text-3xl font-bold text-brand-blue">255 TND (~75€)</span></div><div class="border border-gray-300 rounded-xl mb-4 overflow-hidden"><div class="flex divide-x divide-gray-300 border-b border-gray-300"><div class="p-3 w-1/2"><label for="checkin-sidi3" class="text-xs font-bold uppercase text-gray-800 block">Check-in</label><input type="date" id="checkin-sidi3" class="w-full text-gray-700 text-sm outline-none bg-transparent mt-1" onchange="updateWhatsAppLink('sidi3')"></div><div class="p-3 w-1/2"><label for="checkout-sidi3" class="text-xs font-bold uppercase text-gray-800 block">Checkout</label><input type="date" id="checkout-sidi3" class="w-full text-gray-700 text-sm outline-none bg-transparent mt-1" onchange="updateWhatsAppLink('sidi3')"></div></div><div class="p-3"><label for="guests-sidi3" class="text-xs font-bold uppercase text-gray-800 block">Guests</label><select id="guests-sidi3" class="w-full text-gray-700 text-sm outline-none bg-transparent mt-1" onchange="updateWhatsAppLink('sidi3')"><option value="1">1 guest</option><option value="2">2 guests</option><option value="3">3 guests</option><option value="4">4 guests</option></select></div></div><a href="https://wa.me/21653340970?text=Bonjour" id="wa-btn-sidi3" target="_blank" class="wa-primary-btn block w-full text-center text-white py-4 rounded-xl font-bold text-lg transition-all mb-4 shadow-md"><span data-lang="fr" class="lang-active">Vérifier la disponibilité</span><span data-lang="ar" class="font-arabic">تحقق من التوفر عبر واتساب</span><span data-lang="en">Check availability on WhatsApp</span></a></div></div></div></div>
-<div class="hidden pt-24 pb-20 px-4 max-w-6xl mx-auto" id="detail-view-sidi4"><button onclick="goHome()" class="mb-6 flex items-center gap-2 text-brand-blue font-bold hover:text-brand-gold transition-colors"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" /></svg><span data-lang="fr" class="lang-active">Retour aux appartements</span><span data-lang="ar" class="font-arabic">العودة إلى الشقق</span><span data-lang="en">Back to apartments</span></button><h1 data-lang="fr" class="lang-active text-3xl md:text-5xl font-bold text-brand-blue mb-4">Le Duplex Prestige</h1><h1 data-lang="ar" class="text-3xl md:text-5xl font-bold text-brand-blue mb-4 font-arabic">دوبلكس بريستيج</h1><h1 data-lang="en" class="text-3xl md:text-5xl font-bold text-brand-blue mb-4">The Prestige Duplex</h1><div class="flex items-center gap-4 text-gray-600 mb-8 font-medium"><span>⭐ 4.95</span><span>•</span><span class="underline">Sidi Bou Said, Tunis, Tunisia</span></div><div class="grid md:grid-cols-3 gap-12"><div class="md:col-span-2"><p data-lang="fr" class="lang-active mb-8 text-lg text-gray-700">Un duplex élégant sur deux niveaux avec coin bureau, balcons ensoleillés et une ambiance haut de gamme.</p><p data-lang="ar" class="font-arabic mb-8 text-lg text-gray-700">دوبلكس أنيق على مستويين مع مساحة عمل وشرفات مشمسة.</p><p data-lang="en" class="mb-8 text-lg text-gray-700">An elegant two-level duplex with workspace, sunny balconies and a premium atmosphere.</p><section class="mt-10 border-t border-gray-200 pt-8" data-guest-feedback="sidi4">
+</section></div><div><div class="bg-white border border-gray-200 rounded-2xl shadow-xl p-6 booking-card"><div class="flex items-baseline gap-2 mb-6"><span class="text-gray-500 text-sm font-medium">From</span><span class="text-3xl font-bold text-brand-blue">255 TND (~75€)</span></div><div class="border border-gray-300 rounded-xl mb-4 overflow-hidden"><div class="flex divide-x divide-gray-300 border-b border-gray-300"><div class="p-3 w-1/2"><label class="text-xs font-bold uppercase text-gray-800 block" for="checkin-sidi3">Check-in</label><input class="w-full text-gray-700 text-sm outline-none bg-transparent mt-1" id="checkin-sidi3" onchange="updateWhatsAppLink('sidi3')" type="date"/></div><div class="p-3 w-1/2"><label class="text-xs font-bold uppercase text-gray-800 block" for="checkout-sidi3">Checkout</label><input class="w-full text-gray-700 text-sm outline-none bg-transparent mt-1" id="checkout-sidi3" onchange="updateWhatsAppLink('sidi3')" type="date"/></div></div><div class="p-3"><label class="text-xs font-bold uppercase text-gray-800 block" for="guests-sidi3">Guests</label><select class="w-full text-gray-700 text-sm outline-none bg-transparent mt-1" id="guests-sidi3" onchange="updateWhatsAppLink('sidi3')"><option value="1">1 guest</option><option value="2">2 guests</option><option value="3">3 guests</option><option value="4">4 guests</option></select></div></div><a class="wa-primary-btn block w-full text-center text-white py-4 rounded-xl font-bold text-lg transition-all mb-4 shadow-md" href="https://wa.me/21653340970?text=Bonjour" id="wa-btn-sidi3" target="_blank"><span class="lang-active" data-lang="fr">Vérifier la disponibilité</span><span class="font-arabic" data-lang="ar">تحقق من التوفر عبر واتساب</span><span data-lang="en">Check availability on WhatsApp</span></a></div></div></div></div>
+<div class="hidden pt-24 pb-20 px-4 max-w-6xl mx-auto" id="detail-view-sidi4"><button class="mb-6 flex items-center gap-2 text-brand-blue font-bold hover:text-brand-gold transition-colors" onclick="goHome()"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" stroke-linecap="round" stroke-linejoin="round"></path></svg><span class="lang-active" data-lang="fr">Retour aux appartements</span><span class="font-arabic" data-lang="ar">العودة إلى الشقق</span><span data-lang="en">Back to apartments</span></button><h1 class="lang-active text-3xl md:text-5xl font-bold text-brand-blue mb-4" data-lang="fr">Le Duplex Prestige</h1><h1 class="text-3xl md:text-5xl font-bold text-brand-blue mb-4 font-arabic" data-lang="ar">دوبلكس بريستيج</h1><h1 class="text-3xl md:text-5xl font-bold text-brand-blue mb-4" data-lang="en">The Prestige Duplex</h1><div class="flex items-center gap-4 text-gray-600 mb-8 font-medium"><span>⭐ 4.95</span><span>•</span><span class="underline">Sidi Bou Said, Tunis, Tunisia</span></div><div class="grid md:grid-cols-3 gap-12"><div class="md:col-span-2"><p class="lang-active mb-8 text-lg text-gray-700" data-lang="fr">Un duplex élégant sur deux niveaux avec coin bureau, balcons ensoleillés et une ambiance haut de gamme.</p><p class="font-arabic mb-8 text-lg text-gray-700" data-lang="ar">دوبلكس أنيق على مستويين مع مساحة عمل وشرفات مشمسة.</p><p class="mb-8 text-lg text-gray-700" data-lang="en">An elegant two-level duplex with workspace, sunny balconies and a premium atmosphere.</p><section class="mt-10 border-t border-gray-200 pt-8" data-guest-feedback="sidi4">
 <div class="flex items-center justify-between flex-wrap gap-3 mb-5">
 <h3 class="text-2xl font-bold text-brand-blue">
-<span data-lang="fr" class="lang-active">Avis des voyageurs</span>
-<span data-lang="ar" class="font-arabic">آراء الضيوف</span>
+<span class="lang-active" data-lang="fr">Avis des voyageurs</span>
+<span class="font-arabic" data-lang="ar">آراء الضيوف</span>
 <span data-lang="en">Guest feedback</span>
 </h3>
 </div>
@@ -1431,26 +1387,26 @@ body.gallery-open{overflow:hidden;}
 <div class="bg-white border border-gray-200 rounded-2xl p-5 shadow-sm">
 <div class="flex items-center justify-between mb-3"><span class="font-bold text-brand-blue">★★★★★</span><span class="text-sm text-gray-400">Verified stay</span></div>
 <p class="text-gray-700 leading-relaxed">
-<span data-lang="fr" class="lang-active">Guests appreciate the spacious layout and the extra comfort of the duplex setup.</span>
-<span data-lang="ar" class="font-arabic">Guests appreciate the spacious layout and the extra comfort of the duplex setup.</span>
+<span class="lang-active" data-lang="fr">Guests appreciate the spacious layout and the extra comfort of the duplex setup.</span>
+<span class="font-arabic" data-lang="ar">Guests appreciate the spacious layout and the extra comfort of the duplex setup.</span>
 <span data-lang="en">Guests appreciate the spacious layout and the extra comfort of the duplex setup.</span>
 </p>
 </div>
 <div class="bg-white border border-gray-200 rounded-2xl p-5 shadow-sm">
 <div class="flex items-center justify-between mb-3"><span class="font-bold text-brand-blue">★★★★★</span><span class="text-sm text-gray-400">Verified stay</span></div>
 <p class="text-gray-700 leading-relaxed">
-<span data-lang="fr" class="lang-active">Several stays highlight the sunny balconies and how practical the apartment is for longer visits.</span>
-<span data-lang="ar" class="font-arabic">Several stays highlight the sunny balconies and how practical the apartment is for longer visits.</span>
+<span class="lang-active" data-lang="fr">Several stays highlight the sunny balconies and how practical the apartment is for longer visits.</span>
+<span class="font-arabic" data-lang="ar">Several stays highlight the sunny balconies and how practical the apartment is for longer visits.</span>
 <span data-lang="en">Several stays highlight the sunny balconies and how practical the apartment is for longer visits.</span>
 </p>
 </div>
 </div>
-</section></div><div><div class="bg-white border border-gray-200 rounded-2xl shadow-xl p-6 booking-card"><div class="flex items-baseline gap-2 mb-6"><span class="text-gray-500 text-sm font-medium">From</span><span class="text-3xl font-bold text-brand-blue">240 TND (~70€)</span></div><div class="border border-gray-300 rounded-xl mb-4 overflow-hidden"><div class="flex divide-x divide-gray-300 border-b border-gray-300"><div class="p-3 w-1/2"><label for="checkin-sidi4" class="text-xs font-bold uppercase text-gray-800 block">Check-in</label><input type="date" id="checkin-sidi4" class="w-full text-gray-700 text-sm outline-none bg-transparent mt-1" onchange="updateWhatsAppLink('sidi4')"></div><div class="p-3 w-1/2"><label for="checkout-sidi4" class="text-xs font-bold uppercase text-gray-800 block">Checkout</label><input type="date" id="checkout-sidi4" class="w-full text-gray-700 text-sm outline-none bg-transparent mt-1" onchange="updateWhatsAppLink('sidi4')"></div></div><div class="p-3"><label for="guests-sidi4" class="text-xs font-bold uppercase text-gray-800 block">Guests</label><select id="guests-sidi4" class="w-full text-gray-700 text-sm outline-none bg-transparent mt-1" onchange="updateWhatsAppLink('sidi4')"><option value="1">1 guest</option><option value="2">2 guests</option><option value="3">3 guests</option><option value="4">4 guests</option></select></div></div><a href="https://wa.me/21653340970?text=Bonjour" id="wa-btn-sidi4" target="_blank" class="wa-primary-btn block w-full text-center text-white py-4 rounded-xl font-bold text-lg transition-all mb-4 shadow-md"><span data-lang="fr" class="lang-active">Vérifier la disponibilité</span><span data-lang="ar" class="font-arabic">تحقق من التوفر عبر واتساب</span><span data-lang="en">Check availability on WhatsApp</span></a></div></div></div></div>
-<div class="hidden pt-24 pb-20 px-4 max-w-6xl mx-auto" id="detail-view-sidi5"><button onclick="goHome()" class="mb-6 flex items-center gap-2 text-brand-blue font-bold hover:text-brand-gold transition-colors"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" /></svg><span data-lang="fr" class="lang-active">Retour aux appartements</span><span data-lang="ar" class="font-arabic">العودة إلى الشقق</span><span data-lang="en">Back to apartments</span></button><h1 data-lang="fr" class="lang-active text-3xl md:text-5xl font-bold text-brand-blue mb-4">Le Belvédère 360°</h1><h1 data-lang="ar" class="text-3xl md:text-5xl font-bold text-brand-blue mb-4 font-arabic">بلفيدير 360 درجة</h1><h1 data-lang="en" class="text-3xl md:text-5xl font-bold text-brand-blue mb-4">The 360° Belvedere</h1><div class="flex items-center gap-4 text-gray-600 mb-8 font-medium"><span>⭐ 4.82</span><span>•</span><span class="underline">Sidi Bou Said, Tunis, Tunisia</span></div><div class="grid md:grid-cols-3 gap-12"><div class="md:col-span-2"><p data-lang="fr" class="lang-active mb-8 text-lg text-gray-700">Un vaste appartement avec rooftop privé et vue panoramique 360° sur la Méditerranée et Carthage.</p><p data-lang="ar" class="font-arabic mb-8 text-lg text-gray-700">شقة واسعة مع سطح خاص وإطلالة بانورامية 360° على البحر وقرطاج.</p><p data-lang="en" class="mb-8 text-lg text-gray-700">A spacious apartment with a private rooftop and 360° panoramic views over the Mediterranean and Carthage.</p><section class="mt-10 border-t border-gray-200 pt-8" data-guest-feedback="sidi5">
+</section></div><div><div class="bg-white border border-gray-200 rounded-2xl shadow-xl p-6 booking-card"><div class="flex items-baseline gap-2 mb-6"><span class="text-gray-500 text-sm font-medium">From</span><span class="text-3xl font-bold text-brand-blue">240 TND (~70€)</span></div><div class="border border-gray-300 rounded-xl mb-4 overflow-hidden"><div class="flex divide-x divide-gray-300 border-b border-gray-300"><div class="p-3 w-1/2"><label class="text-xs font-bold uppercase text-gray-800 block" for="checkin-sidi4">Check-in</label><input class="w-full text-gray-700 text-sm outline-none bg-transparent mt-1" id="checkin-sidi4" onchange="updateWhatsAppLink('sidi4')" type="date"/></div><div class="p-3 w-1/2"><label class="text-xs font-bold uppercase text-gray-800 block" for="checkout-sidi4">Checkout</label><input class="w-full text-gray-700 text-sm outline-none bg-transparent mt-1" id="checkout-sidi4" onchange="updateWhatsAppLink('sidi4')" type="date"/></div></div><div class="p-3"><label class="text-xs font-bold uppercase text-gray-800 block" for="guests-sidi4">Guests</label><select class="w-full text-gray-700 text-sm outline-none bg-transparent mt-1" id="guests-sidi4" onchange="updateWhatsAppLink('sidi4')"><option value="1">1 guest</option><option value="2">2 guests</option><option value="3">3 guests</option><option value="4">4 guests</option></select></div></div><a class="wa-primary-btn block w-full text-center text-white py-4 rounded-xl font-bold text-lg transition-all mb-4 shadow-md" href="https://wa.me/21653340970?text=Bonjour" id="wa-btn-sidi4" target="_blank"><span class="lang-active" data-lang="fr">Vérifier la disponibilité</span><span class="font-arabic" data-lang="ar">تحقق من التوفر عبر واتساب</span><span data-lang="en">Check availability on WhatsApp</span></a></div></div></div></div>
+<div class="hidden pt-24 pb-20 px-4 max-w-6xl mx-auto" id="detail-view-sidi5"><button class="mb-6 flex items-center gap-2 text-brand-blue font-bold hover:text-brand-gold transition-colors" onclick="goHome()"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" stroke-linecap="round" stroke-linejoin="round"></path></svg><span class="lang-active" data-lang="fr">Retour aux appartements</span><span class="font-arabic" data-lang="ar">العودة إلى الشقق</span><span data-lang="en">Back to apartments</span></button><h1 class="lang-active text-3xl md:text-5xl font-bold text-brand-blue mb-4" data-lang="fr">Le Belvédère 360°</h1><h1 class="text-3xl md:text-5xl font-bold text-brand-blue mb-4 font-arabic" data-lang="ar">بلفيدير 360 درجة</h1><h1 class="text-3xl md:text-5xl font-bold text-brand-blue mb-4" data-lang="en">The 360° Belvedere</h1><div class="flex items-center gap-4 text-gray-600 mb-8 font-medium"><span>⭐ 4.82</span><span>•</span><span class="underline">Sidi Bou Said, Tunis, Tunisia</span></div><div class="grid md:grid-cols-3 gap-12"><div class="md:col-span-2"><p class="lang-active mb-8 text-lg text-gray-700" data-lang="fr">Un vaste appartement avec rooftop privé et vue panoramique 360° sur la Méditerranée et Carthage.</p><p class="font-arabic mb-8 text-lg text-gray-700" data-lang="ar">شقة واسعة مع سطح خاص وإطلالة بانورامية 360° على البحر وقرطاج.</p><p class="mb-8 text-lg text-gray-700" data-lang="en">A spacious apartment with a private rooftop and 360° panoramic views over the Mediterranean and Carthage.</p><section class="mt-10 border-t border-gray-200 pt-8" data-guest-feedback="sidi5">
 <div class="flex items-center justify-between flex-wrap gap-3 mb-5">
 <h3 class="text-2xl font-bold text-brand-blue">
-<span data-lang="fr" class="lang-active">Avis des voyageurs</span>
-<span data-lang="ar" class="font-arabic">آراء الضيوف</span>
+<span class="lang-active" data-lang="fr">Avis des voyageurs</span>
+<span class="font-arabic" data-lang="ar">آراء الضيوف</span>
 <span data-lang="en">Guest feedback</span>
 </h3>
 </div>
@@ -1458,23 +1414,21 @@ body.gallery-open{overflow:hidden;}
 <div class="bg-white border border-gray-200 rounded-2xl p-5 shadow-sm">
 <div class="flex items-center justify-between mb-3"><span class="font-bold text-brand-blue">★★★★★</span><span class="text-sm text-gray-400">Verified stay</span></div>
 <p class="text-gray-700 leading-relaxed">
-<span data-lang="fr" class="lang-active">Guests repeatedly praise the panoramic rooftop views and standout Sidi Bou Said setting.</span>
-<span data-lang="ar" class="font-arabic">Guests repeatedly praise the panoramic rooftop views and standout Sidi Bou Said setting.</span>
+<span class="lang-active" data-lang="fr">Guests repeatedly praise the panoramic rooftop views and standout Sidi Bou Said setting.</span>
+<span class="font-arabic" data-lang="ar">Guests repeatedly praise the panoramic rooftop views and standout Sidi Bou Said setting.</span>
 <span data-lang="en">Guests repeatedly praise the panoramic rooftop views and standout Sidi Bou Said setting.</span>
 </p>
 </div>
 <div class="bg-white border border-gray-200 rounded-2xl p-5 shadow-sm">
 <div class="flex items-center justify-between mb-3"><span class="font-bold text-brand-blue">★★★★★</span><span class="text-sm text-gray-400">Verified stay</span></div>
 <p class="text-gray-700 leading-relaxed">
-<span data-lang="fr" class="lang-active">The apartment is often highlighted for memorable sunsets, spaciousness, and overall comfort.</span>
-<span data-lang="ar" class="font-arabic">The apartment is often highlighted for memorable sunsets, spaciousness, and overall comfort.</span>
+<span class="lang-active" data-lang="fr">The apartment is often highlighted for memorable sunsets, spaciousness, and overall comfort.</span>
+<span class="font-arabic" data-lang="ar">The apartment is often highlighted for memorable sunsets, spaciousness, and overall comfort.</span>
 <span data-lang="en">The apartment is often highlighted for memorable sunsets, spaciousness, and overall comfort.</span>
 </p>
 </div>
 </div>
-</section></div><div><div class="bg-white border border-gray-200 rounded-2xl shadow-xl p-6 booking-card"><div class="flex items-baseline gap-2 mb-6"><span class="text-gray-500 text-sm font-medium">From</span><span class="text-3xl font-bold text-brand-blue">290 TND (~85€)</span></div><div class="border border-gray-300 rounded-xl mb-4 overflow-hidden"><div class="flex divide-x divide-gray-300 border-b border-gray-300"><div class="p-3 w-1/2"><label for="checkin-sidi5" class="text-xs font-bold uppercase text-gray-800 block">Check-in</label><input type="date" id="checkin-sidi5" class="w-full text-gray-700 text-sm outline-none bg-transparent mt-1" onchange="updateWhatsAppLink('sidi5')"></div><div class="p-3 w-1/2"><label for="checkout-sidi5" class="text-xs font-bold uppercase text-gray-800 block">Checkout</label><input type="date" id="checkout-sidi5" class="w-full text-gray-700 text-sm outline-none bg-transparent mt-1" onchange="updateWhatsAppLink('sidi5')"></div></div><div class="p-3"><label for="guests-sidi5" class="text-xs font-bold uppercase text-gray-800 block">Guests</label><select id="guests-sidi5" class="w-full text-gray-700 text-sm outline-none bg-transparent mt-1" onchange="updateWhatsAppLink('sidi5')"><option value="1">1 guest</option><option value="2">2 guests</option><option value="3">3 guests</option><option value="4">4 guests</option><option value="5">5 guests</option></select></div></div><a href="https://wa.me/21653340970?text=Bonjour" id="wa-btn-sidi5" target="_blank" class="wa-primary-btn block w-full text-center text-white py-4 rounded-xl font-bold text-lg transition-all mb-4 shadow-md"><span data-lang="fr" class="lang-active">Vérifier la disponibilité</span><span data-lang="ar" class="font-arabic">تحقق من التوفر عبر واتساب</span><span data-lang="en">Check availability on WhatsApp</span></a></div></div></div></div>
-
-
+</section></div><div><div class="bg-white border border-gray-200 rounded-2xl shadow-xl p-6 booking-card"><div class="flex items-baseline gap-2 mb-6"><span class="text-gray-500 text-sm font-medium">From</span><span class="text-3xl font-bold text-brand-blue">290 TND (~85€)</span></div><div class="border border-gray-300 rounded-xl mb-4 overflow-hidden"><div class="flex divide-x divide-gray-300 border-b border-gray-300"><div class="p-3 w-1/2"><label class="text-xs font-bold uppercase text-gray-800 block" for="checkin-sidi5">Check-in</label><input class="w-full text-gray-700 text-sm outline-none bg-transparent mt-1" id="checkin-sidi5" onchange="updateWhatsAppLink('sidi5')" type="date"/></div><div class="p-3 w-1/2"><label class="text-xs font-bold uppercase text-gray-800 block" for="checkout-sidi5">Checkout</label><input class="w-full text-gray-700 text-sm outline-none bg-transparent mt-1" id="checkout-sidi5" onchange="updateWhatsAppLink('sidi5')" type="date"/></div></div><div class="p-3"><label class="text-xs font-bold uppercase text-gray-800 block" for="guests-sidi5">Guests</label><select class="w-full text-gray-700 text-sm outline-none bg-transparent mt-1" id="guests-sidi5" onchange="updateWhatsAppLink('sidi5')"><option value="1">1 guest</option><option value="2">2 guests</option><option value="3">3 guests</option><option value="4">4 guests</option><option value="5">5 guests</option></select></div></div><a class="wa-primary-btn block w-full text-center text-white py-4 rounded-xl font-bold text-lg transition-all mb-4 shadow-md" href="https://wa.me/21653340970?text=Bonjour" id="wa-btn-sidi5" target="_blank"><span class="lang-active" data-lang="fr">Vérifier la disponibilité</span><span class="font-arabic" data-lang="ar">تحقق من التوفر عبر واتساب</span><span data-lang="en">Check availability on WhatsApp</span></a></div></div></div></div>
 <!-- Apartment Detail Views -->
 <!-- ============================================== -->
 <!-- LA MARSA DETAIL VIEW                           -->
@@ -1526,7 +1480,7 @@ body.gallery-open{overflow:hidden;}
 <div class="lang-active" data-lang="fr">
 <p class="mb-4">Découvrez l'incarnation du raffinement dans ce superbe appartement flambant neuf de deux chambres, idéalement situé au cœur vibrant de La Marsa.</p>
 <p class="mb-4">Baigné de lumière naturelle, ce logement haut standing a été soigneusement pensé pour offrir une expérience de séjour inégalée. Il dévoile un espace de vie au design contemporain et une cuisine américaine entièrement équipée, s'ouvrant avec grâce sur une belle terrasse privée, véritable invitation à la détente.</p>
-<p class="mb-4"><strong>L'espace nuit, un écrin de repos :</strong><br/>- La suite parentale, élégante et spacieuse, dispose d'un lit Queen-size et de sa propre salle de bain attenante.<br/>- La seconde chambre, tout aussi lumineuse, propose un lit double ultra-confortable.<br/>- Une seconde salle de bain au design épuré est à votre disposition.</p>
+<p class="mb-4"><strong>L'espace nuit, un écrin de repos :</strong><br>- La suite parentale, élégante et spacieuse, dispose d'un lit Queen-size et de sa propre salle de bain attenante.<br>- La seconde chambre, tout aussi lumineuse, propose un lit double ultra-confortable.<br>- Une seconde salle de bain au design épuré est à votre disposition.</br></br></br></p>
 <p class="mb-4"><strong>Prestations de prestige :</strong><br/>Climatisation de pointe, chauffage central, Wi-Fi très haut débit, et un espace multimédia complet avec Apple TV (Netflix &amp; Amazon Prime Video). L'appartement garantit une intimité totale avec une entrée 100% indépendante.</p>
 </div>
 <div class="font-arabic" data-lang="ar">
@@ -1557,12 +1511,11 @@ body.gallery-open{overflow:hidden;}
 <div class="flex items-center gap-3"><span class="text-2xl">🌿</span> <span class="lang-active" data-lang="fr">Jardin / Terrasse privé</span><span class="font-arabic" data-lang="ar">تراس خاص</span><span data-lang="en">Private Terrace</span></div>
 </div>
 </div>
-
 <section class="mt-10 border-t border-gray-200 pt-8" data-guest-feedback="marsa">
 <div class="flex items-center justify-between flex-wrap gap-3 mb-5">
 <h3 class="text-2xl font-bold text-brand-blue">
-<span data-lang="fr" class="lang-active">Avis des voyageurs</span>
-<span data-lang="ar" class="font-arabic">آراء الضيوف</span>
+<span class="lang-active" data-lang="fr">Avis des voyageurs</span>
+<span class="font-arabic" data-lang="ar">آراء الضيوف</span>
 <span data-lang="en">Guest feedback</span>
 </h3>
 </div>
@@ -1570,16 +1523,16 @@ body.gallery-open{overflow:hidden;}
 <div class="bg-white border border-gray-200 rounded-2xl p-5 shadow-sm">
 <div class="flex items-center justify-between mb-3"><span class="font-bold text-brand-blue">★★★★★</span><span class="text-sm text-gray-400">Verified stay</span></div>
 <p class="text-gray-700 leading-relaxed">
-<span data-lang="fr" class="lang-active">Guests often praise the private terrace, smooth check-in, and comfortable premium feel.</span>
-<span data-lang="ar" class="font-arabic">Guests often praise the private terrace, smooth check-in, and comfortable premium feel.</span>
+<span class="lang-active" data-lang="fr">Guests often praise the private terrace, smooth check-in, and comfortable premium feel.</span>
+<span class="font-arabic" data-lang="ar">Guests often praise the private terrace, smooth check-in, and comfortable premium feel.</span>
 <span data-lang="en">Guests often praise the private terrace, smooth check-in, and comfortable premium feel.</span>
 </p>
 </div>
 <div class="bg-white border border-gray-200 rounded-2xl p-5 shadow-sm">
 <div class="flex items-center justify-between mb-3"><span class="font-bold text-brand-blue">★★★★★</span><span class="text-sm text-gray-400">Verified stay</span></div>
 <p class="text-gray-700 leading-relaxed">
-<span data-lang="fr" class="lang-active">The location, cleanliness, and overall experience come up again and again in guest feedback.</span>
-<span data-lang="ar" class="font-arabic">The location, cleanliness, and overall experience come up again and again in guest feedback.</span>
+<span class="lang-active" data-lang="fr">The location, cleanliness, and overall experience come up again and again in guest feedback.</span>
+<span class="font-arabic" data-lang="ar">The location, cleanliness, and overall experience come up again and again in guest feedback.</span>
 <span data-lang="en">The location, cleanliness, and overall experience come up again and again in guest feedback.</span>
 </p>
 </div>
@@ -1603,19 +1556,18 @@ body.gallery-open{overflow:hidden;}
 <span data-lang="en">/ nuit</span>
 </span>
 </div>
-
 </div>
 </div>
 <div class="border border-gray-300 rounded-xl mb-4 overflow-hidden">
 <div class="flex divide-x divide-gray-300 border-b border-gray-300">
 <div class="p-3 w-1/2">
 <label class="text-xs font-bold uppercase text-gray-800 block cursor-pointer" for="checkin-marsa">Check-in</label>
-<input class="w-full text-gray-700 text-sm outline-none cursor-pointer bg-transparent mt-1" id="checkin-marsa" onchange="updateWhatsAppLink('marsa')" type="date" class="booking-date-input w-full text-gray-700 text-sm outline-none cursor-pointer bg-transparent mt-1"/>
-</div>
+<input class="booking-date-input w-full text-gray-700 text-sm outline-none cursor-pointer bg-transparent mt-1" id="checkin-marsa" onchange="updateWhatsAppLink('marsa')" type="date">
+</input></div>
 <div class="p-3 w-1/2">
 <label class="text-xs font-bold uppercase text-gray-800 block cursor-pointer" for="checkout-marsa">Checkout</label>
-<input class="w-full text-gray-700 text-sm outline-none cursor-pointer bg-transparent mt-1" id="checkout-marsa" onchange="updateWhatsAppLink('marsa')" type="date" class="booking-date-input w-full text-gray-700 text-sm outline-none cursor-pointer bg-transparent mt-1"/>
-</div>
+<input class="booking-date-input w-full text-gray-700 text-sm outline-none cursor-pointer bg-transparent mt-1" id="checkout-marsa" onchange="updateWhatsAppLink('marsa')" type="date">
+</input></div>
 </div>
 <div class="p-3">
 <label class="text-xs font-bold uppercase text-gray-800 block cursor-pointer" for="guests-marsa">Guests</label>
@@ -1702,12 +1654,11 @@ body.gallery-open{overflow:hidden;}
 <p class="mb-4">Consisting of two comfortable bedrooms (Queen-size beds and built-in storage) and a modern bathroom, this premium retreat guarantees your family or friends a stay of absolute tranquility.</p>
 </div>
 </div>
-
 <section class="mt-10 border-t border-gray-200 pt-8" data-guest-feedback="marsa2">
 <div class="flex items-center justify-between flex-wrap gap-3 mb-5">
 <h3 class="text-2xl font-bold text-brand-blue">
-<span data-lang="fr" class="lang-active">Avis des voyageurs</span>
-<span data-lang="ar" class="font-arabic">آراء الضيوف</span>
+<span class="lang-active" data-lang="fr">Avis des voyageurs</span>
+<span class="font-arabic" data-lang="ar">آراء الضيوف</span>
 <span data-lang="en">Guest feedback</span>
 </h3>
 </div>
@@ -1715,16 +1666,16 @@ body.gallery-open{overflow:hidden;}
 <div class="bg-white border border-gray-200 rounded-2xl p-5 shadow-sm">
 <div class="flex items-center justify-between mb-3"><span class="font-bold text-brand-blue">★★★★★</span><span class="text-sm text-gray-400">Verified stay</span></div>
 <p class="text-gray-700 leading-relaxed">
-<span data-lang="fr" class="lang-active">Guests regularly mention the generous space, pleasant balcony, and easy work-friendly setup.</span>
-<span data-lang="ar" class="font-arabic">Guests regularly mention the generous space, pleasant balcony, and easy work-friendly setup.</span>
+<span class="lang-active" data-lang="fr">Guests regularly mention the generous space, pleasant balcony, and easy work-friendly setup.</span>
+<span class="font-arabic" data-lang="ar">Guests regularly mention the generous space, pleasant balcony, and easy work-friendly setup.</span>
 <span data-lang="en">Guests regularly mention the generous space, pleasant balcony, and easy work-friendly setup.</span>
 </p>
 </div>
 <div class="bg-white border border-gray-200 rounded-2xl p-5 shadow-sm">
 <div class="flex items-center justify-between mb-3"><span class="font-bold text-brand-blue">★★★★★</span><span class="text-sm text-gray-400">Verified stay</span></div>
 <p class="text-gray-700 leading-relaxed">
-<span data-lang="fr" class="lang-active">Many stays highlight the calm atmosphere and how comfortable the apartment feels for families or friends.</span>
-<span data-lang="ar" class="font-arabic">Many stays highlight the calm atmosphere and how comfortable the apartment feels for families or friends.</span>
+<span class="lang-active" data-lang="fr">Many stays highlight the calm atmosphere and how comfortable the apartment feels for families or friends.</span>
+<span class="font-arabic" data-lang="ar">Many stays highlight the calm atmosphere and how comfortable the apartment feels for families or friends.</span>
 <span data-lang="en">Many stays highlight the calm atmosphere and how comfortable the apartment feels for families or friends.</span>
 </p>
 </div>
@@ -1743,19 +1694,18 @@ body.gallery-open{overflow:hidden;}
 </span>
 <span class="text-3xl font-bold text-brand-blue">240 TND (~71€)</span>
 </div>
-
 </div>
 </div>
 <div class="border border-gray-300 rounded-xl mb-4 overflow-hidden">
 <div class="flex divide-x divide-gray-300 border-b border-gray-300">
 <div class="p-3 w-1/2">
 <label class="text-xs font-bold uppercase text-gray-800 block cursor-pointer" for="checkin-marsa2">Check-in</label>
-<input class="w-full text-gray-700 text-sm outline-none cursor-pointer bg-transparent mt-1" id="checkin-marsa2" onchange="updateWhatsAppLink('marsa2')" type="date" class="booking-date-input w-full text-gray-700 text-sm outline-none cursor-pointer bg-transparent mt-1"/>
-</div>
+<input class="booking-date-input w-full text-gray-700 text-sm outline-none cursor-pointer bg-transparent mt-1" id="checkin-marsa2" onchange="updateWhatsAppLink('marsa2')" type="date">
+</input></div>
 <div class="p-3 w-1/2">
 <label class="text-xs font-bold uppercase text-gray-800 block cursor-pointer" for="checkout-marsa2">Checkout</label>
-<input class="w-full text-gray-700 text-sm outline-none cursor-pointer bg-transparent mt-1" id="checkout-marsa2" onchange="updateWhatsAppLink('marsa2')" type="date" class="booking-date-input w-full text-gray-700 text-sm outline-none cursor-pointer bg-transparent mt-1"/>
-</div>
+<input class="booking-date-input w-full text-gray-700 text-sm outline-none cursor-pointer bg-transparent mt-1" id="checkout-marsa2" onchange="updateWhatsAppLink('marsa2')" type="date">
+</input></div>
 </div>
 <div class="p-3">
 <label class="text-xs font-bold uppercase text-gray-800 block cursor-pointer" for="guests-marsa2">Guests</label>
@@ -1839,12 +1789,11 @@ body.gallery-open{overflow:hidden;}
 <p class="mb-4">Equipped with premium amenities, this independent accommodation offers two sophisticated bedrooms, designed to guarantee a restful sleep after your days of discovery in the lively streets of La Marsa.</p>
 </div>
 </div>
-
 <section class="mt-10 border-t border-gray-200 pt-8" data-guest-feedback="marsa3">
 <div class="flex items-center justify-between flex-wrap gap-3 mb-5">
 <h3 class="text-2xl font-bold text-brand-blue">
-<span data-lang="fr" class="lang-active">Avis des voyageurs</span>
-<span data-lang="ar" class="font-arabic">آراء الضيوف</span>
+<span class="lang-active" data-lang="fr">Avis des voyageurs</span>
+<span class="font-arabic" data-lang="ar">آراء الضيوف</span>
 <span data-lang="en">Guest feedback</span>
 </h3>
 </div>
@@ -1852,16 +1801,16 @@ body.gallery-open{overflow:hidden;}
 <div class="bg-white border border-gray-200 rounded-2xl p-5 shadow-sm">
 <div class="flex items-center justify-between mb-3"><span class="font-bold text-brand-blue">★★★★★</span><span class="text-sm text-gray-400">Verified stay</span></div>
 <p class="text-gray-700 leading-relaxed">
-<span data-lang="fr" class="lang-active">Guests often appreciate the quiet building, bright interior, and private balcony.</span>
-<span data-lang="ar" class="font-arabic">Guests often appreciate the quiet building, bright interior, and private balcony.</span>
+<span class="lang-active" data-lang="fr">Guests often appreciate the quiet building, bright interior, and private balcony.</span>
+<span class="font-arabic" data-lang="ar">Guests often appreciate the quiet building, bright interior, and private balcony.</span>
 <span data-lang="en">Guests often appreciate the quiet building, bright interior, and private balcony.</span>
 </p>
 </div>
 <div class="bg-white border border-gray-200 rounded-2xl p-5 shadow-sm">
 <div class="flex items-center justify-between mb-3"><span class="font-bold text-brand-blue">★★★★★</span><span class="text-sm text-gray-400">Verified stay</span></div>
 <p class="text-gray-700 leading-relaxed">
-<span data-lang="fr" class="lang-active">Repeated feedback highlights comfort, convenience, and a restful stay in La Marsa.</span>
-<span data-lang="ar" class="font-arabic">Repeated feedback highlights comfort, convenience, and a restful stay in La Marsa.</span>
+<span class="lang-active" data-lang="fr">Repeated feedback highlights comfort, convenience, and a restful stay in La Marsa.</span>
+<span class="font-arabic" data-lang="ar">Repeated feedback highlights comfort, convenience, and a restful stay in La Marsa.</span>
 <span data-lang="en">Repeated feedback highlights comfort, convenience, and a restful stay in La Marsa.</span>
 </p>
 </div>
@@ -1880,19 +1829,18 @@ body.gallery-open{overflow:hidden;}
 </span>
 <span class="text-3xl font-bold text-brand-blue">240 TND (~71€)</span>
 </div>
-
 </div>
 </div>
 <div class="border border-gray-300 rounded-xl mb-4 overflow-hidden">
 <div class="flex divide-x divide-gray-300 border-b border-gray-300">
 <div class="p-3 w-1/2">
 <label class="text-xs font-bold uppercase text-gray-800 block cursor-pointer" for="checkin-marsa3">Check-in</label>
-<input class="w-full text-gray-700 text-sm outline-none cursor-pointer bg-transparent mt-1" id="checkin-marsa3" onchange="updateWhatsAppLink('marsa3')" type="date" class="booking-date-input w-full text-gray-700 text-sm outline-none cursor-pointer bg-transparent mt-1"/>
-</div>
+<input class="booking-date-input w-full text-gray-700 text-sm outline-none cursor-pointer bg-transparent mt-1" id="checkin-marsa3" onchange="updateWhatsAppLink('marsa3')" type="date">
+</input></div>
 <div class="p-3 w-1/2">
 <label class="text-xs font-bold uppercase text-gray-800 block cursor-pointer" for="checkout-marsa3">Checkout</label>
-<input class="w-full text-gray-700 text-sm outline-none cursor-pointer bg-transparent mt-1" id="checkout-marsa3" onchange="updateWhatsAppLink('marsa3')" type="date" class="booking-date-input w-full text-gray-700 text-sm outline-none cursor-pointer bg-transparent mt-1"/>
-</div>
+<input class="booking-date-input w-full text-gray-700 text-sm outline-none cursor-pointer bg-transparent mt-1" id="checkout-marsa3" onchange="updateWhatsAppLink('marsa3')" type="date">
+</input></div>
 </div>
 <div class="p-3">
 <label class="text-xs font-bold uppercase text-gray-800 block cursor-pointer" for="guests-marsa3">Guests</label>
@@ -1972,12 +1920,11 @@ body.gallery-open{overflow:hidden;}
 <p class="mb-4">Live like a true local with the prestigious Zephyr shopping center, lively terraces, and the TGM (train) close at hand. A rare opportunity to marry urban convenience and the magic of the Mediterranean.</p>
 </div>
 </div>
-
 <section class="mt-10 border-t border-gray-200 pt-8" data-guest-feedback="marsa4">
 <div class="flex items-center justify-between flex-wrap gap-3 mb-5">
 <h3 class="text-2xl font-bold text-brand-blue">
-<span data-lang="fr" class="lang-active">Avis des voyageurs</span>
-<span data-lang="ar" class="font-arabic">آراء الضيوف</span>
+<span class="lang-active" data-lang="fr">Avis des voyageurs</span>
+<span class="font-arabic" data-lang="ar">آراء الضيوف</span>
 <span data-lang="en">Guest feedback</span>
 </h3>
 </div>
@@ -1985,16 +1932,16 @@ body.gallery-open{overflow:hidden;}
 <div class="bg-white border border-gray-200 rounded-2xl p-5 shadow-sm">
 <div class="flex items-center justify-between mb-3"><span class="font-bold text-brand-blue">★★★★★</span><span class="text-sm text-gray-400">Verified stay</span></div>
 <p class="text-gray-700 leading-relaxed">
-<span data-lang="fr" class="lang-active">Guests love being steps from the beach and close to the Corniche lifestyle.</span>
-<span data-lang="ar" class="font-arabic">Guests love being steps from the beach and close to the Corniche lifestyle.</span>
+<span class="lang-active" data-lang="fr">Guests love being steps from the beach and close to the Corniche lifestyle.</span>
+<span class="font-arabic" data-lang="ar">Guests love being steps from the beach and close to the Corniche lifestyle.</span>
 <span data-lang="en">Guests love being steps from the beach and close to the Corniche lifestyle.</span>
 </p>
 </div>
 <div class="bg-white border border-gray-200 rounded-2xl p-5 shadow-sm">
 <div class="flex items-center justify-between mb-3"><span class="font-bold text-brand-blue">★★★★★</span><span class="text-sm text-gray-400">Verified stay</span></div>
 <p class="text-gray-700 leading-relaxed">
-<span data-lang="fr" class="lang-active">The walkable location and private balcony are frequent highlights in guest feedback.</span>
-<span data-lang="ar" class="font-arabic">The walkable location and private balcony are frequent highlights in guest feedback.</span>
+<span class="lang-active" data-lang="fr">The walkable location and private balcony are frequent highlights in guest feedback.</span>
+<span class="font-arabic" data-lang="ar">The walkable location and private balcony are frequent highlights in guest feedback.</span>
 <span data-lang="en">The walkable location and private balcony are frequent highlights in guest feedback.</span>
 </p>
 </div>
@@ -2013,19 +1960,18 @@ body.gallery-open{overflow:hidden;}
 </span>
 <span class="text-3xl font-bold text-brand-blue">220 TND (~65€)</span>
 </div>
-
 </div>
 </div>
 <div class="border border-gray-300 rounded-xl mb-4 overflow-hidden">
 <div class="flex divide-x divide-gray-300 border-b border-gray-300">
 <div class="p-3 w-1/2">
 <label class="text-xs font-bold uppercase text-gray-800 block cursor-pointer" for="checkin-marsa4">Check-in</label>
-<input class="w-full text-gray-700 text-sm outline-none cursor-pointer bg-transparent mt-1" id="checkin-marsa4" onchange="updateWhatsAppLink('marsa4')" type="date" class="booking-date-input w-full text-gray-700 text-sm outline-none cursor-pointer bg-transparent mt-1"/>
-</div>
+<input class="booking-date-input w-full text-gray-700 text-sm outline-none cursor-pointer bg-transparent mt-1" id="checkin-marsa4" onchange="updateWhatsAppLink('marsa4')" type="date">
+</input></div>
 <div class="p-3 w-1/2">
 <label class="text-xs font-bold uppercase text-gray-800 block cursor-pointer" for="checkout-marsa4">Checkout</label>
-<input class="w-full text-gray-700 text-sm outline-none cursor-pointer bg-transparent mt-1" id="checkout-marsa4" onchange="updateWhatsAppLink('marsa4')" type="date" class="booking-date-input w-full text-gray-700 text-sm outline-none cursor-pointer bg-transparent mt-1"/>
-</div>
+<input class="booking-date-input w-full text-gray-700 text-sm outline-none cursor-pointer bg-transparent mt-1" id="checkout-marsa4" onchange="updateWhatsAppLink('marsa4')" type="date">
+</input></div>
 </div>
 <div class="p-3">
 <label class="text-xs font-bold uppercase text-gray-800 block cursor-pointer" for="guests-marsa4">Guests</label>
@@ -2103,12 +2049,11 @@ body.gallery-open{overflow:hidden;}
 <p class="mb-4">Every detail has been thought of for absolute comfort: premium bedding, state-of-the-art equipment, and a sleek, soothing decor. Immediate access to La Marsa's iconic spots makes this apartment a perfect choice for savoring the best of the coast.</p>
 </div>
 </div>
-
 <section class="mt-10 border-t border-gray-200 pt-8" data-guest-feedback="marsa5">
 <div class="flex items-center justify-between flex-wrap gap-3 mb-5">
 <h3 class="text-2xl font-bold text-brand-blue">
-<span data-lang="fr" class="lang-active">Avis des voyageurs</span>
-<span data-lang="ar" class="font-arabic">آراء الضيوف</span>
+<span class="lang-active" data-lang="fr">Avis des voyageurs</span>
+<span class="font-arabic" data-lang="ar">آراء الضيوف</span>
 <span data-lang="en">Guest feedback</span>
 </h3>
 </div>
@@ -2116,16 +2061,16 @@ body.gallery-open{overflow:hidden;}
 <div class="bg-white border border-gray-200 rounded-2xl p-5 shadow-sm">
 <div class="flex items-center justify-between mb-3"><span class="font-bold text-brand-blue">★★★★★</span><span class="text-sm text-gray-400">Verified stay</span></div>
 <p class="text-gray-700 leading-relaxed">
-<span data-lang="fr" class="lang-active">Guests often point to the beautiful area, beach proximity, and practical work-friendly setup.</span>
-<span data-lang="ar" class="font-arabic">Guests often point to the beautiful area, beach proximity, and practical work-friendly setup.</span>
+<span class="lang-active" data-lang="fr">Guests often point to the beautiful area, beach proximity, and practical work-friendly setup.</span>
+<span class="font-arabic" data-lang="ar">Guests often point to the beautiful area, beach proximity, and practical work-friendly setup.</span>
 <span data-lang="en">Guests often point to the beautiful area, beach proximity, and practical work-friendly setup.</span>
 </p>
 </div>
 <div class="bg-white border border-gray-200 rounded-2xl p-5 shadow-sm">
 <div class="flex items-center justify-between mb-3"><span class="font-bold text-brand-blue">★★★★★</span><span class="text-sm text-gray-400">Verified stay</span></div>
 <p class="text-gray-700 leading-relaxed">
-<span data-lang="fr" class="lang-active">Many stays highlight the relaxing atmosphere and convenient Corniche location.</span>
-<span data-lang="ar" class="font-arabic">Many stays highlight the relaxing atmosphere and convenient Corniche location.</span>
+<span class="lang-active" data-lang="fr">Many stays highlight the relaxing atmosphere and convenient Corniche location.</span>
+<span class="font-arabic" data-lang="ar">Many stays highlight the relaxing atmosphere and convenient Corniche location.</span>
 <span data-lang="en">Many stays highlight the relaxing atmosphere and convenient Corniche location.</span>
 </p>
 </div>
@@ -2144,18 +2089,17 @@ body.gallery-open{overflow:hidden;}
 </span>
 <span class="text-3xl font-bold text-brand-blue">220 TND (~65€)</span>
 </div>
-
 </div>
 </div>
 <div class="border border-gray-300 rounded-xl mb-4 overflow-hidden">
 <div class="flex divide-x divide-gray-300 border-b border-gray-300">
 <div class="p-3 w-1/2">
 <label class="text-xs font-bold uppercase text-gray-800 block cursor-pointer" for="checkin-marsa5">Check-in</label>
-<input class="w-full text-gray-700 text-sm outline-none cursor-pointer bg-transparent mt-1" id="checkin-marsa5" onchange="updateWhatsAppLink('marsa5')" type="date" class="booking-date-input w-full text-gray-700 text-sm outline-none cursor-pointer bg-transparent mt-1"/>
+<input class="booking-date-input w-full text-gray-700 text-sm outline-none cursor-pointer bg-transparent mt-1" id="checkin-marsa5" onchange="updateWhatsAppLink('marsa5')" type="date"/>
 </div>
 <div class="p-3 w-1/2">
 <label class="text-xs font-bold uppercase text-gray-800 block cursor-pointer" for="checkout-marsa5">Checkout</label>
-<input class="w-full text-gray-700 text-sm outline-none cursor-pointer bg-transparent mt-1" id="checkout-marsa5" onchange="updateWhatsAppLink('marsa5')" type="date" class="booking-date-input w-full text-gray-700 text-sm outline-none cursor-pointer bg-transparent mt-1"/>
+<input class="booking-date-input w-full text-gray-700 text-sm outline-none cursor-pointer bg-transparent mt-1" id="checkout-marsa5" onchange="updateWhatsAppLink('marsa5')" type="date"/>
 </div>
 </div>
 <div class="p-3">
@@ -2234,12 +2178,11 @@ body.gallery-open{overflow:hidden;}
 <p class="mb-4">Ideal for large families or discerning groups of friends, this high-end triplex guarantees space, independence, and imperishable memories just minutes from the beach.</p>
 </div>
 </div>
-
 <section class="mt-10 border-t border-gray-200 pt-8" data-guest-feedback="marsa6">
 <div class="flex items-center justify-between flex-wrap gap-3 mb-5">
 <h3 class="text-2xl font-bold text-brand-blue">
-<span data-lang="fr" class="lang-active">Avis des voyageurs</span>
-<span data-lang="ar" class="font-arabic">آراء الضيوف</span>
+<span class="lang-active" data-lang="fr">Avis des voyageurs</span>
+<span class="font-arabic" data-lang="ar">آراء الضيوف</span>
 <span data-lang="en">Guest feedback</span>
 </h3>
 </div>
@@ -2247,16 +2190,16 @@ body.gallery-open{overflow:hidden;}
 <div class="bg-white border border-gray-200 rounded-2xl p-5 shadow-sm">
 <div class="flex items-center justify-between mb-3"><span class="font-bold text-brand-blue">★★★★★</span><span class="text-sm text-gray-400">Verified stay</span></div>
 <p class="text-gray-700 leading-relaxed">
-<span data-lang="fr" class="lang-active">Guests regularly mention the large balcony, city views, and how well the layout works for groups.</span>
-<span data-lang="ar" class="font-arabic">Guests regularly mention the large balcony, city views, and how well the layout works for groups.</span>
+<span class="lang-active" data-lang="fr">Guests regularly mention the large balcony, city views, and how well the layout works for groups.</span>
+<span class="font-arabic" data-lang="ar">Guests regularly mention the large balcony, city views, and how well the layout works for groups.</span>
 <span data-lang="en">Guests regularly mention the large balcony, city views, and how well the layout works for groups.</span>
 </p>
 </div>
 <div class="bg-white border border-gray-200 rounded-2xl p-5 shadow-sm">
 <div class="flex items-center justify-between mb-3"><span class="font-bold text-brand-blue">★★★★★</span><span class="text-sm text-gray-400">Verified stay</span></div>
 <p class="text-gray-700 leading-relaxed">
-<span data-lang="fr" class="lang-active">The spacious triplex format and terrace experience are strong recurring highlights.</span>
-<span data-lang="ar" class="font-arabic">The spacious triplex format and terrace experience are strong recurring highlights.</span>
+<span class="lang-active" data-lang="fr">The spacious triplex format and terrace experience are strong recurring highlights.</span>
+<span class="font-arabic" data-lang="ar">The spacious triplex format and terrace experience are strong recurring highlights.</span>
 <span data-lang="en">The spacious triplex format and terrace experience are strong recurring highlights.</span>
 </p>
 </div>
@@ -2275,18 +2218,17 @@ body.gallery-open{overflow:hidden;}
 </span>
 <span class="text-3xl font-bold text-brand-blue">325 TND (~96€)</span>
 </div>
-
 </div>
 </div>
 <div class="border border-gray-300 rounded-xl mb-4 overflow-hidden">
 <div class="flex divide-x divide-gray-300 border-b border-gray-300">
 <div class="p-3 w-1/2">
 <label class="text-xs font-bold uppercase text-gray-800 block cursor-pointer" for="checkin-marsa6">Check-in</label>
-<input class="w-full text-gray-700 text-sm outline-none cursor-pointer bg-transparent mt-1" id="checkin-marsa6" onchange="updateWhatsAppLink('marsa6')" type="date" class="booking-date-input w-full text-gray-700 text-sm outline-none cursor-pointer bg-transparent mt-1"/>
+<input class="booking-date-input w-full text-gray-700 text-sm outline-none cursor-pointer bg-transparent mt-1" id="checkin-marsa6" onchange="updateWhatsAppLink('marsa6')" type="date"/>
 </div>
 <div class="p-3 w-1/2">
 <label class="text-xs font-bold uppercase text-gray-800 block cursor-pointer" for="checkout-marsa6">Checkout</label>
-<input class="w-full text-gray-700 text-sm outline-none cursor-pointer bg-transparent mt-1" id="checkout-marsa6" onchange="updateWhatsAppLink('marsa6')" type="date" class="booking-date-input w-full text-gray-700 text-sm outline-none cursor-pointer bg-transparent mt-1"/>
+<input class="booking-date-input w-full text-gray-700 text-sm outline-none cursor-pointer bg-transparent mt-1" id="checkout-marsa6" onchange="updateWhatsAppLink('marsa6')" type="date"/>
 </div>
 </div>
 <div class="p-3">
@@ -2369,12 +2311,11 @@ body.gallery-open{overflow:hidden;}
 <p class="mb-4">Live like a true local with the prestigious Zephyr shopping center, lively terraces, and the TGM (train) close at hand. A rare opportunity to marry urban convenience and the magic of the Mediterranean.</p>
 </div>
 </div>
-
 <section class="mt-10 border-t border-gray-200 pt-8" data-guest-feedback="marsa7">
 <div class="flex items-center justify-between flex-wrap gap-3 mb-5">
 <h3 class="text-2xl font-bold text-brand-blue">
-<span data-lang="fr" class="lang-active">Avis des voyageurs</span>
-<span data-lang="ar" class="font-arabic">آراء الضيوف</span>
+<span class="lang-active" data-lang="fr">Avis des voyageurs</span>
+<span class="font-arabic" data-lang="ar">آراء الضيوف</span>
 <span data-lang="en">Guest feedback</span>
 </h3>
 </div>
@@ -2382,16 +2323,16 @@ body.gallery-open{overflow:hidden;}
 <div class="bg-white border border-gray-200 rounded-2xl p-5 shadow-sm">
 <div class="flex items-center justify-between mb-3"><span class="font-bold text-brand-blue">★★★★★</span><span class="text-sm text-gray-400">Verified stay</span></div>
 <p class="text-gray-700 leading-relaxed">
-<span data-lang="fr" class="lang-active">Guests love the beachside setting, nearby shops, and easy access to the area.</span>
-<span data-lang="ar" class="font-arabic">Guests love the beachside setting, nearby shops, and easy access to the area.</span>
+<span class="lang-active" data-lang="fr">Guests love the beachside setting, nearby shops, and easy access to the area.</span>
+<span class="font-arabic" data-lang="ar">Guests love the beachside setting, nearby shops, and easy access to the area.</span>
 <span data-lang="en">Guests love the beachside setting, nearby shops, and easy access to the area.</span>
 </p>
 </div>
 <div class="bg-white border border-gray-200 rounded-2xl p-5 shadow-sm">
 <div class="flex items-center justify-between mb-3"><span class="font-bold text-brand-blue">★★★★★</span><span class="text-sm text-gray-400">Verified stay</span></div>
 <p class="text-gray-700 leading-relaxed">
-<span data-lang="fr" class="lang-active">The convenience of the location and overall comfort are frequent themes in guest feedback.</span>
-<span data-lang="ar" class="font-arabic">The convenience of the location and overall comfort are frequent themes in guest feedback.</span>
+<span class="lang-active" data-lang="fr">The convenience of the location and overall comfort are frequent themes in guest feedback.</span>
+<span class="font-arabic" data-lang="ar">The convenience of the location and overall comfort are frequent themes in guest feedback.</span>
 <span data-lang="en">The convenience of the location and overall comfort are frequent themes in guest feedback.</span>
 </p>
 </div>
@@ -2410,18 +2351,17 @@ body.gallery-open{overflow:hidden;}
 </span>
 <span class="text-3xl font-bold text-brand-blue">220 TND (~65€)</span>
 </div>
-
 </div>
 </div>
 <div class="border border-gray-300 rounded-xl mb-4 overflow-hidden">
 <div class="flex divide-x divide-gray-300 border-b border-gray-300">
 <div class="p-3 w-1/2">
 <label class="text-xs font-bold uppercase text-gray-800 block cursor-pointer" for="checkin-marsa7">Check-in</label>
-<input class="w-full text-gray-700 text-sm outline-none cursor-pointer bg-transparent mt-1" id="checkin-marsa7" onchange="updateWhatsAppLink('marsa7')" type="date" class="booking-date-input w-full text-gray-700 text-sm outline-none cursor-pointer bg-transparent mt-1"/>
+<input class="booking-date-input w-full text-gray-700 text-sm outline-none cursor-pointer bg-transparent mt-1" id="checkin-marsa7" onchange="updateWhatsAppLink('marsa7')" type="date"/>
 </div>
 <div class="p-3 w-1/2">
 <label class="text-xs font-bold uppercase text-gray-800 block cursor-pointer" for="checkout-marsa7">Checkout</label>
-<input class="w-full text-gray-700 text-sm outline-none cursor-pointer bg-transparent mt-1" id="checkout-marsa7" onchange="updateWhatsAppLink('marsa7')" type="date" class="booking-date-input w-full text-gray-700 text-sm outline-none cursor-pointer bg-transparent mt-1"/>
+<input class="booking-date-input w-full text-gray-700 text-sm outline-none cursor-pointer bg-transparent mt-1" id="checkout-marsa7" onchange="updateWhatsAppLink('marsa7')" type="date"/>
 </div>
 </div>
 <div class="p-3">
@@ -2500,12 +2440,11 @@ body.gallery-open{overflow:hidden;}
 <p class="mb-4">Whether you are a business traveler seeking tranquility or a couple wanting to soak up the spirit of La Marsa, this Oasis on the Corniche is the promise of a memorable stay, where modern comfort and Mediterranean charm blend with elegance.</p>
 </div>
 </div>
-
 <section class="mt-10 border-t border-gray-200 pt-8" data-guest-feedback="marsa8">
 <div class="flex items-center justify-between flex-wrap gap-3 mb-5">
 <h3 class="text-2xl font-bold text-brand-blue">
-<span data-lang="fr" class="lang-active">Avis des voyageurs</span>
-<span data-lang="ar" class="font-arabic">آراء الضيوف</span>
+<span class="lang-active" data-lang="fr">Avis des voyageurs</span>
+<span class="font-arabic" data-lang="ar">آراء الضيوف</span>
 <span data-lang="en">Guest feedback</span>
 </h3>
 </div>
@@ -2513,16 +2452,16 @@ body.gallery-open{overflow:hidden;}
 <div class="bg-white border border-gray-200 rounded-2xl p-5 shadow-sm">
 <div class="flex items-center justify-between mb-3"><span class="font-bold text-brand-blue">★★★★★</span><span class="text-sm text-gray-400">Verified stay</span></div>
 <p class="text-gray-700 leading-relaxed">
-<span data-lang="fr" class="lang-active">Guests often highlight the huge private terrace and the short walk to the beach.</span>
-<span data-lang="ar" class="font-arabic">Guests often highlight the huge private terrace and the short walk to the beach.</span>
+<span class="lang-active" data-lang="fr">Guests often highlight the huge private terrace and the short walk to the beach.</span>
+<span class="font-arabic" data-lang="ar">Guests often highlight the huge private terrace and the short walk to the beach.</span>
 <span data-lang="en">Guests often highlight the huge private terrace and the short walk to the beach.</span>
 </p>
 </div>
 <div class="bg-white border border-gray-200 rounded-2xl p-5 shadow-sm">
 <div class="flex items-center justify-between mb-3"><span class="font-bold text-brand-blue">★★★★★</span><span class="text-sm text-gray-400">Verified stay</span></div>
 <p class="text-gray-700 leading-relaxed">
-<span data-lang="fr" class="lang-active">The quiet feel and outdoor space are among the most repeated positives from guest stays.</span>
-<span data-lang="ar" class="font-arabic">The quiet feel and outdoor space are among the most repeated positives from guest stays.</span>
+<span class="lang-active" data-lang="fr">The quiet feel and outdoor space are among the most repeated positives from guest stays.</span>
+<span class="font-arabic" data-lang="ar">The quiet feel and outdoor space are among the most repeated positives from guest stays.</span>
 <span data-lang="en">The quiet feel and outdoor space are among the most repeated positives from guest stays.</span>
 </p>
 </div>
@@ -2541,18 +2480,17 @@ body.gallery-open{overflow:hidden;}
 </span>
 <span class="text-3xl font-bold text-brand-blue">240 TND (~71€)</span>
 </div>
-
 </div>
 </div>
 <div class="border border-gray-300 rounded-xl mb-4 overflow-hidden">
 <div class="flex divide-x divide-gray-300 border-b border-gray-300">
 <div class="p-3 w-1/2">
 <label class="text-xs font-bold uppercase text-gray-800 block cursor-pointer" for="checkin-marsa8">Check-in</label>
-<input class="w-full text-gray-700 text-sm outline-none cursor-pointer bg-transparent mt-1" id="checkin-marsa8" onchange="updateWhatsAppLink('marsa8')" type="date" class="booking-date-input w-full text-gray-700 text-sm outline-none cursor-pointer bg-transparent mt-1"/>
+<input class="booking-date-input w-full text-gray-700 text-sm outline-none cursor-pointer bg-transparent mt-1" id="checkin-marsa8" onchange="updateWhatsAppLink('marsa8')" type="date"/>
 </div>
 <div class="p-3 w-1/2">
 <label class="text-xs font-bold uppercase text-gray-800 block cursor-pointer" for="checkout-marsa8">Checkout</label>
-<input class="w-full text-gray-700 text-sm outline-none cursor-pointer bg-transparent mt-1" id="checkout-marsa8" onchange="updateWhatsAppLink('marsa8')" type="date" class="booking-date-input w-full text-gray-700 text-sm outline-none cursor-pointer bg-transparent mt-1"/>
+<input class="booking-date-input w-full text-gray-700 text-sm outline-none cursor-pointer bg-transparent mt-1" id="checkout-marsa8" onchange="updateWhatsAppLink('marsa8')" type="date"/>
 </div>
 </div>
 <div class="p-3">
@@ -2845,7 +2783,6 @@ body.gallery-open{overflow:hidden;}
             document.getElementById(`wa-btn-${apartment}`).href = `https://wa.me/21653340970?text=${encodedMessage}`;
         }
     </script>
-
 <script>
 document.getElementById("year").textContent = new Date().getFullYear();
 </script>
@@ -2948,13 +2885,8 @@ document.addEventListener('keydown', function(e){
   if(e.key === 'Escape') closeGallery();
 });
 </script>
-
-
 <script src="js/site-sync.js"></script>
-
 <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
-
-
 <script>
 (function(){
   const KEY = 'cosynest-lang';
@@ -2993,8 +2925,6 @@ document.addEventListener('keydown', function(e){
   }
 })();
 </script>
-
-
 <script>
 document.addEventListener('DOMContentLoaded', function(){
   try {
@@ -3003,7 +2933,5 @@ document.addEventListener('DOMContentLoaded', function(){
   } catch(e) {}
 });
 </script>
-
 </body>
-
 </html>
