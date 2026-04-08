@@ -12,11 +12,9 @@
 <meta content="website" property="og:type"/>
 <meta content="cover.jpg" property="og:image"/>
 <meta content="summary_large_image" name="twitter:card"/>
-<!-- Google Fonts: Montserrat for French/English, Tajawal for Arabic -->
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&amp;family=Tajawal:wght@500;700&amp;display=swap" rel="stylesheet"/>
-<!-- Tailwind CSS for styling -->
 <script src="https://cdn.tailwindcss.com"></script>
 <script>
         tailwind.config = {
@@ -43,7 +41,7 @@
             fr: {
                 label: 'Réservation en confiance',
                 hostTitle: 'Ce séjour est géré par des hôtes locaux',
-                hostText: 'L'équipe CosyNest Tunisia accompagne les voyageurs directement, avec réservation simple via WhatsApp et support en français, arabe et anglais.',
+                hostText: 'L\'équipe CosyNest Tunisia accompagne les voyageurs directement, avec réservation simple via WhatsApp et support en français, arabe et anglais.',
                 a: 'Réponse directe des hôtes',
                 b: 'Accompagnement multilingue',
                 c: 'Séjour premium dans un quartier recherché'
@@ -69,7 +67,7 @@
         function injectDetailTrustBlocks() {
             const detailViews = document.querySelectorAll('[id^="detail-view-"]');
             detailViews.forEach(view => {
-                const leftColumn = view.querySelector('.md\:col-span-2');
+                const leftColumn = view.querySelector('.md\\:col-span-2');
                 if (!leftColumn || view.querySelector('.detail-trust-block')) return;
 
                 const ratingText = (view.querySelector('.flex.items-center.gap-4.text-gray-600.mb-8.font-medium span')?.textContent || '').trim();
@@ -649,7 +647,6 @@ body.gallery-open{overflow:hidden;}
 </style>
 </head>
 <body class="bg-brand-light text-brand-dark font-sans antialiased transition-all duration-300">
-<!-- Navigation / Language Switcher -->
 <nav class="site-nav">
 <div class="w-full px-0 py-0">
 <div class="nav-shell nav-inner px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-between gap-3">
@@ -670,11 +667,8 @@ body.gallery-open{overflow:hidden;}
 </div>
 </div>
 </nav>
-<!-- Main Home View -->
 <div id="home-view">
-<!-- Hero Section -->
 <header class="bg-brand-light pb-12 pt-0">
-<!-- Full Width Cover Image -->
 <div class="w-full bg-brand-blue shadow-lg relative overflow-hidden">
 <div class="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-brand-blue/70 to-transparent z-10 pointer-events-none"></div>
 <picture>
@@ -683,15 +677,12 @@ body.gallery-open{overflow:hidden;}
 </picture>
 </div>
 <div class="max-w-4xl mx-auto px-4 text-center mt-12">
-<!-- Subtitles -->
 <h1 class="lang-active text-3xl md:text-5xl text-brand-blue mb-4 font-bold" data-lang="fr">Votre pied-à-terre à Tunis</h1>
 <h1 class="text-3xl md:text-5xl text-brand-blue mb-4 font-bold font-arabic" data-lang="ar">داركم في تونس</h1>
 <h1 class="text-3xl md:text-5xl text-brand-blue mb-4 font-bold" data-lang="en">Your home in Tunis</h1>
-<!-- Taglines -->
 <p class="lang-active text-lg md:text-xl font-medium text-gray-600 mb-10 max-w-2xl mx-auto" data-lang="fr">Location Haut Standing • Confort &amp; Intimité • Sécurité Garantie</p>
 <p class="text-lg md:text-xl font-medium text-gray-600 mb-10 max-w-2xl mx-auto font-arabic" data-lang="ar">شقق فاخرة • راحة وخصوصية • أمان تام</p>
 <p class="text-lg md:text-xl font-medium text-gray-600 mb-10 max-w-2xl mx-auto" data-lang="en">Premium Rentals • Comfort &amp; Privacy • Security Guaranteed</p>
-<!-- CTA Buttons -->
 <div class="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-4 max-w-xl mx-auto mt-2">
 <a class="hero-cta-main" dir="ltr" href="https://wa.me/21653340970" target="_blank">
 <svg class="w-6 h-6" fill="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -844,7 +835,6 @@ body.gallery-open{overflow:hidden;}
 </div>
 </div>
 </section>
-<!-- Amenities Section -->
 <section class="py-14 bg-white border-b border-gray-100">
 <div class="max-w-6xl mx-auto px-4">
 <div class="text-center mb-10">
@@ -937,7 +927,6 @@ body.gallery-open{overflow:hidden;}
 </div>
 </div>
 </section>
-<!-- Properties Section -->
 <section class="py-20 px-4 max-w-6xl mx-auto" id="properties-section">
 <div class="text-center mb-16">
 <h2 class="lang-active text-3xl md:text-4xl font-bold text-brand-blue mb-4" data-lang="fr">Découvrez Nos Appartements</h2>
@@ -945,12 +934,10 @@ body.gallery-open{overflow:hidden;}
 <h2 class="text-3xl md:text-4xl font-bold text-brand-blue mb-4" data-lang="en">Discover Our Apartments</h2>
 <div class="w-24 h-1 bg-brand-gold mx-auto rounded-full"></div>
 </div>
-<!-- Home Page Grid of Apartments -->
 <div class="grid md:grid-cols-2 gap-10">
-<!-- Apartment 1: La Marsa -->
 <div class="bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-100 flex flex-col group hover:shadow-xl transition-shadow">
 <div class="relative h-64 overflow-hidden bg-gray-200">
-<img alt="Appartement La Marsa" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="../uploads/elegance-la-marsa/elegance-01.webp">
+<img alt="Appartement La Marsa" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="../uploads/elegance-la-marsa/01.webp">
 <div class="absolute top-4 right-4 bg-white/90 backdrop-blur px-4 py-2 rounded-full text-brand-blue font-bold shadow-sm" dir="ltr">
                             La Marsa
                         </div>
@@ -979,10 +966,9 @@ body.gallery-open{overflow:hidden;}
 </a>
 </div>
 </div>
-<!-- Apartment 3: La Marsa 2nd Floor -->
 <div class="bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-100 flex flex-col group hover:shadow-xl transition-shadow">
 <div class="relative h-64 overflow-hidden bg-gray-200">
-<img alt="Appartement La Marsa 2nd Floor" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="../uploads/nid-perche-la-marsa/2em-01.webp">
+<img alt="Appartement La Marsa 2nd Floor" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="../uploads/nid-perche-la-marsa/01.webp">
 <div class="absolute top-4 right-4 bg-white/90 backdrop-blur px-4 py-2 rounded-full text-brand-blue font-bold shadow-sm" dir="ltr">
                             La Marsa
                         </div>
@@ -1011,10 +997,9 @@ body.gallery-open{overflow:hidden;}
 </a>
 </div>
 </div>
-<!-- Apartment 4: La Marsa 1st Floor -->
 <div class="bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-100 flex flex-col group hover:shadow-xl transition-shadow">
 <div class="relative h-64 overflow-hidden bg-gray-200">
-<img alt="Appartement La Marsa 1st Floor" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="../uploads/ecrin-lumineux/ecrin-01.webp"/>
+<img alt="Appartement La Marsa 1st Floor" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="../uploads/ecrin-lumineux/01.webp"/>
 <div class="absolute top-4 right-4 bg-white/90 backdrop-blur px-4 py-2 rounded-full text-brand-blue font-bold shadow-sm" dir="ltr">
                             La Marsa
                         </div>
@@ -1043,10 +1028,9 @@ body.gallery-open{overflow:hidden;}
 </a>
 </div>
 </div>
-<!-- Apartment 5: La Marsa Corniche -->
 <div class="bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-100 flex flex-col group hover:shadow-xl transition-shadow">
 <div class="relative h-64 overflow-hidden bg-gray-200">
-<img alt="Appartement La Marsa Corniche" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="../uploads/azur-corniche/azur-01.webp"/>
+<img alt="Appartement La Marsa Corniche" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="../uploads/azur-corniche/01.webp"/>
 <div class="absolute top-4 right-4 bg-white/90 backdrop-blur px-4 py-2 rounded-full text-brand-blue font-bold shadow-sm" dir="ltr">
                             La Marsa Corniche
                         </div>
@@ -1075,10 +1059,9 @@ body.gallery-open{overflow:hidden;}
 </a>
 </div>
 </div>
-<!-- Apartment 6: La Marsa Corniche Plage -->
 <div class="bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-100 flex flex-col group hover:shadow-xl transition-shadow">
 <div class="relative h-64 overflow-hidden bg-gray-200">
-<img alt="Appartement Corniche Plage" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="../uploads/brise-marine/brise-01.webp"/>
+<img alt="Appartement Corniche Plage" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="../uploads/brise-marine/01.webp"/>
 <div class="absolute top-4 right-4 bg-white/90 backdrop-blur px-4 py-2 rounded-full text-brand-blue font-bold shadow-sm" dir="ltr">
                             La Marsa Corniche
                         </div>
@@ -1107,10 +1090,9 @@ body.gallery-open{overflow:hidden;}
 </a>
 </div>
 </div>
-<!-- Apartment 7: Sidi Bou Said Village S2 -->
 <div class="bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-100 flex flex-col group hover:shadow-xl transition-shadow">
 <div class="relative h-64 overflow-hidden bg-gray-200">
-<img alt="Appartement Sidi Bou Said Village" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="../uploads/toit-sidi-bou-said/toit-01.webp"/>
+<img alt="Appartement Sidi Bou Said Village" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="../uploads/toit-sidi-bou-said/01.webp"/>
 <div class="absolute top-4 right-4 bg-white/90 backdrop-blur px-4 py-2 rounded-full text-brand-blue font-bold shadow-sm" dir="ltr">
                             Sidi Bou Said
                         </div>
@@ -1139,10 +1121,9 @@ body.gallery-open{overflow:hidden;}
 </a>
 </div>
 </div>
-<!-- Apartment 8: Sidi Bou Said S2 Ground Floor -->
 <div class="bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-100 flex flex-col group hover:shadow-xl transition-shadow">
 <div class="relative h-64 overflow-hidden bg-gray-200">
-<img alt="Appartement Sidi Bou Said Rez-de-chaussée" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="../uploads/rez-de-jardin/rdc-01.webp"/>
+<img alt="Appartement Sidi Bou Said Rez-de-chaussée" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="../uploads/rez-de-jardin/01.webp"/>
 <div class="absolute top-4 right-4 bg-white/90 backdrop-blur px-4 py-2 rounded-full text-brand-blue font-bold shadow-sm" dir="ltr">
                             Sidi Bou Said
                         </div>
@@ -1171,10 +1152,9 @@ body.gallery-open{overflow:hidden;}
 </a>
 </div>
 </div>
-<!-- Apartment 9: Sidi Bou Said Duplex -->
 <div class="bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-100 flex flex-col group hover:shadow-xl transition-shadow">
 <div class="relative h-64 overflow-hidden bg-gray-200">
-<img alt="Appartement Sidi Bou Said Duplex" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="../uploads/duplex-prestige/duplex-01.webp"/>
+<img alt="Appartement Sidi Bou Said Duplex" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="../uploads/duplex-prestige/01.webp"/>
 <div class="absolute top-4 right-4 bg-white/90 backdrop-blur px-4 py-2 rounded-full text-brand-blue font-bold shadow-sm" dir="ltr">
                             Sidi Bou Said
                         </div>
@@ -1203,10 +1183,9 @@ body.gallery-open{overflow:hidden;}
 </a>
 </div>
 </div>
-<!-- Apartment 10: Sidi Bou Said S3 -->
 <div class="bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-100 flex flex-col group hover:shadow-xl transition-shadow">
 <div class="relative h-64 overflow-hidden bg-gray-200">
-<img alt="Appartement Sidi Bou Said S3" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="../uploads/belvedere-360/belvedere-01.webp"/>
+<img alt="Appartement Sidi Bou Said S3" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="../uploads/belvedere-360/01.webp"/>
 <div class="absolute top-4 right-4 bg-white/90 backdrop-blur px-4 py-2 rounded-full text-brand-blue font-bold shadow-sm" dir="ltr">
                             Sidi Bou Said
                         </div>
@@ -1235,10 +1214,9 @@ body.gallery-open{overflow:hidden;}
 </a>
 </div>
 </div>
-<!-- Apartment 11: La Marsa Triplex -->
 <div class="bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-100 flex flex-col group hover:shadow-xl transition-shadow">
 <div class="relative h-64 overflow-hidden bg-gray-200">
-<img alt="Appartement La Marsa Triplex" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="../uploads/grand-triplex/triplex-01.webp"/>
+<img alt="Appartement La Marsa Triplex" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="../uploads/grand-triplex/01.webp"/>
 <div class="absolute top-4 right-4 bg-white/90 backdrop-blur px-4 py-2 rounded-full text-brand-blue font-bold shadow-sm" dir="ltr">
                             La Marsa
                         </div>
@@ -1267,10 +1245,9 @@ body.gallery-open{overflow:hidden;}
 </a>
 </div>
 </div>
-<!-- Apartment 12: La Marsa Corniche Beach -->
 <div class="bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-100 flex flex-col group hover:shadow-xl transition-shadow">
 <div class="relative h-64 overflow-hidden bg-gray-200">
-<img alt="Appartement La Marsa Corniche Plage" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="../uploads/perle-de-la-plage/perle-01.webp"/>
+<img alt="Appartement La Marsa Corniche Plage" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="../uploads/perle-de-la-plage/01.webp"/>
 <div class="absolute top-4 right-4 bg-white/90 backdrop-blur px-4 py-2 rounded-full text-brand-blue font-bold shadow-sm" dir="ltr">
                             La Marsa Corniche
                         </div>
@@ -1299,10 +1276,9 @@ body.gallery-open{overflow:hidden;}
 </a>
 </div>
 </div>
-<!-- Apartment 13: La Marsa Spacious Corniche -->
 <div class="bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-100 flex flex-col group hover:shadow-xl transition-shadow">
 <div class="relative h-64 overflow-hidden bg-gray-200">
-<img alt="Appartement Spacieux La Marsa Corniche" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="../uploads/oasis-de-la-corniche/oasis-01.webp"/>
+<img alt="Appartement Spacieux La Marsa Corniche" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="../uploads/oasis-de-la-corniche/01.webp"/>
 <div class="absolute top-4 right-4 bg-white/90 backdrop-blur px-4 py-2 rounded-full text-brand-blue font-bold shadow-sm" dir="ltr">
                             La Marsa Plage
                         </div>
@@ -1333,11 +1309,7 @@ body.gallery-open{overflow:hidden;}
 </div>
 </div>
 </section>
-</div> <!-- End of home-view -->
-<!-- ============================================== -->
-<!-- SIDI BOU SAID DETAIL VIEWS                     -->
-<!-- ============================================== -->
-<div class="hidden pt-24 pb-20 px-4 max-w-6xl mx-auto" id="detail-view-sidi2">
+</div> <div class="hidden pt-24 pb-20 px-4 max-w-6xl mx-auto" id="detail-view-sidi2">
 <button class="mb-6 flex items-center gap-2 text-brand-blue font-bold hover:text-brand-gold transition-colors" onclick="goHome()">
 <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" stroke-linecap="round" stroke-linejoin="round"></path></svg>
 <span class="lang-active" data-lang="fr">Retour aux appartements</span><span class="font-arabic" data-lang="ar">العودة إلى الشقق</span><span data-lang="en">Back to apartments</span>
@@ -1429,10 +1401,6 @@ body.gallery-open{overflow:hidden;}
 </div>
 </div>
 </section></div><div><div class="bg-white border border-gray-200 rounded-2xl shadow-xl p-6 booking-card"><div class="flex items-baseline gap-2 mb-6"><span class="text-gray-500 text-sm font-medium">From</span><span class="text-3xl font-bold text-brand-blue">290 TND (~85€)</span></div><div class="border border-gray-300 rounded-xl mb-4 overflow-hidden"><div class="flex divide-x divide-gray-300 border-b border-gray-300"><div class="p-3 w-1/2"><label class="text-xs font-bold uppercase text-gray-800 block" for="checkin-sidi5">Check-in</label><input class="w-full text-gray-700 text-sm outline-none bg-transparent mt-1" id="checkin-sidi5" onchange="updateWhatsAppLink('sidi5')" type="date"/></div><div class="p-3 w-1/2"><label class="text-xs font-bold uppercase text-gray-800 block" for="checkout-sidi5">Checkout</label><input class="w-full text-gray-700 text-sm outline-none bg-transparent mt-1" id="checkout-sidi5" onchange="updateWhatsAppLink('sidi5')" type="date"/></div></div><div class="p-3"><label class="text-xs font-bold uppercase text-gray-800 block" for="guests-sidi5">Guests</label><select class="w-full text-gray-700 text-sm outline-none bg-transparent mt-1" id="guests-sidi5" onchange="updateWhatsAppLink('sidi5')"><option value="1">1 guest</option><option value="2">2 guests</option><option value="3">3 guests</option><option value="4">4 guests</option><option value="5">5 guests</option></select></div></div><a class="wa-primary-btn block w-full text-center text-white py-4 rounded-xl font-bold text-lg transition-all mb-4 shadow-md" href="https://wa.me/21653340970?text=Bonjour" id="wa-btn-sidi5" target="_blank"><span class="lang-active" data-lang="fr">Vérifier la disponibilité</span><span class="font-arabic" data-lang="ar">تحقق من التوفر عبر واتساب</span><span data-lang="en">Check availability on WhatsApp</span></a></div></div></div></div>
-<!-- Apartment Detail Views -->
-<!-- ============================================== -->
-<!-- LA MARSA DETAIL VIEW                           -->
-<!-- ============================================== -->
 <div class="hidden pt-24 pb-20 px-4 max-w-6xl mx-auto" id="detail-view-marsa">
 <button class="mb-6 flex items-center gap-2 text-brand-blue font-bold hover:text-brand-gold transition-colors" onclick="goHome()">
 <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" stroke-linecap="round" stroke-linejoin="round"></path></svg>
@@ -1588,9 +1556,6 @@ body.gallery-open{overflow:hidden;}
 </div>
 </div>
 </div>
-<!-- ============================================== -->
-<!-- LA MARSA 2 (2ND FLOOR) DETAIL VIEW             -->
-<!-- ============================================== -->
 <div class="hidden pt-24 pb-20 px-4 max-w-6xl mx-auto" id="detail-view-marsa2">
 <button class="mb-6 flex items-center gap-2 text-brand-blue font-bold hover:text-brand-gold transition-colors" onclick="goHome()">
 <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" stroke-linecap="round" stroke-linejoin="round"></path></svg>
@@ -1726,9 +1691,6 @@ body.gallery-open{overflow:hidden;}
 </div>
 </div>
 </div>
-<!-- ============================================== -->
-<!-- LA MARSA 3 (1ST FLOOR) DETAIL VIEW             -->
-<!-- ============================================== -->
 <div class="hidden pt-24 pb-20 px-4 max-w-6xl mx-auto" id="detail-view-marsa3">
 <button class="mb-6 flex items-center gap-2 text-brand-blue font-bold hover:text-brand-gold transition-colors" onclick="goHome()">
 <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" stroke-linecap="round" stroke-linejoin="round"></path></svg>
@@ -1861,9 +1823,6 @@ body.gallery-open{overflow:hidden;}
 </div>
 </div>
 </div>
-<!-- ============================================== -->
-<!-- LA MARSA CORNICHE DETAIL VIEW                  -->
-<!-- ============================================== -->
 <div class="hidden pt-24 pb-20 px-4 max-w-6xl mx-auto" id="detail-view-marsa4">
 <button class="mb-6 flex items-center gap-2 text-brand-blue font-bold hover:text-brand-gold transition-colors" onclick="goHome()">
 <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" stroke-linecap="round" stroke-linejoin="round"></path></svg>
@@ -1990,9 +1949,6 @@ body.gallery-open{overflow:hidden;}
 </div>
 </div>
 </div>
-<!-- ============================================== -->
-<!-- LA MARSA CORNICHE PLAGE DETAIL VIEW (marsa5)   -->
-<!-- ============================================== -->
 <div class="hidden pt-24 pb-20 px-4 max-w-6xl mx-auto" id="detail-view-marsa5">
 <button class="mb-6 flex items-center gap-2 text-brand-blue font-bold hover:text-brand-gold transition-colors" onclick="goHome()">
 <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" stroke-linecap="round" stroke-linejoin="round"></path></svg>
@@ -2119,9 +2075,6 @@ body.gallery-open{overflow:hidden;}
 </div>
 </div>
 </div>
-<!-- ============================================== -->
-<!-- LA MARSA TRIPLEX DETAIL VIEW (marsa6)          -->
-<!-- ============================================== -->
 <div class="hidden pt-24 pb-20 px-4 max-w-6xl mx-auto" id="detail-view-marsa6">
 <button class="mb-6 flex items-center gap-2 text-brand-blue font-bold hover:text-brand-gold transition-colors" onclick="goHome()">
 <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" stroke-linecap="round" stroke-linejoin="round"></path></svg>
@@ -2252,9 +2205,6 @@ body.gallery-open{overflow:hidden;}
 </div>
 </div>
 </div>
-<!-- ============================================== -->
-<!-- LA MARSA CORNICHE BEACH DETAIL VIEW (marsa7)   -->
-<!-- ============================================== -->
 <div class="hidden pt-24 pb-20 px-4 max-w-6xl mx-auto" id="detail-view-marsa7">
 <button class="mb-6 flex items-center gap-2 text-brand-blue font-bold hover:text-brand-gold transition-colors" onclick="goHome()">
 <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" stroke-linecap="round" stroke-linejoin="round"></path></svg>
@@ -2381,9 +2331,6 @@ body.gallery-open{overflow:hidden;}
 </div>
 </div>
 </div>
-<!-- ============================================== -->
-<!-- LA MARSA SPACIOUS CORNICHE DETAIL VIEW (marsa8)-->
-<!-- ============================================== -->
 <div class="hidden pt-24 pb-20 px-4 max-w-6xl mx-auto" id="detail-view-marsa8">
 <button class="mb-6 flex items-center gap-2 text-brand-blue font-bold hover:text-brand-gold transition-colors" onclick="goHome()">
 <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" stroke-linecap="round" stroke-linejoin="round"></path></svg>
@@ -2423,515 +2370,4 @@ body.gallery-open{overflow:hidden;}
 <span data-lang="en">2 guests • 1 bedroom • 1 bed • 1 bath</span>
 </p>
 </div>
-<div class="mb-10 text-gray-700 leading-relaxed text-lg">
-<div class="lang-active" data-lang="fr">
-<p class="mb-4">Véritable éden urbain, cet appartement extraordinairement spacieux séduit instantanément par sa magnifique terrasse privée, pensée comme une véritable pièce à vivre à ciel ouvert.</p>
-<p class="mb-4">Situé à seulement 200 mètres de la plage, ce cocon S+1 allie indépendance totale et design élégant. L'espace de vie s'ouvre généreusement sur l'extérieur, inondant chaque recoin de lumière naturelle. La grande chambre est un véritable sanctuaire de repos, tandis que la cuisine entièrement aménagée invite à la créativité culinaire.</p>
-<p class="mb-4">Que vous soyez un voyageur d'affaires en quête de tranquillité ou un couple désireux de s'imprégner de l'esprit de La Marsa, cette Oasis sur la Corniche est la promesse d'un séjour mémorable, où confort moderne et charme méditerranéen se fondent avec élégance.</p>
-</div>
-<div class="font-arabic" data-lang="ar">
-<p class="mb-4">جنة حضرية حقيقية، تجذب هذه الشقة الفسيحة بشكل غير عادي الانتباه على الفور بتراسها الخاص الرائع، المصمم كغرفة معيشة حقيقية في الهواء الطلق.</p>
-<p class="mb-4">يقع هذا الملاذ (S+1) على بعد 200 متر فقط من الشاطئ، ويجمع بين الاستقلالية التامة والتصميم الأنيق. تنفتح مساحة المعيشة بسخاء على الخارج، لتغمر كل زاوية بالضوء الطبيعي. تعتبر غرفة النوم الكبيرة ملاذًا حقيقيًا للراحة، بينما يدعو المطبخ المجهز بالكامل إلى الإبداع في الطهي.</p>
-<p class="mb-4">سواء كنت مسافرًا بغرض العمل تبحث عن الهدوء أو زوجين يرغبان في الاستمتاع بروح المرسى، فإن هذه الواحة على الكورنيش تعد بإقامة لا تُنسى، حيث تمتزج الراحة الحديثة بسحر البحر الأبيض المتوسط بأناقة.</p>
-</div>
-<div data-lang="en">
-<p class="mb-4">A true urban Eden, this extraordinarily spacious apartment instantly captivates with its magnificent private terrace, designed as a true open-air living room.</p>
-<p class="mb-4">Located just 200 meters from the beach, this S+1 cocoon combines total independence and elegant design. The living space opens generously to the outside, flooding every corner with natural light. The large bedroom is a true sanctuary of rest, while the fully equipped kitchen invites culinary creativity.</p>
-<p class="mb-4">Whether you are a business traveler seeking tranquility or a couple wanting to soak up the spirit of La Marsa, this Oasis on the Corniche is the promise of a memorable stay, where modern comfort and Mediterranean charm blend with elegance.</p>
-</div>
-</div>
-<section class="mt-10 border-t border-gray-200 pt-8" data-guest-feedback="marsa8">
-<div class="flex items-center justify-between flex-wrap gap-3 mb-5">
-<h3 class="text-2xl font-bold text-brand-blue">
-<span class="lang-active" data-lang="fr">Avis des voyageurs</span>
-<span class="font-arabic" data-lang="ar">آراء الضيوف</span>
-<span data-lang="en">Guest feedback</span>
-</h3>
-</div>
-<div class="grid md:grid-cols-2 gap-4">
-<div class="bg-white border border-gray-200 rounded-2xl p-5 shadow-sm">
-<div class="flex items-center justify-between mb-3"><span class="font-bold text-brand-blue">★★★★★</span><span class="text-sm text-gray-400">Verified stay</span></div>
-<p class="text-gray-700 leading-relaxed">
-<span class="lang-active" data-lang="fr">Guests often highlight the huge private terrace and the short walk to the beach.</span>
-<span class="font-arabic" data-lang="ar">Guests often highlight the huge private terrace and the short walk to the beach.</span>
-<span data-lang="en">Guests often highlight the huge private terrace and the short walk to the beach.</span>
-</p>
-</div>
-<div class="bg-white border border-gray-200 rounded-2xl p-5 shadow-sm">
-<div class="flex items-center justify-between mb-3"><span class="font-bold text-brand-blue">★★★★★</span><span class="text-sm text-gray-400">Verified stay</span></div>
-<p class="text-gray-700 leading-relaxed">
-<span class="lang-active" data-lang="fr">The quiet feel and outdoor space are among the most repeated positives from guest stays.</span>
-<span class="font-arabic" data-lang="ar">The quiet feel and outdoor space are among the most repeated positives from guest stays.</span>
-<span data-lang="en">The quiet feel and outdoor space are among the most repeated positives from guest stays.</span>
-</p>
-</div>
-</div>
-</section>
-</div>
-<div>
-<div class="bg-white border border-gray-200 rounded-2xl shadow-xl p-6 booking-card">
-<div class="flex justify-between items-end mb-6">
-<div class="flex flex-col">
-<div class="flex items-baseline gap-2">
-<span class="text-gray-500 text-sm font-medium">
-<span class="lang-active" data-lang="fr">À partir de</span>
-<span class="font-arabic" data-lang="ar">ابتداءً من</span>
-<span data-lang="en">From</span>
-</span>
-<span class="text-3xl font-bold text-brand-blue">240 TND (~71€)</span>
-</div>
-</div>
-</div>
-<div class="border border-gray-300 rounded-xl mb-4 overflow-hidden">
-<div class="flex divide-x divide-gray-300 border-b border-gray-300">
-<div class="p-3 w-1/2">
-<label class="text-xs font-bold uppercase text-gray-800 block cursor-pointer" for="checkin-marsa8">Check-in</label>
-<input class="booking-date-input w-full text-gray-700 text-sm outline-none cursor-pointer bg-transparent mt-1" id="checkin-marsa8" onchange="updateWhatsAppLink('marsa8')" type="date"/>
-</div>
-<div class="p-3 w-1/2">
-<label class="text-xs font-bold uppercase text-gray-800 block cursor-pointer" for="checkout-marsa8">Checkout</label>
-<input class="booking-date-input w-full text-gray-700 text-sm outline-none cursor-pointer bg-transparent mt-1" id="checkout-marsa8" onchange="updateWhatsAppLink('marsa8')" type="date"/>
-</div>
-</div>
-<div class="p-3">
-<label class="text-xs font-bold uppercase text-gray-800 block cursor-pointer" for="guests-marsa8">Guests</label>
-<select class="w-full text-gray-700 text-sm outline-none cursor-pointer bg-transparent mt-1" id="guests-marsa8" onchange="updateWhatsAppLink('marsa8')">
-<option value="1">1 guest</option>
-<option value="2">2 guests</option>
-</select>
-</div>
-</div>
-<a class="wa-primary-btn block w-full text-center text-white py-4 rounded-xl font-bold text-lg transition-all mb-4 shadow-md" href="https://wa.me/21653340970?text=Bonjour" id="wa-btn-marsa8" target="_blank">
-<span class="lang-active" data-lang="fr">Vérifier la disponibilité</span>
-<span class="font-arabic" data-lang="ar">تحقق من التوفر عبر واتساب</span>
-<span data-lang="en">Check availability on WhatsApp</span>
-</a>
-</div>
-</div>
-</div>
-</div>
-<!-- Footer -->
-<footer class="bg-brand-blue text-white py-12 px-4 border-t-4 border-brand-gold mt-12">
-<div class="max-w-4xl mx-auto text-center flex flex-col items-center">
-<h2 class="text-2xl font-bold mb-4" dir="ltr">CosyNest Tunisia</h2>
-<p class="lang-active text-gray-300 mb-6 max-w-md" data-lang="fr">Votre partenaire de confiance pour des locations de vacances de qualité dans la Tunisie.</p>
-<p class="text-gray-300 mb-6 max-w-md font-arabic text-lg" data-lang="ar">شريكك الموثوق لإيجارات العطلات المريحة والآمنة في الضاحية الشمالية لتونس.</p>
-<p class="text-gray-300 mb-6 max-w-md" data-lang="en">Your trusted partner for quality and secure vacation rentals in the northern suburbs of Tunis.</p>
-<div class="flex flex-col md:flex-row gap-6 items-center justify-center mb-8" dir="ltr">
-<div class="flex items-center gap-2 text-brand-gold">
-<svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-<path d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" stroke-linecap="round" stroke-linejoin="round"></path>
-<path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" stroke-linecap="round" stroke-linejoin="round"></path>
-</svg>
-<span>Tunis, Tunisie</span>
-</div>
-<div class="flex items-center gap-2 text-brand-gold font-bold">
-<svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-<path d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-2.896-1.596-5.265-3.965-6.861-6.86l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" stroke-linecap="round" stroke-linejoin="round"></path>
-</svg>
-<span>+216 53 340 970</span>
-</div>
-</div>
-<p class="text-sm text-gray-400" dir="ltr">© <span id="year"></span> CosyNest Tunisia.</p>
-</div>
-</footer>
-<!-- Fullscreen Image Gallery Modal -->
-<div class="hidden fixed inset-0 bg-black bg-opacity-95 z-50 flex items-center justify-center backdrop-blur-sm" id="gallery-modal">
-<button class="absolute top-6 right-6 text-white hover:text-gray-300 focus:outline-none" onclick="closeGallery()">
-<svg class="w-10 h-10" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M6 18L18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
-</button>
-<button class="absolute left-4 md:left-10 text-white hover:text-gray-300 focus:outline-none" onclick="prevImage()">
-<svg class="w-10 h-10 md:w-16 md:h-16" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M15 19l-7-7 7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
-</button>
-<img class="max-h-[85vh] max-w-[85vw] object-contain select-none shadow-2xl rounded-sm transition-opacity duration-300" id="gallery-active-img" src=""/>
-<button class="absolute right-4 md:right-10 text-white hover:text-gray-300 focus:outline-none" onclick="nextImage()">
-<svg class="w-10 h-10 md:w-16 md:h-16" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
-</button>
-<div class="absolute bottom-6 text-white text-lg font-bold tracking-widest bg-black bg-opacity-50 px-4 py-1 rounded-full" id="gallery-counter">1 / 5</div>
-</div>
-<!-- Script for Language Switching and Navigation -->
-<script>
-        // Gallery Data: High Resolution image URLs
-        const galleries = {
-            'marsa': [
-                "https://a0.muscache.com/im/pictures/9290366c-badd-41ed-b673-f4c8d3415244.jpg?im_w=1200",
-                "https://a0.muscache.com/im/pictures/98d2d287-b896-4249-8dcf-3de545236df1.jpg?im_w=1200",
-                "https://a0.muscache.com/im/pictures/5a7c1c88-1fb9-4da9-836b-8ee491c5f5e3.jpg?im_w=1200",
-                "https://a0.muscache.com/im/pictures/5cfe67de-a58f-4a38-8a56-26e7a2ec7753.jpg?im_w=1200",
-                "https://a0.muscache.com/im/pictures/96929557-3285-49b1-80cd-fdb1120357c9.jpg?im_w=1200",
-                "https://a0.muscache.com/im/pictures/d8382a6f-46e3-497e-b5e1-ba1450f0139b.jpg?im_w=1200",
-                "https://a0.muscache.com/im/pictures/3bd753ba-3743-4887-8837-26644547c96a.jpg?im_w=1200"
-            ],
-            'marsa2': [
-                "https://a0.muscache.com/im/pictures/miso/Hosting-583787765176810175/original/c7badc6a-c0b0-4c3f-bab3-07165563e5f6.jpeg?im_w=1200",
-                "https://a0.muscache.com/im/pictures/miso/Hosting-583787765176810175/original/20660e9c-de3f-475e-9ab9-67d72f8d0707.jpeg?im_w=1200",
-                "https://a0.muscache.com/im/pictures/miso/Hosting-583787765176810175/original/ad46253b-fd03-41f0-88c4-51a0e8677f9e.jpeg?im_w=1200",
-                "https://a0.muscache.com/im/pictures/miso/Hosting-583787765176810175/original/e57cd4c8-c0f7-49cd-8a52-c6f913b7805b.jpeg?im_w=1200",
-                "https://a0.muscache.com/im/pictures/miso/Hosting-583787765176810175/original/e588c121-d262-4f3d-aac2-7dd36a0a2c91.jpeg?im_w=1200",
-                "https://a0.muscache.com/im/pictures/miso/Hosting-583787765176810175/original/f9957c27-eb89-4041-a8a9-d419342f44a3.jpeg?im_w=1200",
-                "https://a0.muscache.com/im/pictures/miso/Hosting-583787765176810175/original/58a723d0-1703-4b20-81b6-dcd8a0ee13a9.jpeg?im_w=1200"
-            ],
-            'marsa3': [
-                "https://a0.muscache.com/im/pictures/miso/Hosting-45330248/original/2b56d4ea-1b6f-42a5-9edf-ff17251fff3a.jpeg?im_w=1200",
-                "https://a0.muscache.com/im/pictures/miso/Hosting-45330248/original/c326b190-64b3-42b9-b260-7e67bf1b0579.jpeg?im_w=1200",
-                "https://a0.muscache.com/im/pictures/miso/Hosting-45330248/original/ae3c0d09-aa17-448a-8834-ae5f06f35e66.jpeg?im_w=1200",
-                "https://a0.muscache.com/im/pictures/miso/Hosting-45330248/original/a82795b7-e283-4ef4-9dc2-e8c2da2d1782.jpeg?im_w=1200",
-                "https://a0.muscache.com/im/pictures/miso/Hosting-45330248/original/362f5d18-f76b-44c2-b6a4-5ee68b3266ab.jpeg?im_w=1200",
-                "https://a0.muscache.com/im/pictures/miso/Hosting-45330248/original/27445b2c-d125-4326-94a5-2f47886422e8.jpeg?im_w=1200",
-                "https://a0.muscache.com/im/pictures/miso/Hosting-45330248/original/2af77865-189e-4ded-a5e7-e13173d8c85b.jpeg?im_w=1200"
-            ],
-            'marsa4': [
-                "https://a0.muscache.com/im/pictures/miso/Hosting-758300689459776355/original/5039366a-d111-40df-ac12-a77231d5e5a5.jpeg?im_w=1200",
-                "https://a0.muscache.com/im/pictures/miso/Hosting-758300689459776355/original/09502239-107a-46a3-bccc-c7f102296ce8.jpeg?im_w=1200",
-                "https://a0.muscache.com/im/pictures/miso/Hosting-758300689459776355/original/ede3a0b6-0393-4fdf-8f93-4d84df2be754.jpeg?im_w=1200",
-                "https://a0.muscache.com/im/pictures/miso/Hosting-758300689459776355/original/06f68434-67d1-4a89-9f56-5a275fb6674d.jpeg?im_w=1200",
-                "https://a0.muscache.com/im/pictures/miso/Hosting-758300689459776355/original/b3b3ff53-0260-44fd-845f-5192cc84d704.jpeg?im_w=1200"
-            ],
-            'marsa5': [
-                "https://a0.muscache.com/im/pictures/miso/Hosting-771370503826948643/original/153ad520-0b20-40dc-9dd7-4f5d9884c1f4.jpeg?im_w=1200",
-                "https://a0.muscache.com/im/pictures/miso/Hosting-771370503826948643/original/bf6b872b-a853-4623-a608-25aea8f3f64b.jpeg?im_w=1200",
-                "https://a0.muscache.com/im/pictures/miso/Hosting-771370503826948643/original/1a70c7c1-4640-4d78-a5b8-d2a56800f8b6.jpeg?im_w=1200",
-                "https://a0.muscache.com/im/pictures/miso/Hosting-771370503826948643/original/f95552b5-a0e3-439f-a843-3f1d31e4d5d3.jpeg?im_w=1200",
-                "https://a0.muscache.com/im/pictures/miso/Hosting-771370503826948643/original/23950c70-068b-4c23-9f0b-cb0b265da8cd.jpeg?im_w=1200"
-            ],
-            'marsa6': [
-                "https://a0.muscache.com/im/pictures/hosting/Hosting-42120347/original/f7fd792d-28e6-40ce-a22c-875433875412.jpeg?im_w=1200",
-                "https://a0.muscache.com/im/pictures/hosting/Hosting-42120347/original/51794834-d5d2-4f54-b7ed-ac87e41ffa37.jpeg?im_w=1200",
-                "https://a0.muscache.com/im/pictures/hosting/Hosting-42120347/original/557a517b-a1ca-49c1-849c-e3d6d5211970.jpeg?im_w=1200",
-                "https://a0.muscache.com/im/pictures/hosting/Hosting-42120347/original/80869bf5-a2e7-40a2-b1f4-6c80d5cde685.jpeg?im_w=1200",
-                "https://a0.muscache.com/im/pictures/hosting/Hosting-42120347/original/a5e41fc6-762b-40a2-9167-79e16d42729a.jpeg?im_w=1200",
-                "https://a0.muscache.com/im/pictures/3c7086f3-f4b9-48fe-96cb-6ba500d012be.jpg?im_w=1200",
-                "https://a0.muscache.com/im/pictures/5b7e997c-c207-4c04-a809-f71c79a658ad.jpg?im_w=1200",
-                "https://a0.muscache.com/im/pictures/df29b1e3-fc73-4a05-9a06-2b8f67fe0ab6.jpg?im_w=1200"
-            ],
-            'marsa7': [
-                "https://a0.muscache.com/im/pictures/miso/Hosting-809257071180127452/original/b8a2f4ef-65cb-4a61-ad0a-60744ab6f120.jpeg?im_w=1200",
-                "https://a0.muscache.com/im/pictures/miso/Hosting-809257071180127452/original/16c530d5-f66d-4bad-ab92-beddf1c80673.jpeg?im_w=1200",
-                "https://a0.muscache.com/im/pictures/miso/Hosting-809257071180127452/original/a9d5b8e3-1c6f-40ae-b369-1950d11a5297.jpeg?im_w=1200",
-                "https://a0.muscache.com/im/pictures/miso/Hosting-809257071180127452/original/5fe2b5d1-ab70-47f6-8696-b1dc5593ef36.jpeg?im_w=1200",
-                "https://a0.muscache.com/im/pictures/miso/Hosting-809257071180127452/original/cde22efc-0cb8-4f8c-8a70-aa07c86b7aca.jpeg?im_w=1200"
-            ],
-            'marsa8': [
-                "https://a0.muscache.com/im/pictures/05707336-5237-453a-aa1a-e89916348398.jpg?im_w=1200",
-                "https://a0.muscache.com/im/pictures/399f2c63-a253-4672-af9b-a16d30119ba4.jpg?im_w=1200",
-                "https://a0.muscache.com/im/pictures/d1deff21-6c6d-45eb-9dbf-c12f6f8095e5.jpg?im_w=1200",
-                "https://a0.muscache.com/im/pictures/ff261d25-32a3-470c-b3e1-69dc8a7317d1.jpg?im_w=1200",
-                "https://a0.muscache.com/im/pictures/0f1117a6-1616-48c7-8820-0a7dedad0bb3.jpg?im_w=1200"
-            ],
-            'sidi2': [
-                "https://a0.muscache.com/im/pictures/miso/Hosting-1126537860666644929/original/2aae4593-f76c-4802-8397-7234486c2ef3.jpeg?im_w=1200",
-                "https://a0.muscache.com/im/pictures/c9c904e9-2b55-4dee-830a-b9f0ab6b957c.jpg?im_w=1200",
-                "https://a0.muscache.com/im/pictures/miso/Hosting-1126537860666644929/original/57afdf8e-38a9-49a0-9aad-113f49b04410.jpeg?im_w=1200",
-                "https://a0.muscache.com/im/pictures/miso/Hosting-1126537860666644929/original/648f647b-bbd3-4496-a032-1f572834a928.jpeg?im_w=1200",
-                "https://a0.muscache.com/im/pictures/miso/Hosting-1126537860666644929/original/201ccb07-cd5f-4cb8-8a2b-b12ddc279049.jpeg?im_w=1200"
-            ],
-            'sidi3': [
-                "https://a0.muscache.com/im/pictures/miso/Hosting-1131326661308342331/original/ce7636cf-a112-4345-8484-922c55f49293.jpeg?im_w=1200",
-                "https://a0.muscache.com/im/pictures/miso/Hosting-1131326661308342331/original/7ef932f5-2677-43ee-a880-3e6ba10cd718.jpeg?im_w=1200",
-                "https://a0.muscache.com/im/pictures/miso/Hosting-1131326661308342331/original/d864e549-6778-4bf4-af4b-40f14ed1cebf.jpeg?im_w=1200",
-                "https://a0.muscache.com/im/pictures/miso/Hosting-1131326661308342331/original/6eb9ff2b-a773-4455-b35d-9988af9d69b0.jpeg?im_w=1200",
-                "https://a0.muscache.com/im/pictures/edd122ad-0e12-4bf7-8a6c-a528a1b29992.jpg?im_w=1200",
-                "https://a0.muscache.com/im/pictures/miso/Hosting-1131326661308342331/original/9b69dcf6-d604-4616-abf8-fbc813331d26.jpeg?im_w=1200"
-            ],
-            'sidi4': [
-                "https://a0.muscache.com/im/pictures/miso/Hosting-49770055/original/7745c319-419b-4fbd-ba26-9cdf29a3da56.jpeg?im_w=1200",
-                "https://a0.muscache.com/im/pictures/miso/Hosting-49770055/original/5deda3c5-bbb7-4f48-8022-7381b74947e6.jpeg?im_w=1200",
-                "https://a0.muscache.com/im/pictures/miso/Hosting-49770055/original/b18a310d-5760-49bf-a99c-7682613456d3.jpeg?im_w=1200",
-                "https://a0.muscache.com/im/pictures/miso/Hosting-49770055/original/076f7477-4289-402f-8cb8-939055234e50.jpeg?im_w=1200",
-                "https://a0.muscache.com/im/pictures/miso/Hosting-49770055/original/cf1d95a5-c639-458c-b62c-1db3ef854d7e.jpeg?im_w=1200",
-                "https://a0.muscache.com/im/pictures/miso/Hosting-49770055/original/5e232249-b424-4084-8eb0-5578965e9dae.jpeg?im_w=1200",
-                "https://a0.muscache.com/im/pictures/miso/Hosting-49770055/original/1e81315c-1409-4201-b379-a83aeb835fd7.jpeg?im_w=1200"
-            ],
-            'sidi5': [
-                "https://a0.muscache.com/im/pictures/4934cee2-53ce-4cf1-80a1-c995cc033812.jpg?im_w=1200",
-                "https://a0.muscache.com/im/pictures/miso/Hosting-31122684/original/5621f55e-a952-462a-bcae-9d2ea89872e2.jpeg?im_w=1200",
-                "https://a0.muscache.com/im/pictures/miso/Hosting-31122684/original/3ca1b7c0-aa3b-4ed8-83ba-9af5b90da59c.jpeg?im_w=1200",
-                "https://a0.muscache.com/im/pictures/miso/Hosting-31122684/original/66bd60bc-753b-4b5e-809c-f1231f05236a.jpeg?im_w=1200",
-                "https://a0.muscache.com/im/pictures/2d7bf251-b561-4c91-83cf-5bced272ea51.jpg?im_w=1200",
-                "https://a0.muscache.com/im/pictures/e5e5f7bf-24df-446c-a84a-bc5bd04d0727.jpg?im_w=1200",
-                "https://a0.muscache.com/im/pictures/a723e91f-6708-41e3-ae4b-f5b0c3091f65.jpg?im_w=1200"
-            ]
-        };
-        
-        let currentGallery = [];
-        let currentImageIndex = 0;
-
-        function openGallery(apartmentId, index) {
-            currentGallery = galleries[apartmentId];
-            currentImageIndex = index;
-            document.getElementById('gallery-modal').classList.remove('hidden');
-            updateGalleryImage();
-        }
-
-        function closeGallery() {
-            document.getElementById('gallery-modal').classList.add('hidden');
-        }
-
-        function nextImage() {
-            currentImageIndex = (currentImageIndex + 1) % currentGallery.length;
-            updateGalleryImage();
-        }
-
-        function prevImage() {
-            currentImageIndex = (currentImageIndex - 1 + currentGallery.length) % currentGallery.length;
-            updateGalleryImage();
-        }
-
-        function updateGalleryImage() {
-            document.getElementById('gallery-active-img').src = currentGallery[currentImageIndex];
-            document.getElementById('gallery-counter').innerText = `${currentImageIndex + 1} / ${currentGallery.length}`;
-        }
-
-        // Keyboard navigation for the gallery
-        document.addEventListener('keydown', function(event) {
-            const modal = document.getElementById('gallery-modal');
-            if (!modal.classList.contains('hidden')) {
-                if (event.key === "Escape") closeGallery();
-                if (event.key === "ArrowRight") nextImage();
-                if (event.key === "ArrowLeft") prevImage();
-            }
-        });
-
-        function switchLang(lang) {
-            try { localStorage.setItem('cosynest-lang', lang); } catch(e) {}
-            const root = document.getElementById('html-root') || document.documentElement;
-            root.setAttribute('lang', lang);
-            document.documentElement.setAttribute('lang', lang);
-
-            if (lang === 'ar') {
-                root.setAttribute('dir', 'rtl');
-                document.documentElement.setAttribute('dir', 'rtl');
-                document.body.classList.add('font-arabic');
-            } else {
-                root.setAttribute('dir', 'ltr');
-                document.documentElement.setAttribute('dir', 'ltr');
-                document.body.classList.remove('font-arabic');
-            }
-
-            const allElements = document.querySelectorAll('[data-lang]');
-            allElements.forEach(el => {
-                const active = el.getAttribute('data-lang') === lang;
-                el.classList.toggle('lang-active', active);
-                if (active) {
-                    el.style.display = '';
-                } else {
-                    el.style.display = 'none';
-                }
-            });
-
-            document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
-            const activeBtn = document.getElementById('btn-' + lang);
-            if (activeBtn) activeBtn.classList.add('active');
-        }
-
-        // Functions for navigating between home and detail views
-        function showDetail(apartmentId) {
-            const homeView = document.getElementById('home-view');
-            const target = document.getElementById('detail-view-' + apartmentId);
-            document.querySelectorAll('[id^="detail-view-"]').forEach(el => el.classList.add('hidden'));
-            if (!target) {
-                console.warn('Missing detail view for:', apartmentId);
-                return;
-            }
-            if (homeView) homeView.classList.add('hidden');
-            target.classList.remove('hidden');
-            target.style.display = 'block';
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
-
-        function goHome() {
-            document.querySelectorAll('[id^="detail-view-"]').forEach(el => el.classList.add('hidden'));
-            const homeView = document.getElementById('home-view');
-            if (homeView) homeView.classList.remove('hidden');
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
-
-        // Auto-Generate WhatsApp Message with Dates
-        function updateWhatsAppLink(apartment) {
-            const checkin = document.getElementById(`checkin-${apartment}`).value;
-            const checkout = document.getElementById(`checkout-${apartment}`).value;
-            const guests = document.getElementById(`guests-${apartment}`).value;
-            
-            let aptName = '';
-            if(apartment === 'marsa') aptName = "L'Élégance de La Marsa";
-            else if(apartment === 'marsa2') aptName = "Le Nid Perché de La Marsa";
-            else if(apartment === 'marsa3') aptName = "L'Écrin Lumineux (La Marsa)";
-            else if(apartment === 'marsa4') aptName = "L'Azur de la Corniche";
-            else if(apartment === 'marsa5') aptName = "La Brise Marine (Corniche)";
-            else if(apartment === 'marsa6') aptName = "Le Grand Triplex Marsois";
-            else if(apartment === 'marsa7') aptName = "La Perle de la Plage";
-            else if(apartment === 'marsa8') aptName = "L'Oasis de la Corniche";
-            else if(apartment === 'sidi2') aptName = "Le Toit de Sidi Bou Saïd";
-            else if(apartment === 'sidi3') aptName = "La Villa Rez-de-Jardin";
-            else if(apartment === 'sidi4') aptName = "Le Duplex Prestige";
-            else if(apartment === 'sidi5') aptName = "Le Belvédère Sidi Bou Saïd";
-
-            let message = `Bonjour ! Je suis intéressé(e) par la location de l'appartement : ${aptName}`;
-            
-            if (checkin && checkout) {
-                message += ` du ${checkin} au ${checkout}`;
-            }
-            
-            if (guests) {
-                message += ` pour ${guests} voyageur(s).`;
-            }
-            
-            message += ` Est-il disponible ?`;
-            
-            // Encode the message so it works perfectly in the WhatsApp URL
-            const encodedMessage = encodeURIComponent(message);
-            document.getElementById(`wa-btn-${apartment}`).href = `https://wa.me/21653340970?text=${encodedMessage}`;
-        }
-    </script>
-<script>
-document.getElementById("year").textContent = new Date().getFullYear();
-</script>
-<script>
-function sharePage(){
-  const url = window.location.href;
-  const title = document.title;
-  if (navigator.share && !url.startsWith('file://')) {
-    navigator.share({title, url}).catch(()=>{});
-    return;
-  }
-  if (navigator.clipboard && window.isSecureContext) {
-    navigator.clipboard.writeText(url)
-      .then(()=>alert('Link copied'))
-      .catch(()=>window.prompt('Copy this link:', url));
-  } else {
-    window.prompt('Copy this link:', url);
-  }
-}
-</script>
-<script>
-function ensureGalleryModal(){
-  let modal = document.getElementById('global-gallery-modal');
-  if(modal) return modal;
-  modal = document.createElement('div');
-  modal.id = 'global-gallery-modal';
-  modal.className = 'gallery-backdrop';
-  modal.innerHTML = `
-    <div class="gallery-panel">
-      <div class="gallery-head">
-        <div class="gallery-title" id="gallery-title">Photos</div>
-        <button class="gallery-close" onclick="closeGallery()">Close</button>
-      </div>
-      <div class="gallery-main" id="gallery-main"></div>
-      <div class="gallery-note" id="gallery-note"></div>
-    </div>`;
-  modal.addEventListener('click', function(e){
-    if(e.target === modal) closeGallery();
-  });
-  document.body.appendChild(modal);
-  return modal;
-}
-function collectGalleryImages(group){
-  const urls = [];
-  const seen = new Set();
-  document.querySelectorAll('[onclick*="openGallery(\'' + group + '\'"]').forEach(el => {
-    const img = el.tagName.toLowerCase() === 'img' ? el : el.querySelector('img');
-    if(img && img.src && !seen.has(img.src)){
-      seen.add(img.src);
-      urls.push(img.src);
-    }
-  });
-  // also collect from direct page section if any other images exist in same detail page
-  const page = document.getElementById('detail-view-' + group);
-  if(page){
-    page.querySelectorAll('img').forEach(img => {
-      if(img.src && !seen.has(img.src)){
-        seen.add(img.src);
-        urls.push(img.src);
-      }
-    });
-  }
-  return urls;
-}
-function openGallery(group, startIndex){
-  const modal = ensureGalleryModal();
-  const main = modal.querySelector('#gallery-main');
-  const titleEl = modal.querySelector('#gallery-title');
-  const noteEl = modal.querySelector('#gallery-note');
-  const page = document.getElementById('detail-view-' + group);
-  let title = 'Photos';
-  if(page){
-    const activeTitle = page.querySelector('h1.lang-active, h1[data-lang="fr"]');
-    if(activeTitle) title = activeTitle.textContent.trim();
-  }
-  const urls = collectGalleryImages(group);
-  titleEl.textContent = title;
-  main.innerHTML = '';
-  urls.forEach((src, i) => {
-    const im = document.createElement('img');
-    im.src = src;
-    im.alt = title + ' photo ' + (i + 1);
-    im.loading = 'lazy';
-    main.appendChild(im);
-  });
-  noteEl.textContent = urls.length ? (urls.length + ' photos') : 'No photos available';
-  modal.classList.add('open');
-  document.body.classList.add('gallery-open');
-  setTimeout(() => {
-    const imgs = main.querySelectorAll('img');
-    if(imgs[startIndex]) imgs[startIndex].scrollIntoView({behavior:'smooth', block:'center'});
-  }, 50);
-}
-function closeGallery(){
-  const modal = document.getElementById('global-gallery-modal');
-  if(modal) modal.classList.remove('open');
-  document.body.classList.remove('gallery-open');
-}
-document.addEventListener('keydown', function(e){
-  if(e.key === 'Escape') closeGallery();
-});
-</script>
-<script src="js/site-sync.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
-<script>
-(function(){
-  const KEY = 'cosynest-lang';
-
-  function setActiveLanguage(lang){
-    document.documentElement.lang = lang;
-    document.querySelectorAll('[data-lang]').forEach(el => {
-      const active = el.getAttribute('data-lang') === lang;
-      el.classList.toggle('lang-active', active);
-      if (active) {
-        el.style.display = '';
-      } else {
-        el.style.display = 'none';
-      }
-    });
-  }
-
-  const previousSwitchLang = window.switchLang;
-  window.switchLang = function(lang){
-    try { localStorage.setItem(KEY, lang); } catch(e) {}
-    if (typeof previousSwitchLang === 'function') {
-      previousSwitchLang(lang);
-    }
-    setActiveLanguage(lang);
-  };
-
-  function initSavedLanguage(){
-    const saved = localStorage.getItem(KEY) || 'fr';
-    window.switchLang(saved);
-  }
-
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initSavedLanguage);
-  } else {
-    initSavedLanguage();
-  }
-})();
-</script>
-<script>
-document.addEventListener('DOMContentLoaded', function(){
-  try {
-    const savedLang = localStorage.getItem('cosynest-lang') || 'fr';
-    if (typeof switchLang === 'function') switchLang(savedLang);
-  } catch(e) {}
-});
-</script>
-</body>
-</html>
+<div class="mb-10 text-gray-
