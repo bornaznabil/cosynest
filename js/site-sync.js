@@ -114,6 +114,14 @@
     return Math.max(0, Math.round((b - a) / 86400000));
   }
 
+  function naturalImageSort(list){
+    return [...list].sort((a, b) => {
+      const aName = String(a).split('/').pop() || String(a);
+      const bName = String(b).split('/').pop() || String(b);
+      return aName.localeCompare(bName, undefined, { numeric: true, sensitivity: 'base' });
+    });
+  }
+
   function normalizeImage(u){
     if (!u) return u;
     if (u.startsWith('http://') || u.startsWith('https://')) return u;
@@ -381,9 +389,10 @@
   if (window.collectGalleryImages) {
     const originalCollect = window.collectGalleryImages;
     window.collectGalleryImages = function(group){
-      const base = originalCollect(group) || [];
+      const base = (originalCollect(group) || []).map(normalizeImage);
       const extra = (apt.extraImages || []).map(normalizeImage);
-      return [...new Set([...base, ...extra].filter(Boolean))];
+      const merged = [...new Set([...base, ...extra].filter(Boolean))];
+      return naturalImageSort(merged);
     };
   }
 })();
