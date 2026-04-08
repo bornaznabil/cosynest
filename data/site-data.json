@@ -21,12 +21,12 @@
       "priceEUR": 50,
       "icalUrl": "",
       "extraImages": [
-        "/uploads/elegance-la-marsa/elegance-01.webp",
-        "/uploads/elegance-la-marsa/elegance-02.webp",
-        "/uploads/elegance-la-marsa/elegance-03.webp",
-        "/uploads/elegance-la-marsa/elegance-04.webp",
-        "/uploads/elegance-la-marsa/elegance-05.webp",
-        "/uploads/elegance-la-marsa/elegance-06.webp"
+        "/uploads/elegance-la-marsa/01.webp",
+        "/uploads/elegance-la-marsa/02.webp",
+        "/uploads/elegance-la-marsa/03.webp",
+        "/uploads/elegance-la-marsa/04.webp",
+        "/uploads/elegance-la-marsa/05.webp",
+        "/uploads/elegance-la-marsa/06.webp"
       ],
       "deleted": false,
       "manualBlocks": [],
@@ -35,36 +35,12 @@
       "airbnbRating": 4.85,
       "airbnbReviewCount": 87,
       "airbnbReviews": [
-        {
-          "name": "Mélanie",
-          "text": "Excellent séjour, logement propre et décoré avec goût.",
-          "date": "janvier 2026"
-        },
-        {
-          "name": "Majdi",
-          "text": "Bien placé, propre, accès facile.",
-          "date": "mars 2025"
-        },
-        {
-          "name": "David",
-          "text": "Très bon appartement, pratique et confortable.",
-          "date": "mai 2025"
-        },
-        {
-          "name": "Mohamed",
-          "text": "Conforme à la description, bonne communication.",
-          "date": "décembre 2025"
-        },
-        {
-          "name": "Reza",
-          "text": "Appartement élégant et bien rangé, hôte très poli et facilement joignable.",
-          "date": "mai 2025"
-        },
-        {
-          "name": "Rezgui",
-          "text": "Hôtes très accueillants et réactifs, je recommande vivement !",
-          "date": "avril 2025"
-        }
+        { "name": "Mélanie", "text": "Excellent séjour, logement propre et décoré avec goût.", "date": "janvier 2026" },
+        { "name": "Majdi", "text": "Bien placé, propre, accès facile.", "date": "mars 2025" },
+        { "name": "David", "text": "Très bon appartement, pratique et confortable.", "date": "mai 2025" },
+        { "name": "Mohamed", "text": "Conforme à la description, bonne communication.", "date": "décembre 2025" },
+        { "name": "Reza", "text": "Appartement élégant et bien rangé, hôte très poli et facilement joignable.", "date": "mai 2025" },
+        { "name": "Rezgui", "text": "Hôtes très accueillants et réactifs, je recommande vivement !", "date": "avril 2025" }
       ]
     },
     "nid-perche-la-marsa": {
@@ -79,20 +55,20 @@
       "priceEUR": 50,
       "icalUrl": "",
       "extraImages": [
-        "/uploads/nid-perche-la-marsa/2em-01.webp",
-        "/uploads/nid-perche-la-marsa/2em-02.webp",
-        "/uploads/nid-perche-la-marsa/2em-03.webp",
-        "/uploads/nid-perche-la-marsa/2em-04.webp",
-        "/uploads/nid-perche-la-marsa/2em-05.webp",
-        "/uploads/nid-perche-la-marsa/2em-06.webp",
-        "/uploads/nid-perche-la-marsa/2em-07.webp",
-        "/uploads/nid-perche-la-marsa/2em-08.webp",
-        "/uploads/nid-perche-la-marsa/2em-09.webp",
-        "/uploads/nid-perche-la-marsa/2em-10.webp",
-        "/uploads/nid-perche-la-marsa/2em-11.webp",
-        "/uploads/nid-perche-la-marsa/2em-12.webp",
-        "/uploads/nid-perche-la-marsa/2em-13.webp",
-        "/uploads/nid-perche-la-marsa/2em-14.webp"
+        "/uploads/nid-perche-la-marsa/01.webp",
+        "/uploads/nid-perche-la-marsa/02.webp",
+        "/uploads/nid-perche-la-marsa/03.webp",
+        "/uploads/nid-perche-la-marsa/04.webp",
+        "/uploads/nid-perche-la-marsa/05.webp",
+        "/uploads/nid-perche-la-marsa/06.webp",
+        "/uploads/nid-perche-la-marsa/07.webp",
+        "/uploads/nid-perche-la-marsa/08.webp",
+        "/uploads/nid-perche-la-marsa/09.webp",
+        "/uploads/nid-perche-la-marsa/10.webp",
+        "/uploads/nid-perche-la-marsa/11.webp",
+        "/uploads/nid-perche-la-marsa/12.webp",
+        "/uploads/nid-perche-la-marsa/13.webp",
+        "/uploads/nid-perche-la-marsa/14.webp"
       ],
       "deleted": false,
       "manualBlocks": [],
@@ -101,36 +77,12 @@
       "airbnbRating": 4.91,
       "airbnbReviewCount": 65,
       "airbnbReviews": [
-        {
-          "name": "Cédric",
-          "text": "Logement impeccable, très spacieux et conforme à la description.",
-          "date": "Il y a 1 semaine"
-        },
-        {
-          "name": "Swann",
-          "text": "Séjour parfait. Logement calme, propre et très bien équipé.",
-          "date": "juin 2025"
-        },
-        {
-          "name": "Allan",
-          "text": "Très bon séjour, bel appartement.",
-          "date": "février 2026"
-        },
-        {
-          "name": "Samuel",
-          "text": "Super logement, fidèle à l’annonce, très calme.",
-          "date": "janvier 2026"
-        },
-        {
-          "name": "Adonis",
-          "text": "Bien situé, calme et pratique.",
-          "date": "juin 2025"
-        },
-        {
-          "name": "Ciara",
-          "text": "Parfait, fidèle aux photos, excellent emplacement.",
-          "date": "décembre 2025"
-        }
+        { "name": "Cédric", "text": "Logement impeccable, très spacieux et conforme à la description.", "date": "Il y a 1 semaine" },
+        { "name": "Swann", "text": "Séjour parfait. Logement calme, propre et très bien équipé.", "date": "juin 2025" },
+        { "name": "Allan", "text": "Très bon séjour, bel appartement.", "date": "février 2026" },
+        { "name": "Samuel", "text": "Super logement, fidèle à l’annonce, très calme.", "date": "janvier 2026" },
+        { "name": "Adonis", "text": "Bien situé, calme et pratique.", "date": "juin 2025" },
+        { "name": "Ciara", "text": "Parfait, fidèle aux photos, excellent emplacement.", "date": "décembre 2025" }
       ]
     },
     "ecrin-lumineux": {
@@ -145,18 +97,18 @@
       "priceEUR": 50,
       "icalUrl": "",
       "extraImages": [
-        "/uploads/ecrin-lumineux/ecrin-01.webp",
-        "/uploads/ecrin-lumineux/ecrin-02.webp",
-        "/uploads/ecrin-lumineux/ecrin-03.webp",
-        "/uploads/ecrin-lumineux/ecrin-04.webp",
-        "/uploads/ecrin-lumineux/ecrin-05.webp",
-        "/uploads/ecrin-lumineux/ecrin-06.webp",
-        "/uploads/ecrin-lumineux/ecrin-07.webp",
-        "/uploads/ecrin-lumineux/ecrin-08.webp",
-        "/uploads/ecrin-lumineux/ecrin-09.webp",
-        "/uploads/ecrin-lumineux/ecrin-10.webp",
-        "/uploads/ecrin-lumineux/ecrin-11.webp",
-        "/uploads/ecrin-lumineux/ecrin-12.webp"
+        "/uploads/ecrin-lumineux/01.webp",
+        "/uploads/ecrin-lumineux/02.webp",
+        "/uploads/ecrin-lumineux/03.webp",
+        "/uploads/ecrin-lumineux/04.webp",
+        "/uploads/ecrin-lumineux/05.webp",
+        "/uploads/ecrin-lumineux/06.webp",
+        "/uploads/ecrin-lumineux/07.webp",
+        "/uploads/ecrin-lumineux/08.webp",
+        "/uploads/ecrin-lumineux/09.webp",
+        "/uploads/ecrin-lumineux/10.webp",
+        "/uploads/ecrin-lumineux/11.webp",
+        "/uploads/ecrin-lumineux/12.webp"
       ],
       "deleted": false,
       "manualBlocks": [],
@@ -165,36 +117,12 @@
       "airbnbRating": 4.84,
       "airbnbReviewCount": 83,
       "airbnbReviews": [
-        {
-          "name": "Mohamed",
-          "text": "Bel appartement. J’ai été ravi de mon séjour. Check-in autonome très facile.",
-          "date": "novembre 2025"
-        },
-        {
-          "name": "Sami",
-          "text": "J’ai été ravi de mon séjour chez Nour et Nabil. Appartement propre et bien entretenu.",
-          "date": "juillet 2025"
-        },
-        {
-          "name": "Rebin",
-          "text": "Appartement très propre, avec un bon emplacement. Hôte très serviable.",
-          "date": "février 2026"
-        },
-        {
-          "name": "Khouloud",
-          "text": "C’est notre deuxième séjour. Appartement spacieux avec tout le nécessaire fourni.",
-          "date": "juillet 2025"
-        },
-        {
-          "name": "Pierre",
-          "text": "Communication excellente et appartement tout à fait conforme au descriptif.",
-          "date": "décembre 2024"
-        },
-        {
-          "name": "Rebin",
-          "text": "Nous avons prolongé de 3 jours. Appartement très propre et hôtes très serviables.",
-          "date": "février 2026"
-        }
+        { "name": "Mohamed", "text": "Bel appartement. J’ai été ravi de mon séjour. Check-in autonome très facile.", "date": "novembre 2025" },
+        { "name": "Sami", "text": "J’ai été ravi de mon séjour chez Nour et Nabil. Appartement propre et bien entretenu.", "date": "juillet 2025" },
+        { "name": "Rebin", "text": "Appartement très propre, avec un bon emplacement. Hôte très serviable.", "date": "février 2026" },
+        { "name": "Khouloud", "text": "C’est notre deuxième séjour. Appartement spacieux avec tout le nécessaire fourni.", "date": "juillet 2025" },
+        { "name": "Pierre", "text": "Communication excellente et appartement tout à fait conforme au descriptif.", "date": "décembre 2024" },
+        { "name": "Rebin", "text": "Nous avons prolongé de 3 jours. Appartement très propre et hôtes très serviables.", "date": "février 2026" }
       ]
     },
     "azur-corniche": {
@@ -209,16 +137,16 @@
       "priceEUR": 45,
       "icalUrl": "",
       "extraImages": [
-        "/uploads/azur-corniche/azur-01.webp",
-        "/uploads/azur-corniche/azur-02.webp",
-        "/uploads/azur-corniche/azur-03.webp",
-        "/uploads/azur-corniche/azur-04.webp",
-        "/uploads/azur-corniche/azur-05.webp",
-        "/uploads/azur-corniche/azur-06.webp",
-        "/uploads/azur-corniche/azur-07.webp",
-        "/uploads/azur-corniche/azur-08.webp",
-        "/uploads/azur-corniche/azur-09.webp",
-        "/uploads/azur-corniche/azur-10.webp"
+        "/uploads/azur-corniche/01.webp",
+        "/uploads/azur-corniche/02.webp",
+        "/uploads/azur-corniche/03.webp",
+        "/uploads/azur-corniche/04.webp",
+        "/uploads/azur-corniche/05.webp",
+        "/uploads/azur-corniche/06.webp",
+        "/uploads/azur-corniche/07.webp",
+        "/uploads/azur-corniche/08.webp",
+        "/uploads/azur-corniche/09.webp",
+        "/uploads/azur-corniche/10.webp"
       ],
       "deleted": false,
       "manualBlocks": [],
@@ -227,36 +155,12 @@
       "airbnbRating": 4.94,
       "airbnbReviewCount": 16,
       "airbnbReviews": [
-        {
-          "name": "Myrna",
-          "text": "Excellents hôtes, communication fluide et flexibilité appréciée. Recommandé !",
-          "date": "décembre 2025"
-        },
-        {
-          "name": "Kevin",
-          "text": "Excellent emplacement, communication et expérience. Je recommande vivement cet appartement.",
-          "date": "avril 2025"
-        },
-        {
-          "name": "Swann",
-          "text": "Excellent séjour dans cet appartement. Conforme à l’annonce, propre et bien situé.",
-          "date": "février 2025"
-        },
-        {
-          "name": "Colin",
-          "text": "Excellente location pour moi. Très propre, spacieux et calme. Je reviendrai !",
-          "date": "avril 2025"
-        },
-        {
-          "name": "Selim",
-          "text": "Très joli appartement avec balcon à Marsa plage. Avec tout ce dont on a besoin.",
-          "date": "avril 2024"
-        },
-        {
-          "name": "Wassim",
-          "text": "Séjour fantastique, emplacement parfait, arrivée autonome très simple.",
-          "date": "avril 2024"
-        }
+        { "name": "Myrna", "text": "Excellents hôtes, communication fluide et flexibilité appréciée. Recommandé !", "date": "décembre 2025" },
+        { "name": "Kevin", "text": "Excellent emplacement, communication et expérience. Je recommande vivement cet appartement.", "date": "avril 2025" },
+        { "name": "Swann", "text": "Excellent séjour dans cet appartement. Conforme à l’annonce, propre et bien situé.", "date": "février 2025" },
+        { "name": "Colin", "text": "Excellente location pour moi. Très propre, spacieux et calme. Je reviendrai !", "date": "avril 2025" },
+        { "name": "Selim", "text": "Très joli appartement avec balcon à Marsa plage. Avec tout ce dont on a besoin.", "date": "avril 2024" },
+        { "name": "Wassim", "text": "Séjour fantastique, emplacement parfait, arrivée autonome très simple.", "date": "avril 2024" }
       ]
     },
     "brise-marine": {
@@ -271,16 +175,16 @@
       "priceEUR": 45,
       "icalUrl": "",
       "extraImages": [
-        "/uploads/brise-marine/brise-01.webp",
-        "/uploads/brise-marine/brise-02.webp",
-        "/uploads/brise-marine/brise-03.webp",
-        "/uploads/brise-marine/brise-04.webp",
-        "/uploads/brise-marine/brise-05.webp",
-        "/uploads/brise-marine/brise-06.webp",
-        "/uploads/brise-marine/brise-07.webp",
-        "/uploads/brise-marine/brise-08.webp",
-        "/uploads/brise-marine/brise-09.webp",
-        "/uploads/brise-marine/brise-10.webp"
+        "/uploads/brise-marine/01.webp",
+        "/uploads/brise-marine/02.webp",
+        "/uploads/brise-marine/03.webp",
+        "/uploads/brise-marine/04.webp",
+        "/uploads/brise-marine/05.webp",
+        "/uploads/brise-marine/06.webp",
+        "/uploads/brise-marine/07.webp",
+        "/uploads/brise-marine/08.webp",
+        "/uploads/brise-marine/09.webp",
+        "/uploads/brise-marine/10.webp"
       ],
       "deleted": false,
       "manualBlocks": [],
@@ -289,36 +193,12 @@
       "airbnbRating": 4.9,
       "airbnbReviewCount": 92,
       "airbnbReviews": [
-        {
-          "name": "Azdine",
-          "text": "Très agréable séjour, logement conforme aux photos, proche des commodités.",
-          "date": "Il y a 3 semaines"
-        },
-        {
-          "name": "Sophia",
-          "text": "Séjour agréable, hôte disponible, appartement fidèle à la description.",
-          "date": "janvier 2026"
-        },
-        {
-          "name": "Ghassen",
-          "text": "Très propre, confortable et bien équipé. Hôtes très accueillants.",
-          "date": "Il y a 1 semaine"
-        },
-        {
-          "name": "Jessica",
-          "text": "Très confortable, tout était parfait. Aucun problème.",
-          "date": "février 2026"
-        },
-        {
-          "name": "Nidhal",
-          "text": "Appartement sympa et proche de toute commodité. Je recommande.",
-          "date": "janvier 2026"
-        },
-        {
-          "name": "Sandra",
-          "text": "Excellent ! Hôtes disponibles et bienveillants. Nous sommes ravis de notre séjour.",
-          "date": "octobre 2025"
-        }
+        { "name": "Azdine", "text": "Très agréable séjour, logement conforme aux photos, proche des commodités.", "date": "Il y a 3 semaines" },
+        { "name": "Sophia", "text": "Séjour agréable, hôte disponible, appartement fidèle à la description.", "date": "janvier 2026" },
+        { "name": "Ghassen", "text": "Très propre, confortable et bien équipé. Hôtes très accueillants.", "date": "Il y a 1 semaine" },
+        { "name": "Jessica", "text": "Très confortable, tout était parfait. Aucun problème.", "date": "février 2026" },
+        { "name": "Nidhal", "text": "Appartement sympa et proche de toute commodité. Je recommande.", "date": "janvier 2026" },
+        { "name": "Sandra", "text": "Excellent ! Hôtes disponibles et bienveillants. Nous sommes ravis de notre séjour.", "date": "octobre 2025" }
       ]
     },
     "grand-triplex": {
@@ -333,15 +213,15 @@
       "priceEUR": 70,
       "icalUrl": "",
       "extraImages": [
-        "/uploads/grand-triplex/triplex-01.webp",
-        "/uploads/grand-triplex/triplex-02.webp",
-        "/uploads/grand-triplex/triplex-03.webp",
-        "/uploads/grand-triplex/triplex-04.webp",
-        "/uploads/grand-triplex/triplex-05.webp",
-        "/uploads/grand-triplex/triplex-06.webp",
-        "/uploads/grand-triplex/triplex-07.webp",
-        "/uploads/grand-triplex/triplex-08.webp",
-        "/uploads/grand-triplex/triplex-09.webp"
+        "/uploads/grand-triplex/01.webp",
+        "/uploads/grand-triplex/02.webp",
+        "/uploads/grand-triplex/03.webp",
+        "/uploads/grand-triplex/04.webp",
+        "/uploads/grand-triplex/05.webp",
+        "/uploads/grand-triplex/06.webp",
+        "/uploads/grand-triplex/07.webp",
+        "/uploads/grand-triplex/08.webp",
+        "/uploads/grand-triplex/09.webp"
       ],
       "deleted": false,
       "manualBlocks": [],
@@ -350,36 +230,12 @@
       "airbnbRating": 4.79,
       "airbnbReviewCount": 70,
       "airbnbReviews": [
-        {
-          "name": "Miriem",
-          "text": "Un grand merci pour la flexibilité à l’arrivée, la propreté et la communication très rapide et efficace.",
-          "date": "septembre 2025"
-        },
-        {
-          "name": "Nabil",
-          "text": "Très bel appartement au cœur de La Marsa, pas trop loin de la plage. Je recommande vivement.",
-          "date": "octobre 2025"
-        },
-        {
-          "name": "Lynda",
-          "text": "Superbe maison et quartier. L’un de mes préférés.",
-          "date": "août 2025"
-        },
-        {
-          "name": "Alaaeddine",
-          "text": "Super séjour. Logement propre, conforme à l’annonce et hôtes très accueillants.",
-          "date": "août 2025"
-        },
-        {
-          "name": "Bochra",
-          "text": "Logement très propre et confortable, hôtes accueillants et disponibles.",
-          "date": "août 2025"
-        },
-        {
-          "name": "Bilel",
-          "text": "Maison propre et soignée, position privilégiée pour les déplacements à pied.",
-          "date": "décembre 2025"
-        }
+        { "name": "Miriem", "text": "Un grand merci pour la flexibilité à l’arrivée, la propreté et la communication très rapide et efficace.", "date": "septembre 2025" },
+        { "name": "Nabil", "text": "Très bel appartement au cœur de La Marsa, pas trop loin de la plage. Je recommande vivement.", "date": "octobre 2025" },
+        { "name": "Lynda", "text": "Superbe maison et quartier. L’un de mes préférés.", "date": "août 2025" },
+        { "name": "Alaaeddine", "text": "Super séjour. Logement propre, conforme à l’annonce et hôtes très accueillants.", "date": "août 2025" },
+        { "name": "Bochra", "text": "Logement très propre et confortable, hôtes accueillants et disponibles.", "date": "août 2025" },
+        { "name": "Bilel", "text": "Maison propre et soignée, position privilégiée pour les déplacements à pied.", "date": "décembre 2025" }
       ]
     },
     "perle-de-la-plage": {
@@ -394,16 +250,16 @@
       "priceEUR": 45,
       "icalUrl": "",
       "extraImages": [
-        "/uploads/perle-de-la-plage/perle-01.webp",
-        "/uploads/perle-de-la-plage/perle-02.webp",
-        "/uploads/perle-de-la-plage/perle-03.webp",
-        "/uploads/perle-de-la-plage/perle-04.webp",
-        "/uploads/perle-de-la-plage/perle-05.webp",
-        "/uploads/perle-de-la-plage/perle-06.webp",
-        "/uploads/perle-de-la-plage/perle-07.webp",
-        "/uploads/perle-de-la-plage/perle-08.webp",
-        "/uploads/perle-de-la-plage/perle-09.webp",
-        "/uploads/perle-de-la-plage/perle-10.webp"
+        "/uploads/perle-de-la-plage/01.webp",
+        "/uploads/perle-de-la-plage/02.webp",
+        "/uploads/perle-de-la-plage/03.webp",
+        "/uploads/perle-de-la-plage/04.webp",
+        "/uploads/perle-de-la-plage/05.webp",
+        "/uploads/perle-de-la-plage/06.webp",
+        "/uploads/perle-de-la-plage/07.webp",
+        "/uploads/perle-de-la-plage/08.webp",
+        "/uploads/perle-de-la-plage/09.webp",
+        "/uploads/perle-de-la-plage/10.webp"
       ],
       "deleted": false,
       "manualBlocks": [],
@@ -412,36 +268,12 @@
       "airbnbRating": 5.0,
       "airbnbReviewCount": 16,
       "airbnbReviews": [
-        {
-          "name": "Eric",
-          "text": "Hôte très accueillante et attentive. Super emplacement.",
-          "date": "Il y a 3 semaines"
-        },
-        {
-          "name": "Mohamed",
-          "text": "Troisième fois avec vous et ce n’est pas fini ! Je peux dire en toute confiance qu’il s’agit de mon logement préféré.",
-          "date": "janvier 2026"
-        },
-        {
-          "name": "Swann",
-          "text": "Comme toujours, un très bon séjour chez Nour et Nabil. Toujours un plaisir d’y revenir.",
-          "date": "mai 2025"
-        },
-        {
-          "name": "Jacques",
-          "text": "Un séjour merveilleux, je reviendrai.",
-          "date": "juin 2025"
-        },
-        {
-          "name": "Bassel",
-          "text": "Séjour très plaisant, logement spacieux et charmant.",
-          "date": "février 2024"
-        },
-        {
-          "name": "Mohamed",
-          "text": "C’était ma deuxième fois, tout était parfait comme d’habitude.",
-          "date": "janvier 2025"
-        }
+        { "name": "Eric", "text": "Hôte très accueillante et attentive. Super emplacement.", "date": "Il y a 3 semaines" },
+        { "name": "Mohamed", "text": "Troisième fois avec vous et ce n’est pas fini ! Je peux dire en toute confiance qu’il s’agit de mon logement préféré.", "date": "janvier 2026" },
+        { "name": "Swann", "text": "Comme toujours, un très bon séjour chez Nour et Nabil. Toujours un plaisir d’y revenir.", "date": "mai 2025" },
+        { "name": "Jacques", "text": "Un séjour merveilleux, je reviendrai.", "date": "juin 2025" },
+        { "name": "Bassel", "text": "Séjour très plaisant, logement spacieux et charmant.", "date": "février 2024" },
+        { "name": "Mohamed", "text": "C’était ma deuxième fois, tout était parfait comme d’habitude.", "date": "janvier 2025" }
       ]
     },
     "oasis-de-la-corniche": {
@@ -456,15 +288,15 @@
       "priceEUR": 45,
       "icalUrl": "",
       "extraImages": [
-        "/uploads/oasis-de-la-corniche/oasis-01.webp",
-        "/uploads/oasis-de-la-corniche/oasis-02.webp",
-        "/uploads/oasis-de-la-corniche/oasis-03.webp",
-        "/uploads/oasis-de-la-corniche/oasis-04.webp",
-        "/uploads/oasis-de-la-corniche/oasis-05.webp",
-        "/uploads/oasis-de-la-corniche/oasis-06.webp",
-        "/uploads/oasis-de-la-corniche/oasis-07.webp",
-        "/uploads/oasis-de-la-corniche/oasis-08.webp",
-        "/uploads/oasis-de-la-corniche/oasis-09.webp"
+        "/uploads/oasis-de-la-corniche/01.webp",
+        "/uploads/oasis-de-la-corniche/02.webp",
+        "/uploads/oasis-de-la-corniche/03.webp",
+        "/uploads/oasis-de-la-corniche/04.webp",
+        "/uploads/oasis-de-la-corniche/05.webp",
+        "/uploads/oasis-de-la-corniche/06.webp",
+        "/uploads/oasis-de-la-corniche/07.webp",
+        "/uploads/oasis-de-la-corniche/08.webp",
+        "/uploads/oasis-de-la-corniche/09.webp"
       ],
       "deleted": false,
       "manualBlocks": [],
@@ -473,36 +305,12 @@
       "airbnbRating": 4.9,
       "airbnbReviewCount": 69,
       "airbnbReviews": [
-        {
-          "name": "Bertrand",
-          "text": "Le logement était conforme aux photos et au descriptif. Très bien situé à La Marsa.",
-          "date": "novembre 2025"
-        },
-        {
-          "name": "Muhamad",
-          "text": "Nous avons passé un merveilleux séjour à La Marsa. Appartement impeccable et confortable.",
-          "date": "janvier 2026"
-        },
-        {
-          "name": "Gerlinde",
-          "text": "Premier séjour en Tunisie, super expérience dans ce logement.",
-          "date": "octobre 2025"
-        },
-        {
-          "name": "Hany",
-          "text": "Lieu de résidence idéal, quartier animé mais calme, à quelques minutes de la plage.",
-          "date": "juin 2025"
-        },
-        {
-          "name": "Sébastien",
-          "text": "Super choix et très grande flexibilité. Nous avons été ravis de notre séjour.",
-          "date": "mai 2025"
-        },
-        {
-          "name": "Anna-Lisa",
-          "text": "Appartement ressemblant aux photos, propre, hôte toujours disponible en cas de besoin.",
-          "date": "mai 2025"
-        }
+        { "name": "Bertrand", "text": "Le logement était conforme aux photos et au descriptif. Très bien situé à La Marsa.", "date": "novembre 2025" },
+        { "name": "Muhamad", "text": "Nous avons passé un merveilleux séjour à La Marsa. Appartement impeccable et confortable.", "date": "janvier 2026" },
+        { "name": "Gerlinde", "text": "Premier séjour en Tunisie, super expérience dans ce logement.", "date": "octobre 2025" },
+        { "name": "Hany", "text": "Lieu de résidence idéal, quartier animé mais calme, à quelques minutes de la plage.", "date": "juin 2025" },
+        { "name": "Sébastien", "text": "Super choix et très grande flexibilité. Nous avons été ravis de notre séjour.", "date": "mai 2025" },
+        { "name": "Anna-Lisa", "text": "Appartement ressemblant aux photos, propre, hôte toujours disponible en cas de besoin.", "date": "mai 2025" }
       ]
     },
     "toit-sidi-bou-said": {
@@ -517,17 +325,17 @@
       "priceEUR": 60,
       "icalUrl": "",
       "extraImages": [
-        "/uploads/toit-sidi-bou-said/toit-01.webp",
-        "/uploads/toit-sidi-bou-said/toit-02.webp",
-        "/uploads/toit-sidi-bou-said/toit-03.webp",
-        "/uploads/toit-sidi-bou-said/toit-04.webp",
-        "/uploads/toit-sidi-bou-said/toit-05.webp",
-        "/uploads/toit-sidi-bou-said/toit-06.webp",
-        "/uploads/toit-sidi-bou-said/toit-07.webp",
-        "/uploads/toit-sidi-bou-said/toit-08.webp",
-        "/uploads/toit-sidi-bou-said/toit-09.webp",
-        "/uploads/toit-sidi-bou-said/toit-10.webp",
-        "/uploads/toit-sidi-bou-said/toit-11.webp"
+        "/uploads/toit-sidi-bou-said/01.webp",
+        "/uploads/toit-sidi-bou-said/02.webp",
+        "/uploads/toit-sidi-bou-said/03.webp",
+        "/uploads/toit-sidi-bou-said/04.webp",
+        "/uploads/toit-sidi-bou-said/05.webp",
+        "/uploads/toit-sidi-bou-said/06.webp",
+        "/uploads/toit-sidi-bou-said/07.webp",
+        "/uploads/toit-sidi-bou-said/08.webp",
+        "/uploads/toit-sidi-bou-said/09.webp",
+        "/uploads/toit-sidi-bou-said/10.webp",
+        "/uploads/toit-sidi-bou-said/11.webp"
       ],
       "deleted": false,
       "manualBlocks": [],
@@ -536,36 +344,12 @@
       "airbnbRating": 4.82,
       "airbnbReviewCount": 184,
       "airbnbReviews": [
-        {
-          "name": "Catherine",
-          "text": "Maison très agréable, au calme mais juste à côté des rues animées de Sidi Bou Saïd. Le toit terrasse est parfait pour profiter des couchers de soleil.",
-          "date": "Il y a 3 semaines"
-        },
-        {
-          "name": "Benjamin",
-          "text": "Idéalement situé et facile d’accès. Appartement confortable pour profiter pleinement de Sidi Bou Saïd.",
-          "date": "février 2025"
-        },
-        {
-          "name": "Gregory",
-          "text": "Très bien situé dans le quartier, terrasse magnifique. Très pratique pour visiter Tunis.",
-          "date": "juillet 2025"
-        },
-        {
-          "name": "Chema",
-          "text": "Séjour parfait, excellente communication avec le propriétaire. Je recommande fortement.",
-          "date": "Il y a 2 semaines"
-        },
-        {
-          "name": "Slim",
-          "text": "Excellent séjour, emplacement parfait, proche de tout.",
-          "date": "mai 2025"
-        },
-        {
-          "name": "Amel",
-          "text": "Très bien situé dans une zone animée mais paisible. Expérience unique.",
-          "date": "août 2025"
-        }
+        { "name": "Catherine", "text": "Maison très agréable, au calme mais juste à côté des rues animées de Sidi Bou Saïd. Le toit terrasse est parfait pour profiter des couchers de soleil.", "date": "Il y a 3 semaines" },
+        { "name": "Benjamin", "text": "Idéalement situé et facile d’accès. Appartement confortable pour profiter pleinement de Sidi Bou Saïd.", "date": "février 2025" },
+        { "name": "Gregory", "text": "Très bien situé dans le quartier, terrasse magnifique. Très pratique pour visiter Tunis.", "date": "juillet 2025" },
+        { "name": "Chema", "text": "Séjour parfait, excellente communication avec le propriétaire. Je recommande fortement.", "date": "Il y a 2 semaines" },
+        { "name": "Slim", "text": "Excellent séjour, emplacement parfait, proche de tout.", "date": "mai 2025" },
+        { "name": "Amel", "text": "Très bien situé dans une zone animée mais paisible. Expérience unique.", "date": "août 2025" }
       ]
     },
     "rez-de-jardin": {
@@ -580,34 +364,34 @@
       "priceEUR": 60,
       "icalUrl": "",
       "extraImages": [
-        "/uploads/rez-de-jardin/rdc-01.webp",
-        "/uploads/rez-de-jardin/rdc-02.webp",
-        "/uploads/rez-de-jardin/rdc-03.webp",
-        "/uploads/rez-de-jardin/rdc-04.webp",
-        "/uploads/rez-de-jardin/rdc-05.webp",
-        "/uploads/rez-de-jardin/rdc-06.webp",
-        "/uploads/rez-de-jardin/rdc-07.webp",
-        "/uploads/rez-de-jardin/rdc-08.webp",
-        "/uploads/rez-de-jardin/rdc-09.webp",
-        "/uploads/rez-de-jardin/rdc-10.webp",
-        "/uploads/rez-de-jardin/rdc-11.webp",
-        "/uploads/rez-de-jardin/rdc-12.webp",
-        "/uploads/rez-de-jardin/rdc-13.webp",
-        "/uploads/rez-de-jardin/rdc-14.webp",
-        "/uploads/rez-de-jardin/rdc-15.webp",
-        "/uploads/rez-de-jardin/rdc-16.webp",
-        "/uploads/rez-de-jardin/rez-01.webp",
-        "/uploads/rez-de-jardin/rez-02.webp",
-        "/uploads/rez-de-jardin/rez-03.webp",
-        "/uploads/rez-de-jardin/rez-04.webp",
-        "/uploads/rez-de-jardin/rez-05.webp",
-        "/uploads/rez-de-jardin/rez-06.webp",
-        "/uploads/rez-de-jardin/rez-07.webp",
-        "/uploads/rez-de-jardin/rez-08.webp",
-        "/uploads/rez-de-jardin/rez-09.webp",
-        "/uploads/rez-de-jardin/rez-10.webp",
-        "/uploads/rez-de-jardin/rez-11.webp",
-        "/uploads/rez-de-jardin/rez-12.webp"
+        "/uploads/rez-de-jardin/01.webp",
+        "/uploads/rez-de-jardin/02.webp",
+        "/uploads/rez-de-jardin/03.webp",
+        "/uploads/rez-de-jardin/04.webp",
+        "/uploads/rez-de-jardin/05.webp",
+        "/uploads/rez-de-jardin/06.webp",
+        "/uploads/rez-de-jardin/07.webp",
+        "/uploads/rez-de-jardin/08.webp",
+        "/uploads/rez-de-jardin/09.webp",
+        "/uploads/rez-de-jardin/10.webp",
+        "/uploads/rez-de-jardin/11.webp",
+        "/uploads/rez-de-jardin/12.webp",
+        "/uploads/rez-de-jardin/13.webp",
+        "/uploads/rez-de-jardin/14.webp",
+        "/uploads/rez-de-jardin/15.webp",
+        "/uploads/rez-de-jardin/16.webp",
+        "/uploads/rez-de-jardin/17.webp",
+        "/uploads/rez-de-jardin/18.webp",
+        "/uploads/rez-de-jardin/19.webp",
+        "/uploads/rez-de-jardin/20.webp",
+        "/uploads/rez-de-jardin/21.webp",
+        "/uploads/rez-de-jardin/22.webp",
+        "/uploads/rez-de-jardin/23.webp",
+        "/uploads/rez-de-jardin/24.webp",
+        "/uploads/rez-de-jardin/25.webp",
+        "/uploads/rez-de-jardin/26.webp",
+        "/uploads/rez-de-jardin/27.webp",
+        "/uploads/rez-de-jardin/28.webp"
       ],
       "deleted": false,
       "manualBlocks": [],
@@ -616,36 +400,12 @@
       "airbnbRating": 4.86,
       "airbnbReviewCount": 7,
       "airbnbReviews": [
-        {
-          "name": "Stephanie",
-          "text": "Appartement très bien situé, très propre et hôte très accueillant.",
-          "date": "juillet 2025"
-        },
-        {
-          "name": "Nour Kati",
-          "text": "J’ai adoré mon séjour ici. Décoration soignée, ambiance cosy et terrasse véritable atout.",
-          "date": "juin 2024"
-        },
-        {
-          "name": "Canap",
-          "text": "Au cœur de Sidi Bou Saïd, proche de tout, gens sympathiques. Vous pouvez contacter l’équipe de Nabil.",
-          "date": "novembre 2025"
-        },
-        {
-          "name": "Lini",
-          "text": "Magnifique maison dans le plus beau quartier. Merci Nour et Nabil.",
-          "date": "décembre 2025"
-        },
-        {
-          "name": "Samira",
-          "text": "Nous avons passé un bon séjour, tout était génial.",
-          "date": "août 2025"
-        },
-        {
-          "name": "Moe",
-          "text": "Super logement et propre. L’équipe a été très réactive et sympathique. Merci.",
-          "date": "avril 2024"
-        }
+        { "name": "Stephanie", "text": "Appartement très bien situé, très propre et hôte très accueillant.", "date": "juillet 2025" },
+        { "name": "Nour Kati", "text": "J’ai adoré mon séjour ici. Décoration soignée, ambiance cosy et terrasse véritable atout.", "date": "juin 2024" },
+        { "name": "Canap", "text": "Au cœur de Sidi Bou Saïd, proche de tout, gens sympathiques. Vous pouvez contacter l’équipe de Nabil.", "date": "novembre 2025" },
+        { "name": "Lini", "text": "Magnifique maison dans le plus beau quartier. Merci Nour et Nabil.", "date": "décembre 2025" },
+        { "name": "Samira", "text": "Nous avons passé un bon séjour, tout était génial.", "date": "août 2025" },
+        { "name": "Moe", "text": "Super logement et propre. L’équipe a été très réactive et sympathique. Merci.", "date": "avril 2024" }
       ]
     },
     "duplex-prestige": {
@@ -660,15 +420,15 @@
       "priceEUR": 60,
       "icalUrl": "",
       "extraImages": [
-        "/uploads/duplex-prestige/duplex-01.webp",
-        "/uploads/duplex-prestige/duplex-02.webp",
-        "/uploads/duplex-prestige/duplex-03.webp",
-        "/uploads/duplex-prestige/duplex-04.webp",
-        "/uploads/duplex-prestige/duplex-05.webp",
-        "/uploads/duplex-prestige/duplex-06.webp",
-        "/uploads/duplex-prestige/duplex-07.webp",
-        "/uploads/duplex-prestige/duplex-08.webp",
-        "/uploads/duplex-prestige/duplex-09.webp"
+        "/uploads/duplex-prestige/01.webp",
+        "/uploads/duplex-prestige/02.webp",
+        "/uploads/duplex-prestige/03.webp",
+        "/uploads/duplex-prestige/04.webp",
+        "/uploads/duplex-prestige/05.webp",
+        "/uploads/duplex-prestige/06.webp",
+        "/uploads/duplex-prestige/07.webp",
+        "/uploads/duplex-prestige/08.webp",
+        "/uploads/duplex-prestige/09.webp"
       ],
       "deleted": false,
       "manualBlocks": [],
@@ -677,36 +437,12 @@
       "airbnbRating": 4.81,
       "airbnbReviewCount": 84,
       "airbnbReviews": [
-        {
-          "name": "Mohamed Hedi",
-          "text": "Excellent séjour, maison chaleureuse, très propre et parfaitement équipée. Emplacement top et hôte très accueillant.",
-          "date": "décembre 2025"
-        },
-        {
-          "name": "Charly",
-          "text": "Logement conforme à l’annonce avec bon rapport qualité/prix. Instructions claires.",
-          "date": "Il y a 2 semaines"
-        },
-        {
-          "name": "Ambre",
-          "text": "Super séjour, bien placé. Logement fidèle à la description, très beau et propre.",
-          "date": "novembre 2025"
-        },
-        {
-          "name": "Cynthia",
-          "text": "Appartement conforme, très propre, proche de tout. Hôte très réactif. Recommandé à 1000%.",
-          "date": "juillet 2025"
-        },
-        {
-          "name": "Najoua",
-          "text": "Séjour parfait, tranquillité absolue et voisinage agréable.",
-          "date": "novembre 2025"
-        },
-        {
-          "name": "Donia",
-          "text": "Logement propre, confortable et suffisant pour 3 personnes. Hôte très gentil et réactif.",
-          "date": "décembre 2025"
-        }
+        { "name": "Mohamed Hedi", "text": "Excellent séjour, maison chaleureuse, très propre et parfaitement équipée. Emplacement top et hôte très accueillant.", "date": "décembre 2025" },
+        { "name": "Charly", "text": "Logement conforme à l’annonce avec bon rapport qualité/prix. Instructions claires.", "date": "Il y a 2 semaines" },
+        { "name": "Ambre", "text": "Super séjour, bien placé. Logement fidèle à la description, très beau et propre.", "date": "novembre 2025" },
+        { "name": "Cynthia", "text": "Appartement conforme, très propre, proche de tout. Hôte très réactif. Recommandé à 1000%.", "date": "juillet 2025" },
+        { "name": "Najoua", "text": "Séjour parfait, tranquillité absolue et voisinage agréable.", "date": "novembre 2025" },
+        { "name": "Donia", "text": "Logement propre, confortable et suffisant pour 3 personnes. Hôte très gentil et réactif.", "date": "décembre 2025" }
       ]
     },
     "belvedere-360": {
@@ -721,16 +457,16 @@
       "priceEUR": 85,
       "icalUrl": "",
       "extraImages": [
-        "/uploads/belvedere-360/belvedere-01.webp",
-        "/uploads/belvedere-360/belvedere-02.webp",
-        "/uploads/belvedere-360/belvedere-03.webp",
-        "/uploads/belvedere-360/belvedere-04.webp",
-        "/uploads/belvedere-360/belvedere-05.webp",
-        "/uploads/belvedere-360/belvedere-06.webp",
-        "/uploads/belvedere-360/belvedere-07.webp",
-        "/uploads/belvedere-360/belvedere-08.webp",
-        "/uploads/belvedere-360/belvedere-09.webp",
-        "/uploads/belvedere-360/belvedere-10.webp"
+        "/uploads/belvedere-360/01.webp",
+        "/uploads/belvedere-360/02.webp",
+        "/uploads/belvedere-360/03.webp",
+        "/uploads/belvedere-360/04.webp",
+        "/uploads/belvedere-360/05.webp",
+        "/uploads/belvedere-360/06.webp",
+        "/uploads/belvedere-360/07.webp",
+        "/uploads/belvedere-360/08.webp",
+        "/uploads/belvedere-360/09.webp",
+        "/uploads/belvedere-360/10.webp"
       ],
       "deleted": false,
       "manualBlocks": [],
@@ -739,36 +475,12 @@
       "airbnbRating": 4.84,
       "airbnbReviewCount": 37,
       "airbnbReviews": [
-        {
-          "name": "Isabelle",
-          "text": "Très beau logement avec une belle terrasse sur les toits de Sidi Bou Saïd. Cuisine bien équipée.",
-          "date": "novembre 2025"
-        },
-        {
-          "name": "Faouzi",
-          "text": "Séjour agréable, logement bien situé dans le village. L’accès au logement est juste un peu difficile.",
-          "date": "septembre 2025"
-        },
-        {
-          "name": "Yannis",
-          "text": "Très bon accueil, hôte disponible et facilitant. Logement spacieux, propre et bien équipé.",
-          "date": "août 2025"
-        },
-        {
-          "name": "Véronique",
-          "text": "Super logement, bien placé, spacieux. Belle terrasse. Très calme au cœur du village.",
-          "date": "Il y a 2 semaines"
-        },
-        {
-          "name": "Nour",
-          "text": "Appartement impeccable, instructions claires et détaillées pour arriver.",
-          "date": "juin 2025"
-        },
-        {
-          "name": "Emily",
-          "text": "Appartement fantastique, dans le meilleur emplacement pour tout à Sidi Bou Saïd.",
-          "date": "Il y a 1 semaine"
-        }
+        { "name": "Isabelle", "text": "Très beau logement avec une belle terrasse sur les toits de Sidi Bou Saïd. Cuisine bien équipée.", "date": "novembre 2025" },
+        { "name": "Faouzi", "text": "Séjour agréable, logement bien situé dans le village. L’accès au logement est juste un peu difficile.", "date": "septembre 2025" },
+        { "name": "Yannis", "text": "Très bon accueil, hôte disponible et facilitant. Logement spacieux, propre et bien équipé.", "date": "août 2025" },
+        { "name": "Véronique", "text": "Super logement, bien placé, spacieux. Belle terrasse. Très calme au cœur du village.", "date": "Il y a 2 semaines" },
+        { "name": "Nour", "text": "Appartement impeccable, instructions claires et détaillées pour arriver.", "date": "juin 2025" },
+        { "name": "Emily", "text": "Appartement fantastique, dans le meilleur emplacement pour tout à Sidi Bou Saïd.", "date": "Il y a 1 semaine" }
       ]
     }
   }
