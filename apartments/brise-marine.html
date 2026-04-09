@@ -11,11 +11,9 @@
 <meta content="website" property="og:type"/>
 <meta content="cover.jpg" property="og:image"/>
 <meta content="summary_large_image" name="twitter:card"/>
-<!-- Google Fonts: Montserrat for French/English, Tajawal for Arabic -->
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&amp;family=Tajawal:wght@500;700&amp;display=swap" rel="stylesheet"/>
-<!-- Tailwind CSS for styling -->
 <script src="https://cdn.tailwindcss.com"></script>
 <script>
         tailwind.config = {
@@ -42,7 +40,7 @@
             fr: {
                 label: 'Réservation en confiance',
                 hostTitle: 'Ce séjour est géré par des hôtes locaux',
-                hostText: 'L'équipe CosyNest Tunisia accompagne les voyageurs directement, avec réservation simple via WhatsApp et support en français, arabe et anglais.',
+                hostText: 'L\'équipe CosyNest Tunisia accompagne les voyageurs directement, avec réservation simple via WhatsApp et support en français, arabe et anglais.',
                 a: 'Réponse directe des hôtes',
                 b: 'Accompagnement multilingue',
                 c: 'Séjour premium dans un quartier recherché'
@@ -68,7 +66,7 @@
         function injectDetailTrustBlocks() {
             const detailViews = document.querySelectorAll('[id^="detail-view-"]');
             detailViews.forEach(view => {
-                const leftColumn = view.querySelector('.md\:col-span-2');
+                const leftColumn = view.querySelector('.md\\:col-span-2');
                 if (!leftColumn || view.querySelector('.detail-trust-block')) return;
 
                 const ratingText = (view.querySelector('.flex.items-center.gap-4.text-gray-600.mb-8.font-medium span')?.textContent || '').trim();
@@ -711,16 +709,23 @@ body.gallery-open{overflow:hidden;}
 <span class="underline">La Marsa Corniche, Carthage, Tunisia</span>
 </div>
 <div class="detail-image-grid mb-10">
-<img alt="Living Room" class="main-img" onclick="openGallery('marsa5', 0)" src="../uploads/brise-marine/brise-01.webp"/>
-<img alt="Living Area" onclick="openGallery('marsa5', 1)" src="../uploads/brise-marine/brise-02.webp"/>
-<img alt="Bedroom" onclick="openGallery('marsa5', 2)" src="../uploads/brise-marine/brise-03.webp"/>
-<img alt="Balcony" onclick="openGallery('marsa5', 3)" src="../uploads/brise-marine/brise-04.webp"/>
+<img alt="Living Room" class="main-img" onclick="openGallery('marsa5', 0)" src="../uploads/brise-marine/01.webp"/>
+<img alt="Living Area" onclick="openGallery('marsa5', 1)" src="../uploads/brise-marine/02.webp"/>
+<img alt="Bedroom" onclick="openGallery('marsa5', 2)" src="../uploads/brise-marine/03.webp"/>
+<img alt="Balcony" onclick="openGallery('marsa5', 3)" src="../uploads/brise-marine/04.webp"/>
 <div class="relative cursor-pointer group w-full h-full" onclick="openGallery('marsa5', 4)">
-<img alt="Terrace" class="absolute inset-0 w-full h-full object-cover" src="../uploads/brise-marine/brise-05.webp"/>
+<img alt="Terrace" class="absolute inset-0 w-full h-full object-cover" src="../uploads/brise-marine/05.webp"/>
 <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center text-white font-bold text-sm md:text-lg group-hover:bg-opacity-50 transition-all">
 <span class="lang-active" data-lang="fr">Afficher toutes les photos</span>
 </div>
 </div>
+</div>
+<div style="display: none;">
+    <img src="../uploads/brise-marine/06.webp" onclick="openGallery('marsa5', 5)">
+    <img src="../uploads/brise-marine/07.webp" onclick="openGallery('marsa5', 6)">
+    <img src="../uploads/brise-marine/08.webp" onclick="openGallery('marsa5', 7)">
+    <img src="../uploads/brise-marine/09.webp" onclick="openGallery('marsa5', 8)">
+    <img src="../uploads/brise-marine/10.webp" onclick="openGallery('marsa5', 9)">
 </div>
 <div class="grid md:grid-cols-3 gap-12 max-w-7xl mx-auto px-4">
 <div class="md:col-span-2 max-w-3xl mx-auto md:mx-0">
@@ -904,11 +909,16 @@ body.gallery-open{overflow:hidden;}
                 "https://a0.muscache.com/im/pictures/miso/Hosting-758300689459776355/original/b3b3ff53-0260-44fd-845f-5192cc84d704.jpeg?im_w=1200"
             ],
             'marsa5': [
-                "https://a0.muscache.com/im/pictures/miso/Hosting-771370503826948643/original/153ad520-0b20-40dc-9dd7-4f5d9884c1f4.jpeg?im_w=1200",
-                "https://a0.muscache.com/im/pictures/miso/Hosting-771370503826948643/original/bf6b872b-a853-4623-a608-25aea8f3f64b.jpeg?im_w=1200",
-                "https://a0.muscache.com/im/pictures/miso/Hosting-771370503826948643/original/1a70c7c1-4640-4d78-a5b8-d2a56800f8b6.jpeg?im_w=1200",
-                "https://a0.muscache.com/im/pictures/miso/Hosting-771370503826948643/original/f95552b5-a0e3-439f-a843-3f1d31e4d5d3.jpeg?im_w=1200",
-                "https://a0.muscache.com/im/pictures/miso/Hosting-771370503826948643/original/23950c70-068b-4c23-9f0b-cb0b265da8cd.jpeg?im_w=1200"
+                "../uploads/brise-marine/01.webp",
+                "../uploads/brise-marine/02.webp",
+                "../uploads/brise-marine/03.webp",
+                "../uploads/brise-marine/04.webp",
+                "../uploads/brise-marine/05.webp",
+                "../uploads/brise-marine/06.webp",
+                "../uploads/brise-marine/07.webp",
+                "../uploads/brise-marine/08.webp",
+                "../uploads/brise-marine/09.webp",
+                "../uploads/brise-marine/10.webp"
             ],
             'marsa6': [
                 "https://a0.muscache.com/im/pictures/hosting/Hosting-42120347/original/f7fd792d-28e6-40ce-a22c-875433875412.jpeg?im_w=1200",
