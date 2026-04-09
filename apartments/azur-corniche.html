@@ -11,11 +11,9 @@
 <meta content="website" property="og:type"/>
 <meta content="cover.jpg" property="og:image"/>
 <meta content="summary_large_image" name="twitter:card"/>
-<!-- Google Fonts: Montserrat for French/English, Tajawal for Arabic -->
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&amp;family=Tajawal:wght@500;700&amp;display=swap" rel="stylesheet"/>
-<!-- Tailwind CSS for styling -->
 <script src="https://cdn.tailwindcss.com"></script>
 <script>
         tailwind.config = {
@@ -42,7 +40,7 @@
             fr: {
                 label: 'Réservation en confiance',
                 hostTitle: 'Ce séjour est géré par des hôtes locaux',
-                hostText: 'L'équipe CosyNest Tunisia accompagne les voyageurs directement, avec réservation simple via WhatsApp et support en français, arabe et anglais.',
+                hostText: 'L\'équipe CosyNest Tunisia accompagne les voyageurs directement, avec réservation simple via WhatsApp et support en français, arabe et anglais.',
                 a: 'Réponse directe des hôtes',
                 b: 'Accompagnement multilingue',
                 c: 'Séjour premium dans un quartier recherché'
@@ -68,7 +66,7 @@
         function injectDetailTrustBlocks() {
             const detailViews = document.querySelectorAll('[id^="detail-view-"]');
             detailViews.forEach(view => {
-                const leftColumn = view.querySelector('.md\:col-span-2');
+                const leftColumn = view.querySelector('.md\\:col-span-2');
                 if (!leftColumn || view.querySelector('.detail-trust-block')) return;
 
                 const ratingText = (view.querySelector('.flex.items-center.gap-4.text-gray-600.mb-8.font-medium span')?.textContent || '').trim();
@@ -609,71 +607,6 @@ body.gallery-open{overflow:hidden;}
 .cn-picker-foot{display:flex;justify-content:flex-end;margin-top:12px}
 .booking-date-input{font-size:1.06rem !important;padding:.9rem .25rem !important;font-weight:700;min-height:44px;cursor:pointer !important}
 </style>
-</head>
-<style>
-.detail-page-shell{min-height:100vh;background:#F8F9FA}
-.share-like-bar{display:flex;gap:.75rem;flex-wrap:wrap;margin:.75rem 0 1rem}
-.share-btn,.like-btn{display:inline-flex;align-items:center;gap:.45rem;padding:.72rem 1rem;border-radius:9999px;font-weight:700;border:1px solid rgba(26,54,93,.12);background:#fff;color:#1A365D;box-shadow:0 6px 14px rgba(15,23,42,.05);cursor:pointer}
-.share-btn:hover,.like-btn:hover{transform:translateY(-1px)}
-.like-btn.is-liked{background:rgba(197,168,128,.15);border-color:rgba(197,168,128,.35)}
-</style>
-<style>
-.gallery-backdrop{
-  position:fixed; inset:0; background:rgba(15,23,42,.82);
-  backdrop-filter:blur(6px); z-index:9999; display:none;
-  align-items:flex-start; justify-content:center; overflow:auto; padding:2rem 1rem;
-}
-.gallery-backdrop.open{display:flex;}
-.gallery-panel{
-  width:min(1200px, 100%); background:#fff; border-radius:1.5rem;
-  box-shadow:0 30px 80px rgba(0,0,0,.35); overflow:hidden;
-}
-.gallery-head{
-  display:flex; align-items:center; justify-content:space-between;
-  padding:1rem 1.25rem; border-bottom:1px solid rgba(15,23,42,.08);
-  position:sticky; top:0; background:#fff; z-index:2;
-}
-.gallery-title{font-weight:800; color:#16375C; font-size:1.1rem;}
-.gallery-close{
-  border:none; background:#f3f4f6; color:#16375C; font-weight:700;
-  border-radius:9999px; padding:.65rem .9rem; cursor:pointer;
-}
-.gallery-main{
-  display:grid; grid-template-columns:1fr; gap:.75rem; padding:1rem;
-}
-.gallery-main img{
-  width:100%; height:auto; display:block; border-radius:1rem;
-  object-fit:cover; background:#e5e7eb;
-}
-.gallery-note{
-  color:#64748b; font-size:.9rem; padding:0 1rem 1rem;
-}
-body.gallery-open{overflow:hidden;}
-@media (min-width: 900px){
-  .gallery-main{grid-template-columns:repeat(2, 1fr);}
-}
-</style>
-<style>
-.cn-picker-overlay{position:fixed;inset:0;background:rgba(15,23,42,.45);display:none;align-items:center;justify-content:center;z-index:999999}
-.cn-picker-overlay.open{display:flex}
-.cn-picker{width:min(440px,94vw);background:#fff;border-radius:22px;box-shadow:0 24px 60px rgba(15,23,42,.24);padding:16px;border:1px solid rgba(148,163,184,.22);direction:ltr}
-.cn-picker-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}
-.cn-picker-title{font-size:20px;font-weight:800;color:#16375C}
-.cn-picker-nav{display:flex;gap:8px}
-.cn-picker-nav button,.cn-picker-close{border:1px solid rgba(148,163,184,.24);background:#fff;border-radius:999px;padding:8px 12px;font-weight:800;color:#16375C}
-.cn-picker-weekdays,.cn-picker-days{display:grid;grid-template-columns:repeat(7,1fr);gap:8px}
-.cn-picker-weekdays div{font-size:12px;color:#64748b;text-align:center;font-weight:700}
-.cn-picker-day{height:58px;display:flex;flex-direction:column;align-items:center;justify-content:center;border-radius:14px;background:#f8fafc;color:#334155;font-weight:600;cursor:pointer;border:1px solid transparent;padding:4px}
-.cn-picker-day.empty{background:transparent;border:none;cursor:default}
-.cn-picker-day.blocked{background:#d1d5db;color:#9ca3af;text-decoration:line-through;cursor:not-allowed}
-.cn-picker-day.selected{background:#1A365D;color:#fff}
-.cn-picker-day.today{border-color:#cbd5e1}
-.cn-picker-day.has-price{box-shadow:inset 0 0 0 1px rgba(59,130,246,.24)}
-.cn-picker-price{font-size:10px;line-height:1;color:#2563eb;font-weight:800;margin-top:3px}
-.cn-picker-day.blocked .cn-picker-price{color:#6b7280}
-.cn-picker-foot{display:flex;justify-content:flex-end;margin-top:12px}
-.booking-date-input{font-size:1.06rem !important;padding:.9rem .25rem !important;font-weight:700;min-height:44px;cursor:pointer !important}
-</style>
 </head><body class="detail-page-shell bg-brand-light text-brand-dark font-sans antialiased transition-all duration-300" data-page-slug="azur-corniche"><nav class="site-nav">
 <div class="w-full px-0 py-0">
 <div class="nav-shell nav-inner px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-between gap-3">
@@ -711,16 +644,21 @@ body.gallery-open{overflow:hidden;}
 <span class="underline">La Marsa Corniche, Tunis, Tunisia</span>
 </div>
 <div class="detail-image-grid mb-10">
-<img alt="Living Room" class="main-img" onclick="openGallery('marsa4', 0)" src="../uploads/azur-corniche/azur-01.webp"/>
-<img alt="Living Area" onclick="openGallery('marsa4', 1)" src="../uploads/azur-corniche/azur-02.webp"/>
-<img alt="Bedroom" onclick="openGallery('marsa4', 2)" src="../uploads/azur-corniche/azur-03.webp"/>
-<img alt="Balcony" onclick="openGallery('marsa4', 3)" src="../uploads/azur-corniche/azur-04.webp"/>
+<img alt="Living Room" class="main-img" onclick="openGallery('marsa4', 0)" src="../uploads/azur-corniche/01.webp"/>
+<img alt="Living Area" onclick="openGallery('marsa4', 1)" src="../uploads/azur-corniche/02.webp"/>
+<img alt="Bedroom" onclick="openGallery('marsa4', 2)" src="../uploads/azur-corniche/03.webp"/>
+<img alt="Balcony" onclick="openGallery('marsa4', 3)" src="../uploads/azur-corniche/04.webp"/>
 <div class="relative cursor-pointer group w-full h-full" onclick="openGallery('marsa4', 4)">
-<img alt="Kitchen" class="absolute inset-0 w-full h-full object-cover" src="../uploads/azur-corniche/azur-05.webp"/>
+<img alt="Kitchen" class="absolute inset-0 w-full h-full object-cover" src="../uploads/azur-corniche/05.webp"/>
 <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center text-white font-bold text-sm md:text-lg group-hover:bg-opacity-50 transition-all">
 <span class="lang-active" data-lang="fr">Afficher toutes les photos</span>
 </div>
 </div>
+</div>
+<div style="display: none;">
+    <img src="../uploads/azur-corniche/06.webp" onclick="openGallery('marsa4', 5)">
+    <img src="../uploads/azur-corniche/07.webp" onclick="openGallery('marsa4', 6)">
+    <img src="../uploads/azur-corniche/08.webp" onclick="openGallery('marsa4', 7)">
 </div>
 <div class="grid md:grid-cols-3 gap-12 max-w-7xl mx-auto px-4">
 <div class="md:col-span-2 max-w-3xl mx-auto md:mx-0">
@@ -897,11 +835,14 @@ body.gallery-open{overflow:hidden;}
                 "https://a0.muscache.com/im/pictures/miso/Hosting-45330248/original/2af77865-189e-4ded-a5e7-e13173d8c85b.jpeg?im_w=1200"
             ],
             'marsa4': [
-                "https://a0.muscache.com/im/pictures/miso/Hosting-758300689459776355/original/5039366a-d111-40df-ac12-a77231d5e5a5.jpeg?im_w=1200",
-                "https://a0.muscache.com/im/pictures/miso/Hosting-758300689459776355/original/09502239-107a-46a3-bccc-c7f102296ce8.jpeg?im_w=1200",
-                "https://a0.muscache.com/im/pictures/miso/Hosting-758300689459776355/original/ede3a0b6-0393-4fdf-8f93-4d84df2be754.jpeg?im_w=1200",
-                "https://a0.muscache.com/im/pictures/miso/Hosting-758300689459776355/original/06f68434-67d1-4a89-9f56-5a275fb6674d.jpeg?im_w=1200",
-                "https://a0.muscache.com/im/pictures/miso/Hosting-758300689459776355/original/b3b3ff53-0260-44fd-845f-5192cc84d704.jpeg?im_w=1200"
+                "../uploads/azur-corniche/01.webp",
+                "../uploads/azur-corniche/02.webp",
+                "../uploads/azur-corniche/03.webp",
+                "../uploads/azur-corniche/04.webp",
+                "../uploads/azur-corniche/05.webp",
+                "../uploads/azur-corniche/06.webp",
+                "../uploads/azur-corniche/07.webp",
+                "../uploads/azur-corniche/08.webp"
             ],
             'marsa5': [
                 "https://a0.muscache.com/im/pictures/miso/Hosting-771370503826948643/original/153ad520-0b20-40dc-9dd7-4f5d9884c1f4.jpeg?im_w=1200",
@@ -1089,43 +1030,25 @@ body.gallery-open{overflow:hidden;}
             let message = '';
             if (lang === 'ar') {
                 message = `مرحبًا 👋 رأيت الشقة على Cosynest وأرغب في الحجز: ${aptName}`;
-                if (checkin && checkout) message += `
-التواريخ: ${checkin} → ${checkout}`;
-                if (nights && nights !== '—') message += `
-عدد الليالي: ${nights}`;
-                if (guests) message += `
-عدد الضيوف: ${guests}`;
-                if (total && total !== '—') message += `
-الإجمالي التقديري: ${total}`;
-                message += `
-
-هل يمكنكم تأكيد التوفر؟`;
+                if (checkin && checkout) message += `\nالتواريخ: ${checkin} → ${checkout}`;
+                if (nights && nights !== '—') message += `\nعدد الليالي: ${nights}`;
+                if (guests) message += `\nعدد الضيوف: ${guests}`;
+                if (total && total !== '—') message += `\nالإجمالي التقديري: ${total}`;
+                message += `\n\nهل يمكنكم تأكيد التوفر؟`;
             } else if (lang === 'en') {
                 message = `Hi 👋 I saw your apartment on Cosynest and I would like to book: ${aptName}`;
-                if (checkin && checkout) message += `
-Dates: ${checkin} → ${checkout}`;
-                if (nights && nights !== '—') message += `
-Nights: ${nights}`;
-                if (guests) message += `
-Guests: ${guests}`;
-                if (total && total !== '—') message += `
-Estimated total: ${total}`;
-                message += `
-
-Could you please confirm availability?`;
+                if (checkin && checkout) message += `\nDates: ${checkin} → ${checkout}`;
+                if (nights && nights !== '—') message += `\nNights: ${nights}`;
+                if (guests) message += `\nGuests: ${guests}`;
+                if (total && total !== '—') message += `\nEstimated total: ${total}`;
+                message += `\n\nCould you please confirm availability?`;
             } else {
                 message = `Bonjour 👋 J’ai vu votre appartement sur Cosynest et je souhaite réserver : ${aptName}`;
-                if (checkin && checkout) message += `
-Dates : ${checkin} → ${checkout}`;
-                if (nights && nights !== '—') message += `
-Nuits : ${nights}`;
-                if (guests) message += `
-Voyageurs : ${guests}`;
-                if (total && total !== '—') message += `
-Total estimé : ${total}`;
-                message += `
-
-Pouvez-vous confirmer la disponibilité ?`;
+                if (checkin && checkout) message += `\nDates : ${checkin} → ${checkout}`;
+                if (nights && nights !== '—') message += `\nNuits : ${nights}`;
+                if (guests) message += `\nVoyageurs : ${guests}`;
+                if (total && total !== '—') message += `\nTotal estimé : ${total}`;
+                message += `\n\nPouvez-vous confirmer la disponibilité ?`;
             }
 
             const btn = document.getElementById(`wa-btn-${apartment}`);
