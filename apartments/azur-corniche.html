@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-
-<html lang="fr"><head><head>
+<html lang="fr" id="html-root">
+<head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>L'Azur de la Corniche | CosyNest Tunisia</title>
@@ -11,1796 +11,561 @@
 <meta content="website" property="og:type"/>
 <meta content="cover.jpg" property="og:image"/>
 <meta content="summary_large_image" name="twitter:card"/>
+
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&amp;family=Tajawal:wght@500;700&amp;display=swap" rel="stylesheet"/>
+
 <script src="https://cdn.tailwindcss.com"></script>
 <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        brand: {
-                            blue: '#1A365D', /* Deep Sidi Bou Said Blue */
-                            gold: '#C5A880', /* Warm Cosy Sand */
-                            light: '#F8F9FA',
-                            dark: '#2D3748',
-                            whatsapp: '#25D366'
-                        }
-                    },
-                    fontFamily: {
-                        sans: ['Montserrat', 'sans-serif'],
-                        arabic: ['Tajawal', 'sans-serif'],
+    tailwind.config = {
+        theme: {
+            extend: {
+                colors: {
+                    brand: {
+                        blue: '#1A365D',
+                        gold: '#C5A880',
+                        light: '#F8F9FA',
+                        dark: '#2D3748',
+                        whatsapp: '#25D366'
                     }
+                },
+                fontFamily: {
+                    sans: ['Montserrat', 'sans-serif'],
+                    arabic: ['Tajawal', 'sans-serif'],
                 }
             }
         }
-
-        const detailTrustContent = {
-            fr: {
-                label: 'Réservation en confiance',
-                hostTitle: 'Ce séjour est géré par des hôtes locaux',
-                hostText: 'L\'équipe CosyNest Tunisia accompagne les voyageurs directement, avec réservation simple via WhatsApp et support en français, arabe et anglais.',
-                a: 'Réponse directe des hôtes',
-                b: 'Accompagnement multilingue',
-                c: 'Séjour premium dans un quartier recherché'
-            },
-            ar: {
-                label: 'حجز بثقة',
-                hostTitle: 'هذا المسكن بإدارة مضيفين محليين',
-                hostText: 'يقوم فريق CosyNest Tunisia بمتابعة الضيوف مباشرة مع حجز سهل عبر واتساب ودعم بالعربية والفرنسية والإنجليزية.',
-                a: 'تواصل مباشر مع المضيفين',
-                b: 'دعم بعدة لغات',
-                c: 'إقامة مميزة في موقع مطلوب'
-            },
-            en: {
-                label: 'Book with confidence',
-                hostTitle: 'This stay is managed by local hosts',
-                hostText: 'The CosyNest Tunisia team supports guests directly, with easy WhatsApp booking and multilingual assistance in French, Arabic and English.',
-                a: 'Direct host communication',
-                b: 'Multilingual guest support',
-                c: 'Premium stay in a sought-after area'
-            }
-        };
-
-        function injectDetailTrustBlocks() {
-            const detailViews = document.querySelectorAll('[id^="detail-view-"]');
-            detailViews.forEach(view => {
-                const leftColumn = view.querySelector('.md\\:col-span-2');
-                if (!leftColumn || view.querySelector('.detail-trust-block')) return;
-
-                const ratingText = (view.querySelector('.flex.items-center.gap-4.text-gray-600.mb-8.font-medium span')?.textContent || '').trim();
-                const locationText = (view.querySelector('.underline')?.textContent || '').trim();
-                const block = document.createElement('section');
-                block.className = 'detail-trust-block border border-gray-200 rounded-[1.5rem] p-6 md:p-8 mt-10 soft-ring';
-                block.innerHTML = `
-                    <div class="flex flex-wrap items-center justify-between gap-3 mb-6">
-                        <div class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold section-chip">
-                            <span data-lang="fr" class="lang-active">Réservation en confiance</span>
-                            <span data-lang="ar" class="font-arabic">حجز بثقة</span>
-                            <span data-lang="en">WhatsApp</span>
-                        </div>
-                        <div class="text-sm font-semibold text-brand-blue">${ratingText}</div>
-                    </div>
-                    <div class="grid lg:grid-cols-[1.1fr,0.9fr] gap-6 items-start">
-                        <div>
-                            <h3 data-lang="fr" class="lang-active text-2xl font-bold text-brand-blue mb-3">Ce séjour est géré par des hôtes locaux</h3>
-                            <h3 data-lang="ar" class="text-2xl font-bold text-brand-blue mb-3 font-arabic">هذا المسكن بإدارة مضيفين محليين</h3>
-                            <h3 data-lang="en" class="text-2xl font-bold text-brand-blue mb-3">This stay is managed by local hosts</h3>
-                            <p data-lang="fr" class="lang-active text-gray-600 leading-relaxed mb-4">L'équipe CosyNest Tunisia accompagne les voyageurs directement, avec réservation simple via WhatsApp et support en français, arabe et anglais.</p>
-                            <p data-lang="ar" class="text-gray-600 leading-relaxed mb-4 font-arabic">يقوم فريق CosyNest Tunisia بمتابعة الضيوف مباشرة مع حجز سهل عبر واتساب ودعم بالعربية والفرنسية والإنجليزية.</p>
-                            <p data-lang="en" class="text-gray-600 leading-relaxed mb-4">The CosyNest Tunisia team supports guests directly, with easy WhatsApp booking and multilingual assistance in French, Arabic and English.</p>
-                            <div class="grid sm:grid-cols-3 gap-3 text-sm font-medium text-gray-700">
-                                <div class="bg-white rounded-2xl border border-gray-200 p-4">
-                                    <span data-lang="fr" class="lang-active">Réponse directe des hôtes</span>
-                                    <span data-lang="ar" class="font-arabic">تواصل مباشر مع المضيفين</span>
-                                    <span data-lang="en">WhatsApp</span>
-                                </div>
-                                <div class="bg-white rounded-2xl border border-gray-200 p-4">
-                                    <span data-lang="fr" class="lang-active">Accompagnement multilingue</span>
-                                    <span data-lang="ar" class="font-arabic">دعم بعدة لغات</span>
-                                    <span data-lang="en">Multilingual guest support</span>
-                                </div>
-                                <div class="bg-white rounded-2xl border border-gray-200 p-4">
-                                    <span data-lang="fr" class="lang-active">Séjour premium dans un quartier recherché</span>
-                                    <span data-lang="ar" class="font-arabic">إقامة مميزة في موقع مطلوب</span>
-                                    <span data-lang="en">Premium stay in a sought-after area</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="bg-brand-blue text-white rounded-[1.5rem] p-6">
-                            <div class="flex items-center gap-4 mb-4">
-                                <img src="logo.jpg" alt="CosyNest logo" class="w-16 h-16 rounded-2xl object-contain bg-white p-2">
-                                <div>
-                                    <p class="text-xs uppercase tracking-[0.2em] text-brand-gold font-semibold">CosyNest Tunisia</p>
-                                    <p class="text-xl font-bold">CosyNest Tunisia</p>
-                                </div>
-                            </div>
-                            <div class="text-white/85 space-y-2 text-sm">
-                                <p>${locationText}</p>
-                                <p data-lang="fr" class="lang-active">Réservation directe, claire et rapide pour les séjours à La Marsa et Sidi Bou Said.</p>
-                                <p data-lang="ar" class="font-arabic">حجز مباشر وواضح وسريع لإقامات المرسى وسيدي بوسعيد.</p>
-                                <p data-lang="en">Clear, direct and fast booking for stays in La Marsa and Sidi Bou Said.</p>
-                            </div>
-                            <a href="https://wa.me/21653340970" target="_blank" class="mt-5 inline-flex justify-center w-full bg-white text-brand-blue rounded-xl px-4 py-3 font-bold hover:bg-brand-light transition-colors">
-                                <span data-lang="fr" class="lang-active">Contacter CosyNest</span>
-                                <span data-lang="ar" class="font-arabic">تواصل مع CosyNest</span>
-                                <span data-lang="en">Contact CosyNest</span>
-                            </a>
-                        </div>
-                    </div>`;
-                leftColumn.appendChild(block);
-            });
-        }
-
-        document.addEventListener('DOMContentLoaded', injectDetailTrustBlocks);
-
-    </script>
-<style>
-        .font-arabic { font-family: 'Tajawal', sans-serif; }
-        .hero-bg {
-            background-image: linear-gradient(rgba(26, 54, 93, 0.7), rgba(26, 54, 93, 0.8)), url('https://images.unsplash.com/photo-1616035251430-8041fcb52d2f?auto=format&fit=crop&q=80&w=2000');
-            background-size: cover;
-            background-position: center;
-        }
-        /* Hide elements by default if they don't match the current language */
-        [data-lang] { display: none; }
-        .lang-active[data-lang] { display: block; }
-        span.lang-active[data-lang] { display: inline; }
-        
-        /* Navigation + language switcher */
-        .site-nav {
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            margin-bottom: -88px;
-            background: linear-gradient(180deg, rgba(16,43,78,0.96) 0%, rgba(27,66,112,0.92) 42%, rgba(38,84,136,0.70) 72%, rgba(38,84,136,0.00) 100%);
-            backdrop-filter: blur(8px);
-            -webkit-backdrop-filter: blur(8px);
-        }
-        .nav-shell {
-            width: 100%;
-            background: linear-gradient(90deg, rgba(17,45,80,0.86) 0%, rgba(35,78,127,0.76) 55%, rgba(83,143,192,0.58) 100%);
-            border-bottom: 1px solid rgba(255,255,255,0.16);
-            box-shadow: none;
-        }
-        .nav-logo-wrap { min-width: 0; }
-        .nav-brand-text { white-space: nowrap; }
-        .nav-badge {
-            display:inline-flex;
-            align-items:center;
-            padding:0.22rem 0.55rem;
-            border-radius:9999px;
-            background: rgba(255,255,255,0.10);
-            color:#F7E7CF;
-            border:1px solid rgba(255,255,255,0.18);
-            font-size:0.64rem;
-            font-weight:700;
-            letter-spacing:0.08em;
-            text-transform:uppercase;
-        }
-        .lang-btn {
-            opacity: 1;
-            transition: all 0.25s ease;
-            color: #ffffff;
-            background: rgba(255,255,255,0.14);
-            border: 1px solid rgba(255,255,255,0.22);
-            border-radius: 9999px;
-            padding: 0.42rem 0.78rem;
-            min-width: 2.7rem;
-            line-height: 1;
-            font-weight: 800;
-            font-size: 0.92rem;
-            box-shadow: 0 4px 14px rgba(8,24,46,0.12);
-        }
-        .lang-btn:hover {
-            background: rgba(255,255,255,0.24);
-            border-color: rgba(255,255,255,0.34);
-            transform: translateY(-1px);
-        }
-        .lang-btn.active {
-            color: #15375c;
-            background: linear-gradient(135deg, #F4D58D 0%, #E7B85C 100%);
-            border-color: rgba(255,255,255,0.10);
-            box-shadow: 0 8px 18px rgba(231,184,92,0.28);
-        }
-        .nav-wa-btn {
-            background: linear-gradient(135deg, #25D366 0%, #18B954 100%);
-            color: #ffffff;
-            border-radius: 9999px;
-            padding: 0.66rem 1.08rem;
-            font-weight: 800;
-            white-space: nowrap;
-            border: 1px solid rgba(255,255,255,0.14);
-            box-shadow: 0 10px 22px rgba(23,168,84,0.28);
-        }
-        .nav-wa-btn:hover { background: linear-gradient(135deg, #2CE06E 0%, #17A850 100%); transform: translateY(-1px); }
-        
-        .wa-primary-btn {
-            background: linear-gradient(135deg, #25D366 0%, #16B956 100%);
-            border: 1px solid rgba(18,122,56,0.14);
-            box-shadow: 0 12px 26px rgba(23,168,84,0.22);
-        }
-        .call-secondary-btn{
-            box-shadow:0 8px 20px rgba(26,54,93,0.08);
-        }
-        .call-secondary-btn:hover{transform:translateY(-1px);background:#f8fbff;}
-        .booking-request-card{box-shadow:0 12px 24px rgba(15,23,42,0.05);max-width:520px;margin-left:auto;margin-right:auto;}.booking-request-card .grid{gap:12px;}.booking-request-card button{display:block !important;visibility:visible !important;opacity:1 !important;}.booking-request-card input,.booking-request-card textarea{background:#fff;}.phone-row{display:grid;grid-template-columns:120px 1fr;gap:10px;}.phone-prefix{appearance:none;background:#fff;border:1px solid #d1d5db;border-radius:12px;padding:12px 14px;font-weight:600;}@media (max-width:640px){.phone-row{grid-template-columns:1fr;}}
-        .booking-request-card input,.booking-request-card textarea{outline:none}
-        .booking-request-card input:focus,.booking-request-card textarea:focus{border-color:#93c5fd; box-shadow:0 0 0 3px rgba(147,197,253,.25);}
-        .wa-primary-btn:hover {
-            background: linear-gradient(135deg, #2CE06E 0%, #149D49 100%);
-            transform: translateY(-1px);
-        }
-
-        .hero-cta-main {
-            display:inline-flex;
-            align-items:center;
-            justify-content:center;
-            gap:0.8rem;
-            padding:1rem 1.35rem;
-            border-radius:9999px;
-            border:1px solid rgba(18,122,56,0.16);
-            background:linear-gradient(135deg, #25D366 0%, #18B954 100%);
-            color:#ffffff !important;
-            font-weight:800;
-            box-shadow:0 14px 30px rgba(23,168,84,0.22);
-        }
-        .hero-cta-main:hover { transform: translateY(-2px); background:linear-gradient(135deg, #2CE06E 0%, #17A850 100%); }
-        .hero-cta-secondary {
-            display:inline-flex;
-            align-items:center;
-            justify-content:center;
-            padding:1rem 1.35rem;
-            border-radius:9999px;
-            border:1px solid rgba(26,54,93,0.16);
-            background:linear-gradient(180deg, #ffffff 0%, #eef4fb 100%);
-            color:#1A365D !important;
-            font-weight:700;
-            box-shadow:0 14px 30px rgba(26,54,93,0.10);
-        }
-        .hero-cta-secondary:hover { transform: translateY(-2px); background:linear-gradient(180deg, #ffffff 0%, #e7eff8 100%); }
-        .hero-cta-secondary:hover { transform: translateY(-2px); background:#f8fafc; }
-        @media (max-width: 768px) {
-            .site-nav .nav-inner { padding-top: 0.6rem; padding-bottom: 0.6rem; }
-            .site-nav { margin-bottom: -72px; }
-            .nav-brand-text { font-size: 0.95rem; }
-            .nav-wa-btn { padding: 0.5rem 0.75rem; font-size: 0.85rem; }
-            .lang-btn { padding: 0.34rem 0.55rem; min-width: 2.3rem; font-size: 0.82rem; }
-            .hero-cta-main, .hero-cta-secondary { width:100%; justify-content:center; }
-        }
-
-        /* Detail View Styles */
-        .booking-card { position: sticky; top: 100px; }
-        .detail-image-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; grid-template-rows: 1fr 1fr; gap: 0.5rem; border-radius: 1rem; overflow: hidden; height: 55vh; min-height: 450px; }
-        .detail-image-grid img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s; cursor: pointer; }
-        .detail-image-grid img:hover { transform: scale(1.02); opacity: 0.9; }
-        .main-img { grid-column: 1; grid-row: 1 / span 2; }
-        @media (max-width: 768px) { .detail-image-grid { display: flex; flex-direction: column; height: auto; gap: 0.5rem; } .detail-image-grid img { height: 250px; border-radius: 0.5rem; } }
-
-        .property-details-btn, .wa-primary-btn { background-color: #1A365D !important; color: #ffffff !important; }
-        .wa-primary-btn { background-color: #25D366 !important; }
-        .property-details-btn:hover { opacity: 0.92; }
-        .trust-card { background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%); }
-        .host-gradient { background: linear-gradient(135deg, rgba(26,54,93,0.98) 0%, rgba(36,66,109,0.96) 55%, rgba(197,168,128,0.22) 100%); }
-        .soft-ring { box-shadow: 0 10px 30px rgba(26,54,93,0.08); }
-        .section-chip { background: rgba(197,168,128,0.12); color: #1A365D; }
-        .detail-trust-block { background: linear-gradient(180deg, #ffffff 0%, #f8f9fa 100%); }
-    </style>
-<style>
-.airbnb-chip { display:inline-flex; align-items:center; gap:.35rem; padding:.45rem .75rem; border-radius:9999px; background:#F8F9FA; border:1px solid #E5E7EB; color:#1A365D; font-weight:600; font-size:.9rem; }
-.airbnb-score-card { background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%); border:1px solid #E5E7EB; border-radius:1rem; padding:1rem; }
-</style>
-<style>
-/* FORCE all WhatsApp buttons */
-[class*="whatsapp"], .wa-primary-btn, .wa-secondary-btn, .nav-wa-btn {
-    background: linear-gradient(135deg, #25D366 0%, #18B954 100%) !important;
-    color: #fff !important;
-    border: none !important;
-}
-
-/* Minimal language buttons */
-.lang-btn {
-    background: transparent !important;
-    border: none !important;
-    color: white !important;
-    font-weight: 600;
-    opacity: 0.85;
-}
-
-.lang-btn.active {
-    opacity: 1;
-    border-bottom: 2px solid #d4af37;
-}
-</style>
-<style>
-.cosy-compact{
-  background:
-    radial-gradient(circle at top left, rgba(214,231,255,0.9), transparent 30%),
-    linear-gradient(135deg, #ffffff 0%, #fbfcfe 50%, #f4f8ff 100%);
-}
-.cosy-badge-compact{
-  background: linear-gradient(135deg, rgba(26,54,93,0.06), rgba(197,168,128,0.16));
-  color:#1A365D;
-  border:1px solid rgba(26,54,93,0.08);
-}
-.compact-card{
-  display:flex;
-  align-items:flex-start;
-  gap:0.85rem;
-  padding:1rem;
-  border-radius:1.25rem;
-  border:1px solid rgba(255,255,255,0.8);
-  box-shadow:0 8px 18px rgba(15,23,42,0.05);
-}
-.compact-copy{min-width:0; flex:1;}
-.compact-card h3{
-  color:#16375C;
-  font-size:1rem;
-  font-weight:800;
-  line-height:1.25;
-  margin-bottom:0.15rem;
-}
-.compact-card p{
-  color:#5b6472;
-  font-size:0.92rem;
-  line-height:1.45;
-  margin:0;
-}
-.compact-icon{
-  width:2.6rem;
-  height:2.6rem;
-  min-width:2.6rem;
-  border-radius:9999px;
-  background:rgba(255,255,255,0.75);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:1.2rem;
-}
-.compact-blue{ background: linear-gradient(180deg, #eef6ff 0%, #e6f0ff 100%); }
-.compact-gold{ background: linear-gradient(180deg, #fff8ea 0%, #fff0c9 100%); }
-.compact-green{ background: linear-gradient(180deg, #eefdf3 0%, #dff8e8 100%); }
-.compact-pink{ background: linear-gradient(180deg, #fff2f7 0%, #fbe4ec 100%); }
-
-.compact-side{
-  background:rgba(255,255,255,0.94);
-  border:1px solid rgba(15,23,42,0.06);
-  border-radius:1.5rem;
-  padding:1.15rem;
-  box-shadow:0 14px 26px rgba(15,23,42,0.06);
-}
-.compact-side-head{
-  display:flex;
-  align-items:center;
-  gap:0.8rem;
-  margin-bottom:1rem;
-  padding-bottom:0.9rem;
-  border-bottom:1px solid rgba(148,163,184,0.14);
-}
-.compact-logo-wrap{
-  width:3.2rem;
-  height:3.2rem;
-  border-radius:1rem;
-  background:linear-gradient(180deg,#ffffff,#f4f7fb);
-  border:1px solid rgba(148,163,184,0.18);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-}
-.compact-point{
-  display:flex;
-  gap:0.8rem;
-  align-items:flex-start;
-  padding:0.75rem 0;
-  border-bottom:1px solid rgba(148,163,184,0.12);
-}
-.compact-point:last-of-type{ border-bottom:none; }
-.mini-icon-compact{
-  width:2.2rem;
-  height:2.2rem;
-  min-width:2.2rem;
-  border-radius:9999px;
-  background:linear-gradient(135deg,#ecf4ff,#fff6e7);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:1rem;
-}
-.compact-point strong{
-  display:block;
-  color:#16375C;
-  font-size:0.96rem;
-  margin-bottom:0.15rem;
-}
-.compact-point p{
-  color:#64748b;
-  font-size:0.9rem;
-  line-height:1.42;
-  margin:0;
-}
-.cosy-compact [data-lang]:not(.lang-active){ display:none !important; }
-.cosy-compact .lang-active[data-lang]{ display:block !important; }
-.cosy-compact span.lang-active[data-lang],
-.cosy-compact strong.lang-active[data-lang]{ display:inline !important; }
-
-@media (max-width: 1023px){
-  .compact-side{ margin-top:0.5rem; }
-}
-</style>
-<style>
-/* Section adjustments */
-.cosy-feature-card{
-  
-  display:flex;
-  flex-direction:column;
-  justify-content:flex-start;
-  overflow:hidden;
-}
-.cosy-feature-card p,
-.cosy-feature-card h3{
-  overflow-wrap:anywhere;
-  word-break:normal;
-}
-.cosy-side-panel [data-lang]:not(.lang-active),
-.cosy-feature-card [data-lang]:not(.lang-active),
-.cosy-showcase [data-lang]:not(.lang-active){
-  display:none !important;
-}
-.cosy-showcase .lang-active[data-lang]{display:block !important;}
-.cosy-showcase span.lang-active[data-lang],
-.cosy-showcase strong.lang-active[data-lang]{display:inline !important;}
-
-.cosy-side-panel .text-sm.text-slate-500{
-  margin-top: .1rem;
-}
-</style>
-<style>
-.amenity-card{
-    background: linear-gradient(180deg, #ffffff 0%, #f9fbff 100%);
-    border: 1px solid rgba(26,54,93,0.08);
-    border-radius: 1.35rem;
-    padding: 1.15rem;
-    box-shadow: 0 10px 22px rgba(15,23,42,0.04);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-.amenity-card:hover{
-    transform: translateY(-2px);
-    box-shadow: 0 14px 28px rgba(15,23,42,0.07);
-}
-.amenity-icon{
-    width: 3rem;
-    height: 3rem;
-    border-radius: 9999px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    background: linear-gradient(135deg, #eef5ff 0%, #fff8ea 100%);
-    font-size: 1.3rem;
-    margin-bottom: 0.8rem;
-}
-.amenity-card h3{
-    color:#16375C;
-    font-size:1.05rem;
-    font-weight:800;
-    line-height:1.3;
-    margin-bottom:0.35rem;
-}
-.amenity-card p{
-    color:#64748b;
-    font-size:0.92rem;
-    line-height:1.5;
-    margin:0;
-}
-section .amenity-card [data-lang]:not(.lang-active){display:none !important;}
-section .amenity-card .lang-active[data-lang]{display:block !important;}
-</style>
-<style>
-.price-row{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap:1rem;
-    background: #fff;
-    border:1px solid rgba(26,54,93,0.08);
-    border-radius: 1.2rem;
-    padding: 1rem 1.1rem;
-    box-shadow: 0 8px 18px rgba(15,23,42,0.04);
-}
-.price-left{
-    display:flex;
-    align-items:center;
-    gap:0.9rem;
-}
-.price-icon{
-    width:2.8rem;
-    height:2.8rem;
-    min-width:2.8rem;
-    border-radius:9999px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    background: linear-gradient(135deg, #eef5ff 0%, #fff6e8 100%);
-    font-size:1.2rem;
-}
-.price-left h3{
-    color:#16375C;
-    font-size:1rem;
-    font-weight:800;
-    margin:0;
-    line-height:1.35;
-}
-.price-right{
-    color:#16375C;
-    font-weight:700;
-    white-space:nowrap;
-    font-size:1rem;
-}
-.price-right strong{
-    font-size:1.15rem;
-}
-@media (max-width: 768px){
-    .price-row{
-        flex-direction:column;
-        align-items:flex-start;
     }
-    .price-right{
-        white-space:normal;
-        padding-left:3.7rem;
-    }
-}
-</style>
-<style>
-.gallery-backdrop{
-  position:fixed; inset:0; background:rgba(15,23,42,.82);
-  backdrop-filter:blur(6px); z-index:9999; display:none;
-  align-items:flex-start; justify-content:center; overflow:auto; padding:2rem 1rem;
-}
-.gallery-backdrop.open{display:flex;}
-.gallery-panel{
-  width:min(1200px, 100%); background:#fff; border-radius:1.5rem;
-  box-shadow:0 30px 80px rgba(0,0,0,.35); overflow:hidden;
-}
-.gallery-head{
-  display:flex; align-items:center; justify-content:space-between;
-  padding:1rem 1.25rem; border-bottom:1px solid rgba(15,23,42,.08);
-  position:sticky; top:0; background:#fff; z-index:2;
-}
-.gallery-title{font-weight:800; color:#16375C; font-size:1.1rem;}
-.gallery-close{
-  border:none; background:#f3f4f6; color:#16375C; font-weight:700;
-  border-radius:9999px; padding:.65rem .9rem; cursor:pointer;
-}
-.gallery-main{
-  display:grid; grid-template-columns:1fr; gap:.75rem; padding:1rem;
-}
-.gallery-main img{
-  width:100%; height:auto; display:block; border-radius:1rem;
-  object-fit:cover; background:#e5e7eb;
-}
-.gallery-note{
-  color:#64748b; font-size:.9rem; padding:0 1rem 1rem;
-}
-body.gallery-open{overflow:hidden;}
-@media (min-width: 900px){
-  .gallery-main{grid-template-columns:repeat(2, 1fr);}
-}
-</style>
-<style>
-.cn-picker-overlay{position:fixed;inset:0;background:rgba(15,23,42,.45);display:none;align-items:center;justify-content:center;z-index:999999}
-.cn-picker-overlay.open{display:flex}
-.cn-picker{width:min(440px,94vw);background:#fff;border-radius:22px;box-shadow:0 24px 60px rgba(15,23,42,.24);padding:16px;border:1px solid rgba(148,163,184,.22);direction:ltr}
-.cn-picker-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}
-.cn-picker-title{font-size:20px;font-weight:800;color:#16375C}
-.cn-picker-nav{display:flex;gap:8px}
-.cn-picker-nav button,.cn-picker-close{border:1px solid rgba(148,163,184,.24);background:#fff;border-radius:999px;padding:8px 12px;font-weight:800;color:#16375C}
-.cn-picker-weekdays,.cn-picker-days{display:grid;grid-template-columns:repeat(7,1fr);gap:8px}
-.cn-picker-weekdays div{font-size:12px;color:#64748b;text-align:center;font-weight:700}
-.cn-picker-day{height:58px;display:flex;flex-direction:column;align-items:center;justify-content:center;border-radius:14px;background:#f8fafc;color:#334155;font-weight:600;cursor:pointer;border:1px solid transparent;padding:4px}
-.cn-picker-day.empty{background:transparent;border:none;cursor:default}
-.cn-picker-day.blocked{background:#d1d5db;color:#9ca3af;text-decoration:line-through;cursor:not-allowed}
-.cn-picker-day.selected{background:#1A365D;color:#fff}
-.cn-picker-day.today{border-color:#cbd5e1}
-.cn-picker-day.has-price{box-shadow:inset 0 0 0 1px rgba(59,130,246,.24)}
-.cn-picker-price{font-size:10px;line-height:1;color:#2563eb;font-weight:800;margin-top:3px}
-.cn-picker-day.blocked .cn-picker-price{color:#6b7280}
-.cn-picker-foot{display:flex;justify-content:flex-end;margin-top:12px}
-.booking-date-input{font-size:1.06rem !important;padding:.9rem .25rem !important;font-weight:700;min-height:44px;cursor:pointer !important}
-</style>
-</head><body class="detail-page-shell bg-brand-light text-brand-dark font-sans antialiased transition-all duration-300" data-page-slug="azur-corniche"><nav class="site-nav">
-<div class="w-full px-0 py-0">
-<div class="nav-shell nav-inner px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-between gap-3">
-<div class="nav-logo-wrap flex items-center gap-3 text-white cursor-pointer min-w-0" onclick="window.location.href='../index.html'">
-<img alt="CosyNest Logo" class="w-10 h-10 rounded-xl border border-white/20 object-contain bg-white shadow-sm p-1 shrink-0" src="../logo.jpg"/>
-<div class="min-w-0">
-<div class="nav-brand-text font-bold text-sm sm:text-base tracking-wide truncate">CosyNest Tunisia</div>
-</div>
-</div>
-<div class="flex items-center gap-2 sm:gap-2.5 ml-auto shrink-0">
-<div class="flex items-center gap-1.5 text-white font-medium rounded-full bg-white/12 px-1.5 py-1.5 border border-white/18 shadow-lg backdrop-blur-sm">
-<button class="lang-btn active" id="btn-fr" onclick="switchLang('fr')">FR</button>
-<button class="lang-btn" id="btn-ar" onclick="switchLang('ar')">AR</button>
-<button class="lang-btn" id="btn-en" onclick="switchLang('en')">EN</button>
-</div>
-<a class="nav-wa-btn inline-flex items-center gap-2 px-4 py-2 rounded-full" dir="ltr" href="https://wa.me/21653340970" target="_blank"><svg class="w-4 h-4 sm:w-5 sm:h-5" fill="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path clip-rule="evenodd" d="M1.5 4.5a3 3 0 013-3h1.372c.86 0 1.61.586 1.819 1.42l1.105 4.423a1.875 1.875 0 01-.694 1.955l-1.293.97c-.135.101-.164.249-.126.352a11.285 11.285 0 006.697 6.697c.103.038.25.009.352-.126l.97-1.293a1.875 1.875 0 011.955-.694l4.423 1.105c.834.209 1.42.959 1.42 1.82V19.5a3 3 0 01-3 3h-2.25C8.552 22.5 1.5 15.448 1.5 6.75V4.5z" fill-rule="evenodd"></path></svg><span class="lang-active" data-lang="fr">WhatsApp</span><span class="font-arabic" data-lang="ar">WhatsApp</span><span data-lang="en">WhatsApp</span></a>
-</div>
-</div>
-</div>
-</nav><div class="pt-24 pb-20 px-4 max-w-6xl mx-auto" id="detail-view-marsa4">
-<button class="mb-6 flex items-center gap-2 text-brand-blue font-bold hover:text-brand-gold transition-colors" onclick="window.location.href='../index.html'">
-<svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-<span class="lang-active" data-lang="fr">Retour aux appartements</span>
-</button>
-<h1 class="lang-active text-3xl md:text-5xl font-bold text-brand-blue mb-4" data-lang="fr">L'Azur de la Corniche</h1>
-<h1 class="text-3xl md:text-5xl font-bold text-brand-blue mb-4 font-arabic" data-lang="ar">أزور الكورنيش</h1>
-<h1 class="text-3xl md:text-5xl font-bold text-brand-blue mb-4" data-lang="en">The Corniche Azure</h1>
-<div class="share-like-bar">
-<button class="share-btn" onclick="sharePage()"><span>📤</span><span>Share</span></button>
-<button class="like-btn" id="like-btn" onclick="toggleLike('azur-corniche')"><span>❤</span><span class="label">Save</span></button>
-</div>
-<div class="flex items-center gap-4 text-gray-600 mb-8 font-medium">
-<span class="flex items-center gap-1"><svg class="w-5 h-5 text-brand-gold" fill="currentColor" viewbox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg> 4.9 (69)</span>
-<span>•</span>
-<span class="underline">La Marsa Corniche, Tunis, Tunisia</span>
-</div>
-<div class="detail-image-grid mb-10">
-<img alt="Living Room" class="main-img" onclick="openGallery('marsa4', 0)" src="../uploads/azur-corniche/01.webp"/>
-<img alt="Living Area" onclick="openGallery('marsa4', 1)" src="../uploads/azur-corniche/02.webp"/>
-<img alt="Bedroom" onclick="openGallery('marsa4', 2)" src="../uploads/azur-corniche/03.webp"/>
-<img alt="Balcony" onclick="openGallery('marsa4', 3)" src="../uploads/azur-corniche/04.webp"/>
-<div class="relative cursor-pointer group w-full h-full" onclick="openGallery('marsa4', 4)">
-<img alt="Kitchen" class="absolute inset-0 w-full h-full object-cover" src="../uploads/azur-corniche/05.webp"/>
-<div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center text-white font-bold text-sm md:text-lg group-hover:bg-opacity-50 transition-all">
-<span class="lang-active" data-lang="fr">Afficher toutes les photos</span>
-</div>
-</div>
-</div>
-<div style="display: none;">
-    <img src="../uploads/azur-corniche/06.webp" onclick="openGallery('marsa4', 5)">
-    <img src="../uploads/azur-corniche/07.webp" onclick="openGallery('marsa4', 6)">
-    <img src="../uploads/azur-corniche/08.webp" onclick="openGallery('marsa4', 7)">
-</div>
-<div class="grid md:grid-cols-3 gap-12 max-w-7xl mx-auto px-4">
-<div class="md:col-span-2 max-w-3xl mx-auto md:mx-0">
-<div class="border-b border-gray-200 pb-8 mb-8">
-<h2 class="text-2xl font-bold text-brand-blue mb-2">
-<span class="lang-active" data-lang="fr">Logement entier par CosyNest Tunisia</span>
-<span class="font-arabic" data-lang="ar">شقة كاملة من CosyNest Tunisia</span>
-<span data-lang="en">Entire rental unit by CosyNest Tunisia</span>
-</h2>
-<p class="text-gray-600 text-lg">
-<span class="lang-active" data-lang="fr">2 voyageurs • 1 chambre • 1 lit • 1 salle de bain</span>
-<span class="font-arabic" data-lang="ar">ضيفان • غرفة نوم واحدة • سرير واحد • حمام واحد</span>
-<span data-lang="en">2 guests • 1 bedroom • 1 bed • 1 bath</span>
-</p>
-</div>
-<div class="mb-10 text-gray-700 leading-relaxed text-lg">
-<div class="lang-active" data-lang="fr">
-<p class="mb-4">Réveillez-vous au rythme des vagues dans cette perle de la Corniche, nichée à seulement 50 petits pas du sable fin.</p>
-<p class="mb-4">Cet appartement intimiste et magnifiquement agencé est l'incarnation même du luxe côtier détendu. Parfait pour un séjour en amoureux ou une échappée solitaire, il combine un emplacement d'exception avec un confort haut de gamme. Le salon chaleureux, la grande chambre avec lit Queen-size, et le balcon ensoleillé créent un espace où chaque moment est un délice.</p>
-<p class="mb-4">Vivez comme un véritable local avec le prestigieux centre commercial Zéphyr, les terrasses animées et le TGM (train) à portée de main. Une opportunité rare de marier la commodité urbaine et la magie de la Méditerranée.</p>
-</div>
-<div class="font-arabic" data-lang="ar">
-<p class="mb-4">استيقظ على إيقاع الأمواج في هذه الجوهرة بالكورنيش، التي تبعد 50 خطوة فقط عن الرمال الناعمة.</p>
-<p class="mb-4">تعتبر هذه الشقة الحميمة والمصممة بشكل جميل تجسيداً حقيقياً للرفاهية الساحلية المريحة. مثالية لإقامة رومانسية أو ملاذ منفرد، فهي تجمع بين موقع استثنائي وراحة راقية. غرفة المعيشة الدافئة، وغرفة النوم الكبيرة بسرير كوين، والشرفة المشمسة تخلق مساحة تكون فيها كل لحظة متعة.</p>
-<p class="mb-4">عش كواحد من السكان المحليين مع مركز زفير التجاري المرموق والشرفات الحيوية وقطار TGM في متناول يدك. فرصة نادرة للجمع بين الراحة الحضرية وسحر البحر الأبيض المتوسط.</p>
-</div>
-<div data-lang="en">
-<p class="mb-4">Wake up to the rhythm of the waves in this pearl of the Corniche, nestled just 50 short steps from the fine sand.</p>
-<p class="mb-4">This intimate and beautifully arranged apartment is the very incarnation of relaxed coastal luxury. Perfect for a romantic stay or a solitary escape, it combines an exceptional location with premium comfort. The warm living room, the large bedroom with Queen-size bed, and the sunny balcony create a space where every moment is a delight.</p>
-<p class="mb-4">Live like a true local with the prestigious Zephyr shopping center, lively terraces, and the TGM (train) close at hand. A rare opportunity to marry urban convenience and the magic of the Mediterranean.</p>
-</div>
-</div>
-<section class="mt-10 border-t border-gray-200 pt-8" data-guest-feedback="marsa4">
-<div class="flex items-center justify-between flex-wrap gap-3 mb-5">
-<h3 class="text-2xl font-bold text-brand-blue">
-<span class="lang-active" data-lang="fr">Avis des voyageurs</span>
-<span class="font-arabic" data-lang="ar">آراء الضيوف</span>
-<span data-lang="en">Guest feedback</span>
-</h3>
-</div>
-<div class="grid md:grid-cols-2 gap-4">
-<div class="bg-white border border-gray-200 rounded-2xl p-5 shadow-sm">
-<div class="flex items-center justify-between mb-3"><span class="font-bold text-brand-blue">★★★★★</span><span class="text-sm text-gray-400">Verified stay</span></div>
-<p class="text-gray-700 leading-relaxed">
-<span class="lang-active" data-lang="fr">Guests love being steps from the beach and close to the Corniche lifestyle.</span>
-<span class="font-arabic" data-lang="ar">Guests love being steps from the beach and close to the Corniche lifestyle.</span>
-<span data-lang="en">Guests love being steps from the beach and close to the Corniche lifestyle.</span>
-</p>
-</div>
-<div class="bg-white border border-gray-200 rounded-2xl p-5 shadow-sm">
-<div class="flex items-center justify-between mb-3"><span class="font-bold text-brand-blue">★★★★★</span><span class="text-sm text-gray-400">Verified stay</span></div>
-<p class="text-gray-700 leading-relaxed">
-<span class="lang-active" data-lang="fr">The walkable location and private balcony are frequent highlights in guest feedback.</span>
-<span class="font-arabic" data-lang="ar">The walkable location and private balcony are frequent highlights in guest feedback.</span>
-<span data-lang="en">The walkable location and private balcony are frequent highlights in guest feedback.</span>
-</p>
-</div>
-</div>
-</section>
-</div>
-<div>
-<div class="bg-white border border-gray-200 rounded-2xl shadow-xl p-6 booking-card">
-<div class="flex justify-between items-end mb-6">
-<div class="flex flex-col">
-<div class="flex items-baseline gap-2">
-<span class="text-gray-500 text-sm font-medium">
-<span class="lang-active" data-lang="fr">À partir de</span>
-<span class="font-arabic" data-lang="ar">ابتداءً من</span>
-<span data-lang="en">From</span>
-</span>
-<span class="text-3xl font-bold text-brand-blue">220 TND (~65€)</span>
-</div>
-</div>
-</div>
-<div class="border border-gray-300 rounded-xl mb-4 overflow-hidden">
-<div class="flex divide-x divide-gray-300 border-b border-gray-300">
-<div class="p-3 w-1/2">
-<label class="text-xs font-bold uppercase text-gray-800 block cursor-pointer" for="checkin-marsa4">Check-in</label>
-<input class="booking-date-input w-full text-gray-700 text-sm outline-none cursor-pointer bg-transparent mt-1" id="checkin-marsa4" onchange="updateWhatsAppLink(\'checkin-marsa4\'.replace(\'checkin-\', \'\'))" placeholder="Select date" readonly="" type="text"/>
-</div>
-<div class="p-3 w-1/2">
-<label class="text-xs font-bold uppercase text-gray-800 block cursor-pointer" for="checkout-marsa4">Checkout</label>
-<input class="booking-date-input w-full text-gray-700 text-sm outline-none cursor-pointer bg-transparent mt-1" id="checkout-marsa4" onchange="updateWhatsAppLink(\'checkout-marsa4\'.replace(\'checkout-\', \'\'))" placeholder="Select date" readonly="" type="text"/>
-</div>
-</div>
-<div class="p-3">
-<label class="text-xs font-bold uppercase text-gray-800 block cursor-pointer" for="guests-marsa4">Guests</label>
-<select class="w-full text-gray-700 text-sm outline-none cursor-pointer bg-transparent mt-1" id="guests-marsa4" onchange="updateWhatsAppLink('marsa4')">
-<option value="1">1 guest</option>
-<option value="2">2 guests</option>
-</select>
-</div>
-</div>
-<div class="mb-4" id="booking-summary-placeholder">
-<div class="border border-gray-200 rounded-2xl bg-slate-50 p-4">
-<div class="flex items-center justify-between mb-2">
-<div class="font-bold text-brand-blue">
-<span class="lang-active" data-lang="fr">Résumé du séjour</span>
-<span class="font-arabic" data-lang="ar">ملخص الإقامة</span>
-<span data-lang="en">Stay summary</span>
-</div>
-<div class="text-xs font-bold px-3 py-1 rounded-full bg-slate-100 text-slate-600" id="availability-badge">
-<span class="lang-active" data-lang="fr">Choisissez vos dates</span>
-<span class="font-arabic" data-lang="ar">اختر التواريخ</span>
-<span data-lang="en">Select dates</span>
-</div>
-</div>
-<div class="space-y-2 text-sm text-slate-700">
-<div class="flex justify-between"><span><span class="lang-active" data-lang="fr">Nombre de nuits</span><span class="font-arabic" data-lang="ar">عدد الليالي</span><span data-lang="en">Nights</span></span><strong id="summary-nights">—</strong></div>
-<div class="flex justify-between"><span><span class="lang-active" data-lang="fr">Prix par nuit</span><span class="font-arabic" data-lang="ar">السعر لليلة</span><span data-lang="en">Price per night</span></span><strong id="summary-price-night">—</strong></div>
-<div class="flex justify-between border-t border-slate-200 pt-2 text-base"><span class="font-bold"><span class="lang-active" data-lang="fr">Total estimé</span><span class="font-arabic" data-lang="ar">الإجمالي التقديري</span><span data-lang="en">Estimated total</span></span><strong class="text-brand-blue" id="summary-total">—</strong></div>
-</div>
-<div id="urgency-text" style="margin-top:10px;font-size:13px;color:#b45309;font-weight:600;">Only a few dates left this month</div>
-<div class="mt-3 text-xs text-slate-500" id="summary-message">
-<span class="lang-active" data-lang="fr">Choisissez vos dates pour voir le prix estimé et la disponibilité.</span>
-<span class="font-arabic" data-lang="ar">اختر التواريخ لرؤية السعر التقديري ومعرفة التوفر.</span>
-<span data-lang="en">Choose your dates to see estimated price and availability.</span>
-</div>
-<div class="mt-3 text-xs rounded-xl bg-amber-50 text-amber-800 border border-amber-200 px-3 py-2" id="booking-advance-note"><span class="lang-active" data-lang="fr">Réservation confirmée après réception d’un petit acompte.</span><span class="font-arabic" data-lang="ar">يتم تأكيد الحجز بعد استلام عربون بسيط.</span><span data-lang="en">Booking is confirmed after a small advance payment.</span></div>
-</div>
-</div>
-<div class="booking-card-actions">
-<button class="w-full mb-3 rounded-xl font-bold px-4 py-3 shadow-md" onclick="scrollToBookingRequest()" style="background:#16375C;color:#fff;border:none;display:block;" type="button">
-<span class="lang-active" data-lang="fr">Envoyer une demande</span>
-<span class="font-arabic" data-lang="ar">إرسال طلب</span>
-<span data-lang="en">Submit request</span>
-</button>
-<div class="booking-helper-text" style="font-size:12px;color:#16a34a;margin-bottom:6px;">
-<span class="lang-active" data-lang="fr">Réponse rapide sur WhatsApp</span>
-<span class="font-arabic" data-lang="ar">رد سريع عبر واتساب</span>
-<span data-lang="en">Fast response on WhatsApp</span>
-</div>
-<a class="wa-primary-btn block w-full text-center text-white py-4 rounded-xl font-bold text-lg transition-all mb-3 shadow-md" href="https://wa.me/21653340970?text=Bonjour" id="wa-btn-marsa4" onclick="updateWhatsAppLink('marsa4')" target="_blank">
-<span class="lang-active" data-lang="fr">Réserver sur WhatsApp</span>
-<span class="font-arabic" data-lang="ar">احجز عبر واتساب</span>
-<span data-lang="en">Book via WhatsApp</span>
-</a>
-<a class="call-secondary-btn block w-full text-center py-3 rounded-xl font-bold transition-all mb-4 border border-brand-blue text-brand-blue bg-white" href="tel:+21653340970">
-<span class="lang-active" data-lang="fr">Appeler maintenant</span>
-<span class="font-arabic" data-lang="ar">اتصل الآن</span>
-<span data-lang="en">Call now</span>
-</a>
-</div>
-</div>
-</div>
-</div><script src="https://cdn.tailwindcss.com"></script><script>
-        // Gallery Data: High Resolution image URLs
-        const galleries = {
-            'marsa': [
-                "https://a0.muscache.com/im/pictures/9290366c-badd-41ed-b673-f4c8d3415244.jpg?im_w=1200",
-                "https://a0.muscache.com/im/pictures/98d2d287-b896-4249-8dcf-3de545236df1.jpg?im_w=1200",
-                "https://a0.muscache.com/im/pictures/5a7c1c88-1fb9-4da9-836b-8ee491c5f5e3.jpg?im_w=1200",
-                "https://a0.muscache.com/im/pictures/5cfe67de-a58f-4a38-8a56-26e7a2ec7753.jpg?im_w=1200",
-                "https://a0.muscache.com/im/pictures/96929557-3285-49b1-80cd-fdb1120357c9.jpg?im_w=1200",
-                "https://a0.muscache.com/im/pictures/d8382a6f-46e3-497e-b5e1-ba1450f0139b.jpg?im_w=1200",
-                "https://a0.muscache.com/im/pictures/3bd753ba-3743-4887-8837-26644547c96a.jpg?im_w=1200"
-            ],
-            'marsa2': [
-                "https://a0.muscache.com/im/pictures/miso/Hosting-583787765176810175/original/c7badc6a-c0b0-4c3f-bab3-07165563e5f6.jpeg?im_w=1200",
-                "https://a0.muscache.com/im/pictures/miso/Hosting-583787765176810175/original/20660e9c-de3f-475e-9ab9-67d72f8d0707.jpeg?im_w=1200",
-                "https://a0.muscache.com/im/pictures/miso/Hosting-583787765176810175/original/ad46253b-fd03-41f0-88c4-51a0e8677f9e.jpeg?im_w=1200",
-                "https://a0.muscache.com/im/pictures/miso/Hosting-583787765176810175/original/e57cd4c8-c0f7-49cd-8a52-c6f913b7805b.jpeg?im_w=1200",
-                "https://a0.muscache.com/im/pictures/miso/Hosting-583787765176810175/original/e588c121-d262-4f3d-aac2-7dd36a0a2c91.jpeg?im_w=1200",
-                "https://a0.muscache.com/im/pictures/miso/Hosting-583787765176810175/original/f9957c27-eb89-4041-a8a9-d419342f44a3.jpeg?im_w=1200",
-                "https://a0.muscache.com/im/pictures/miso/Hosting-583787765176810175/original/58a723d0-1703-4b20-81b6-dcd8a0ee13a9.jpeg?im_w=1200"
-            ],
-            'marsa3': [
-                "https://a0.muscache.com/im/pictures/miso/Hosting-45330248/original/2b56d4ea-1b6f-42a5-9edf-ff17251fff3a.jpeg?im_w=1200",
-                "https://a0.muscache.com/im/pictures/miso/Hosting-45330248/original/c326b190-64b3-42b9-b260-7e67bf1b0579.jpeg?im_w=1200",
-                "https://a0.muscache.com/im/pictures/miso/Hosting-45330248/original/ae3c0d09-aa17-448a-8834-ae5f06f35e66.jpeg?im_w=1200",
-                "https://a0.muscache.com/im/pictures/miso/Hosting-45330248/original/a82795b7-e283-4ef4-9dc2-e8c2da2d1782.jpeg?im_w=1200",
-                "https://a0.muscache.com/im/pictures/miso/Hosting-45330248/original/362f5d18-f76b-44c2-b6a4-5ee68b3266ab.jpeg?im_w=1200",
-                "https://a0.muscache.com/im/pictures/miso/Hosting-45330248/original/27445b2c-d125-4326-94a5-2f47886422e8.jpeg?im_w=1200",
-                "https://a0.muscache.com/im/pictures/miso/Hosting-45330248/original/2af77865-189e-4ded-a5e7-e13173d8c85b.jpeg?im_w=1200"
-            ],
-            'marsa4': [
-                "../uploads/azur-corniche/01.webp",
-                "../uploads/azur-corniche/02.webp",
-                "../uploads/azur-corniche/03.webp",
-                "../uploads/azur-corniche/04.webp",
-                "../uploads/azur-corniche/05.webp",
-                "../uploads/azur-corniche/06.webp",
-                "../uploads/azur-corniche/07.webp",
-                "../uploads/azur-corniche/08.webp"
-            ],
-            'marsa5': [
-                "https://a0.muscache.com/im/pictures/miso/Hosting-771370503826948643/original/153ad520-0b20-40dc-9dd7-4f5d9884c1f4.jpeg?im_w=1200",
-                "https://a0.muscache.com/im/pictures/miso/Hosting-771370503826948643/original/bf6b872b-a853-4623-a608-25aea8f3f64b.jpeg?im_w=1200",
-                "https://a0.muscache.com/im/pictures/miso/Hosting-771370503826948643/original/1a70c7c1-4640-4d78-a5b8-d2a56800f8b6.jpeg?im_w=1200",
-                "https://a0.muscache.com/im/pictures/miso/Hosting-771370503826948643/original/f95552b5-a0e3-439f-a843-3f1d31e4d5d3.jpeg?im_w=1200",
-                "https://a0.muscache.com/im/pictures/miso/Hosting-771370503826948643/original/23950c70-068b-4c23-9f0b-cb0b265da8cd.jpeg?im_w=1200"
-            ],
-            'marsa6': [
-                "https://a0.muscache.com/im/pictures/hosting/Hosting-42120347/original/f7fd792d-28e6-40ce-a22c-875433875412.jpeg?im_w=1200",
-                "https://a0.muscache.com/im/pictures/hosting/Hosting-42120347/original/51794834-d5d2-4f54-b7ed-ac87e41ffa37.jpeg?im_w=1200",
-                "https://a0.muscache.com/im/pictures/hosting/Hosting-42120347/original/557a517b-a1ca-49c1-849c-e3d6d5211970.jpeg?im_w=1200",
-                "https://a0.muscache.com/im/pictures/hosting/Hosting-42120347/original/80869bf5-a2e7-40a2-b1f4-6c80d5cde685.jpeg?im_w=1200",
-                "https://a0.muscache.com/im/pictures/hosting/Hosting-42120347/original/a5e41fc6-762b-40a2-9167-79e16d42729a.jpeg?im_w=1200",
-                "https://a0.muscache.com/im/pictures/3c7086f3-f4b9-48fe-96cb-6ba500d012be.jpg?im_w=1200",
-                "https://a0.muscache.com/im/pictures/5b7e997c-c207-4c04-a809-f71c79a658ad.jpg?im_w=1200",
-                "https://a0.muscache.com/im/pictures/df29b1e3-fc73-4a05-9a06-2b8f67fe0ab6.jpg?im_w=1200"
-            ],
-            'marsa7': [
-                "https://a0.muscache.com/im/pictures/miso/Hosting-809257071180127452/original/b8a2f4ef-65cb-4a61-ad0a-60744ab6f120.jpeg?im_w=1200",
-                "https://a0.muscache.com/im/pictures/miso/Hosting-809257071180127452/original/16c530d5-f66d-4bad-ab92-beddf1c80673.jpeg?im_w=1200",
-                "https://a0.muscache.com/im/pictures/miso/Hosting-809257071180127452/original/a9d5b8e3-1c6f-40ae-b369-1950d11a5297.jpeg?im_w=1200",
-                "https://a0.muscache.com/im/pictures/miso/Hosting-809257071180127452/original/5fe2b5d1-ab70-47f6-8696-b1dc5593ef36.jpeg?im_w=1200",
-                "https://a0.muscache.com/im/pictures/miso/Hosting-809257071180127452/original/cde22efc-0cb8-4f8c-8a70-aa07c86b7aca.jpeg?im_w=1200"
-            ],
-            'marsa8': [
-                "https://a0.muscache.com/im/pictures/05707336-5237-453a-aa1a-e89916348398.jpg?im_w=1200",
-                "https://a0.muscache.com/im/pictures/399f2c63-a253-4672-af9b-a16d30119ba4.jpg?im_w=1200",
-                "https://a0.muscache.com/im/pictures/d1deff21-6c6d-45eb-9dbf-c12f6f8095e5.jpg?im_w=1200",
-                "https://a0.muscache.com/im/pictures/ff261d25-32a3-470c-b3e1-69dc8a7317d1.jpg?im_w=1200",
-                "https://a0.muscache.com/im/pictures/0f1117a6-1616-48c7-8820-0a7dedad0bb3.jpg?im_w=1200"
-            ],
-            'sidi2': [
-                "https://a0.muscache.com/im/pictures/miso/Hosting-1126537860666644929/original/2aae4593-f76c-4802-8397-7234486c2ef3.jpeg?im_w=1200",
-                "https://a0.muscache.com/im/pictures/c9c904e9-2b55-4dee-830a-b9f0ab6b957c.jpg?im_w=1200",
-                "https://a0.muscache.com/im/pictures/miso/Hosting-1126537860666644929/original/57afdf8e-38a9-49a0-9aad-113f49b04410.jpeg?im_w=1200",
-                "https://a0.muscache.com/im/pictures/miso/Hosting-1126537860666644929/original/648f647b-bbd3-4496-a032-1f572834a928.jpeg?im_w=1200",
-                "https://a0.muscache.com/im/pictures/miso/Hosting-1126537860666644929/original/201ccb07-cd5f-4cb8-8a2b-b12ddc279049.jpeg?im_w=1200"
-            ],
-            'sidi3': [
-                "https://a0.muscache.com/im/pictures/miso/Hosting-1131326661308342331/original/ce7636cf-a112-4345-8484-922c55f49293.jpeg?im_w=1200",
-                "https://a0.muscache.com/im/pictures/miso/Hosting-1131326661308342331/original/7ef932f5-2677-43ee-a880-3e6ba10cd718.jpeg?im_w=1200",
-                "https://a0.muscache.com/im/pictures/miso/Hosting-1131326661308342331/original/d864e549-6778-4bf4-af4b-40f14ed1cebf.jpeg?im_w=1200",
-                "https://a0.muscache.com/im/pictures/miso/Hosting-1131326661308342331/original/6eb9ff2b-a773-4455-b35d-9988af9d69b0.jpeg?im_w=1200",
-                "https://a0.muscache.com/im/pictures/edd122ad-0e12-4bf7-8a6c-a528a1b29992.jpg?im_w=1200",
-                "https://a0.muscache.com/im/pictures/miso/Hosting-1131326661308342331/original/9b69dcf6-d604-4616-abf8-fbc813331d26.jpeg?im_w=1200"
-            ],
-            'sidi4': [
-                "https://a0.muscache.com/im/pictures/miso/Hosting-49770055/original/7745c319-419b-4fbd-ba26-9cdf29a3da56.jpeg?im_w=1200",
-                "https://a0.muscache.com/im/pictures/miso/Hosting-49770055/original/5deda3c5-bbb7-4f48-8022-7381b74947e6.jpeg?im_w=1200",
-                "https://a0.muscache.com/im/pictures/miso/Hosting-49770055/original/b18a310d-5760-49bf-a99c-7682613456d3.jpeg?im_w=1200",
-                "https://a0.muscache.com/im/pictures/miso/Hosting-49770055/original/076f7477-4289-402f-8cb8-939055234e50.jpeg?im_w=1200",
-                "https://a0.muscache.com/im/pictures/miso/Hosting-49770055/original/cf1d95a5-c639-458c-b62c-1db3ef854d7e.jpeg?im_w=1200",
-                "https://a0.muscache.com/im/pictures/miso/Hosting-49770055/original/5e232249-b424-4084-8eb0-5578965e9dae.jpeg?im_w=1200",
-                "https://a0.muscache.com/im/pictures/miso/Hosting-49770055/original/1e81315c-1409-4201-b379-a83aeb835fd7.jpeg?im_w=1200"
-            ],
-            'sidi5': [
-                "https://a0.muscache.com/im/pictures/4934cee2-53ce-4cf1-80a1-c995cc033812.jpg?im_w=1200",
-                "https://a0.muscache.com/im/pictures/miso/Hosting-31122684/original/5621f55e-a952-462a-bcae-9d2ea89872e2.jpeg?im_w=1200",
-                "https://a0.muscache.com/im/pictures/miso/Hosting-31122684/original/3ca1b7c0-aa3b-4ed8-83ba-9af5b90da59c.jpeg?im_w=1200",
-                "https://a0.muscache.com/im/pictures/miso/Hosting-31122684/original/66bd60bc-753b-4b5e-809c-f1231f05236a.jpeg?im_w=1200",
-                "https://a0.muscache.com/im/pictures/2d7bf251-b561-4c91-83cf-5bced272ea51.jpg?im_w=1200",
-                "https://a0.muscache.com/im/pictures/e5e5f7bf-24df-446c-a84a-bc5bd04d0727.jpg?im_w=1200",
-                "https://a0.muscache.com/im/pictures/a723e91f-6708-41e3-ae4b-f5b0c3091f65.jpg?im_w=1200"
-            ]
-        };
-        
-        let currentGallery = [];
-        let currentImageIndex = 0;
 
-        function openGallery(apartmentId, index) {
-            currentGallery = galleries[apartmentId];
-            currentImageIndex = index;
-            document.getElementById('gallery-modal').classList.remove('hidden');
-            updateGalleryImage();
+    const detailTrustContent = {
+        fr: {
+            label: 'Réservation en confiance',
+            hostTitle: 'Ce séjour est géré par des hôtes locaux',
+            hostText: 'L\'équipe CosyNest Tunisia accompagne les voyageurs directement, avec réservation simple via WhatsApp et support en français, arabe et anglais.',
+            a: 'Réponse directe des hôtes',
+            b: 'Accompagnement multilingue',
+            c: 'Séjour premium dans un quartier recherché'
+        },
+        ar: {
+            label: 'حجز بثقة',
+            hostTitle: 'هذا المسكن بإدارة مضيفين محليين',
+            hostText: 'يقوم فريق CosyNest Tunisia بمتابعة الضيوف مباشرة مع حجز سهل عبر واتساب ودعم بالعربية والفرنسية والإنجليزية.',
+            a: 'تواصل مباشر مع المضيفين',
+            b: 'دعم بعدة لغات',
+            c: 'إقامة مميزة في موقع مطلوب'
+        },
+        en: {
+            label: 'Book with confidence',
+            hostTitle: 'This stay is managed by local hosts',
+            hostText: 'The CosyNest Tunisia team supports guests directly, with easy WhatsApp booking and multilingual assistance in French, Arabic and English.',
+            a: 'Direct host communication',
+            b: 'Multilingual guest support',
+            c: 'Premium stay in a sought-after area'
         }
-
-        function closeGallery() {
-            document.getElementById('gallery-modal').classList.add('hidden');
-        }
-
-        function nextImage() {
-            currentImageIndex = (currentImageIndex + 1) % currentGallery.length;
-            updateGalleryImage();
-        }
-
-        function prevImage() {
-            currentImageIndex = (currentImageIndex - 1 + currentGallery.length) % currentGallery.length;
-            updateGalleryImage();
-        }
-
-        function updateGalleryImage() {
-            document.getElementById('gallery-active-img').src = currentGallery[currentImageIndex];
-            document.getElementById('gallery-counter').innerText = `${currentImageIndex + 1} / ${currentGallery.length}`;
-        }
-
-        // Keyboard navigation for the gallery
-        document.addEventListener('keydown', function(event) {
-            const modal = document.getElementById('gallery-modal');
-            if (!modal.classList.contains('hidden')) {
-                if (event.key === "Escape") closeGallery();
-                if (event.key === "ArrowRight") nextImage();
-                if (event.key === "ArrowLeft") prevImage();
-            }
-        });
-
-        function switchLang(lang) {
-            try { localStorage.setItem('cosynest-lang', lang); } catch(e) {}
-            const root = document.getElementById('html-root') || document.documentElement;
-            root.setAttribute('lang', lang);
-            document.documentElement.setAttribute('lang', lang);
-
-            if (lang === 'ar') {
-                root.setAttribute('dir', 'rtl');
-                document.documentElement.setAttribute('dir', 'rtl');
-                document.body.classList.add('font-arabic');
-            } else {
-                root.setAttribute('dir', 'ltr');
-                document.documentElement.setAttribute('dir', 'ltr');
-                document.body.classList.remove('font-arabic');
-            }
-
-            const allElements = document.querySelectorAll('[data-lang]');
-            allElements.forEach(el => {
-                const active = el.getAttribute('data-lang') === lang;
-                el.classList.toggle('lang-active', active);
-                if (active) {
-                    el.style.display = '';
-                } else {
-                    el.style.display = 'none';
-                }
-            });
-
-            document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
-            const activeBtn = document.getElementById('btn-' + lang);
-            if (activeBtn) activeBtn.classList.add('active');
-        }
-
-        // Functions for navigating between home and detail views
-        function showDetail(apartmentId) {
-            const homeView = document.getElementById('home-view');
-            const target = document.getElementById('detail-view-' + apartmentId);
-            document.querySelectorAll('[id^="detail-view-"]').forEach(el => el.classList.add('hidden'));
-            if (!target) {
-                console.warn('Missing detail view for:', apartmentId);
-                return;
-            }
-            if (homeView) homeView.classList.add('hidden');
-            target.classList.remove('hidden');
-            target.style.display = 'block';
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
-
-        function goHome() {
-            document.querySelectorAll('[id^="detail-view-"]').forEach(el => el.classList.add('hidden'));
-            const homeView = document.getElementById('home-view');
-            if (homeView) homeView.classList.remove('hidden');
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
-
-        // Auto-Generate WhatsApp Message with Dates
-        function updateWhatsAppLink(apartment) {
-            const checkin = document.getElementById(`checkin-${apartment}`)?.value || '';
-            const checkout = document.getElementById(`checkout-${apartment}`)?.value || '';
-            const guests = document.getElementById(`guests-${apartment}`)?.value || '1';
-            const nights = document.getElementById('summary-nights')?.textContent?.trim() || '';
-            const total = document.getElementById('summary-total')?.textContent?.trim() || '';
-            const activeBtn = document.querySelector('.lang-btn.active');
-            const lang = activeBtn ? activeBtn.id.replace('btn-','') : (localStorage.getItem('cosynest-lang') || document.documentElement.lang || 'fr');
-
-            let aptName = '';
-            if(apartment === 'marsa') aptName = "L'Élégance de La Marsa";
-            else if(apartment === 'marsa2') aptName = "Le Nid Perché de La Marsa";
-            else if(apartment === 'marsa3') aptName = "L'Écrin Lumineux (La Marsa)";
-            else if(apartment === 'marsa4') aptName = "L'Azur de la Corniche";
-            else if(apartment === 'marsa5') aptName = "La Brise Marine (Corniche)";
-            else if(apartment === 'marsa6') aptName = "Le Grand Triplex Marsois";
-            else if(apartment === 'marsa7') aptName = "La Perle de la Plage";
-            else if(apartment === 'marsa8') aptName = "L'Oasis de la Corniche";
-            else if(apartment === 'sidi2') aptName = "Le Toit de Sidi Bou Saïd";
-            else if(apartment === 'sidi3') aptName = "La Villa Rez-de-Jardin";
-            else if(apartment === 'sidi4') aptName = "Le Duplex Prestige";
-            else if(apartment === 'sidi5') aptName = "Le Belvédère Sidi Bou Saïd";
-
-            let message = '';
-            if (lang === 'ar') {
-                message = `مرحبًا 👋 رأيت الشقة على Cosynest وأرغب في الحجز: ${aptName}`;
-                if (checkin && checkout) message += `\nالتواريخ: ${checkin} → ${checkout}`;
-                if (nights && nights !== '—') message += `\nعدد الليالي: ${nights}`;
-                if (guests) message += `\nعدد الضيوف: ${guests}`;
-                if (total && total !== '—') message += `\nالإجمالي التقديري: ${total}`;
-                message += `\n\nهل يمكنكم تأكيد التوفر؟`;
-            } else if (lang === 'en') {
-                message = `Hi 👋 I saw your apartment on Cosynest and I would like to book: ${aptName}`;
-                if (checkin && checkout) message += `\nDates: ${checkin} → ${checkout}`;
-                if (nights && nights !== '—') message += `\nNights: ${nights}`;
-                if (guests) message += `\nGuests: ${guests}`;
-                if (total && total !== '—') message += `\nEstimated total: ${total}`;
-                message += `\n\nCould you please confirm availability?`;
-            } else {
-                message = `Bonjour 👋 J’ai vu votre appartement sur Cosynest et je souhaite réserver : ${aptName}`;
-                if (checkin && checkout) message += `\nDates : ${checkin} → ${checkout}`;
-                if (nights && nights !== '—') message += `\nNuits : ${nights}`;
-                if (guests) message += `\nVoyageurs : ${guests}`;
-                if (total && total !== '—') message += `\nTotal estimé : ${total}`;
-                message += `\n\nPouvez-vous confirmer la disponibilité ?`;
-            }
-
-            const btn = document.getElementById(`wa-btn-${apartment}`);
-            if (btn) btn.href = `https://wa.me/21653340970?text=${encodeURIComponent(message)}`;
-            return true;
-        }
-    </script><script>
-document.getElementById("year").textContent = new Date().getFullYear();
-</script>
-<script>
-function sharePage(){
-  const url = window.location.href;
-  const title = document.title;
-  if (navigator.share && !url.startsWith('file://')) {
-    navigator.share({title, url}).catch(()=>{});
-    return;
-  }
-  if (navigator.clipboard && window.isSecureContext) {
-    navigator.clipboard.writeText(url)
-      .then(()=>alert('Link copied'))
-      .catch(()=>window.prompt('Copy this link:', url));
-  } else {
-    window.prompt('Copy this link:', url);
-  }
-}
-function toggleLike(slug){
-  const key='cosynest-liked-'+slug, btn=document.getElementById('like-btn');
-  const liked=localStorage.getItem(key)==='1';
-  if(liked){localStorage.removeItem(key);btn.classList.remove('is-liked');setLikeLabel(false);}
-  else{localStorage.setItem(key,'1');btn.classList.add('is-liked');setLikeLabel(true);}
-}
-function setLikeLabel(liked){
-  const lang = document.documentElement.lang || 'fr';
-  const labels = liked
-    ? {fr:'Ajouté aux favoris', ar:'تمت الإضافة للمفضلة', en:'Saved'}
-    : {fr:'Ajouter aux favoris', ar:'أضف إلى المفضلة', en:'Save'};
-  document.querySelector('#like-btn .label').textContent = labels[lang] || labels.fr;
-}
-function initLike(slug){
-  const liked = localStorage.getItem('cosynest-liked-'+slug)==='1';
-  if(liked){document.getElementById('like-btn').classList.add('is-liked');}
-  setLikeLabel(liked);
-}
-</script>
-<script>document.addEventListener('DOMContentLoaded', function(){ try{ switchLang && switchLang(localStorage.getItem('cosynest-lang') || 'fr'); }catch(e){} try{ attachPhoneFormatting(); }catch(e){} initLike('azur-corniche'); });</script>
-<script>
-function ensureGalleryModal(){
-  let modal = document.getElementById('global-gallery-modal');
-  if(modal) return modal;
-  modal = document.createElement('div');
-  modal.id = 'global-gallery-modal';
-  modal.className = 'gallery-backdrop';
-  modal.innerHTML = `
-    <div class="gallery-panel">
-      <div class="gallery-head">
-        <div class="gallery-title" id="gallery-title">Photos</div>
-        <button class="gallery-close" onclick="closeGallery()">Close</button>
-      </div>
-      <div class="gallery-main" id="gallery-main"></div>
-      <div class="gallery-note" id="gallery-note"></div>
-    </div>`;
-  modal.addEventListener('click', function(e){
-    if(e.target === modal) closeGallery();
-  });
-  document.body.appendChild(modal);
-  return modal;
-}
-function collectGalleryImages(group){
-  const urls = [];
-  const seen = new Set();
-  document.querySelectorAll('[onclick*="openGallery(\'' + group + '\'"]').forEach(el => {
-    const img = el.tagName.toLowerCase() === 'img' ? el : el.querySelector('img');
-    if(img && img.src && !seen.has(img.src)){
-      seen.add(img.src);
-      urls.push(img.src);
-    }
-  });
-  // also collect from direct page section if any other images exist in same detail page
-  const page = document.getElementById('detail-view-' + group);
-  if(page){
-    page.querySelectorAll('img').forEach(img => {
-      if(img.src && !seen.has(img.src)){
-        seen.add(img.src);
-        urls.push(img.src);
-      }
-    });
-  }
-  return urls;
-}
-function openGallery(group, startIndex){
-  const modal = ensureGalleryModal();
-  const main = modal.querySelector('#gallery-main');
-  const titleEl = modal.querySelector('#gallery-title');
-  const noteEl = modal.querySelector('#gallery-note');
-  const page = document.getElementById('detail-view-' + group);
-  let title = 'Photos';
-  if(page){
-    const activeTitle = page.querySelector('h1.lang-active, h1[data-lang="fr"]');
-    if(activeTitle) title = activeTitle.textContent.trim();
-  }
-  const urls = collectGalleryImages(group);
-  titleEl.textContent = title;
-  main.innerHTML = '';
-  urls.forEach((src, i) => {
-    const im = document.createElement('img');
-    im.src = src;
-    im.alt = title + ' photo ' + (i + 1);
-    im.loading = 'lazy';
-    main.appendChild(im);
-  });
-  noteEl.textContent = urls.length ? (urls.length + ' photos') : 'No photos available';
-  modal.classList.add('open');
-  document.body.classList.add('gallery-open');
-  setTimeout(() => {
-    const imgs = main.querySelectorAll('img');
-    if(imgs[startIndex]) imgs[startIndex].scrollIntoView({behavior:'smooth', block:'center'});
-  }, 50);
-}
-function closeGallery(){
-  const modal = document.getElementById('global-gallery-modal');
-  if(modal) modal.classList.remove('open');
-  document.body.classList.remove('gallery-open');
-}
-document.addEventListener('keydown', function(e){
-  if(e.key === 'Escape') closeGallery();
-});
-</script>
-<script src="../js/site-sync.js"></script>
-<script>
-(function(){
-  function buildDatePriceMap(datePrices){
-    const map = new Map();
-    (datePrices || []).forEach(function(p){
-      if (p && p.date) map.set(p.date, Number(p.price || 0));
-    });
-    return map;
-  }
-
-  function expandBlockedDates(blocks){
-    const out = [];
-    (blocks || []).forEach(function(b){
-      if (!b || !b.start || !b.end) return;
-      const start = new Date(b.start + 'T00:00:00');
-      const end = new Date(b.end + 'T00:00:00');
-      for (let d = new Date(start); d <= end; d.setDate(d.getDate() + 1)) {
-        out.push(d.toISOString().slice(0,10));
-      }
-    });
-    return Array.from(new Set(out));
-  }
-
-  async function initApartmentPicker(){
-    const slug = document.body.getAttribute('data-page-slug');
-    if (!slug) return;
-    const checkin = document.getElementById('checkin-' + slug.replace(/-/g,'')); // fallback unlikely
-    let ci = document.querySelector('input[id^="checkin-"]');
-    let co = document.querySelector('input[id^="checkout-"]');
-    if (!ci || !co) return;
-
-    // Force non-native text inputs
-    ci.setAttribute('type', 'text');
-    co.setAttribute('type', 'text');
-    ci.setAttribute('readonly', 'readonly');
-    co.setAttribute('readonly', 'readonly');
-    if (!ci.placeholder) ci.placeholder = 'Select date';
-    if (!co.placeholder) co.placeholder = 'Select date';
-
-    let disabledDates = [];
-    try {
-      const res = await fetch('/api/calendar/' + slug);
-      if (res.ok) {
-        const cal = await res.json();
-        if (cal.ok && Array.isArray(cal.blocks)) disabledDates = expandBlockedDates(cal.blocks);
-      }
-    } catch (e) {}
-
-    if (typeof flatpickr === 'undefined') return;
-
-    const common = {
-      dateFormat: 'Y-m-d',
-      minDate: 'today',
-      disable: disabledDates,
-      monthSelectorType: 'static',
-      disableMobile: true,
-      clickOpens: true,
-      allowInput: false,
-      locale: { firstDayOfWeek: 1 },
-      position: 'auto center'
     };
 
-    const checkoutPicker = flatpickr(co, Object.assign({}, common, {
-      onOpen: function(_, __, fp){ fp.calendarContainer.style.zIndex = '999999'; },
-      onChange: function(){
-        if (typeof updateWhatsAppLink === 'function') {
-          const slugId = ci.id.replace('checkin-','');
-          updateWhatsAppLink(slugId);
-        }
-      }
-    }));
+    function injectDetailTrustBlocks() {
+        const detailViews = document.querySelectorAll('[id^="detail-view-"]');
+        detailViews.forEach(view => {
+            const leftColumn = view.querySelector('.md\\:col-span-2');
+            if (!leftColumn || view.querySelector('.detail-trust-block')) return;
 
-    flatpickr(ci, Object.assign({}, common, {
-      onOpen: function(_, __, fp){ fp.calendarContainer.style.zIndex = '999999'; },
-      onChange: function(selectedDates){
-        if (selectedDates[0]) {
-          const nextDay = new Date(selectedDates[0]);
-          nextDay.setDate(nextDay.getDate() + 1);
-          checkoutPicker.set('minDate', nextDay);
-          if (co.value && new Date(co.value) <= selectedDates[0]) checkoutPicker.clear();
-        }
-        if (typeof updateWhatsAppLink === 'function') {
-          const slugId = ci.id.replace('checkin-','');
-          updateWhatsAppLink(slugId);
-        }
-      }
-    }));
-  }
+            const ratingText = (view.querySelector('.flex.items-center.gap-4.text-gray-600.mb-8.font-medium span')?.textContent || '').trim();
+            const locationText = (view.querySelector('.underline')?.textContent || '').trim();
+            const block = document.createElement('section');
+            block.className = 'detail-trust-block border border-gray-200 rounded-[1.5rem] p-6 md:p-8 mt-10 soft-ring';
+            block.innerHTML = `
+                <div class="flex flex-wrap items-center justify-between gap-3 mb-6">
+                    <div class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold section-chip">
+                        <span data-lang="fr" class="lang-active">Réservation en confiance</span>
+                        <span data-lang="ar" class="font-arabic">حجز بثقة</span>
+                        <span data-lang="en">Book with confidence</span>
+                    </div>
+                    <div class="text-sm font-semibold text-brand-blue">${ratingText}</div>
+                </div>
+                <div class="grid lg:grid-cols-[1.1fr,0.9fr] gap-6 items-start">
+                    <div>
+                        <h3 data-lang="fr" class="lang-active text-2xl font-bold text-brand-blue mb-3">Ce séjour est géré par des hôtes locaux</h3>
+                        <h3 data-lang="ar" class="text-2xl font-bold text-brand-blue mb-3 font-arabic">هذا المسكن بإدارة مضيفين محليين</h3>
+                        <h3 data-lang="en" class="text-2xl font-bold text-brand-blue mb-3">This stay is managed by local hosts</h3>
+                        <p data-lang="fr" class="lang-active text-gray-600 leading-relaxed mb-4">L'équipe CosyNest Tunisia accompagne les voyageurs directement, avec réservation simple via WhatsApp et support en français, arabe et anglais.</p>
+                        <p data-lang="ar" class="text-gray-600 leading-relaxed mb-4 font-arabic">يقوم فريق CosyNest Tunisia بمتابعة الضيوف مباشرة مع حجز سهل عبر واتساب ودعم بالعربية والفرنسية والإنجليزية.</p>
+                        <p data-lang="en" class="text-gray-600 leading-relaxed mb-4">The CosyNest Tunisia team supports guests directly, with easy WhatsApp booking and multilingual assistance in French, Arabic and English.</p>
+                        <div class="grid sm:grid-cols-3 gap-3 text-sm font-medium text-gray-700">
+                            <div class="bg-white rounded-2xl border border-gray-200 p-4">
+                                <span data-lang="fr" class="lang-active">Réponse directe des hôtes</span>
+                                <span data-lang="ar" class="font-arabic">تواصل مباشر مع المضيفين</span>
+                                <span data-lang="en">Direct host communication</span>
+                            </div>
+                            <div class="bg-white rounded-2xl border border-gray-200 p-4">
+                                <span data-lang="fr" class="lang-active">Accompagnement multilingue</span>
+                                <span data-lang="ar" class="font-arabic">دعم بعدة لغات</span>
+                                <span data-lang="en">Multilingual guest support</span>
+                            </div>
+                            <div class="bg-white rounded-2xl border border-gray-200 p-4">
+                                <span data-lang="fr" class="lang-active">Séjour premium dans un quartier recherché</span>
+                                <span data-lang="ar" class="font-arabic">إقامة مميزة في موقع مطلوب</span>
+                                <span data-lang="en">Premium stay in a sought-after area</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-brand-blue text-white rounded-[1.5rem] p-6">
+                        <div class="flex items-center gap-4 mb-4">
+                            <img src="../logo.jpg" alt="CosyNest logo" class="w-16 h-16 rounded-2xl object-contain bg-white p-2">
+                            <div>
+                                <p class="text-xs uppercase tracking-[0.2em] text-brand-gold font-semibold">CosyNest Tunisia</p>
+                                <p class="text-xl font-bold">CosyNest Tunisia</p>
+                            </div>
+                        </div>
+                        <div class="text-white/85 space-y-2 text-sm">
+                            <p>${locationText}</p>
+                            <p data-lang="fr" class="lang-active">Réservation directe, claire et rapide pour les séjours à La Marsa et Sidi Bou Said.</p>
+                            <p data-lang="ar" class="font-arabic">حجز مباشر وواضح وسريع لإقامات المرسى وسيدي بوسعيد.</p>
+                            <p data-lang="en">Clear, direct and fast booking for stays in La Marsa and Sidi Bou Said.</p>
+                        </div>
+                        <a href="https://wa.me/21653340970" target="_blank" class="mt-5 inline-flex justify-center w-full bg-white text-brand-blue rounded-xl px-4 py-3 font-bold hover:bg-brand-light transition-colors">
+                            <span data-lang="fr" class="lang-active">Contacter CosyNest</span>
+                            <span data-lang="ar" class="font-arabic">تواصل مع CosyNest</span>
+                            <span data-lang="en">Contact CosyNest</span>
+                        </a>
+                    </div>
+                </div>`;
+            leftColumn.appendChild(block);
+        });
+    }
 
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initApartmentPicker);
-  } else {
-    initApartmentPicker();
-  }
-})();
+    document.addEventListener('DOMContentLoaded', injectDetailTrustBlocks);
 </script>
-<script>
-(function(){
-  function formatDate(d){
-    const y=d.getFullYear(), m=String(d.getMonth()+1).padStart(2,'0'), day=String(d.getDate()).padStart(2,'0');
-    return `${y}-${m}-${day}`;
-  }
-  function parseDate(s){
-    const [y,m,d]=String(s).split('-').map(Number);
-    return new Date(y,m-1,d);
-  }
-  function buildDatePriceMap(datePrices){
-    const map = new Map();
-    (datePrices || []).forEach(function(p){
-      if (p && p.date) map.set(p.date, Number(p.price || 0));
-    });
-    return map;
-  }
 
-  function expandBlockedDates(blocks){
-    const out = new Set();
-    (blocks || []).forEach(function(b){
-      if (!b || !b.start || !b.end) return;
-      const start = parseDate(b.start);
-      const end = parseDate(b.end);
-      for(let d = new Date(start); d <= end; d.setDate(d.getDate()+1)){
-        out.add(formatDate(d));
-      }
-    });
-    return out;
-  }
+<style>
+    .font-arabic { font-family: 'Tajawal', sans-serif; }
+    [data-lang] { display: none; }
+    .lang-active[data-lang] { display: block; }
+    span.lang-active[data-lang] { display: inline; }
+    
+    .site-nav {
+        position: sticky; top: 0; z-index: 100; margin-bottom: -88px;
+        background: linear-gradient(180deg, rgba(16,43,78,0.96) 0%, rgba(27,66,112,0.92) 42%, rgba(38,84,136,0.70) 72%, rgba(38,84,136,0.00) 100%);
+        backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+    }
+    .nav-shell {
+        width: 100%;
+        background: linear-gradient(90deg, rgba(17,45,80,0.86) 0%, rgba(35,78,127,0.76) 55%, rgba(83,143,192,0.58) 100%);
+        border-bottom: 1px solid rgba(255,255,255,0.16);
+    }
+    .lang-btn {
+        opacity: 1; transition: all 0.25s ease; color: #ffffff;
+        background: rgba(255,255,255,0.14); border: 1px solid rgba(255,255,255,0.22);
+        border-radius: 9999px; padding: 0.42rem 0.78rem; min-width: 2.7rem;
+        font-weight: 800; font-size: 0.92rem;
+    }
+    .lang-btn.active {
+        color: #15375c; background: linear-gradient(135deg, #F4D58D 0%, #E7B85C 100%);
+        border-color: rgba(255,255,255,0.10);
+    }
+    .nav-wa-btn {
+        background: linear-gradient(135deg, #25D366 0%, #18B954 100%); color: #ffffff;
+        border-radius: 9999px; padding: 0.66rem 1.08rem; font-weight: 800; white-space: nowrap;
+    }
+    .wa-primary-btn {
+        background: linear-gradient(135deg, #25D366 0%, #16B956 100%);
+        box-shadow: 0 12px 26px rgba(23,168,84,0.22);
+    }
+    .call-secondary-btn { box-shadow:0 8px 20px rgba(26,54,93,0.08); }
+    .call-secondary-btn:hover { transform:translateY(-1px); background:#f8fbff; }
+    .booking-card { position: sticky; top: 100px; }
+    .detail-image-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; grid-template-rows: 1fr 1fr; gap: 0.5rem; border-radius: 1rem; overflow: hidden; height: 55vh; min-height: 450px; }
+    .detail-image-grid img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s; cursor: pointer; }
+    .detail-image-grid img:hover { transform: scale(1.02); opacity: 0.9; }
+    .main-img { grid-column: 1; grid-row: 1 / span 2; }
+    @media (max-width: 768px) { .detail-image-grid { display: flex; flex-direction: column; height: auto; gap: 0.5rem; } .detail-image-grid img { height: 250px; border-radius: 0.5rem; } }
+    .soft-ring { box-shadow: 0 10px 30px rgba(26,54,93,0.08); }
+    .detail-page-shell { min-height:100vh; background:#F8F9FA }
+    .share-like-bar { display:flex; gap:.75rem; flex-wrap:wrap; margin:.75rem 0 1rem }
+    .share-btn, .like-btn { display:inline-flex; align-items:center; gap:.45rem; padding:.72rem 1rem; border-radius:9999px; font-weight:700; border:1px solid rgba(26,54,93,.12); background:#fff; color:#1A365D; cursor:pointer }
+    .like-btn.is-liked { background:rgba(197,168,128,.15); border-color:rgba(197,168,128,.35) }
+    .booking-date-input { font-size:1.06rem !important; padding:.9rem .25rem !important; font-weight:700; min-height:44px; cursor:pointer !important }
+    .gallery-backdrop { position:fixed; inset:0; background:rgba(15,23,42,.82); backdrop-filter:blur(6px); z-index:9999; display:none; align-items:flex-start; justify-content:center; overflow:auto; padding:2rem 1rem; }
+    .gallery-backdrop.open { display:flex; }
+    .gallery-panel { width:min(1200px, 100%); background:#fff; border-radius:1.5rem; overflow:hidden; }
+    .gallery-head { display:flex; align-items:center; justify-content:space-between; padding:1rem 1.25rem; position:sticky; top:0; background:#fff; z-index:2; }
+    .gallery-close { border:none; background:#f3f4f6; color:#16375C; font-weight:700; border-radius:9999px; padding:.65rem .9rem; cursor:pointer; }
+    .gallery-main { display:grid; grid-template-columns:1fr; gap:.75rem; padding:1rem; }
+    .gallery-main img { width:100%; height:auto; border-radius:1rem; object-fit:cover; }
+    @media (min-width: 900px){ .gallery-main{grid-template-columns:repeat(2, 1fr);} }
+    .cn-picker-overlay { position:fixed; inset:0; background:rgba(15,23,42,.45); display:none; align-items:center; justify-content:center; z-index:999999 }
+    .cn-picker-overlay.open { display:flex }
+    .cn-picker { width:min(440px,94vw); background:#fff; border-radius:22px; padding:16px; border:1px solid rgba(148,163,184,.22); direction:ltr }
+    .cn-picker-day { height:58px; display:flex; flex-direction:column; align-items:center; justify-content:center; border-radius:14px; background:#f8fafc; font-weight:600; cursor:pointer; }
+    .cn-picker-day.selected { background:#1A365D; color:#fff }
+</style>
+<link href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css" rel="stylesheet"/>
+</head>
 
-  function createPicker(input, opts){
-    let current = opts.startDate ? new Date(opts.startDate) : new Date();
-    let selected = input.value ? parseDate(input.value) : null;
+<body class="detail-page-shell bg-brand-light text-brand-dark font-sans antialiased transition-all duration-300" data-page-slug="azur-corniche">
 
-    const overlay = document.createElement('div');
-    overlay.className = 'cn-picker-overlay';
-    overlay.innerHTML = `
-      <div class="cn-picker">
-        <div class="cn-picker-head">
-          <div class="cn-picker-title"></div>
-          <div class="cn-picker-nav">
-            <button type="button" class="cn-prev">‹</button>
-            <button type="button" class="cn-next">›</button>
-          </div>
+<nav class="site-nav">
+    <div class="w-full px-0 py-0">
+        <div class="nav-shell nav-inner px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-between gap-3">
+            <div class="nav-logo-wrap flex items-center gap-3 text-white cursor-pointer min-w-0" onclick="window.location.href='../index.html'">
+                <img alt="CosyNest Logo" class="w-10 h-10 rounded-xl border border-white/20 object-contain bg-white shadow-sm p-1 shrink-0" src="../logo.jpg"/>
+                <div class="min-w-0">
+                    <div class="nav-brand-text font-bold text-sm sm:text-base tracking-wide truncate">CosyNest Tunisia</div>
+                </div>
+            </div>
+            <div class="flex items-center gap-2 sm:gap-2.5 ml-auto shrink-0">
+                <div class="flex items-center gap-1.5 text-white font-medium rounded-full bg-white/12 px-1.5 py-1.5 border border-white/18 shadow-lg backdrop-blur-sm">
+                    <button class="lang-btn active" id="btn-fr" onclick="switchLang('fr')">FR</button>
+                    <button class="lang-btn" id="btn-ar" onclick="switchLang('ar')">AR</button>
+                    <button class="lang-btn" id="btn-en" onclick="switchLang('en')">EN</button>
+                </div>
+                <a class="nav-wa-btn inline-flex items-center gap-2 px-4 py-2 rounded-full" dir="ltr" href="https://wa.me/21653340970" target="_blank">
+                    <span class="lang-active" data-lang="fr">WhatsApp</span>
+                    <span class="font-arabic" data-lang="ar">WhatsApp</span>
+                    <span data-lang="en">WhatsApp</span>
+                </a>
+            </div>
         </div>
-        <div class="cn-picker-weekdays"><div>Mo</div><div>Tu</div><div>We</div><div>Th</div><div>Fr</div><div>Sa</div><div>Su</div></div>
-        <div class="cn-picker-days"></div>
-        <div class="cn-picker-foot"><button type="button" class="cn-picker-close">Close</button></div>
-      </div>`;
-    document.body.appendChild(overlay);
+    </div>
+</nav>
 
-    function render(){
-      const title = overlay.querySelector('.cn-picker-title');
-      const daysWrap = overlay.querySelector('.cn-picker-days');
-      title.textContent = current.toLocaleString('en-US',{month:'long',year:'numeric'});
-      daysWrap.innerHTML = '';
-      const first = new Date(current.getFullYear(), current.getMonth(), 1);
-      const last = new Date(current.getFullYear(), current.getMonth()+1, 0);
-      let startWeekday = (first.getDay()+6)%7;
-      for(let i=0;i<startWeekday;i++){
-        const e=document.createElement('div'); e.className='cn-picker-day empty'; daysWrap.appendChild(e);
-      }
-      const today = new Date(); today.setHours(0,0,0,0);
-      for(let day=1; day<=last.getDate(); day++){
-        const d = new Date(current.getFullYear(), current.getMonth(), day);
-        const ds = formatDate(d);
-        const cell = document.createElement('button');
-        cell.type = 'button';
-        cell.className = 'cn-picker-day';
-        if (d < opts.minDate) cell.classList.add('blocked');
-        if (!opts.allowBlockedSelect && opts.blockedDates.has(ds)) cell.classList.add('blocked');
-        if (opts.allowBlockedSelect && opts.blockedDates.has(ds)) cell.classList.add('has-price');
-        if (selected && formatDate(selected)===ds) cell.classList.add('selected');
-        if (formatDate(today)===ds) cell.classList.add('today');
-        const nightly = opts.priceMap && opts.priceMap.has(ds) ? opts.priceMap.get(ds) : opts.basePrice;
-        cell.innerHTML = `<div>${day}</div><div class="cn-picker-price">${nightly ? nightly + ' TND' : ''}</div>`;
-        if (nightly) cell.classList.add('has-price');
-        if (!cell.classList.contains('blocked')){
-          cell.addEventListener('click', function(){
-            selected = d;
-            input.value = ds;
-            input.dispatchEvent(new Event('change', { bubbles: true }));
-            if (typeof opts.onSelect === 'function') opts.onSelect(d, ds);
-            close();
-          });
+<div class="pt-24 pb-20 px-4 max-w-6xl mx-auto" id="detail-view-marsa4">
+    <button class="mb-6 flex items-center gap-2 text-brand-blue font-bold hover:text-brand-gold transition-colors" onclick="window.location.href='../index.html'">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+        <span class="lang-active" data-lang="fr">Retour aux appartements</span>
+        <span class="font-arabic" data-lang="ar">العودة إلى الشقق</span>
+        <span data-lang="en">Back to apartments</span>
+    </button>
+    
+    <h1 class="lang-active text-3xl md:text-5xl font-bold text-brand-blue mb-4" data-lang="fr">L'Azur de la Corniche</h1>
+    <h1 class="text-3xl md:text-5xl font-bold text-brand-blue mb-4 font-arabic" data-lang="ar">أزور الكورنيش</h1>
+    <h1 class="text-3xl md:text-5xl font-bold text-brand-blue mb-4" data-lang="en">The Corniche Azure</h1>
+    
+    <div class="share-like-bar">
+        <button class="share-btn" onclick="sharePage()"><span>📤</span><span>Share</span></button>
+        <button class="like-btn" id="like-btn" onclick="toggleLike('azur-corniche')"><span>❤</span><span class="label">Save</span></button>
+    </div>
+    
+    <div class="flex items-center gap-4 text-gray-600 mb-8 font-medium">
+        <span class="flex items-center gap-1">⭐ 4.9 (69)</span>
+        <span>•</span>
+        <span class="underline">La Marsa Corniche, Tunis, Tunisia</span>
+    </div>
+    
+    <div class="detail-image-grid mb-10">
+        <img alt="Living Room" class="main-img" onclick="openGallery('marsa4', 0)" src="../uploads/azur-corniche/01.webp"/>
+        <img alt="Living Area" onclick="openGallery('marsa4', 1)" src="../uploads/azur-corniche/02.webp"/>
+        <img alt="Bedroom" onclick="openGallery('marsa4', 2)" src="../uploads/azur-corniche/03.webp"/>
+        <img alt="Balcony" onclick="openGallery('marsa4', 3)" src="../uploads/azur-corniche/04.webp"/>
+        <div class="relative cursor-pointer group w-full h-full" onclick="openGallery('marsa4', 4)">
+            <img alt="Kitchen" class="absolute inset-0 w-full h-full object-cover" src="../uploads/azur-corniche/05.webp"/>
+            <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center text-white font-bold text-sm md:text-lg group-hover:bg-opacity-50 transition-all">
+                <span class="lang-active" data-lang="fr">Afficher toutes les photos</span>
+                <span class="font-arabic" data-lang="ar">عرض جميع الصور</span>
+                <span data-lang="en">Show all photos</span>
+            </div>
+        </div>
+    </div>
+    <div style="display: none;">
+        <img src="../uploads/azur-corniche/06.webp" onclick="openGallery('marsa4', 5)">
+        <img src="../uploads/azur-corniche/07.webp" onclick="openGallery('marsa4', 6)">
+        <img src="../uploads/azur-corniche/08.webp" onclick="openGallery('marsa4', 7)">
+        <img src="../uploads/azur-corniche/09.webp" onclick="openGallery('marsa4', 8)">
+        <img src="../uploads/azur-corniche/10.webp" onclick="openGallery('marsa4', 9)">
+    </div>
+    
+    <div class="grid md:grid-cols-3 gap-12 max-w-7xl mx-auto px-4">
+        <div class="md:col-span-2 max-w-3xl mx-auto md:mx-0">
+            <div class="border-b border-gray-200 pb-8 mb-8">
+                <h2 class="text-2xl font-bold text-brand-blue mb-2">
+                    <span class="lang-active" data-lang="fr">Logement entier par CosyNest Tunisia</span>
+                    <span class="font-arabic" data-lang="ar">شقة كاملة من CosyNest Tunisia</span>
+                    <span data-lang="en">Entire rental unit by CosyNest Tunisia</span>
+                </h2>
+                <p class="text-gray-600 text-lg">
+                    <span class="lang-active" data-lang="fr">2 voyageurs • 1 chambre • 1 lit • 1 salle de bain</span>
+                    <span class="font-arabic" data-lang="ar">ضيفان • غرفة نوم واحدة • سرير واحد • حمام واحد</span>
+                    <span data-lang="en">2 guests • 1 bedroom • 1 bed • 1 bath</span>
+                </p>
+            </div>
+            
+            <div class="mb-10 text-gray-700 leading-relaxed text-lg">
+                <div class="lang-active" data-lang="fr">
+                    <p class="mb-4">Réveillez-vous au rythme des vagues dans cette perle de la Corniche, nichée à seulement 50 petits pas du sable fin.</p>
+                    <p class="mb-4">Cet appartement intimiste et magnifiquement agencé est l'incarnation même du luxe côtier détendu. Parfait pour un séjour en amoureux ou une échappée solitaire, il combine un emplacement d'exception avec un confort haut de gamme.</p>
+                    <p class="mb-4">Vivez comme un véritable local avec le prestigieux centre commercial Zéphyr, les terrasses animées et le TGM (train) à portée de main.</p>
+                </div>
+                <div class="font-arabic" data-lang="ar">
+                    <p class="mb-4">استيقظ على إيقاع الأمواج في هذه الجوهرة بالكورنيش، التي تبعد 50 خطوة فقط عن الرمال الناعمة.</p>
+                    <p class="mb-4">تعتبر هذه الشقة الحميمة والمصممة بشكل جميل تجسيداً حقيقياً للرفاهية الساحلية المريحة. مثالية لإقامة رومانسية أو ملاذ منفرد، فهي تجمع بين موقع استثنائي وراحة راقية.</p>
+                    <p class="mb-4">عش كواحد من السكان المحليين مع مركز زفير التجاري المرموق والشرفات الحيوية وقطار TGM في متناول يدك.</p>
+                </div>
+                <div data-lang="en">
+                    <p class="mb-4">Wake up to the rhythm of the waves in this pearl of the Corniche, nestled just 50 short steps from the fine sand.</p>
+                    <p class="mb-4">This intimate and beautifully arranged apartment is the very incarnation of relaxed coastal luxury. Perfect for a romantic stay or a solitary escape, it combines an exceptional location with premium comfort.</p>
+                    <p class="mb-4">Live like a true local with the prestigious Zephyr shopping center, lively terraces, and the TGM (train) close at hand.</p>
+                </div>
+            </div>
+            
+            <section class="mt-10 border-t border-gray-200 pt-8" data-guest-feedback="marsa4">
+                <div class="flex items-center justify-between flex-wrap gap-3 mb-5">
+                    <h3 class="text-2xl font-bold text-brand-blue">
+                        <span class="lang-active" data-lang="fr">Avis des voyageurs</span>
+                        <span class="font-arabic" data-lang="ar">آراء الضيوف</span>
+                        <span data-lang="en">Guest feedback</span>
+                    </h3>
+                </div>
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div class="bg-white border border-gray-200 rounded-2xl p-5 shadow-sm">
+                        <div class="flex items-center justify-between mb-3"><span class="font-bold text-brand-blue">★★★★★</span><span class="text-sm text-gray-400">Verified stay</span></div>
+                        <p class="text-gray-700 leading-relaxed">
+                            <span class="lang-active" data-lang="fr">Guests love being steps from the beach and close to the Corniche lifestyle.</span>
+                            <span class="font-arabic" data-lang="ar">Guests love being steps from the beach and close to the Corniche lifestyle.</span>
+                            <span data-lang="en">Guests love being steps from the beach and close to the Corniche lifestyle.</span>
+                        </p>
+                    </div>
+                    <div class="bg-white border border-gray-200 rounded-2xl p-5 shadow-sm">
+                        <div class="flex items-center justify-between mb-3"><span class="font-bold text-brand-blue">★★★★★</span><span class="text-sm text-gray-400">Verified stay</span></div>
+                        <p class="text-gray-700 leading-relaxed">
+                            <span class="lang-active" data-lang="fr">The walkable location and private balcony are frequent highlights in guest feedback.</span>
+                            <span class="font-arabic" data-lang="ar">The walkable location and private balcony are frequent highlights in guest feedback.</span>
+                            <span data-lang="en">The walkable location and private balcony are frequent highlights in guest feedback.</span>
+                        </p>
+                    </div>
+                </div>
+            </section>
+        </div>
+        
+        <div>
+            <div class="bg-white border border-gray-200 rounded-2xl shadow-xl p-6 booking-card">
+                <div class="flex justify-between items-end mb-6">
+                    <div class="flex flex-col">
+                        <div class="flex items-baseline gap-2">
+                            <span class="text-gray-500 text-sm font-medium">
+                                <span class="lang-active" data-lang="fr">À partir de</span>
+                                <span class="font-arabic" data-lang="ar">ابتداءً من</span>
+                                <span data-lang="en">From</span>
+                            </span>
+                            <span class="text-3xl font-bold text-brand-blue">220 TND (~65€)</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="border border-gray-300 rounded-xl mb-4 overflow-hidden">
+                    <div class="flex divide-x divide-gray-300 border-b border-gray-300">
+                        <div class="p-3 w-1/2">
+                            <label class="text-xs font-bold uppercase text-gray-800 block cursor-pointer" for="checkin-marsa4">Check-in</label>
+                            <input class="booking-date-input w-full text-gray-700 text-sm outline-none cursor-pointer bg-transparent mt-1" id="checkin-marsa4" onchange="updateWhatsAppLink('marsa4')" placeholder="Select date" readonly="" type="text"/>
+                        </div>
+                        <div class="p-3 w-1/2">
+                            <label class="text-xs font-bold uppercase text-gray-800 block cursor-pointer" for="checkout-marsa4">Checkout</label>
+                            <input class="booking-date-input w-full text-gray-700 text-sm outline-none cursor-pointer bg-transparent mt-1" id="checkout-marsa4" onchange="updateWhatsAppLink('marsa4')" placeholder="Select date" readonly="" type="text"/>
+                        </div>
+                    </div>
+                    <div class="p-3">
+                        <label class="text-xs font-bold uppercase text-gray-800 block cursor-pointer" for="guests-marsa4">Guests</label>
+                        <select class="w-full text-gray-700 text-sm outline-none cursor-pointer bg-transparent mt-1" id="guests-marsa4" onchange="updateWhatsAppLink('marsa4')">
+                            <option value="1">1 guest</option>
+                            <option value="2">2 guests</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="booking-card-actions mt-6">
+                    <button class="w-full mb-3 rounded-xl font-bold px-4 py-3 shadow-md" onclick="scrollToBookingRequest()" style="background:#16375C;color:#fff;border:none;display:block;" type="button">
+                        <span class="lang-active" data-lang="fr">Envoyer une demande</span>
+                        <span class="font-arabic" data-lang="ar">إرسال طلب</span>
+                        <span data-lang="en">Submit request</span>
+                    </button>
+                    <a class="wa-primary-btn block w-full text-center text-white py-4 rounded-xl font-bold text-lg transition-all mb-3 shadow-md" href="https://wa.me/21653340970?text=Bonjour" id="wa-btn-marsa4" target="_blank">
+                        <span class="lang-active" data-lang="fr">Réserver sur WhatsApp</span>
+                        <span class="font-arabic" data-lang="ar">احجز عبر واتساب</span>
+                        <span data-lang="en">Book via WhatsApp</span>
+                    </a>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="booking-request-card rounded-2xl border border-slate-200 bg-white p-5 max-w-md mx-auto mt-6 mb-16" id="booking-request-card">
+    <div class="flex items-center justify-between mb-3">
+        <h3 class="font-bold text-brand-blue text-lg">
+            <span class="lang-active" data-lang="fr">Demande de réservation</span>
+            <span class="font-arabic" data-lang="ar">طلب حجز</span>
+            <span data-lang="en">Booking request</span>
+        </h3>
+    </div>
+    <div class="grid gap-3 mt-4">
+        <input class="w-full border rounded-xl px-4 py-3" id="booking-name" placeholder="Your full name"/>
+        <div class="phone-row">
+            <select class="phone-prefix" id="booking-country">
+                <option selected="" value="+216">🇹🇳 Tunisia +216</option>
+                <option value="+33">🇫🇷 France +33</option>
+                <option value="+1">🇺🇸 United States +1</option>
+            </select>
+            <input class="w-full border rounded-xl px-4 py-3" id="booking-phone" inputmode="numeric" placeholder="12 345 678" type="tel"/>
+        </div>
+        <textarea class="w-full border rounded-xl px-4 py-3" id="booking-msg" placeholder="Message (optional)" rows="3"></textarea>
+        <button class="w-full rounded-xl bg-brand-blue text-white font-bold px-4 py-3 shadow-md mt-2" onclick="submitBookingRequest()" style="background:#16375C;border:none;">
+            <span class="lang-active" data-lang="fr">Envoyer la demande</span>
+            <span class="font-arabic" data-lang="ar">إرسال الطلب</span>
+            <span data-lang="en">Send request</span>
+        </button>
+        <div class="text-sm text-slate-500" id="booking-feedback"></div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+<script>
+    // FIX 3: The Gallery Object
+    const galleries = {
+        'marsa4': [
+            "../uploads/azur-corniche/01.webp",
+            "../uploads/azur-corniche/02.webp",
+            "../uploads/azur-corniche/03.webp",
+            "../uploads/azur-corniche/04.webp",
+            "../uploads/azur-corniche/05.webp",
+            "../uploads/azur-corniche/06.webp",
+            "../uploads/azur-corniche/07.webp",
+            "../uploads/azur-corniche/08.webp",
+            "../uploads/azur-corniche/09.webp",
+            "../uploads/azur-corniche/10.webp"
+        ],
+        'marsa5': [
+            "../uploads/brise-marine/01.webp",
+            "../uploads/brise-marine/02.webp",
+            "../uploads/brise-marine/03.webp",
+            "../uploads/brise-marine/04.webp",
+            "../uploads/brise-marine/05.webp",
+            "../uploads/brise-marine/06.webp",
+            "../uploads/brise-marine/07.webp",
+            "../uploads/brise-marine/08.webp",
+            "../uploads/brise-marine/09.webp",
+            "../uploads/brise-marine/10.webp"
+        ],
+        'sidi4': [
+            "../uploads/duplex-prestige/01.webp",
+            "../uploads/duplex-prestige/02.webp",
+            "../uploads/duplex-prestige/03.webp",
+            "../uploads/duplex-prestige/04.webp",
+            "../uploads/duplex-prestige/05.webp",
+            "../uploads/duplex-prestige/06.webp",
+            "../uploads/duplex-prestige/07.webp",
+            "../uploads/duplex-prestige/08.webp",
+            "../uploads/duplex-prestige/09.webp"
+        ],
+        'sidi5': [
+            "../uploads/belvedere-360/01.webp",
+            "../uploads/belvedere-360/02.webp",
+            "../uploads/belvedere-360/03.webp",
+            "../uploads/belvedere-360/04.webp",
+            "../uploads/belvedere-360/05.webp",
+            "../uploads/belvedere-360/06.webp",
+            "../uploads/belvedere-360/07.webp",
+            "../uploads/belvedere-360/08.webp",
+            "../uploads/belvedere-360/09.webp",
+            "../uploads/belvedere-360/10.webp"
+        ]
+    };
+    
+    let currentGallery = [];
+    let currentImageIndex = 0;
+
+    function openGallery(apartmentId, index) {
+        currentGallery = galleries[apartmentId] || [];
+        if (currentGallery.length === 0) return;
+        currentImageIndex = index;
+        ensureGalleryModal().classList.add('open');
+        document.body.classList.add('gallery-open');
+        updateGalleryImage();
+    }
+
+    function closeGallery() {
+        const modal = document.getElementById('global-gallery-modal');
+        if (modal) modal.classList.remove('open');
+        document.body.classList.remove('gallery-open');
+    }
+
+    function nextImage() {
+        currentImageIndex = (currentImageIndex + 1) % currentGallery.length;
+        updateGalleryImage();
+    }
+
+    function prevImage() {
+        currentImageIndex = (currentImageIndex - 1 + currentGallery.length) % currentGallery.length;
+        updateGalleryImage();
+    }
+
+    function updateGalleryImage() {
+        const main = document.getElementById('gallery-main');
+        if (!main) return;
+        main.innerHTML = `<img src="${currentGallery[currentImageIndex]}" class="w-full h-auto object-contain max-h-[85vh] rounded-lg">`;
+        document.getElementById('gallery-note').innerText = `${currentImageIndex + 1} / ${currentGallery.length}`;
+    }
+
+    function ensureGalleryModal() {
+        let modal = document.getElementById('global-gallery-modal');
+        if(modal) return modal;
+        modal = document.createElement('div');
+        modal.id = 'global-gallery-modal';
+        modal.className = 'gallery-backdrop fixed inset-0 bg-black/90 z-[9999] hidden flex-col items-center justify-center p-4';
+        modal.innerHTML = `
+            <div class="w-full max-w-6xl relative flex flex-col items-center">
+                <button class="absolute -top-12 right-0 text-white font-bold text-xl" onclick="closeGallery()">✕ Fermer</button>
+                <button class="absolute left-0 top-1/2 -translate-y-1/2 text-white text-4xl px-4" onclick="prevImage()">‹</button>
+                <div id="gallery-main" class="w-full flex justify-center"></div>
+                <button class="absolute right-0 top-1/2 -translate-y-1/2 text-white text-4xl px-4" onclick="nextImage()">›</button>
+                <div id="gallery-note" class="text-white mt-4 font-semibold"></div>
+            </div>`;
+        document.body.appendChild(modal);
+        return modal;
+    }
+
+    document.addEventListener('keydown', function(event) {
+        const modal = document.getElementById('global-gallery-modal');
+        if (modal && modal.classList.contains('open')) {
+            if (event.key === "Escape") closeGallery();
+            if (event.key === "ArrowRight") nextImage();
+            if (event.key === "ArrowLeft") prevImage();
         }
-        daysWrap.appendChild(cell);
-      }
+    });
+
+    function switchLang(lang) {
+        try { localStorage.setItem('cosynest-lang', lang); } catch(e) {}
+        document.documentElement.lang = lang;
+        if (lang === 'ar') { document.documentElement.dir = 'rtl'; document.body.classList.add('font-arabic'); } 
+        else { document.documentElement.dir = 'ltr'; document.body.classList.remove('font-arabic'); }
+        document.querySelectorAll('[data-lang]').forEach(el => {
+            if (el.getAttribute('data-lang') === lang) { el.classList.add('lang-active'); el.style.display = ''; } 
+            else { el.classList.remove('lang-active'); el.style.display = 'none'; }
+        });
+        document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+        document.getElementById('btn-' + lang)?.classList.add('active');
+        updateWhatsAppLink('marsa4');
     }
 
-    function open(){
-      overlay.classList.add('open');
-      render();
+    function updateWhatsAppLink(apartment) {
+        const ci = document.getElementById(`checkin-${apartment}`)?.value || '';
+        const co = document.getElementById(`checkout-${apartment}`)?.value || '';
+        const g = document.getElementById(`guests-${apartment}`)?.value || '1';
+        let msg = `Bonjour 👋 Je suis intéressé(e) par : L'Azur de la Corniche`;
+        if (ci && co) msg += `\nDates : ${ci} → ${co}`;
+        msg += `\nVoyageurs : ${g}\nPouvez-vous confirmer la disponibilité ?`;
+        document.getElementById(`wa-btn-${apartment}`).href = `https://wa.me/21653340970?text=${encodeURIComponent(message)}`;
     }
-    function close(){ overlay.classList.remove('open'); }
 
-    overlay.addEventListener('click', function(e){ if(e.target===overlay) close(); });
-    overlay.querySelector('.cn-prev').addEventListener('click', function(){ current = new Date(current.getFullYear(), current.getMonth()-1, 1); render(); });
-    overlay.querySelector('.cn-next').addEventListener('click', function(){ current = new Date(current.getFullYear(), current.getMonth()+1, 1); render(); });
-    overlay.querySelector('.cn-picker-close').addEventListener('click', close);
-    input.addEventListener('click', open);
-    input.addEventListener('focus', open);
-
-    return { open, close, setMinDate(d){ opts.minDate = d; if(current < d) current = new Date(d.getFullYear(), d.getMonth(), 1); }, clear(){ input.value=''; selected=null; } };
-  }
-
-  async function initApartmentCustomCalendar(){
-    const slug = document.body.getAttribute('data-page-slug');
-    if (!slug) return;
-    const ci = document.querySelector('input[id^="checkin-"]');
-    const co = document.querySelector('input[id^="checkout-"]');
-    if (!ci || !co) return;
-
-    ci.type='text'; co.type='text';
-    ci.readOnly=true; co.readOnly=true;
-    ci.placeholder='Select date'; co.placeholder='Select date';
-
-    let blocked = new Set();
-    const priceMap = buildDatePriceMap((window.__APT_DATE_PRICES__) || []);
-    const basePrice = Number((window.__APT_BASE_PRICE__) || 0);
-    try{
-      const res = await fetch('/api/calendar/' + slug);
-      if(res.ok){
-        const cal = await res.json();
-        if(cal.ok && Array.isArray(cal.blocks)) blocked = expandBlockedDates(cal.blocks);
-      }
-    }catch(e){}
-
-    const today = new Date(); today.setHours(0,0,0,0);
-    let checkoutPicker;
-    const checkinPicker = createPicker(ci, {
-      blockedDates: blocked,
-      priceMap: priceMap,
-      basePrice: basePrice,
-      minDate: today,
-      onSelect: function(d){
-        const nextDay = new Date(d); nextDay.setDate(nextDay.getDate()+1);
-        checkoutPicker.setMinDate(nextDay);
-        if (co.value && parseDate(co.value) <= d) checkoutPicker.clear();
-        if (typeof updateWhatsAppLink === 'function') updateWhatsAppLink(ci.id.replace('checkin-',''));
-      }
-    });
-    checkoutPicker = createPicker(co, {
-      blockedDates: blocked,
-      allowBlockedSelect: true,
-      priceMap: priceMap,
-      basePrice: basePrice,
-      minDate: today,
-      onSelect: function(){
-        if (typeof updateWhatsAppLink === 'function') updateWhatsAppLink(ci.id.replace('checkin-',''));
-      }
-    });
-  }
-
-  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded', initApartmentCustomCalendar);
-  else initApartmentCustomCalendar();
-})();
-</script>
-<script>
-(function(){
-  const KEY = 'cosynest-lang';
-
-  function setActiveLanguage(lang){
-    document.documentElement.lang = lang;
-    document.querySelectorAll('[data-lang]').forEach(el => {
-      const active = el.getAttribute('data-lang') === lang;
-      el.classList.toggle('lang-active', active);
-      if (active) {
-        el.style.display = '';
-      } else {
-        el.style.display = 'none';
-      }
-    });
-  }
-
-  const previousSwitchLang = window.switchLang;
-  window.switchLang = function(lang){
-    try { localStorage.setItem(KEY, lang); } catch(e) {}
-    if (typeof previousSwitchLang === 'function') {
-      previousSwitchLang(lang);
+    function scrollToBookingRequest() {
+        document.getElementById('booking-request-card')?.scrollIntoView({ behavior: 'smooth' });
     }
-    setActiveLanguage(lang);
-  };
 
-  function initSavedLanguage(){
-    const saved = localStorage.getItem(KEY) || 'fr';
-    window.switchLang(saved);
-  }
-
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initSavedLanguage);
-  } else {
-    initSavedLanguage();
-  }
-})();
-</script>
-<script>
-document.addEventListener('DOMContentLoaded', function(){
-  try {
-    const savedLang = localStorage.getItem('cosynest-lang') || 'fr';
-    if (typeof switchLang === 'function') switchLang(savedLang);
-  } catch(e) {}
-});
-</script>
-<div class="booking-request-card rounded-2xl border border-slate-200 bg-white p-5 max-w-md mx-auto mt-6" id="booking-request-card">
-<div class="flex items-center justify-between mb-3">
-<h3 class="font-bold text-brand-blue text-lg"><span class="lang-active" data-lang="fr">Demande de réservation</span><span class="font-arabic" data-lang="ar">طلب حجز</span><span data-lang="en">Booking request</span></h3>
-<span class="text-xs px-3 py-1 rounded-full bg-slate-100 text-slate-600">No payment required</span>
-</div>
-<p class="text-sm text-slate-500 mb-4"><span class="lang-active" data-lang="fr">Envoyez votre demande. La réservation est confirmée après accord et réception d’un petit acompte.</span><span class="font-arabic" data-lang="ar">أرسل طلبك. يتم تأكيد الحجز بعد الاتفاق واستلام عربون بسيط.</span><span data-lang="en">Send your request. The booking is confirmed after agreement and receipt of a small advance payment.</span></p>
-<div class="grid gap-3">
-<input class="w-full border rounded-xl px-4 py-3" id="booking-name" placeholder="Your full name"/>
-<div class="phone-row">
-<select class="phone-prefix" id="booking-country">
-<option selected="" value="+216">🇹🇳 Tunisia +216</option>
-<option value="+1">🇺🇸 United States +1</option>
-<option value="+1">🇨🇦 Canada +1</option>
-<option value="+7">🇷🇺 Russia +7</option>
-<option value="+20">🇪🇬 Egypt +20</option>
-<option value="+27">🇿🇦 South Africa +27</option>
-<option value="+30">🇬🇷 Greece +30</option>
-<option value="+31">🇳🇱 Netherlands +31</option>
-<option value="+32">🇧🇪 Belgium +32</option>
-<option value="+33">🇫🇷 France +33</option>
-<option value="+34">🇪🇸 Spain +34</option>
-<option value="+36">🇭🇺 Hungary +36</option>
-<option value="+39">🇮🇹 Italy +39</option>
-<option value="+40">🇷🇴 Romania +40</option>
-<option value="+41">🇨🇭 Switzerland +41</option>
-<option value="+43">🇦🇹 Austria +43</option>
-<option value="+44">🇬🇧 United Kingdom +44</option>
-<option value="+45">🇩🇰 Denmark +45</option>
-<option value="+46">🇸🇪 Sweden +46</option>
-<option value="+47">🇳🇴 Norway +47</option>
-<option value="+48">🇵🇱 Poland +48</option>
-<option value="+49">🇩🇪 Germany +49</option>
-<option value="+51">🇵🇪 Peru +51</option>
-<option value="+52">🇲🇽 Mexico +52</option>
-<option value="+53">🇨🇺 Cuba +53</option>
-<option value="+54">🇦🇷 Argentina +54</option>
-<option value="+55">🇧🇷 Brazil +55</option>
-<option value="+56">🇨🇱 Chile +56</option>
-<option value="+57">🇨🇴 Colombia +57</option>
-<option value="+58">🇻🇪 Venezuela +58</option>
-<option value="+60">🇲🇾 Malaysia +60</option>
-<option value="+61">🇦🇺 Australia +61</option>
-<option value="+62">🇮🇩 Indonesia +62</option>
-<option value="+63">🇵🇭 Philippines +63</option>
-<option value="+64">🇳🇿 New Zealand +64</option>
-<option value="+65">🇸🇬 Singapore +65</option>
-<option value="+66">🇹🇭 Thailand +66</option>
-<option value="+81">🇯🇵 Japan +81</option>
-<option value="+82">🇰🇷 South Korea +82</option>
-<option value="+84">🇻🇳 Vietnam +84</option>
-<option value="+86">🇨🇳 China +86</option>
-<option value="+90">🇹🇷 Turkey +90</option>
-<option value="+91">🇮🇳 India +91</option>
-<option value="+92">🇵🇰 Pakistan +92</option>
-<option value="+93">🇦🇫 Afghanistan +93</option>
-<option value="+94">🇱🇰 Sri Lanka +94</option>
-<option value="+95">🇲🇲 Myanmar +95</option>
-<option value="+98">🇮🇷 Iran +98</option>
-<option value="+212">🇲🇦 Morocco +212</option>
-<option value="+213">🇩🇿 Algeria +213</option>
-<option value="+218">🇱🇾 Libya +218</option>
-<option value="+220">🇬🇲 Gambia +220</option>
-<option value="+221">🇸🇳 Senegal +221</option>
-<option value="+222">🇲🇷 Mauritania +222</option>
-<option value="+223">🇲🇱 Mali +223</option>
-<option value="+224">🇬🇳 Guinea +224</option>
-<option value="+225">🇨🇮 Côte d’Ivoire +225</option>
-<option value="+226">🇧🇫 Burkina Faso +226</option>
-<option value="+227">🇳🇪 Niger +227</option>
-<option value="+228">🇹🇬 Togo +228</option>
-<option value="+229">🇧🇯 Benin +229</option>
-<option value="+230">🇲🇺 Mauritius +230</option>
-<option value="+231">🇱🇷 Liberia +231</option>
-<option value="+232">🇸🇱 Sierra Leone +232</option>
-<option value="+233">🇬🇭 Ghana +233</option>
-<option value="+234">🇳🇬 Nigeria +234</option>
-<option value="+235">🇹🇩 Chad +235</option>
-<option value="+236">🇨🇫 Central African Republic +236</option>
-<option value="+237">🇨🇲 Cameroon +237</option>
-<option value="+238">🇨🇻 Cape Verde +238</option>
-<option value="+239">🇸🇹 São Tomé &amp; Príncipe +239</option>
-<option value="+240">🇬🇶 Equatorial Guinea +240</option>
-<option value="+241">🇬🇦 Gabon +241</option>
-<option value="+242">🇨🇬 Republic of the Congo +242</option>
-<option value="+243">🇨🇩 DR Congo +243</option>
-<option value="+244">🇦🇴 Angola +244</option>
-<option value="+245">🇬🇼 Guinea-Bissau +245</option>
-<option value="+248">🇸🇨 Seychelles +248</option>
-<option value="+249">🇸🇩 Sudan +249</option>
-<option value="+250">🇷🇼 Rwanda +250</option>
-<option value="+251">🇪🇹 Ethiopia +251</option>
-<option value="+252">🇸🇴 Somalia +252</option>
-<option value="+253">🇩🇯 Djibouti +253</option>
-<option value="+254">🇰🇪 Kenya +254</option>
-<option value="+255">🇹🇿 Tanzania +255</option>
-<option value="+256">🇺🇬 Uganda +256</option>
-<option value="+257">🇧🇮 Burundi +257</option>
-<option value="+258">🇲🇿 Mozambique +258</option>
-<option value="+260">🇿🇲 Zambia +260</option>
-<option value="+261">🇲🇬 Madagascar +261</option>
-<option value="+262">🇷🇪 Réunion/Mayotte +262</option>
-<option value="+263">🇿🇼 Zimbabwe +263</option>
-<option value="+264">🇳🇦 Namibia +264</option>
-<option value="+265">🇲🇼 Malawi +265</option>
-<option value="+266">🇱🇸 Lesotho +266</option>
-<option value="+267">🇧🇼 Botswana +267</option>
-<option value="+268">🇸🇿 Eswatini +268</option>
-<option value="+269">🇰🇲 Comoros +269</option>
-<option value="+297">🇦🇼 Aruba +297</option>
-<option value="+298">🇫🇴 Faroe Islands +298</option>
-<option value="+299">🇬🇱 Greenland +299</option>
-<option value="+350">🇬🇮 Gibraltar +350</option>
-<option value="+351">🇵🇹 Portugal +351</option>
-<option value="+352">🇱🇺 Luxembourg +352</option>
-<option value="+353">🇮🇪 Ireland +353</option>
-<option value="+354">🇮🇸 Iceland +354</option>
-<option value="+355">🇦🇱 Albania +355</option>
-<option value="+356">🇲🇹 Malta +356</option>
-<option value="+357">🇨🇾 Cyprus +357</option>
-<option value="+358">🇫🇮 Finland +358</option>
-<option value="+359">🇧🇬 Bulgaria +359</option>
-<option value="+370">🇱🇹 Lithuania +370</option>
-<option value="+371">🇱🇻 Latvia +371</option>
-<option value="+372">🇪🇪 Estonia +372</option>
-<option value="+373">🇲🇩 Moldova +373</option>
-<option value="+374">🇦🇲 Armenia +374</option>
-<option value="+375">🇧🇾 Belarus +375</option>
-<option value="+376">🇦🇩 Andorra +376</option>
-<option value="+377">🇲🇨 Monaco +377</option>
-<option value="+378">🇸🇲 San Marino +378</option>
-<option value="+380">🇺🇦 Ukraine +380</option>
-<option value="+381">🇷🇸 Serbia +381</option>
-<option value="+382">🇲🇪 Montenegro +382</option>
-<option value="+383">🇽🇰 Kosovo +383</option>
-<option value="+385">🇭🇷 Croatia +385</option>
-<option value="+386">🇸🇮 Slovenia +386</option>
-<option value="+387">🇧🇦 Bosnia &amp; Herzegovina +387</option>
-<option value="+389">🇲🇰 North Macedonia +389</option>
-<option value="+420">🇨🇿 Czech Republic +420</option>
-<option value="+421">🇸🇰 Slovakia +421</option>
-<option value="+423">🇱🇮 Liechtenstein +423</option>
-<option value="+500">🇫🇰 Falkland Islands +500</option>
-<option value="+501">🇧🇿 Belize +501</option>
-<option value="+502">🇬🇹 Guatemala +502</option>
-<option value="+503">🇸🇻 El Salvador +503</option>
-<option value="+504">🇭🇳 Honduras +504</option>
-<option value="+505">🇳🇮 Nicaragua +505</option>
-<option value="+506">🇨🇷 Costa Rica +506</option>
-<option value="+507">🇵🇦 Panama +507</option>
-<option value="+508">🇵🇲 Saint Pierre &amp; Miquelon +508</option>
-<option value="+509">🇭🇹 Haiti +509</option>
-<option value="+590">🇬🇵 Guadeloupe +590</option>
-<option value="+591">🇧🇴 Bolivia +591</option>
-<option value="+592">🇬🇾 Guyana +592</option>
-<option value="+593">🇪🇨 Ecuador +593</option>
-<option value="+594">🇬🇫 French Guiana +594</option>
-<option value="+595">🇵🇾 Paraguay +595</option>
-<option value="+596">🇲🇶 Martinique +596</option>
-<option value="+597">🇸🇷 Suriname +597</option>
-<option value="+598">🇺🇾 Uruguay +598</option>
-<option value="+599">🇨🇼 Curaçao/Caribbean NL +599</option>
-<option value="+670">🇹🇱 Timor-Leste +670</option>
-<option value="+672">🇦🇶 Antarctica +672</option>
-<option value="+673">🇧🇳 Brunei +673</option>
-<option value="+674">🇳🇷 Nauru +674</option>
-<option value="+675">🇵🇬 Papua New Guinea +675</option>
-<option value="+676">🇹🇴 Tonga +676</option>
-<option value="+677">🇸🇧 Solomon Islands +677</option>
-<option value="+678">🇻🇺 Vanuatu +678</option>
-<option value="+679">🇫🇯 Fiji +679</option>
-<option value="+680">🇵🇼 Palau +680</option>
-<option value="+681">🇼🇫 Wallis &amp; Futuna +681</option>
-<option value="+682">🇨🇰 Cook Islands +682</option>
-<option value="+683">🇳🇺 Niue +683</option>
-<option value="+685">🇼🇸 Samoa +685</option>
-<option value="+686">🇰🇮 Kiribati +686</option>
-<option value="+687">🇳🇨 New Caledonia +687</option>
-<option value="+688">🇹🇻 Tuvalu +688</option>
-<option value="+689">🇵🇫 French Polynesia +689</option>
-<option value="+690">🇹🇰 Tokelau +690</option>
-<option value="+691">🇫🇲 Micronesia +691</option>
-<option value="+692">🇲🇭 Marshall Islands +692</option>
-<option value="+850">🇰🇵 North Korea +850</option>
-<option value="+852">🇭🇰 Hong Kong +852</option>
-<option value="+853">🇲🇴 Macau +853</option>
-<option value="+855">🇰🇭 Cambodia +855</option>
-<option value="+856">🇱🇦 Laos +856</option>
-<option value="+880">🇧🇩 Bangladesh +880</option>
-<option value="+886">🇹🇼 Taiwan +886</option>
-<option value="+960">🇲🇻 Maldives +960</option>
-<option value="+961">🇱🇧 Lebanon +961</option>
-<option value="+962">🇯🇴 Jordan +962</option>
-<option value="+963">🇸🇾 Syria +963</option>
-<option value="+964">🇮🇶 Iraq +964</option>
-<option value="+965">🇰🇼 Kuwait +965</option>
-<option value="+966">🇸🇦 Saudi Arabia +966</option>
-<option value="+967">🇾🇪 Yemen +967</option>
-<option value="+968">🇴🇲 Oman +968</option>
-<option value="+970">🇵🇸 Palestine +970</option>
-<option value="+971">🇦🇪 United Arab Emirates +971</option>
-<option value="+972">🇮🇱 Israel +972</option>
-<option value="+973">🇧🇭 Bahrain +973</option>
-<option value="+974">🇶🇦 Qatar +974</option>
-<option value="+975">🇧🇹 Bhutan +975</option>
-<option value="+976">🇲🇳 Mongolia +976</option>
-<option value="+977">🇳🇵 Nepal +977</option>
-<option value="+992">🇹🇯 Tajikistan +992</option>
-<option value="+993">🇹🇲 Turkmenistan +993</option>
-<option value="+994">🇦🇿 Azerbaijan +994</option>
-<option value="+995">🇬🇪 Georgia +995</option>
-<option value="+996">🇰🇬 Kyrgyzstan +996</option>
-<option value="+998">🇺🇿 Uzbekistan +998</option>
-</select>
-<input class="w-full border rounded-xl px-4 py-3" id="booking-phone" inputmode="numeric" placeholder="12 345 678" required="" type="tel"/>
-</div>
-<textarea class="w-full border rounded-xl px-4 py-3" id="booking-msg" placeholder="Message (optional)" rows="3"></textarea>
-<button class="w-full rounded-xl bg-brand-blue text-white font-bold px-4 py-3 shadow-md mt-2" onclick="submitBookingRequest()" style="display:block !important;background:#16375C !important;color:#ffffff !important;min-height:50px;visibility:visible !important;opacity:1 !important;border:none;"><span class="lang-active" data-lang="fr">Envoyer la demande</span><span class="font-arabic" data-lang="ar">إرسال الطلب</span><span data-lang="en">Send request</span></button>
-<div class="text-sm text-slate-500" id="booking-feedback"></div>
-</div>
-</div>
-<script>
-function normalizePhoneNumber(raw){
-  let digits = String(raw || '').replace(/[^0-9]/g, '');
-  if (!digits) return '';
-  if (digits.startsWith('00')) digits = digits.slice(2);
-  return digits;
-}
-function formatPhoneInputValue(raw){
-  const digits = normalizePhoneNumber(raw).slice(0, 15);
-  if (digits.length <= 2) return digits;
-  if (digits.length <= 5) return digits.replace(/^(\d{2})(\d+)/, '$1 $2');
-  if (digits.length <= 8) return digits.replace(/^(\d{2})(\d{3})(\d+)/, '$1 $2 $3');
-  return digits.replace(/^(\d{2})(\d{3})(\d{3})(\d+)/, '$1 $2 $3 $4');
-}
-function attachPhoneFormatting(){
-  const phoneInput = document.getElementById('booking-phone');
-  if (!phoneInput) return;
-  phoneInput.addEventListener('input', function(){
-    this.value = formatPhoneInputValue(this.value);
-  });
-}
-
-function scrollToBookingRequest(){
-  const el = document.getElementById('booking-request-card');
-  if (!el) return;
-  el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  const firstInput = el.querySelector('input, textarea');
-  if (firstInput) setTimeout(() => firstInput.focus(), 350);
-}
-
-async function submitBookingRequest(){
-  const slug = document.body.getAttribute('data-page-slug');
-  const name = document.getElementById('booking-name')?.value?.trim() || '';
-  const countryCode = document.getElementById('booking-country')?.value || '+216';
-  const phoneLocal = document.getElementById('booking-phone')?.value?.trim() || '';
-  const phoneDigits = normalizePhoneNumber(phoneLocal);
-  const phone = `${countryCode}${phoneDigits}`;
-  const customerMessage = document.getElementById('booking-msg')?.value?.trim() || '';
-  const checkin = document.querySelector('input[id^="checkin-"]')?.value || '';
-  const checkout = document.querySelector('input[id^="checkout-"]')?.value || '';
-  const guests = document.querySelector('select[id^="guests-"]')?.value || '1';
-  const nights = Number((document.getElementById('summary-nights')?.textContent || '').replace(/[^0-9]/g,'')) || 0;
-  const totalTND = Number((document.getElementById('summary-total')?.textContent || '').replace(/[^0-9]/g,'')) || 0;
-  const aptTitleEl = document.querySelector('h1.lang-active') || document.querySelector('h1[data-lang="fr"]') || document.querySelector('h1');
-  const apartmentName = (aptTitleEl?.textContent || slug || '').trim();
-  const feedback = document.getElementById('booking-feedback');
-
-
-    const lang = (document.querySelector('.lang-btn.active')?.id || '').replace('btn-','') || localStorage.getItem('cosynest-lang') || document.documentElement.lang || 'fr';
-  const expectedMin = countryCode === '+216' ? 8 : 6;
-  if (!phoneDigits || phoneDigits.length < expectedMin || phoneDigits.length > 15) {
-    feedback.textContent = ({
-      fr:'Veuillez entrer un numéro de téléphone valide.',
-      ar:'يرجى إدخال رقم هاتف صحيح.',
-      en:'Please enter a valid phone number.'
-    })[lang] || 'Please enter a valid phone number.';
-    feedback.className = 'text-sm text-red-600';
-    return;
-  }
-  if (!name || !phone || !checkin || !checkout) {
-    feedback.textContent = ({
-      fr:'Veuillez renseigner votre nom, téléphone, date d’arrivée et date de départ.',
-      ar:'يرجى إدخال الاسم ورقم الهاتف وتاريخ الوصول والمغادرة.',
-      en:'Please add your name, phone, check-in and check-out dates.'
-    })[lang] || 'Please add your name, phone, check-in and check-out dates.';
-    feedback.className = 'text-sm text-red-600';
-    return;
-  }
-
-  try{
-    const res = await fetch('/api/booking-request', {
-      method:'POST',
-      headers:{'Content-Type':'application/json'},
-      body: JSON.stringify({
-        apartmentSlug: slug,
-        apartmentName,
-        checkin,
-        checkout,
-        guests,
-        nights,
-        totalTND,
-        customerName: name,
-        customerPhone: phone,
-        customerMessage
-      })
+    document.addEventListener('DOMContentLoaded', () => {
+        switchLang(localStorage.getItem('cosynest-lang') || 'fr');
+        flatpickr("#checkin-marsa4", { minDate: "today", onChange: function(sel) { flatpickr("#checkout-marsa4", {minDate: new Date(sel[0]).fp_incr(1)}); } });
     });
-    const data = await res.json();
-    if(!res.ok || !data.ok) throw new Error(data.message || 'Request failed');
-    feedback.textContent = ({
-      fr:'Votre demande a bien été envoyée. Nous vous contacterons pour confirmer la disponibilité et l’acompte.',
-      ar:'تم إرسال طلب الحجز بنجاح. سنتواصل معك لتأكيد التوفر والعربون.',
-      en:'Your booking request was sent successfully. We will contact you to confirm availability and the advance payment.'
-    })[lang] || 'Your booking request was sent successfully.';
-    feedback.className = 'text-sm text-emerald-600';
-  }catch(e){
-    feedback.textContent = ({
-      fr:'Impossible d’envoyer votre demande.',
-      ar:'تعذر إرسال طلب الحجز.',
-      en:'Could not send your booking request.'
-    })[lang] || 'Could not send your booking request.';
-    feedback.className = 'text-sm text-red-600';
-  }
-}
 </script>
-</div></body>
+
+</body>
 </html>
